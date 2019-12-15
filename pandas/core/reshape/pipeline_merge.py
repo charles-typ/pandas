@@ -246,7 +246,7 @@ class _PipelineMergeOperation:
 
         self._maybe_restore_index_levels(result)
 
-        return result, self.factorizer, self.intfactorizer
+        return result, self.factorizer, self.intfactorizer, self.left_sorter, self.left_count
 
     def _indicator_pre_merge(
             self, left: "DataFrame", right: "DataFrame"
@@ -910,7 +910,7 @@ def _get_join_indexers(
         kwargs["sort"] = sort
     join_func = _join_functions[how]
 
-    return join_func(lkey, rkey, count, left_sorter, left_count **kwargs)
+    return join_func(lkey, rkey, count, left_sorter, left_count, **kwargs)
 
 
 def _restore_dropped_levels_multijoin(

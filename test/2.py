@@ -9,7 +9,7 @@ right = pd.DataFrame({'key': ['K0', 'K4', 'K5', 'K3'],
 right2 = pd.DataFrame({'key': ['K0', 'K6', 'K7', 'K3'],
                       'C': ['C9', 'C1', 'C2', 'C8'],
                       'D': ['D9', 'D1', 'D2', 'D8']})
-result, objectrizer, intrizer = pd.pipeline_merge(left, right)
+result, objectrizer, intrizer, leftsorter, leftcount = pd.pipeline_merge(left, right, how='pipeline')
 print(result)
-result, objectrizer, intrizer = pd.pipeline_merge(left, right2, factorizer=objectrizer, intfactorizer=intrizer)
+result, objectrizer, intrizer, leftsorter, leftcount = pd.pipeline_merge(left, right2, factorizer=objectrizer, intfactorizer=intrizer, leftsorter=leftsorter, leftcount=leftcount, how='pipeline')
 print(result)
