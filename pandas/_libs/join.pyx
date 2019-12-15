@@ -28,7 +28,7 @@ def inner_join(const int64_t[:] left, const int64_t[:] right,
 
     left_sorter, left_count = groupsort_indexer(left, max_groups)
     right_sorter, right_count = groupsort_indexer(right, max_groups)
-
+    # FIXME we do not to sort like this, or we could learn more knowledge prior to sorting
     with nogil:
         # First pass, determine size of result set, do not use the NA group
         for i in range(1, max_groups + 1):

@@ -68,6 +68,7 @@ def pipeline_merge(
         copy: bool = True,
         indicator: bool = False,
         validate=None,
+        factorizer=None,
 ):
     op = _PipelineMergeOperation(
         left,
@@ -83,6 +84,7 @@ def pipeline_merge(
         copy=copy,
         indicator=indicator,
         validate=validate,
+        factorizer=factorizer,
     )
     return op.get_result()
 
@@ -117,6 +119,7 @@ class _PipelineMergeOperation:
             copy: bool = True,
             indicator: bool = False,
             validate=None,
+            factorizer=None,
     ):
         _left = _validate_operand(left)
         _right = _validate_operand(right)
@@ -178,6 +181,10 @@ class _PipelineMergeOperation:
             self.right_join_keys,
             self.join_names,
         ) = self._get_merge_keys()
+        if self.factorizer == None:
+            self.factorizer = libhashtable.Int64Factorizer(max(len(self.left_join_keys), len(self.right_join_keys)))
+        else:
+            self.factorizer = factorizer
 
         # validate the merge keys dtypes. We may need to coerce
         # to avoid incompat dtypes
@@ -223,7 +230,7 @@ class _PipelineMergeOperation:
 
         self._maybe_restore_index_levels(result)
 
-        return result
+        return result, self.factorizer
 
     def _indicator_pre_merge(
             self, left: "DataFrame", right: "DataFrame"
@@ -392,7 +399,7 @@ class _PipelineMergeOperation:
         """ return the join indexers """
         # FIXME 4 fix this function
         return _get_join_indexers(
-            self.left_join_keys, self.right_join_keys, sort=self.sort, how=self.how
+            self.left_join_keys, self.right_join_keys, self.factorizer, sort=self.sort, how=self.how
         )
 
     def _get_join_info(self):
@@ -841,7 +848,7 @@ class _PipelineMergeOperation:
 
 
 def _get_join_indexers(
-        left_keys, right_keys, sort: bool = False, how: str = "inner", **kwargs
+        left_keys, right_keys, factorizer, sort: bool = False, how: str = "inner", **kwargs
 ):
     """
 
@@ -864,19 +871,19 @@ def _get_join_indexers(
 
     # get left & right join labels and num. of levels at each location
     mapped = (
-        _factorize_keys(left_keys[n], right_keys[n], sort=sort)
+        _factorize_keys(left_keys[n], right_keys[n], factorizer, sort=sort)
         for n in range(len(left_keys))
     )
     zipped = zip(*mapped)
     llab, rlab, shape = [list(x) for x in zipped]
 
     # get flat i8 keys from label lists
-    lkey, rkey = _get_join_keys(llab, rlab, shape, sort)
+    lkey, rkey = _get_join_keys(llab, rlab, shape, factorizer, sort)
 
     # factorize keys to a dense i8 space
     # `count` is the num. of unique keys
     # set(lkey) | set(rkey) == range(count)
-    lkey, rkey, count = _factorize_keys(lkey, rkey, sort=sort)
+    lkey, rkey, count = _factorize_keys(lkey, rkey, factorizer, sort=sort)
 
     # preserve left frame order if how == 'left' and sort == False
     kwargs = copy.copy(kwargs)
@@ -1075,7 +1082,7 @@ _join_functions = {
 }
 
 
-def _factorize_keys(lk, rk, sort=True):
+def _factorize_keys(lk, rk, rizer, sort=True):
     # Some pre-processing for non-ndarray lk / rk
     if is_datetime64tz_dtype(lk) and is_datetime64tz_dtype(rk):
         lk = getattr(lk, "_values", lk)._data
@@ -1120,7 +1127,7 @@ def _factorize_keys(lk, rk, sort=True):
         lk = ensure_object(lk)
         rk = ensure_object(rk)
 
-    rizer = klass(max(len(lk), len(rk)))
+    #rizer = klass(max(len(lk), len(rk)))
 
     llab = rizer.factorize(lk)
     rlab = rizer.factorize(rk)
@@ -1162,7 +1169,7 @@ def _sort_labels(uniques: np.ndarray, left, right):
     return new_left, new_right
 
 
-def _get_join_keys(llab, rlab, shape, sort: bool):
+def _get_join_keys(llab, rlab, shape, factorizer, sort: bool):
     # FIXME 6
     # how many levels can be done without overflow
     pred = lambda i: not is_int64_overflow_possible(shape[:i])
@@ -1183,7 +1190,7 @@ def _get_join_keys(llab, rlab, shape, sort: bool):
         return lkey, rkey
 
     # densify current keys to avoid overflow
-    lkey, rkey, count = _factorize_keys(lkey, rkey, sort=sort)
+    lkey, rkey, count = _factorize_keys(lkey, rkey, factorizer, sort=sort)
 
     llab = [lkey] + llab[nlev:]
     rlab = [rkey] + rlab[nlev:]
