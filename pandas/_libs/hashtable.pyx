@@ -62,7 +62,7 @@ cdef class Factorizer:
 
     def get_count(self):
         return self.count
-
+    # FIXME fix this factorize function
     def factorize(self, ndarray[object] values, sort=False, na_sentinel=-1,
                   na_value=None):
         """
