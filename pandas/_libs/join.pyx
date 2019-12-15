@@ -64,7 +64,7 @@ def inner_join(const int64_t[:] left, const int64_t[:] right,
             _get_result_indexer(right_sorter, right_indexer))
 
 def pipeline_inner_join(const int64_t[:] left, const int64_t[:] right,
-               Py_ssize_t max_groups, leftsorter = None, leftcounter = None):
+               Py_ssize_t max_groups, leftsorter = None, leftcount = None):
     cdef:
         Py_ssize_t i, j, k, count = 0
         ndarray[int64_t] left_count, right_count, left_sorter, right_sorter
@@ -74,7 +74,7 @@ def pipeline_inner_join(const int64_t[:] left, const int64_t[:] right,
         Py_ssize_t offset
 
     # NA group in location 0
-    if leftsorter is None and leftcounter is None:
+    if leftsorter is None and leftcount is None:
         left_sorter, left_count = groupsort_indexer(left, max_groups)
     else:
         left_sorter = leftsorter
