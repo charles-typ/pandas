@@ -69,6 +69,7 @@ def pipeline_merge(
         indicator: bool = False,
         validate=None,
         factorizer=None,
+        intfactorizer=None,
 ):
     op = _PipelineMergeOperation(
         left,
@@ -85,6 +86,7 @@ def pipeline_merge(
         indicator=indicator,
         validate=validate,
         factorizer=factorizer,
+        intfactorizer=intfactorizer,
     )
     return op.get_result()
 
@@ -120,6 +122,7 @@ class _PipelineMergeOperation:
             indicator: bool = False,
             validate=None,
             factorizer=None,
+            intfactorizer=None,
     ):
         _left = _validate_operand(left)
         _right = _validate_operand(right)
@@ -186,6 +189,11 @@ class _PipelineMergeOperation:
         else:
             self.factorizer = factorizer
 
+        if intfactorizer == None:
+            self.intfactorizer = libhashtable.Int64Factorizer(max(len(self.left_join_keys), len(self.right_join_keys)))
+        else:
+            self.intfactorizer = intfactorizer
+
         # validate the merge keys dtypes. We may need to coerce
         # to avoid incompat dtypes
         self._maybe_coerce_merge_keys()
@@ -230,7 +238,7 @@ class _PipelineMergeOperation:
 
         self._maybe_restore_index_levels(result)
 
-        return result, self.factorizer
+        return result, self.factorizer, self.intfactorizer
 
     def _indicator_pre_merge(
             self, left: "DataFrame", right: "DataFrame"
@@ -399,7 +407,7 @@ class _PipelineMergeOperation:
         """ return the join indexers """
         # FIXME 4 fix this function
         return _get_join_indexers(
-            self.left_join_keys, self.right_join_keys, self.factorizer, sort=self.sort, how=self.how
+            self.left_join_keys, self.right_join_keys, self.factorizer, self.intfactorizer, sort=self.sort, how=self.how
         )
 
     def _get_join_info(self):
@@ -848,7 +856,7 @@ class _PipelineMergeOperation:
 
 
 def _get_join_indexers(
-        left_keys, right_keys, factorizer, sort: bool = False, how: str = "inner", **kwargs
+        left_keys, right_keys, factorizer, intfactorizer, sort: bool = False, how: str = "inner", **kwargs
 ):
     """
 
@@ -871,19 +879,19 @@ def _get_join_indexers(
 
     # get left & right join labels and num. of levels at each location
     mapped = (
-        _factorize_keys(left_keys[n], right_keys[n], factorizer, sort=sort)
+        _factorize_keys(left_keys[n], right_keys[n], factorizer, intfactorizer, sort=sort)
         for n in range(len(left_keys))
     )
     zipped = zip(*mapped)
     llab, rlab, shape = [list(x) for x in zipped]
 
     # get flat i8 keys from label lists
-    lkey, rkey = _get_join_keys(llab, rlab, shape, factorizer, sort)
+    lkey, rkey = _get_join_keys(llab, rlab, shape, factorizer, intfactorizer, sort)
 
     # factorize keys to a dense i8 space
     # `count` is the num. of unique keys
     # set(lkey) | set(rkey) == range(count)
-    lkey, rkey, count = _factorize_keys(lkey, rkey, factorizer, sort=sort)
+    lkey, rkey, count = _factorize_keys(lkey, rkey, factorizer, intfactorizer, sort=sort)
 
     # preserve left frame order if how == 'left' and sort == False
     kwargs = copy.copy(kwargs)
@@ -1083,7 +1091,7 @@ _join_functions = {
 }
 
 
-def _factorize_keys(lk, rk, rizer, sort=True):
+def _factorize_keys(lk, rk, objectrizer, intrizer, sort=True):
     # Some pre-processing for non-ndarray lk / rk
     if is_datetime64tz_dtype(lk) and is_datetime64tz_dtype(rk):
         lk = getattr(lk, "_values", lk)._data
@@ -1114,6 +1122,7 @@ def _factorize_keys(lk, rk, rizer, sort=True):
         # GH#23917 TODO: needs tests for case where lk is integer-dtype
         #  and rk is datetime-dtype
         klass = libhashtable.Int64Factorizer
+        flag = 0
         lk = ensure_int64(com.values_from_object(lk))
         rk = ensure_int64(com.values_from_object(rk))
     elif issubclass(lk.dtype.type, (np.timedelta64, np.datetime64)) and issubclass(
@@ -1121,15 +1130,20 @@ def _factorize_keys(lk, rk, rizer, sort=True):
     ):
         # GH#23917 TODO: Needs tests for non-matching dtypes
         klass = libhashtable.Int64Factorizer
+        flag = 0
         lk = ensure_int64(com.values_from_object(lk))
         rk = ensure_int64(com.values_from_object(rk))
     else:
         klass = libhashtable.Factorizer
+        flag = 1
         lk = ensure_object(lk)
         rk = ensure_object(rk)
 
     #rizer = klass(max(len(lk), len(rk)))
-
+    if flag == 0:
+        rizer = intrizer
+    else:
+        rizer = objectrizer
     llab = rizer.factorize(lk)
     rlab = rizer.factorize(rk)
 
