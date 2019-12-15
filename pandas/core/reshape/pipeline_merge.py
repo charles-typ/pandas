@@ -1079,6 +1079,7 @@ _join_functions = {
     "left": libjoin.left_outer_join,
     "right": _right_outer_join,
     "outer": libjoin.full_outer_join,
+    "pipeline": libjoin.pipeline_inner_join,
 }
 
 
