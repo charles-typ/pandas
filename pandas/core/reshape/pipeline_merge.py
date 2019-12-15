@@ -1184,7 +1184,7 @@ def _sort_labels(uniques: np.ndarray, left, right):
     return new_left, new_right
 
 
-def _get_join_keys(llab, rlab, shape, factorizer, sort: bool):
+def _get_join_keys(llab, rlab, shape, factorizer, intfactorizer, sort: bool):
     # FIXME 6
     # how many levels can be done without overflow
     pred = lambda i: not is_int64_overflow_possible(shape[:i])
@@ -1205,13 +1205,13 @@ def _get_join_keys(llab, rlab, shape, factorizer, sort: bool):
         return lkey, rkey
 
     # densify current keys to avoid overflow
-    lkey, rkey, count = _factorize_keys(lkey, rkey, factorizer, sort=sort)
+    lkey, rkey, count = _factorize_keys(lkey, rkey, factorizer, intfactorizer, sort=sort)
 
     llab = [lkey] + llab[nlev:]
     rlab = [rkey] + rlab[nlev:]
     shape = [count] + shape[nlev:]
 
-    return _get_join_keys(llab, rlab, shape, sort)
+    return _get_join_keys(llab, rlab, shape, factorizer, intfactorizer, sort)
 
 
 def _should_fill(lname, rname) -> bool:
