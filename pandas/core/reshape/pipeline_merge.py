@@ -90,7 +90,7 @@ def pipeline_merge(
 
 
 if __debug__:
-    merge.__doc__ = _merge_doc % "\nleft : DataFrame"
+    pipeline_merge.__doc__ = _merge_doc % "\nleft : DataFrame"
 
 
 # TODO: transformations??
