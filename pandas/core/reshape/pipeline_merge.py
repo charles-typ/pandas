@@ -181,8 +181,8 @@ class _PipelineMergeOperation:
             self.right_join_keys,
             self.join_names,
         ) = self._get_merge_keys()
-        if self.factorizer == None:
-            self.factorizer = libhashtable.Int64Factorizer(max(len(self.left_join_keys), len(self.right_join_keys)))
+        if factorizer == None:
+            self.factorizer = libhashtable.Factorizer(max(len(self.left_join_keys), len(self.right_join_keys)))
         else:
             self.factorizer = factorizer
 
