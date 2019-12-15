@@ -133,6 +133,7 @@ from pandas.core.reshape.api import (
     merge,
     merge_asof,
     merge_ordered,
+    pipeline_merge,
     crosstab,
     pivot,
     pivot_table,
