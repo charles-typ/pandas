@@ -64,7 +64,7 @@ def inner_join(const int64_t[:] left, const int64_t[:] right,
             _get_result_indexer(right_sorter, right_indexer))
 
 def pipeline_inner_join(const int64_t[:] left, const int64_t[:] right,
-               Py_ssize_t max_groups):
+               Py_ssize_t max_groups, leftsorter = None, leftcounter = None):
     cdef:
         Py_ssize_t i, j, k, count = 0
         ndarray[int64_t] left_count, right_count, left_sorter, right_sorter
@@ -74,8 +74,11 @@ def pipeline_inner_join(const int64_t[:] left, const int64_t[:] right,
         Py_ssize_t offset
 
     # NA group in location 0
-
-    left_sorter, left_count = groupsort_indexer(left, max_groups)
+    if leftsorter is None and leftcounter is None:
+        left_sorter, left_count = groupsort_indexer(left, max_groups)
+    else:
+        left_sorter = leftsorter
+        left_count = leftcount
     right_sorter, right_count = groupsort_indexer(right, max_groups)
     # FIXME we do not to sort like this, or we could learn more knowledge prior to sorting
     with nogil:
@@ -110,7 +113,8 @@ def pipeline_inner_join(const int64_t[:] left, const int64_t[:] right,
             right_pos += rc
 
     return (_get_result_indexer(left_sorter, left_indexer),
-            _get_result_indexer(right_sorter, right_indexer))
+            _get_result_indexer(right_sorter, right_indexer),
+            left_sorter, left_count)
 
 @cython.boundscheck(False)
 def left_outer_join(const int64_t[:] left, const int64_t[:] right,

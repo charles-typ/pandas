@@ -70,6 +70,8 @@ def pipeline_merge(
         validate=None,
         factorizer=None,
         intfactorizer=None,
+        leftsorter=None,
+        leftcounter=None,
 ):
     op = _PipelineMergeOperation(
         left,
@@ -87,6 +89,8 @@ def pipeline_merge(
         validate=validate,
         factorizer=factorizer,
         intfactorizer=intfactorizer,
+        leftsorter=leftsorter,
+        leftcounter=leftcounter,
     )
     return op.get_result()
 
@@ -123,6 +127,8 @@ class _PipelineMergeOperation:
             validate=None,
             factorizer=None,
             intfactorizer=None,
+            leftsorter=None,
+            leftcounter=None,
     ):
         _left = _validate_operand(left)
         _right = _validate_operand(right)
@@ -138,6 +144,8 @@ class _PipelineMergeOperation:
         self.copy = copy
         self.suffixes = suffixes
         self.sort = sort
+        self.left_sorter=leftsorter
+        self.left_counter=leftcounter
 
         self.left_index = left_index
         self.right_index = right_index
@@ -407,7 +415,7 @@ class _PipelineMergeOperation:
         """ return the join indexers """
         # FIXME 4 fix this function
         return _get_join_indexers(
-            self.left_join_keys, self.right_join_keys, self.factorizer, self.intfactorizer, sort=self.sort, how=self.how
+            self.left_join_keys, self.right_join_keys, self.factorizer, self.intfactorizer, self.left_sorter, self.left_counter, sort=self.sort, how=self.how
         )
 
     def _get_join_info(self):
@@ -429,8 +437,11 @@ class _PipelineMergeOperation:
             )
         else:
             # FIXME 2 fix get join indexers
-            (left_indexer, right_indexer) = self._get_join_indexers()
-
+            (left_indexer, right_indexer, left_sorter, left_counter) = self._get_join_indexers()
+            if self.left_counter is None:
+                self.left_counter = left_counter
+            if self.left_sorter is None:
+                self.left_sorter = left_sorter
             if self.right_index:
                 if len(self.left) > 0:
                     join_index = self._create_join_index(
@@ -856,7 +867,7 @@ class _PipelineMergeOperation:
 
 
 def _get_join_indexers(
-        left_keys, right_keys, factorizer, intfactorizer, sort: bool = False, how: str = "inner", **kwargs
+        left_keys, right_keys, factorizer, intfactorizer, left_sorter, left_counter, sort: bool = False, how: str = "inner", **kwargs
 ):
     """
 
@@ -899,7 +910,7 @@ def _get_join_indexers(
         kwargs["sort"] = sort
     join_func = _join_functions[how]
 
-    return join_func(lkey, rkey, count, **kwargs)
+    return join_func(lkey, rkey, count, left_sorter, left_counter **kwargs)
 
 
 def _restore_dropped_levels_multijoin(
