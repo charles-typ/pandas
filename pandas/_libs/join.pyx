@@ -80,15 +80,16 @@ def pipeline_inner_join(const int64_t[:] left, const int64_t[:] right,
     #    left_sorter = leftsorter
     #    left_count = leftcount
     left_increment_count = np.empty(len(left_count), dtype=np.int64)
+    left_increment_count[0] = 0
     for i in range(1, len(left_count)):
         left_increment_count[i] = left_increment_count[i - 1] + left_count[i]
     #right_sorter, right_count = groupsort_indexer(right, max_groups)
-    print("left_sorter : ")
-    print(left_sorter)
-    print("left_count : ")
-    print(left_count)
-    print("left_incremenet_count : ")
-    print(left_increment_count)
+   # print("left_sorter : ")
+   # print(left_sorter)
+   # print("left_count : ")
+   # print(left_count)
+   # print("left_incremenet_count : ")
+   # print(left_increment_count)
     #print("right_sorter : ")
     #print(right_sorter)
     #print("right_count : ")
@@ -98,8 +99,8 @@ def pipeline_inner_join(const int64_t[:] left, const int64_t[:] right,
         # First pass, determine size of result set, do not use the NA group
         for i in range(len(right)):
             lc = right[i]
-            if left_count[lc] > 0:
-                count += left_count[lc]
+            if left_count[lc + 1] > 0:
+                count += left_count[lc + 1]
 
     # exclude the NA group
     left_pos = left_count[0]
@@ -113,10 +114,10 @@ def pipeline_inner_join(const int64_t[:] left, const int64_t[:] right,
             right_indexer[idx] = i
             left_indexer[idx] = left_sorter[left_increment_count[right[i] + 1] - 1]
             idx = idx + 1
-    print("left_indexer")
-    print(left_indexer)
-    print("right_indexer")
-    print(right_indexer)
+    #print("left_indexer")
+    #print(left_indexer)
+    #print("right_indexer")
+    #print(right_indexer)
     return (left_indexer, right_indexer, left_sorter, left_count)
 
 @cython.boundscheck(False)

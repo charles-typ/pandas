@@ -3,7 +3,6 @@ import string
 import numpy as np
 
 from pandas import DataFrame, MultiIndex, Series, concat, date_range, merge, merge_asof
-from pandas import pipeline_merge
 import pandas.util.testing as tm
 
 try:
@@ -45,13 +44,13 @@ class Merge:
         self.df3 = self.df[:5000]
 
     def time_merge_2intkey(self, sort):
-        pipeline_merge(self.left, self.right, how="pipeline", sort=sort)
+        merge(self.left, self.right, sort=sort)
 
     def time_merge_dataframe_integer_2key(self, sort):
-        pipeline_merge(self.df, self.df3, how="pipeline", sort=sort)
+        merge(self.df, self.df3, sort=sort)
 
     def time_merge_dataframe_integer_key(self, sort):
-        pipeline_merge(self.df, self.df2, on="key1", how="pipeline", sort=sort)
+        merge(self.df, self.df2, on="key1", sort=sort)
 
 
 # class I8Merge:
