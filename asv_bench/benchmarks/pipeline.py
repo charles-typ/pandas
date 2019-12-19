@@ -1,0 +1,75 @@
+import string
+
+import numpy as np
+
+from pandas import DataFrame, MultiIndex, Series, concat, date_range, merge, merge_asof
+import pandas.util.testing as tm
+
+try:
+    from pandas import merge_ordered
+except ImportError:
+    from pandas import ordered_merge as merge_ordered
+
+
+class Merge:
+
+    params = [True, False]
+    param_names = ["sort"]
+
+    def setup(self, sort):
+        N = 10000
+        indices = tm.makeStringIndex(N).values
+        indices2 = tm.makeStringIndex(N).values
+        key = np.tile(indices[:8000], 10)
+        key2 = np.tile(indices2[:8000], 10)
+        self.left = DataFrame(
+            {"key": key, "key2": key2, "value": np.random.randn(80000)}
+        )
+        self.right = DataFrame(
+            {
+                "key": indices[2000:],
+                "key2": indices2[2000:],
+                "value2": np.random.randn(8000),
+            }
+        )
+
+        self.df = DataFrame(
+            {
+                "key1": np.tile(np.arange(500).repeat(10), 2),
+                "key2": np.tile(np.arange(250).repeat(10), 4),
+                "value": np.random.randn(10000),
+            }
+        )
+        self.df2 = DataFrame({"key1": np.arange(500), "value2": np.random.randn(500)})
+        self.df3 = self.df[:5000]
+
+    def time_merge_2intkey(self, sort):
+        merge(self.left, self.right, sort=sort)
+
+    def time_merge_dataframe_integer_2key(self, sort):
+        merge(self.df, self.df3, sort=sort)
+
+    def time_merge_dataframe_integer_key(self, sort):
+        merge(self.df, self.df2, on="key1", sort=sort)
+
+
+# class I8Merge:
+#
+#     params = ["inner", "outer", "left", "right"]
+#     param_names = ["how"]
+#
+#     def setup(self, how):
+#         low, high, n = -1000, 1000, 10 ** 6
+#         self.left = DataFrame(
+#             np.random.randint(low, high, (n, 7)), columns=list("ABCDEFG")
+#         )
+#         self.left["left"] = self.left.sum(axis=1)
+#         self.right = self.left.sample(frac=1).rename({"left": "right"}, axis=1)
+#         self.right = self.right.reset_index(drop=True)
+#         self.right["right"] *= -1
+#
+#     def time_i8merge(self, how):
+#         merge(self.left, self.right, how=how)
+
+
+from .pandas_vb_common import setup  # noqa: F401 isort:skip
