@@ -229,15 +229,21 @@ class _PipelineMergeOperation:
         lindexers = {1: left_indexer} if left_indexer is not None else {}
         rindexers = {1: right_indexer} if right_indexer is not None else {}
 
+        print("&&&&&&")
+        print(lindexers)
+        print(rindexers)
         result_data = concatenate_block_managers(
             [(ldata, lindexers), (rdata, rindexers)],
             axes=[llabels.append(rlabels), join_index],
             concat_axis=0,
             copy=self.copy,
         )
+        print(result_data)
 
         typ = self.left._constructor
         result = typ(result_data).__finalize__(self, method=self._merge_type)
+
+        print(result)
 
         if self.indicator:
             result = self._indicator_post_merge(result)
@@ -246,6 +252,8 @@ class _PipelineMergeOperation:
 
         self._maybe_restore_index_levels(result)
 
+        print("**********")
+        print(result)
         return result, self.factorizer, self.intfactorizer, self.left_sorter, self.left_count
 
     def _indicator_pre_merge(
@@ -1157,7 +1165,12 @@ def _factorize_keys(lk, rk, objectrizer, intrizer, sort=True):
         rizer = objectrizer
     llab = rizer.factorize(lk)
     rlab = rizer.factorize(rk)
-
+    print("$$$$$$$$$$$$$$$$$$$$$$")
+    print(lk)
+    print(rk)
+    print(llab)
+    print(rlab)
+    print("$$$$$$$$$$$$$$$$$$$$$$")
     count = rizer.get_count()
 
     if sort:

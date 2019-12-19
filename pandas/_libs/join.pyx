@@ -67,54 +67,57 @@ def pipeline_inner_join(const int64_t[:] left, const int64_t[:] right,
                Py_ssize_t max_groups, leftsorter = None, leftcount = None):
     cdef:
         Py_ssize_t i, j, k, count = 0
-        ndarray[int64_t] left_count, right_count, left_sorter, right_sorter
+        ndarray[int64_t] left_count, right_count, left_sorter, right_sorter, left_increment_count
         ndarray[int64_t] left_indexer, right_indexer
         int64_t lc, rc
         Py_ssize_t loc, left_pos = 0, right_pos = 0, position = 0
         Py_ssize_t offset
 
     # NA group in location 0
-    if leftsorter is None and leftcount is None:
-        left_sorter, left_count = groupsort_indexer(left, max_groups)
-    else:
-        left_sorter = leftsorter
-        left_count = leftcount
-    right_sorter, right_count = groupsort_indexer(right, max_groups)
+    #if leftsorter is None and leftcount is None:
+    left_sorter, left_count = groupsort_indexer(left, max_groups)
+    #else:
+    #    left_sorter = leftsorter
+    #    left_count = leftcount
+    left_increment_count = np.empty(len(left_count), dtype=np.int64)
+    for i in range(1, len(left_count)):
+        left_increment_count[i] = left_increment_count[i - 1] + left_count[i]
+    #right_sorter, right_count = groupsort_indexer(right, max_groups)
+    print("left_sorter : ")
+    print(left_sorter)
+    print("left_count : ")
+    print(left_count)
+    print("left_incremenet_count : ")
+    print(left_increment_count)
+    #print("right_sorter : ")
+    #print(right_sorter)
+    #print("right_count : ")
+    #print(right_count)
     # FIXME we do not to sort like this, or we could learn more knowledge prior to sorting
     with nogil:
         # First pass, determine size of result set, do not use the NA group
-        for i in range(1, max_groups + 1):
-            lc = left_count[i]
-            rc = right_count[i]
-
-            if rc > 0 and lc > 0:
-                count += lc * rc
+        for i in range(len(right)):
+            lc = right[i]
+            if left_count[lc] > 0:
+                count += left_count[lc]
 
     # exclude the NA group
     left_pos = left_count[0]
-    right_pos = right_count[0]
 
     left_indexer = np.empty(count, dtype=np.int64)
     right_indexer = np.empty(count, dtype=np.int64)
-
-    with nogil:
-        for i in range(1, max_groups + 1):
-            lc = left_count[i]
-            rc = right_count[i]
-
-            if rc > 0 and lc > 0:
-                for j in range(lc):
-                    offset = position + j * rc
-                    for k in range(rc):
-                        left_indexer[offset + k] = left_pos + j
-                        right_indexer[offset + k] = right_pos + k
-                position += lc * rc
-            left_pos += lc
-            right_pos += rc
-
-    return (_get_result_indexer(left_sorter, left_indexer),
-            _get_result_indexer(right_sorter, right_indexer),
-            left_sorter, left_count)
+    result = []
+    idx = 0
+    for i in range(len(right)):
+        if left_count[right[i] + 1] > 0:
+            right_indexer[idx] = i
+            left_indexer[idx] = left_sorter[left_increment_count[right[i] + 1] - 1]
+            idx = idx + 1
+    print("left_indexer")
+    print(left_indexer)
+    print("right_indexer")
+    print(right_indexer)
+    return (left_indexer, right_indexer, left_sorter, left_count)
 
 @cython.boundscheck(False)
 def left_outer_join(const int64_t[:] left, const int64_t[:] right,
