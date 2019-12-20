@@ -81,19 +81,21 @@ def pipeline_inner_join(const int64_t[:] left, const int64_t[:] right,
     #    left_count = leftcount
     left_increment_count = np.empty(len(left_count), dtype=np.int64)
     left_increment_count[0] = 0
+    #print("Check point 1")
     for i in range(1, len(left_count)):
         left_increment_count[i] = left_increment_count[i - 1] + left_count[i]
     #right_sorter, right_count = groupsort_indexer(right, max_groups)
-   # print("left_sorter : ")
-   # print(left_sorter)
-   # print("left_count : ")
-   # print(left_count)
-   # print("left_incremenet_count : ")
-   # print(left_increment_count)
+    print("left_sorter : ")
+    print(left_sorter)
+    print("left_count : ")
+    print(left_count)
+    print("left_incremenet_count : ")
+    print(left_increment_count)
     #print("right_sorter : ")
     #print(right_sorter)
     #print("right_count : ")
     #print(right_count)
+    #print("Check point 2")
     # FIXME we do not to sort like this, or we could learn more knowledge prior to sorting
     with nogil:
         # First pass, determine size of result set, do not use the NA group
@@ -102,6 +104,7 @@ def pipeline_inner_join(const int64_t[:] left, const int64_t[:] right,
             if left_count[lc + 1] > 0:
                 count += left_count[lc + 1]
 
+    #print("Check point 3")
     # exclude the NA group
     left_pos = left_count[0]
 
@@ -111,13 +114,15 @@ def pipeline_inner_join(const int64_t[:] left, const int64_t[:] right,
     idx = 0
     for i in range(len(right)):
         if left_count[right[i] + 1] > 0:
-            right_indexer[idx] = i
-            left_indexer[idx] = left_sorter[left_increment_count[right[i] + 1] - 1]
-            idx = idx + 1
-    #print("left_indexer")
-    #print(left_indexer)
-    #print("right_indexer")
-    #print(right_indexer)
+            for j in range(left_count[right[i] + 1]):
+                right_indexer[idx] = i
+                left_indexer[idx] = left_sorter[left_increment_count[right[i]] + j]
+                idx = idx + 1
+    #print("Check point 4")
+    print("left_indexer")
+    print(left_indexer)
+    print("right_indexer")
+    print(right_indexer)
     return (left_indexer, right_indexer, left_sorter, left_count)
 
 @cython.boundscheck(False)

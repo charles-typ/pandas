@@ -4,6 +4,7 @@ import numpy as np
 
 from pandas import DataFrame, MultiIndex, Series, concat, date_range, merge, merge_asof
 import pandas.util.testing as tm
+from pandas import pipeline_merge
 
 try:
     from pandas import merge_ordered
@@ -42,7 +43,7 @@ class Merge:
       #  self.df3 = self.df[:5000]
 
     def time_merge_2intkey(self):
-        merge(self.left, self.right, how="inner")
+        pipeline_merge(self.left, self.right, how="pipeline")
 
 #    def time_merge_dataframe_integer_2key(self, sort):
 #        pipeline_merge(self.df, self.df3, how="pipeline")

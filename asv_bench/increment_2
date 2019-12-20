@@ -1,0 +1,20 @@
+· Discovering benchmarks
+· Profile data does not already exist. Running profiler now.
+·· Benchmarking existing-py_home_ubuntu_miniconda3_envs_pandas-dev_bin_python
+··· Running (increment.Merge.time_merge_2intkey--).
+··· increment.Merge.time_merge_2intkey                          failed
+···· asv: benchmark timed out (timeout 60.0s)
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/pandas-dev/bin/asv", line 8, in <module>
+    sys.exit(main())
+  File "/home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/asv/main.py", line 38, in main
+    result = args.func(args)
+  File "/home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/asv/commands/__init__.py", line 49, in run_from_args
+    return cls.run_from_conf_args(conf, args)
+  File "/home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/asv/commands/profiling.py", line 94, in run_from_conf_args
+    **kwargs)
+  File "/home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/asv/commands/profiling.py", line 207, in run
+    profile_data = results.get_profile(benchmark_name)
+  File "/home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/asv/results.py", line 566, in get_profile
+    profile_data = self._profiles[benchmark_name]
+KeyError: 'increment.Merge.time_merge_2intkey'
