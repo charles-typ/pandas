@@ -74,11 +74,11 @@ def pipeline_inner_join(const int64_t[:] left, const int64_t[:] right,
         Py_ssize_t offset
 
     # NA group in location 0
-    #if leftsorter is None and leftcount is None:
-    left_sorter, left_count = groupsort_indexer(left, max_groups)
-    #else:
-    #    left_sorter = leftsorter
-    #    left_count = leftcount
+    if leftsorter is None and leftcount is None:
+        left_sorter, left_count = groupsort_indexer(left, max_groups)
+    else:
+        left_sorter = leftsorter
+        left_count = leftcount
     left_increment_count = np.empty(len(left_count), dtype=np.int64)
     left_increment_count[0] = 0
     #print("Check point 1")

@@ -72,6 +72,7 @@ def pipeline_merge(
         intfactorizer=None,
         leftsorter=None,
         leftcount=None,
+        lkey=None,
 ):
     op = _PipelineMergeOperation(
         left,
@@ -91,6 +92,7 @@ def pipeline_merge(
         intfactorizer=intfactorizer,
         leftsorter=leftsorter,
         leftcount=leftcount,
+        lkey=None,
     )
     return op.get_result()
 
@@ -129,6 +131,7 @@ class _PipelineMergeOperation:
             intfactorizer=None,
             leftsorter=None,
             leftcount=None,
+            lkey=None,
     ):
         _left = _validate_operand(left)
         _right = _validate_operand(right)
@@ -201,7 +204,7 @@ class _PipelineMergeOperation:
             self.intfactorizer = libhashtable.Int64Factorizer(max(len(self.left_join_keys), len(self.right_join_keys)))
         else:
             self.intfactorizer = intfactorizer
-
+        self.lkey = lkey
         # validate the merge keys dtypes. We may need to coerce
         # to avoid incompat dtypes
         self._maybe_coerce_merge_keys()
@@ -427,7 +430,7 @@ class _PipelineMergeOperation:
         """ return the join indexers """
         # FIXME 4 fix this function
         return _get_join_indexers(
-            self.left_join_keys, self.right_join_keys, self.factorizer, self.intfactorizer, self.left_sorter, self.left_count, sort=self.sort, how=self.how
+            self.left_join_keys, self.right_join_keys, self.lkey, self.factorizer, self.intfactorizer, self.left_sorter, self.left_count, sort=self.sort, how=self.how
         )
 
     def _get_join_info(self):
@@ -899,22 +902,33 @@ def _get_join_indexers(
     assert len(left_keys) == len(
         right_keys
     ), "left_key and right_keys must be the same length"
+    if left_sorter is None and left_count is None:
+        # get left & right join labels and num. of levels at each location
+        mapped = (
+            _factorize_keys(left_keys[n], right_keys[n], factorizer, intfactorizer, sort=sort)
+            for n in range(len(left_keys))
+        )
+        zipped = zip(*mapped)
+        llab, rlab, shape = [list(x) for x in zipped]
 
-    # get left & right join labels and num. of levels at each location
-    mapped = (
-        _factorize_keys(left_keys[n], right_keys[n], factorizer, intfactorizer, sort=sort)
-        for n in range(len(left_keys))
-    )
-    zipped = zip(*mapped)
-    llab, rlab, shape = [list(x) for x in zipped]
+        # get flat i8 keys from label lists
+        lkey, rkey = _get_join_keys(llab, rlab, shape, factorizer, intfactorizer, sort)
 
-    # get flat i8 keys from label lists
-    lkey, rkey = _get_join_keys(llab, rlab, shape, factorizer, intfactorizer, sort)
+        # factorize keys to a dense i8 space
+        # `count` is the num. of unique keys
+        # set(lkey) | set(rkey) == range(count)
+        lkey, rkey, count = _factorize_keys(lkey, rkey, factorizer, intfactorizer, sort=sort)
+    else:
+        mapped = (
+            _factorize_right_keys(left_keys[n], right_keys[n], factorizer, intfactorizer, sort=sort)
+            for n in range(len(right_keys))
+        )
+        zipped = zip(*mapped)
+        rlab, shape = [list(x) for x in zipped]
+        # get flat i8 keys from label lists
+        rkey = _get_right_join_keys(rlab, shape, factorizer, intfactorizer, sort)
+        rkey, count = _factorize_right_keys(lkey, rkey, factorizer, intfactorizer, sort=sort)
 
-    # factorize keys to a dense i8 space
-    # `count` is the num. of unique keys
-    # set(lkey) | set(rkey) == range(count)
-    lkey, rkey, count = _factorize_keys(lkey, rkey, factorizer, intfactorizer, sort=sort)
 
     # preserve left frame order if how == 'left' and sort == False
     kwargs = copy.copy(kwargs)
@@ -1196,6 +1210,76 @@ def _factorize_keys(lk, rk, objectrizer, intrizer, sort=True):
 
     return llab, rlab, count
 
+def _factorize_right_keys(lk, rk, objectrizer, intrizer, sort=True):
+    # Some pre-processing for non-ndarray lk / rk
+    if is_datetime64tz_dtype(lk) and is_datetime64tz_dtype(rk):
+        lk = getattr(lk, "_values", lk)._data
+        rk = getattr(rk, "_values", rk)._data
+
+    elif (
+            is_categorical_dtype(lk) and is_categorical_dtype(rk) and lk.is_dtype_equal(rk)
+    ):
+        if lk.categories.equals(rk.categories):
+            # if we exactly match in categories, allow us to factorize on codes
+            rk = rk.codes
+        else:
+            # Same categories in different orders -> recode
+            rk = _recode_for_categories(rk.codes, rk.categories, lk.categories)
+
+        lk = ensure_int64(lk.codes)
+        rk = ensure_int64(rk)
+
+    elif (
+            is_extension_array_dtype(lk.dtype)
+            and is_extension_array_dtype(rk.dtype)
+            and lk.dtype == rk.dtype
+    ):
+        lk, _ = lk._values_for_factorize()
+        rk, _ = rk._values_for_factorize()
+
+    if is_integer_dtype(lk) and is_integer_dtype(rk):
+        # GH#23917 TODO: needs tests for case where lk is integer-dtype
+        #  and rk is datetime-dtype
+        klass = libhashtable.Int64Factorizer
+        flag = 0
+        lk = ensure_int64(com.values_from_object(lk))
+        rk = ensure_int64(com.values_from_object(rk))
+    elif issubclass(lk.dtype.type, (np.timedelta64, np.datetime64)) and issubclass(
+            rk.dtype.type, (np.timedelta64, np.datetime64)
+    ):
+        # GH#23917 TODO: Needs tests for non-matching dtypes
+        klass = libhashtable.Int64Factorizer
+        flag = 0
+        lk = ensure_int64(com.values_from_object(lk))
+        rk = ensure_int64(com.values_from_object(rk))
+    else:
+        klass = libhashtable.Factorizer
+        flag = 1
+        lk = ensure_object(lk)
+        rk = ensure_object(rk)
+
+    #rizer = klass(max(len(lk), len(rk)))
+    if flag == 0:
+        rizer = intrizer
+    else:
+        rizer = objectrizer
+    rlab = rizer.factorize(rk)
+    #print("$$$$$$$$$$$$$$$$$$$$$$")
+    #print(lk)
+    #print(rk)
+    #print(llab)
+    #print(rlab)
+    #print("$$$$$$$$$$$$$$$$$$$$$$")
+    count = rizer.get_count()
+
+    rmask = rlab == -1
+    rany = rmask.any()
+
+    if rany:
+        np.putmask(rlab, rmask, count)
+        count += 1
+
+    return rlab, count
 
 def _sort_labels(uniques: np.ndarray, left, right):
     if not isinstance(uniques, np.ndarray):
@@ -1240,6 +1324,31 @@ def _get_join_keys(llab, rlab, shape, factorizer, intfactorizer, sort: bool):
     shape = [count] + shape[nlev:]
 
     return _get_join_keys(llab, rlab, shape, factorizer, intfactorizer, sort)
+
+def _get_right_join_keys(rlab, shape, factorizer, intfactorizer, sort: bool):
+    # FIXME 6
+    # how many levels can be done without overflow
+    pred = lambda i: not is_int64_overflow_possible(shape[:i])
+    nlev = next(filter(pred, range(len(shape), 0, -1)))
+
+    # get keys for the first `nlev` levels
+    stride = np.prod(shape[1:nlev], dtype="i8")
+    rkey = stride * rlab[0].astype("i8", subok=False, copy=False)
+
+    for i in range(1, nlev):
+        with np.errstate(divide="ignore"):
+            stride //= shape[i]
+        rkey += rlab[i] * stride
+
+    if nlev == len(shape):  # all done!
+        return rkey
+
+    # densify current keys to avoid overflow
+    rkey, count = _factorize_right_keys(rkey, factorizer, intfactorizer, sort=sort)
+    rlab = [rkey] + rlab[nlev:]
+    shape = [count] + shape[nlev:]
+
+    return _get_right_join_keys(rlab, shape, factorizer, intfactorizer, sort)
 
 
 def _should_fill(lname, rname) -> bool:
