@@ -1,0 +1,401 @@
+· Discovering benchmarks
+· Profile data does not already exist. Running profiler now.
+·· Benchmarking existing-py_home_ubuntu_miniconda3_envs_pandas-dev_bin_python
+··· Running (increment.Merge.time_merge_2intkey--).
+··· increment.Merge.time_merge_2intkey                      25.1±0.01s
+
+Sun Dec 22 01:19:55 2019    /tmp/tmp3pax84il
+
+         34585 function calls (34256 primitive calls) in 24.959 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000   24.959   24.959 {built-in method builtins.exec}
+        1    0.059    0.059   24.959   24.959 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/asv/benchmark.py:576(method_caller)
+        1    0.018    0.018   24.901   24.901 /home/ubuntu/pandas-yupeng/asv_bench/benchmarks/increment.py:48(time_merge_2intkey)
+        8    0.000    0.000   24.882    3.110 /home/ubuntu/pandas-yupeng/pandas/core/reshape/pipeline_merge.py:55(pipeline_merge)
+        8    0.000    0.000   24.848    3.106 /home/ubuntu/pandas-yupeng/pandas/core/reshape/pipeline_merge.py:215(get_result)
+        8    0.000    0.000   24.742    3.093 /home/ubuntu/pandas-yupeng/pandas/core/reshape/pipeline_merge.py:433(_get_join_info)
+        8    0.003    0.000   24.738    3.092 /home/ubuntu/pandas-yupeng/pandas/core/reshape/pipeline_merge.py:426(_get_join_indexers)
+        8    0.002    0.000   24.735    3.092 /home/ubuntu/pandas-yupeng/pandas/core/reshape/pipeline_merge.py:881(_get_join_indexers)
+       16    0.078    0.005   23.756    1.485 /home/ubuntu/pandas-yupeng/pandas/core/reshape/pipeline_merge.py:1117(_factorize_keys)
+       16    0.000    0.000   21.273    1.330 /home/ubuntu/pandas-yupeng/pandas/core/reshape/pipeline_merge.py:905(<genexpr>)
+       16   21.229    1.327   21.229    1.327 {method 'factorize' of 'pandas._libs.hashtable.Factorizer' objects}
+       16    2.439    0.152    2.439    0.152 {method 'factorize' of 'pandas._libs.hashtable.Int64Factorizer' objects}
+        8    0.855    0.107    0.855    0.107 {pandas._libs.join.pipeline_inner_join}
+        8    0.121    0.015    0.122    0.015 /home/ubuntu/pandas-yupeng/pandas/core/reshape/pipeline_merge.py:1215(_get_join_keys)
+        8    0.000    0.000    0.100    0.013 /home/ubuntu/pandas-yupeng/pandas/core/internals/managers.py:1960(concatenate_block_managers)
+      104    0.000    0.000    0.092    0.001 {built-in method builtins.all}
+       24    0.000    0.000    0.092    0.004 /home/ubuntu/pandas-yupeng/pandas/core/internals/concat.py:375(is_uniform_join_units)
+       48    0.000    0.000    0.092    0.002 /home/ubuntu/pandas-yupeng/pandas/core/internals/concat.py:388(<genexpr>)
+       24    0.000    0.000    0.092    0.004 /home/ubuntu/pandas-yupeng/pandas/core/internals/concat.py:145(is_na)
+       65    0.000    0.000    0.091    0.001 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/missing.py:49(isna)
+       65    0.000    0.000    0.091    0.001 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/missing.py:132(_isna_new)
+       24    0.002    0.000    0.090    0.004 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/missing.py:225(_isna_ndarraylike)
+        8    0.088    0.011    0.088    0.011 {built-in method pandas._libs.missing.isnaobj}
+        8    0.000    0.000    0.034    0.004 /home/ubuntu/pandas-yupeng/pandas/core/reshape/pipeline_merge.py:112(__init__)
+        8    0.000    0.000    0.030    0.004 /home/ubuntu/pandas-yupeng/pandas/core/reshape/pipeline_merge.py:523(_get_merge_keys)
+        8    0.000    0.000    0.028    0.003 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:1745(_drop_labels_or_levels)
+        8    0.000    0.000    0.016    0.002 /home/ubuntu/pandas-yupeng/pandas/core/frame.py:3674(drop)
+        8    0.000    0.000    0.016    0.002 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:3875(drop)
+        8    0.000    0.000    0.011    0.001 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:5631(copy)
+        8    0.000    0.000    0.011    0.001 /home/ubuntu/pandas-yupeng/pandas/core/internals/managers.py:738(copy)
+        8    0.000    0.000    0.011    0.001 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:3911(_drop_axis)
+        8    0.000    0.000    0.011    0.001 /home/ubuntu/pandas-yupeng/pandas/core/internals/managers.py:343(apply)
+      144    0.010    0.000    0.010    0.000 {method 'reduce' of 'numpy.ufunc' objects}
+       96    0.000    0.000    0.010    0.000 {method 'any' of 'numpy.ndarray' objects}
+       96    0.000    0.000    0.009    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/_methods.py:44(_any)
+       16    0.000    0.000    0.009    0.001 /home/ubuntu/pandas-yupeng/pandas/core/internals/blocks.py:669(copy)
+       40    0.009    0.000    0.009    0.000 {method 'copy' of 'numpy.ndarray' objects}
+       48    0.001    0.000    0.007    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:267(__new__)
+        8    0.000    0.000    0.007    0.001 /home/ubuntu/pandas-yupeng/pandas/util/_decorators.py:225(wrapper)
+        8    0.000    0.000    0.007    0.001 /home/ubuntu/pandas-yupeng/pandas/core/frame.py:3653(reindex)
+        8    0.000    0.000    0.007    0.001 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:4255(reindex)
+        8    0.000    0.000    0.007    0.001 /home/ubuntu/pandas-yupeng/pandas/core/frame.py:3548(_reindex_axes)
+        8    0.000    0.000    0.006    0.001 /home/ubuntu/pandas-yupeng/pandas/core/frame.py:3585(_reindex_columns)
+       48    0.001    0.000    0.006    0.000 /home/ubuntu/pandas-yupeng/pandas/core/algorithms.py:1555(take_nd)
+        8    0.000    0.000    0.006    0.001 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:4539(_reindex_with_indexers)
+        8    0.000    0.000    0.006    0.001 /home/ubuntu/pandas-yupeng/pandas/core/internals/managers.py:1194(reindex_indexer)
+       16    0.000    0.000    0.005    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:2438(intersection)
+        8    0.000    0.000    0.005    0.001 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:3964(_update_inplace)
+       43    0.005    0.000    0.005    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:5203(__setattr__)
+       24    0.000    0.000    0.005    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/concat.py:236(concatenate_join_units)
+        8    0.000    0.000    0.005    0.001 /home/ubuntu/pandas-yupeng/pandas/core/internals/managers.py:1244(_slice_take_blocks_ax0)
+     5731    0.002    0.000    0.003    0.000 {built-in method builtins.isinstance}
+        8    0.000    0.000    0.003    0.000 /home/ubuntu/pandas-yupeng/pandas/core/reshape/pipeline_merge.py:770(_validate_specification)
+        8    0.000    0.000    0.003    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/blocks.py:1233(take_nd)
+       24    0.000    0.000    0.003    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/managers.py:123(__init__)
+        8    0.000    0.000    0.003    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:5068(drop)
+       24    0.000    0.000    0.003    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/concat.py:247(<listcomp>)
+       24    0.000    0.000    0.003    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/concat.py:173(get_reindexed_values)
+        8    0.003    0.000    0.003    0.000 {pandas._libs.algos.take_2d_axis1_float64_float64}
+       16    0.000    0.000    0.003    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:2397(_wrap_setop_result)
+      568    0.001    0.000    0.003    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/base.py:243(is_dtype)
+        8    0.000    0.000    0.002    0.000 /home/ubuntu/pandas-yupeng/pandas/core/reshape/pipeline_merge.py:1270(_items_overlap_with_suffix)
+       16    0.000    0.000    0.002    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:2763(get_indexer)
+       24    0.001    0.000    0.002    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/concat.py:268(_get_empty_dtype_and_na)
+       57    0.000    0.000    0.002    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/blocks.py:2959(make_block)
+        8    0.000    0.000    0.002    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:726(astype)
+       16    0.000    0.000    0.002    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:1673(_get_label_or_level_values)
+        8    0.000    0.000    0.002    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:4038(append)
+        8    0.000    0.000    0.002    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:4067(_concat)
+      513    0.001    0.000    0.002    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/common.py:1589(is_extension_array_dtype)
+      552    0.001    0.000    0.002    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/common.py:1732(_is_dtype_type)
+     2417    0.001    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/generic.py:7(_check)
+      105    0.000    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:5369(ensure_index)
+      216    0.001    0.000    0.001    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/_dtype.py:319(_name_get)
+       32    0.000    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:4122(equals)
+       24    0.001    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/managers.py:213(_rebuild_blknos_and_blklocs)
+       40    0.000    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/cast.py:339(maybe_promote)
+        8    0.000    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:4075(_concat_same_dtype)
+       16    0.000    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:3384(xs)
+       24    0.000    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/managers.py:627(_consolidate_check)
+       16    0.000    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/frame.py:2622(__getitem__)
+      200    0.000    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/common.py:573(is_categorical_dtype)
+       56    0.001    0.000    0.001    0.000 {pandas._libs.lib.infer_dtype}
+       24    0.000    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/managers.py:628(<listcomp>)
+      192    0.000    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/common.py:434(is_datetime64tz_dtype)
+       48    0.000    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/blocks.py:326(ftype)
+    72/56    0.000    0.000    0.001    0.000 {built-in method numpy.core._multiarray_umath.implement_array_function}
+        8    0.000    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:573(_shallow_copy_with_infer)
+       16    0.000    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:3550(_get_item_cache)
+      224    0.000    0.000    0.001    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/_asarray.py:16(asarray)
+       24    0.000    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/blocks.py:2913(get_block_type)
+       48    0.000    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/algorithms.py:1426(_get_take_nd_function)
+     3834    0.001    0.000    0.001    0.000 {built-in method builtins.getattr}
+       48    0.000    0.000    0.001    0.000 {method 'format' of 'str' objects}
+      136    0.000    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/common.py:503(is_period_dtype)
+      216    0.000    0.000    0.001    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/numerictypes.py:365(issubdtype)
+       32    0.000    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:1598(is_monotonic)
+       96    0.000    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/common.py:1011(is_datetime64_any_dtype)
+       32    0.001    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:1605(is_monotonic_increasing)
+      240    0.001    0.000    0.001    0.000 {built-in method numpy.array}
+      513    0.001    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/dtypes.py:77(find)
+        8    0.000    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/managers.py:1973(<listcomp>)
+       16    0.000    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/concat.py:28(get_mgr_concatenation_plan)
+        8    0.000    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:5038(delete)
+      136    0.000    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/dtypes.py:915(is_dtype)
+1451/1138    0.001    0.000    0.001    0.000 {built-in method builtins.len}
+      336    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap>:1009(_handle_fromlist)
+      120    0.000    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/common.py:222(is_object_dtype)
+        8    0.000    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/reshape/pipeline_merge.py:341(_maybe_add_join_keys)
+       33    0.000    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/blocks.py:254(make_block_same_class)
+       48    0.000    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/common.py:217(asarray_tuplesafe)
+      120    0.000    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/common.py:537(is_interval_dtype)
+       88    0.000    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/managers.py:164(shape)
+        8    0.000    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:3158(reindex)
+       41    0.000    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:631(_engine)
+        8    0.000    0.000    0.001    0.000 <__array_function__ internals>:2(delete)
+       48    0.000    0.000    0.001    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/_dtype.py:46(__str__)
+       88    0.000    0.000    0.001    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/common.py:403(is_datetime64_dtype)
+      984    0.000    0.000    0.001    0.000 {built-in method builtins.hasattr}
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:233(_inner_indexer)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/lib/function_base.py:4225(delete)
+        9    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/managers.py:920(get)
+       80    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/dtypes.py:1102(is_dtype)
+       57    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/blocks.py:111(__init__)
+      128    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/common.py:472(is_timedelta64_dtype)
+     2306    0.000    0.000    0.000    0.000 {built-in method builtins.issubclass}
+       64    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/base.py:1052(__iter__)
+       24    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/concat.py:135(dtype)
+      432    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/numerictypes.py:293(issubclass_)
+       40    0.000    0.000    0.000    0.000 {method 'all' of 'numpy.ndarray' objects}
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/concat.py:31(get_dtype_kinds)
+       64    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:501(_simple_new)
+       25    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:1673(is_unique)
+       57    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/base.py:879(_ndarray_values)
+       40    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/common.py:1459(is_bool_dtype)
+       32    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/missing.py:402(array_equivalent)
+       80    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/common.py:252(is_sparse)
+       40    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/_methods.py:47(_all)
+      264    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/managers.py:166(<genexpr>)
+       56    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:3976(__contains__)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/managers.py:330(_verify_integrity)
+        8    0.000    0.000    0.000    0.000 <__array_function__ internals>:2(prod)
+       24    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/concat.py:126(needs_filling)
+       24    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:1747(inferred_type)
+      208    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/common.py:1696(_get_dtype)
+       25    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/blocks.py:2523(__init__)
+        9    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/managers.py:949(iget)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:1876(__contains__)
+        9    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/frame.py:2918(_box_item_values)
+       32    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/common.py:606(is_string_dtype)
+       24    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/frame.py:399(__init__)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/fromnumeric.py:2792(prod)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/reshape/pipeline_merge.py:640(_maybe_coerce_merge_keys)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:4487(<genexpr>)
+       40    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/common.py:1671(_is_dtype)
+       32    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/common.py:799(is_integer_dtype)
+       24    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:1571(_is_label_reference)
+       80    0.000    0.000    0.000    0.000 {pandas._libs.lib.values_from_object}
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:1684(is_boolean)
+      248    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/common.py:1868(pandas_dtype)
+      112    0.000    0.000    0.000    0.000 {built-in method numpy.empty}
+       40    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/cast.py:487(_ensure_dtype_type)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:555(_shallow_copy)
+       64    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/common.py:709(is_dtype_equal)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/fromnumeric.py:73(_wrapreduction)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/reshape/pipeline_merge.py:1251(_any)
+      114    0.000    0.000    0.000    0.000 {pandas._libs.lib.is_scalar}
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/managers.py:761(<listcomp>)
+      432    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/common.py:208(<lambda>)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/reshape/pipeline_merge.py:307(_maybe_restore_index_levels)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:4152(identical)
+      192    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:416(parent)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/managers.py:755(copy_func)
+        9    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/frame.py:2925(_box_col_values)
+      161    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:3691(values)
+      112    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/_internal.py:865(npy_ctypes_check)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/common.py:1306(needs_i8_conversion)
+       32    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:1541(_is_level_reference)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:689(view)
+       80    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/common.py:1425(is_float_dtype)
+       24    0.000    0.000    0.000    0.000 {method 'astype' of 'numpy.ndarray' objects}
+       16    0.000    0.000    0.000    0.000 {method 'get_indexer' of 'pandas._libs.index.IndexEngine' objects}
+        9    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/series.py:181(__init__)
+      128    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:388(_get_axis_number)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/numeric.py:48(__new__)
+       56    0.000    0.000    0.000    0.000 {built-in method numpy.arange}
+       32    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/common.py:636(condition)
+       40    0.000    0.000    0.000    0.000 {built-in method builtins.any}
+      241    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:644(__len__)
+       48    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/common.py:854(is_signed_integer_dtype)
+       32    0.000    0.000    0.000    0.000 {pandas._libs.lib.is_list_like}
+       80    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/abc.py:137(__instancecheck__)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:2638(_assert_can_do_setop)
+       24    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/common.py:339(is_categorical)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/common.py:240(index_labels_to_array)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/numerictypes.py:602(find_common_type)
+        8    0.000    0.000    0.000    0.000 {pandas._libs.algos.take_2d_axis0_object_object}
+       48    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:1597(<genexpr>)
+      432    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/common.py:206(classes)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:1776(<listcomp>)
+       24    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/concat.py:398(_is_uniform_reindex)
+       16    0.000    0.000    0.000    0.000 {pandas._libs.algos.take_2d_axis0_float64_float64}
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/blocks.py:2985(_extend_blocks)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:1600(_is_label_or_level_reference)
+       24    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/blocks.py:204(get_values)
+       48    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/construction.py:337(extract_array)
+       64    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:3743(_internal_get_values)
+       32    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/concat.py:434(combine_concat_plans)
+       33    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:186(__init__)
+       16    0.000    0.000    0.000    0.000 {pandas._libs.algos.take_1d_int64_int64}
+       80    0.000    0.000    0.000    0.000 {built-in method _abc._abc_instancecheck}
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:4581(_maybe_promote)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:1624(_check_label_or_level_ambiguity)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/numeric.py:166(ones)
+      161    0.000    0.000    0.000    0.000 {method 'view' of 'numpy.ndarray' objects}
+       24    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/managers.py:129(<listcomp>)
+       24    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/managers.py:200(_is_single_block)
+       16    0.000    0.000    0.000    0.000 <__array_function__ internals>:2(min_scalar_type)
+       40    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/common.py:911(is_unsigned_integer_dtype)
+      273    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+       48    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/concat.py:401(<genexpr>)
+      192    0.000    0.000    0.000    0.000 {method 'rpartition' of 'str' objects}
+      120    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/common.py:216(<lambda>)
+       32    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:414(_get_axis)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/ops/__init__.py:97(get_op_result_name)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/blocks.py:2529(is_bool)
+       32    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:534(_get_attributes_dict)
+       57    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/blocks.py:230(mgr_locs)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:5268(_consolidate_inplace)
+       24    0.000    0.000    0.000    0.000 {built-in method builtins.sum}
+        8    0.000    0.000    0.000    0.000 {built-in method builtins.next}
+       56    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:401(_get_axis_name)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/reshape/pipeline_merge.py:1255(_validate_operand)
+       32    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:5162(__finalize__)
+       24    0.000    0.000    0.000    0.000 <__array_function__ internals>:2(can_cast)
+        8    0.000    0.000    0.000    0.000 <__array_function__ internals>:2(concatenate)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:4088(<listcomp>)
+       32    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:602(is_)
+       72    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/range.py:675(__len__)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/dtypes.py:336(construct_from_string)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/numerictypes.py:654(<listcomp>)
+       56    0.000    0.000    0.000    0.000 {method 'ravel' of 'numpy.ndarray' objects}
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:3248(_maybe_update_cacher)
+       18    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:2694(get_loc)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/reshape/pipeline_merge.py:1218(<lambda>)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:4527(_needs_reindex_multi)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:5258(_protect_consolidate)
+      225    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/blocks.py:226(mgr_locs)
+       97    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/inference.py:358(is_hashable)
+       48    0.000    0.000    0.000    0.000 {method 'fill' of 'numpy.ndarray' objects}
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/copy.py:66(copy)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/common.py:188(any_not_none)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:348(_construct_axes_from_arguments)
+       57    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/blocks.py:122(_check_ndim)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/series.py:472(_values)
+        9    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/managers.py:1437(__init__)
+       72    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/frame.py:500(axes)
+       72    0.000    0.000    0.000    0.000 {pandas._libs.algos.ensure_int64}
+        9    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:3220(_set_as_cached)
+      264    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:3713(_values)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/common.py:1132(is_datetime_or_timedelta_dtype)
+        8    0.000    0.000    0.000    0.000 <__array_function__ internals>:2(copyto)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:5271(f)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/managers.py:1942(_preprocess_slice_or_indexer)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/base.py:64(_reset_cache)
+       80    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/managers.py:168(ndim)
+       48    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:1233(_get_names)
+      120    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/common.py:211(classes_and_not_datetimelike)
+        8    0.000    0.000    0.000    0.000 {built-in method pandas._libs.lib.is_bool_array}
+       72    0.000    0.000    0.000    0.000 {built-in method __new__ of type object at 0x560ee40063c0}
+       72    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:621(_reset_identity)
+       48    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/managers.py:332(<genexpr>)
+       41    0.000    0.000    0.000    0.000 {built-in method pandas._libs.missing.checknull}
+        8    0.000    0.000    0.000    0.000 {method 'reshape' of 'numpy.ndarray' objects}
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/range.py:387(_shallow_copy)
+       24    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:215(_init_mgr)
+        9    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/series.py:368(_set_axis)
+        9    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:3990(__getitem__)
+       48    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/concat.py:391(<genexpr>)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/reshape/pipeline_merge.py:545(<lambda>)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:1788(<listcomp>)
+       16    0.000    0.000    0.000    0.000 {pandas._libs.internals.get_blkno_placements}
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/util/_validators.py:235(validate_axis_style_args)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/inference.py:220(is_array_like)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:1790(<listcomp>)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:5184(__getattr__)
+       18    0.000    0.000    0.000    0.000 {method 'get_loc' of 'pandas._libs.index.IndexEngine' objects}
+       58    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/managers.py:233(items)
+       80    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/blocks.py:322(dtype)
+       32    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:538(<dictcomp>)
+       24    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/blocks.py:283(__len__)
+       24    0.000    0.000    0.000    0.000 {method 'add' of 'pandas._libs.internals.BlockPlacement' objects}
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/reshape/pipeline_merge.py:909(<listcomp>)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/managers.py:1535(internal_values)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/common.py:202(count_not_none)
+       24    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/missing.py:601(clean_reindex_fill_method)
+      128    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/frame.py:1020(__len__)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/sorting.py:129(is_int64_overflow_possible)
+       96    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
+       57    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:667(dtype)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/managers.py:913(_consolidate_inplace)
+      104    0.000    0.000    0.000    0.000 {method 'pop' of 'dict' objects}
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/range.py:131(_simple_new)
+       48    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/concat.py:384(<genexpr>)
+      144    0.000    0.000    0.000    0.000 {pandas._libs.lib.is_integer}
+       32    0.000    0.000    0.000    0.000 {method 'update' of 'dict' objects}
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:474(_info_axis)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:418(_get_block_manager_axis)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/ops/__init__.py:120(_maybe_match_name)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/common.py:1393(is_string_like_dtype)
+        9    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/series.py:420(name)
+       24    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/concat.py:115(__init__)
+        9    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/blocks.py:348(iget)
+        8    0.000    0.000    0.000    0.000 {pandas._libs.lib.array_equivalent_object}
+        9    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/series.py:424(name)
+       32    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/numerictypes.py:578(_can_coerce_all)
+       26    0.000    0.000    0.000    0.000 {built-in method builtins.max}
+        8    0.000    0.000    0.000    0.000 {built-in method builtins.sorted}
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/dtypes.py:1050(construct_from_string)
+      153    0.000    0.000    0.000    0.000 {built-in method builtins.hash}
+       32    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/blocks.py:318(shape)
+       42    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:234(attrs)
+       49    0.000    0.000    0.000    0.000 {pandas._libs.lib.is_float}
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/_asarray.py:88(asanyarray)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/managers.py:315(__len__)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:3287(_clear_item_cache)
+       32    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/common.py:267(maybe_make_list)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/reshape/pipeline_merge.py:546(<lambda>)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:4095(<listcomp>)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/managers.py:897(consolidate)
+       24    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/frame.py:384(_constructor)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:5436(_ensure_has_len)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/inference.py:96(is_iterator)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/fromnumeric.py:74(<dictcomp>)
+       24    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/managers.py:619(is_consolidated)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/util/_validators.py:225(validate_bool_kwarg)
+       32    0.000    0.000    0.000    0.000 {method 'values' of 'dict' objects}
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:4062(<setcomp>)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/common.py:328(apply_if_callable)
+       32    0.000    0.000    0.000    0.000 {pandas._libs.algos.ensure_object}
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/dtypes.py:717(construct_from_string)
+       16    0.000    0.000    0.000    0.000 {method 'startswith' of 'str' objects}
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/reshape/pipeline_merge.py:1245(_should_fill)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:2256(_validate_sort_keyword)
+       40    0.000    0.000    0.000    0.000 {pandas._libs.lib.is_bool}
+       24    0.000    0.000    0.000    0.000 {method 'copy' of 'dict' objects}
+        8    0.000    0.000    0.000    0.000 {method 'pop' of 'list' objects}
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/managers.py:1490(_block)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:373(<dictcomp>)
+       50    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:638(<lambda>)
+       24    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/missing.py:73(clean_fill_method)
+        9    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/common.py:149(cast_scalar_indexer)
+       32    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/common.py:192(<genexpr>)
+       16    0.000    0.000    0.000    0.000 {pandas._libs.algos.ensure_platform_int}
+       48    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:1592(<genexpr>)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/blocks.py:198(internal_values)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:3625(_check_setitem_copy)
+       32    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:1400(nlevels)
+       24    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/common.py:206(<genexpr>)
+       16    0.000    0.000    0.000    0.000 {pandas._libs.lib.item_from_zerodim}
+        8    0.000    0.000    0.000    0.000 {built-in method numpy.core._multiarray_umath.normalize_axis_index}
+       24    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/multiarray.py:469(can_cast)
+        9    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/series.py:395(_set_subtyp)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/blocks.py:222(fill_value)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/multiarray.py:584(min_scalar_type)
+        9    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/numeric.py:151(is_all_dates)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:1643(<genexpr>)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/generic.py:1708(<listcomp>)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/lib/function_base.py:4221(_delete_dispatcher)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/multiarray.py:145(concatenate)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/multiarray.py:1043(copyto)
+       16    0.000    0.000    0.000    0.000 {built-in method builtins.callable}
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/numeric.py:75(_validate_dtype)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/dtypes/common.py:1422(<lambda>)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/fromnumeric.py:2787(_prod_dispatcher)
+        8    0.000    0.000    0.000    0.000 {method 'keys' of 'dict' objects}
+        8    0.000    0.000    0.000    0.000 {method 'clear' of 'dict' objects}
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:3141(_can_reindex)
+        8    0.000    0.000    0.000    0.000 {method 'get_count' of 'pandas._libs.hashtable.Int64Factorizer' objects}
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/numerictypes.py:655(<listcomp>)
+       16    0.000    0.000    0.000    0.000 {method 'add' of 'set' objects}
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/internals/managers.py:394(<dictcomp>)
+        8    0.000    0.000    0.000    0.000 {method 'get_count' of 'pandas._libs.hashtable.Factorizer' objects}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        1    0.000    0.000    0.000    0.000 /home/ubuntu/pandas-yupeng/pandas/core/indexes/base.py:527(_constructor)
+
+

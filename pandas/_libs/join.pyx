@@ -15,7 +15,7 @@ from pandas._libs.algos import (
 
 @cython.boundscheck(False)
 def inner_join(const int64_t[:] left, const int64_t[:] right,
-               Py_ssize_t max_groups):
+               Py_ssize_t max_groups, nouse_x = None, nouse_y = None):
     cdef:
         Py_ssize_t i, j, k, count = 0
         ndarray[int64_t] left_count, right_count, left_sorter, right_sorter
@@ -85,12 +85,12 @@ def pipeline_inner_join(const int64_t[:] left, const int64_t[:] right,
     for i in range(1, len(left_count)):
         left_increment_count[i] = left_increment_count[i - 1] + left_count[i]
     #right_sorter, right_count = groupsort_indexer(right, max_groups)
-    print("left_sorter : ")
-    print(left_sorter)
-    print("left_count : ")
-    print(left_count)
-    print("left_incremenet_count : ")
-    print(left_increment_count)
+    #print("left_sorter : ")
+    #print(left_sorter)
+    #print("left_count : ")
+    #print(left_count)
+    #print("left_incremenet_count : ")
+    #print(left_increment_count)
     #print("right_sorter : ")
     #print(right_sorter)
     #print("right_count : ")
@@ -119,10 +119,10 @@ def pipeline_inner_join(const int64_t[:] left, const int64_t[:] right,
                 left_indexer[idx] = left_sorter[left_increment_count[right[i]] + j]
                 idx = idx + 1
     #print("Check point 4")
-    print("left_indexer")
-    print(left_indexer)
-    print("right_indexer")
-    print(right_indexer)
+    #print("left_indexer")
+    #print(left_indexer)
+    #print("right_indexer")
+    #print(right_indexer)
     return (left_indexer, right_indexer, left_sorter, left_count)
 
 @cython.boundscheck(False)
