@@ -72,7 +72,6 @@ def pipeline_merge(
         intfactorizer=None,
         leftsorter=None,
         leftcount=None,
-        lkey=None,
 ):
     op = _PipelineMergeOperation(
         left,
@@ -92,7 +91,6 @@ def pipeline_merge(
         intfactorizer=intfactorizer,
         leftsorter=leftsorter,
         leftcount=leftcount,
-        lkey=None,
     )
     return op.get_result()
 
@@ -131,7 +129,6 @@ class _PipelineMergeOperation:
             intfactorizer=None,
             leftsorter=None,
             leftcount=None,
-            lkey=None,
     ):
         _left = _validate_operand(left)
         _right = _validate_operand(right)
@@ -147,8 +144,8 @@ class _PipelineMergeOperation:
         self.copy = copy
         self.suffixes = suffixes
         self.sort = sort
-        self.left_sorter=leftsorter
-        self.left_count=leftcount
+        self.left_sorter = leftsorter
+        self.left_count = leftcount
 
         self.left_index = left_index
         self.right_index = right_index
@@ -195,16 +192,15 @@ class _PipelineMergeOperation:
             self.right_join_keys,
             self.join_names,
         ) = self._get_merge_keys()
-        if factorizer == None:
+        if factorizer is None:
             self.factorizer = libhashtable.Factorizer(max(len(self.left_join_keys), len(self.right_join_keys)))
         else:
             self.factorizer = factorizer
 
-        if intfactorizer == None:
+        if intfactorizer is None:
             self.intfactorizer = libhashtable.Int64Factorizer(max(len(self.left_join_keys), len(self.right_join_keys)))
         else:
             self.intfactorizer = intfactorizer
-        self.lkey = lkey
         # validate the merge keys dtypes. We may need to coerce
         # to avoid incompat dtypes
         self._maybe_coerce_merge_keys()
@@ -430,7 +426,7 @@ class _PipelineMergeOperation:
         """ return the join indexers """
         # FIXME 4 fix this function
         return _get_join_indexers(
-            self.left_join_keys, self.right_join_keys, self.lkey, self.factorizer, self.intfactorizer, self.left_sorter, self.left_count, sort=self.sort, how=self.how
+            self.left_join_keys, self.right_join_keys, self.factorizer, self.intfactorizer, self.left_sorter, self.left_count, sort=self.sort, how=self.how
         )
 
     def _get_join_info(self):
@@ -920,14 +916,15 @@ def _get_join_indexers(
         lkey, rkey, count = _factorize_keys(lkey, rkey, factorizer, intfactorizer, sort=sort)
     else:
         mapped = (
-            _factorize_right_keys(left_keys[n], right_keys[n], factorizer, intfactorizer, sort=sort)
+            _factorize_right_keys(right_keys[n], factorizer, intfactorizer, sort=sort)
             for n in range(len(right_keys))
         )
         zipped = zip(*mapped)
         rlab, shape = [list(x) for x in zipped]
         # get flat i8 keys from label lists
         rkey = _get_right_join_keys(rlab, shape, factorizer, intfactorizer, sort)
-        rkey, count = _factorize_right_keys(lkey, rkey, factorizer, intfactorizer, sort=sort)
+        rkey, count = _factorize_right_keys(rkey, factorizer, intfactorizer, sort=sort)
+        lkey = []
 
 
     # preserve left frame order if how == 'left' and sort == False
@@ -1210,52 +1207,38 @@ def _factorize_keys(lk, rk, objectrizer, intrizer, sort=True):
 
     return llab, rlab, count
 
-def _factorize_right_keys(lk, rk, objectrizer, intrizer, sort=True):
+def _factorize_right_keys(rk, objectrizer, intrizer, sort=True):
     # Some pre-processing for non-ndarray lk / rk
-    if is_datetime64tz_dtype(lk) and is_datetime64tz_dtype(rk):
-        lk = getattr(lk, "_values", lk)._data
+    if is_datetime64tz_dtype(rk):
         rk = getattr(rk, "_values", rk)._data
 
     elif (
-            is_categorical_dtype(lk) and is_categorical_dtype(rk) and lk.is_dtype_equal(rk)
+            is_categorical_dtype(rk)
     ):
-        if lk.categories.equals(rk.categories):
-            # if we exactly match in categories, allow us to factorize on codes
-            rk = rk.codes
-        else:
-            # Same categories in different orders -> recode
-            rk = _recode_for_categories(rk.codes, rk.categories, lk.categories)
-
-        lk = ensure_int64(lk.codes)
+        rk = rk.codes
         rk = ensure_int64(rk)
 
     elif (
-            is_extension_array_dtype(lk.dtype)
-            and is_extension_array_dtype(rk.dtype)
-            and lk.dtype == rk.dtype
+        is_extension_array_dtype(rk.dtype)
     ):
-        lk, _ = lk._values_for_factorize()
         rk, _ = rk._values_for_factorize()
 
-    if is_integer_dtype(lk) and is_integer_dtype(rk):
+    if is_integer_dtype(rk):
         # GH#23917 TODO: needs tests for case where lk is integer-dtype
         #  and rk is datetime-dtype
         klass = libhashtable.Int64Factorizer
         flag = 0
-        lk = ensure_int64(com.values_from_object(lk))
         rk = ensure_int64(com.values_from_object(rk))
-    elif issubclass(lk.dtype.type, (np.timedelta64, np.datetime64)) and issubclass(
+    elif issubclass(
             rk.dtype.type, (np.timedelta64, np.datetime64)
     ):
         # GH#23917 TODO: Needs tests for non-matching dtypes
         klass = libhashtable.Int64Factorizer
         flag = 0
-        lk = ensure_int64(com.values_from_object(lk))
         rk = ensure_int64(com.values_from_object(rk))
     else:
         klass = libhashtable.Factorizer
         flag = 1
-        lk = ensure_object(lk)
         rk = ensure_object(rk)
 
     #rizer = klass(max(len(lk), len(rk)))
