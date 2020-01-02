@@ -1922,6 +1922,8 @@ def _factorize_keys(lk, rk, sort=True):
 
     rizer = klass(max(len(lk), len(rk)))
 
+    print("Size should be")
+    print(max(len(lk), len(rk)))
     llab = rizer.factorize(lk)
     rlab = rizer.factorize(rk)
 

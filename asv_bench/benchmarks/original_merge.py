@@ -27,8 +27,8 @@ class Merge:
         )
         self.right = DataFrame(
             {
-                "key": indices[5200000:6000000],
-                "value2": np.random.randn(800000),
+                "key": indices[1000000:9000000],
+                "value2": np.random.randn(8000000),
             }
         )
 

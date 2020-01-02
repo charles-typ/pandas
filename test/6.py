@@ -31,9 +31,11 @@ for i in range(2, pieces):
     )
 globalorizer = None
 globalintrizer = None
+leftsorter = None
+leftcount = None
 for i in range(2, pieces):
     print(i)
-    result, orizer, intrizer, leftsorter, leftcount = pipeline_merge(left, right[i], factorizer=globalorizer, intfactorizer=globalintrizer, how="pipeline")
+    result, orizer, intrizer, leftsorter, leftcount = pipeline_merge(left, right[i], factorizer=globalorizer, intfactorizer=globalintrizer, leftsorter=leftsorter, leftcount=leftcount, how="pipeline")
     globalorizer = orizer
     globalintrizer = intrizer
 

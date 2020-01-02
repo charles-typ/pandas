@@ -31,8 +31,8 @@ class Merge:
         for i in range(2, self.pieces):
             self.right[i] = DataFrame(
                 {
-                    "key": indices[i*100000 + 5000000:(i+1)*100000 + 5000000],
-                    "value2": np.random.randn(100000),
+                    "key": indices[(i - 1)*1000000 + 50000:i*1000000 + 50000],
+                    "value2": np.random.randn(1000000),
                 }
             )
 
@@ -46,12 +46,18 @@ class Merge:
 #        self.df3 = self.df[:5000]
 
     def time_merge_2intkey(self):
-        globalorizer = None
-        globalintrizer = None
-        for i in range(2, self.pieces):
-            result, orizer, intrizer, leftsorter, leftcount = pipeline_merge(self.left, self.right[i], factorizer=globalorizer, intfactorizer=globalintrizer, how="pipeline")
-            globalorizer = orizer
-            globalintrizer = intrizer
+
+        result, orizer, intrizer, leftsorter, leftcount = pipeline_merge(self.left, self.right[2], how="pipeline")
+        print("*&%&%*$&%*$&*%")
+        print(leftsorter)
+        print(leftcount)
+        print("*&%&%*$&%*$&*%")
+        for i in range(3, self.pieces):
+            result, orizer, intrizer, leftsorter, leftcount = pipeline_merge(self.left, self.right[i], factorizer=orizer, intfactorizer=intrizer, leftsorter=leftsorter, leftcount=leftcount, how="pipeline")
+            print("*&%&%*$&%*$&*%")
+            print(leftsorter)
+            print(leftcount)
+            print("*&%&%*$&%*$&*%")
 
 #    def time_merge_dataframe_integer_2key(self, sort):
 #        pipeline_merge(self.df, self.df3, how="pipeline")

@@ -31,8 +31,8 @@ class Merge:
         for i in range(2, self.pieces):
             self.right[i] = DataFrame(
                 {
-                    "key": indices[i*100000 + 5000000:(i+1)*100000 + 5000000],
-                    "value2": np.random.randn(100000),
+                    "key": indices[(i - 1)*1000000 + 50000:(i)*1000000 + 50000],
+                    "value2": np.random.randn(1000000),
                 }
             )
 
@@ -46,8 +46,6 @@ class Merge:
 #        self.df3 = self.df[:5000]
 
     def time_merge_2intkey(self):
-        globalorizer = None
-        globalintrizer = None
         for i in range(2, self.pieces):
             result = merge(self.left, self.right[i], how="inner")
 

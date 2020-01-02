@@ -1,0 +1,987 @@
+· Discovering benchmarks
+· Profile data does not already exist. Running profiler now.
+·· Benchmarking existing-py_home_yupeng_miniconda3_envs_pandas-dev_bin_python
+··· Running (increment.Merge.time_merge_2intkey--).
+··· increment.Merge.time_merge_2intkey                      7.00±0.02s
+···· calling this init function
+     Size set to be:
+     10000000
+     *********************
+     None
+     None
+     *********************
+     need to factorize left and right keys
+     !!!
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     !!!
+     @@@
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     *&%&%*$&%*$&*%
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *&%&%*$&%*$&*%
+     calling this init function
+     Size set to be:
+     10000000
+     *********************
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *********************
+     need to factorize right keys
+     !!!
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     !!!
+     @@@
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     *&%&%*$&%*$&*%
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *&%&%*$&%*$&*%
+     calling this init function
+     Size set to be:
+     10000000
+     *********************
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *********************
+     need to factorize right keys
+     !!!
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     !!!
+     @@@
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     *&%&%*$&%*$&*%
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *&%&%*$&%*$&*%
+     calling this init function
+     Size set to be:
+     10000000
+     *********************
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *********************
+     need to factorize right keys
+     !!!
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     !!!
+     @@@
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     *&%&%*$&%*$&*%
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *&%&%*$&%*$&*%
+     calling this init function
+     Size set to be:
+     10000000
+     *********************
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *********************
+     need to factorize right keys
+     !!!
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     !!!
+     @@@
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     *&%&%*$&%*$&*%
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *&%&%*$&%*$&*%
+     calling this init function
+     Size set to be:
+     10000000
+     *********************
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *********************
+     need to factorize right keys
+     !!!
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     !!!
+     @@@
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     *&%&%*$&%*$&*%
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *&%&%*$&%*$&*%
+     calling this init function
+     Size set to be:
+     10000000
+     *********************
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *********************
+     need to factorize right keys
+     !!!
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     !!!
+     @@@
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     *&%&%*$&%*$&*%
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *&%&%*$&%*$&*%
+     calling this init function
+     Size set to be:
+     10000000
+     *********************
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *********************
+     need to factorize right keys
+     !!!
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     !!!
+     @@@
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     *&%&%*$&%*$&*%
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *&%&%*$&%*$&*%
+     calling this init function
+     Size set to be:
+     10000000
+     *********************
+     None
+     None
+     *********************
+     need to factorize left and right keys
+     !!!
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     !!!
+     @@@
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     *&%&%*$&%*$&*%
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *&%&%*$&%*$&*%
+     calling this init function
+     Size set to be:
+     10000000
+     *********************
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *********************
+     need to factorize right keys
+     !!!
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     !!!
+     @@@
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     *&%&%*$&%*$&*%
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *&%&%*$&%*$&*%
+     calling this init function
+     Size set to be:
+     10000000
+     *********************
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *********************
+     need to factorize right keys
+     !!!
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     !!!
+     @@@
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     *&%&%*$&%*$&*%
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *&%&%*$&%*$&*%
+     calling this init function
+     Size set to be:
+     10000000
+     *********************
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *********************
+     need to factorize right keys
+     !!!
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     !!!
+     @@@
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     *&%&%*$&%*$&*%
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *&%&%*$&%*$&*%
+     calling this init function
+     Size set to be:
+     10000000
+     *********************
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *********************
+     need to factorize right keys
+     !!!
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     !!!
+     @@@
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     *&%&%*$&%*$&*%
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *&%&%*$&%*$&*%
+     calling this init function
+     Size set to be:
+     10000000
+     *********************
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *********************
+     need to factorize right keys
+     !!!
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     !!!
+     @@@
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     *&%&%*$&%*$&*%
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *&%&%*$&%*$&*%
+     calling this init function
+     Size set to be:
+     10000000
+     *********************
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *********************
+     need to factorize right keys
+     !!!
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     !!!
+     @@@
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     *&%&%*$&%*$&*%
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *&%&%*$&%*$&*%
+     calling this init function
+     Size set to be:
+     10000000
+     *********************
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *********************
+     need to factorize right keys
+     !!!
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     !!!
+     @@@
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     *&%&%*$&%*$&*%
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *&%&%*$&%*$&*%
+     calling this init function
+     Size set to be:
+     10000000
+     *********************
+     None
+     None
+     *********************
+     need to factorize left and right keys
+     !!!
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     !!!
+     @@@
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     *&%&%*$&%*$&*%
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *&%&%*$&%*$&*%
+     calling this init function
+     Size set to be:
+     10000000
+     *********************
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *********************
+     need to factorize right keys
+     !!!
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     !!!
+     @@@
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     *&%&%*$&%*$&*%
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *&%&%*$&%*$&*%
+     calling this init function
+     Size set to be:
+     10000000
+     *********************
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *********************
+     need to factorize right keys
+     !!!
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     !!!
+     @@@
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     *&%&%*$&%*$&*%
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *&%&%*$&%*$&*%
+     calling this init function
+     Size set to be:
+     10000000
+     *********************
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *********************
+     need to factorize right keys
+     !!!
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     !!!
+     @@@
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     *&%&%*$&%*$&*%
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *&%&%*$&%*$&*%
+     calling this init function
+     Size set to be:
+     10000000
+     *********************
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *********************
+     need to factorize right keys
+     !!!
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     !!!
+     @@@
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     *&%&%*$&%*$&*%
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *&%&%*$&%*$&*%
+     calling this init function
+     Size set to be:
+     10000000
+     *********************
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *********************
+     need to factorize right keys
+     !!!
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     !!!
+     @@@
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     *&%&%*$&%*$&*%
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *&%&%*$&%*$&*%
+     calling this init function
+     Size set to be:
+     10000000
+     *********************
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *********************
+     need to factorize right keys
+     !!!
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     !!!
+     @@@
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     *&%&%*$&%*$&*%
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *&%&%*$&%*$&*%
+     calling this init function
+     Size set to be:
+     10000000
+     *********************
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *********************
+     need to factorize right keys
+     !!!
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     !!!
+     @@@
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     ######
+     *&%&%*$&%*$&*%
+     [     0  50000 100000 ... 399999 449999 499999]
+     [ 0 10 10 ...  0  0  0]
+     *&%&%*$&%*$&*%
+
+
+Thu Jan  2 07:00:30 2020    /tmp/tmpcz3unytm
+
+         44028 function calls (43075 primitive calls) in 7.057 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    7.057    7.057 {built-in method builtins.exec}
+        1    0.063    0.063    7.057    7.057 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/asv/benchmark.py:576(method_caller)
+        1    0.000    0.000    6.994    6.994 /home/yupeng/pandas/asv_bench/benchmarks/increment.py:48(time_merge_2intkey)
+        8    0.000    0.000    6.992    0.874 /home/yupeng/pandas/pandas/core/reshape/pipeline_merge.py:55(pipeline_merge)
+        8    0.000    0.000    6.874    0.859 /home/yupeng/pandas/pandas/core/reshape/pipeline_merge.py:218(get_result)
+        8    0.000    0.000    6.861    0.858 /home/yupeng/pandas/pandas/core/reshape/pipeline_merge.py:440(_get_join_info)
+        8    0.000    0.000    6.856    0.857 /home/yupeng/pandas/pandas/core/reshape/pipeline_merge.py:433(_get_join_indexers)
+        8    0.000    0.000    6.856    0.857 /home/yupeng/pandas/pandas/core/reshape/pipeline_merge.py:895(_get_join_indexers)
+       14    0.008    0.001    6.511    0.465 /home/yupeng/pandas/pandas/core/reshape/pipeline_merge.py:1231(_factorize_right_keys)
+        9    6.260    0.696    6.260    0.696 {method 'factorize' of 'pandas._libs.hashtable.Factorizer' objects}
+       14    0.000    0.000    6.025    0.430 /home/yupeng/pandas/pandas/core/reshape/pipeline_merge.py:940(<genexpr>)
+        9    0.537    0.060    0.537    0.060 {method 'factorize' of 'pandas._libs.hashtable.Int64Factorizer' objects}
+        2    0.002    0.001    0.297    0.149 /home/yupeng/pandas/pandas/core/reshape/pipeline_merge.py:1149(_factorize_keys)
+        2    0.000    0.000    0.240    0.120 /home/yupeng/pandas/pandas/core/reshape/pipeline_merge.py:924(<genexpr>)
+        8    0.000    0.000    0.118    0.015 /home/yupeng/pandas/pandas/core/reshape/pipeline_merge.py:112(__init__)
+        8    0.000    0.000    0.116    0.015 /home/yupeng/pandas/pandas/core/reshape/pipeline_merge.py:537(_get_merge_keys)
+        8    0.000    0.000    0.115    0.014 /home/yupeng/pandas/pandas/core/generic.py:1745(_drop_labels_or_levels)
+        8    0.000    0.000    0.062    0.008 /home/yupeng/pandas/pandas/core/frame.py:3674(drop)
+        8    0.000    0.000    0.062    0.008 /home/yupeng/pandas/pandas/core/generic.py:3875(drop)
+        8    0.000    0.000    0.053    0.007 /home/yupeng/pandas/pandas/core/generic.py:5631(copy)
+        8    0.000    0.000    0.052    0.007 /home/yupeng/pandas/pandas/core/internals/managers.py:738(copy)
+        8    0.000    0.000    0.052    0.007 /home/yupeng/pandas/pandas/core/internals/managers.py:343(apply)
+       16    0.000    0.000    0.051    0.003 /home/yupeng/pandas/pandas/core/internals/blocks.py:669(copy)
+       40    0.051    0.001    0.051    0.001 {method 'copy' of 'numpy.ndarray' objects}
+        8    0.039    0.005    0.039    0.005 {pandas._libs.join.pipeline_inner_join}
+        8    0.000    0.000    0.037    0.005 /home/yupeng/pandas/pandas/core/generic.py:3964(_update_inplace)
+       43    0.037    0.001    0.037    0.001 /home/yupeng/pandas/pandas/core/generic.py:5203(__setattr__)
+        8    0.000    0.000    0.025    0.003 /home/yupeng/pandas/pandas/core/generic.py:3911(_drop_axis)
+        8    0.000    0.000    0.023    0.003 /home/yupeng/pandas/pandas/util/_decorators.py:225(wrapper)
+        8    0.000    0.000    0.023    0.003 /home/yupeng/pandas/pandas/core/frame.py:3653(reindex)
+        8    0.000    0.000    0.023    0.003 /home/yupeng/pandas/pandas/core/generic.py:4255(reindex)
+        8    0.000    0.000    0.022    0.003 /home/yupeng/pandas/pandas/core/frame.py:3548(_reindex_axes)
+        8    0.000    0.000    0.022    0.003 /home/yupeng/pandas/pandas/core/frame.py:3585(_reindex_columns)
+        8    0.000    0.000    0.022    0.003 /home/yupeng/pandas/pandas/core/generic.py:4539(_reindex_with_indexers)
+       48    0.000    0.000    0.021    0.000 /home/yupeng/pandas/pandas/core/algorithms.py:1555(take_nd)
+        8    0.000    0.000    0.021    0.003 /home/yupeng/pandas/pandas/core/internals/managers.py:1194(reindex_indexer)
+        8    0.000    0.000    0.021    0.003 /home/yupeng/pandas/pandas/core/internals/managers.py:1244(_slice_take_blocks_ax0)
+        8    0.000    0.000    0.020    0.002 /home/yupeng/pandas/pandas/core/internals/blocks.py:1233(take_nd)
+        8    0.019    0.002    0.019    0.002 {pandas._libs.algos.take_2d_axis1_float64_float64}
+        8    0.000    0.000    0.009    0.001 /home/yupeng/pandas/pandas/core/internals/managers.py:1960(concatenate_block_managers)
+      184    0.000    0.000    0.006    0.000 {built-in method builtins.print}
+       78    0.000    0.000    0.006    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/arrayprint.py:1512(_array_str_implementation)
+       78    0.000    0.000    0.006    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/arrayprint.py:520(array2string)
+        7    0.005    0.001    0.006    0.001 /home/yupeng/pandas/pandas/core/reshape/pipeline_merge.py:1332(_get_right_join_keys)
+       78    0.000    0.000    0.005    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/arrayprint.py:465(wrapper)
+       78    0.000    0.000    0.005    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/arrayprint.py:482(_array2string)
+      104    0.000    0.000    0.005    0.000 {built-in method builtins.all}
+       24    0.000    0.000    0.004    0.000 /home/yupeng/pandas/pandas/core/internals/concat.py:375(is_uniform_join_units)
+       48    0.000    0.000    0.004    0.000 /home/yupeng/pandas/pandas/core/internals/concat.py:388(<genexpr>)
+       24    0.000    0.000    0.004    0.000 /home/yupeng/pandas/pandas/core/internals/concat.py:145(is_na)
+       48    0.001    0.000    0.004    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:267(__new__)
+       65    0.000    0.000    0.004    0.000 /home/yupeng/pandas/pandas/core/dtypes/missing.py:49(isna)
+       65    0.000    0.000    0.004    0.000 /home/yupeng/pandas/pandas/core/dtypes/missing.py:132(_isna_new)
+       24    0.000    0.000    0.004    0.000 /home/yupeng/pandas/pandas/core/dtypes/missing.py:225(_isna_ndarraylike)
+        8    0.003    0.000    0.003    0.000 {built-in method pandas._libs.missing.isnaobj}
+       16    0.000    0.000    0.003    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:2438(intersection)
+       24    0.000    0.000    0.003    0.000 /home/yupeng/pandas/pandas/core/internals/concat.py:236(concatenate_join_units)
+       78    0.000    0.000    0.002    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/arrayprint.py:413(_get_format_function)
+      286    0.002    0.000    0.002    0.000 {method 'reduce' of 'numpy.ufunc' objects}
+  306/290    0.000    0.000    0.002    0.000 {built-in method numpy.core._multiarray_umath.implement_array_function}
+     5859    0.001    0.000    0.002    0.000 {built-in method builtins.isinstance}
+       24    0.000    0.000    0.002    0.000 /home/yupeng/pandas/pandas/core/internals/managers.py:123(__init__)
+        8    0.000    0.000    0.002    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:5068(drop)
+       78    0.000    0.000    0.002    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/arrayprint.py:368(<lambda>)
+       78    0.000    0.000    0.002    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/arrayprint.py:1146(__init__)
+       78    0.000    0.000    0.002    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/arrayprint.py:717(_formatArray)
+   546/78    0.001    0.000    0.002    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/arrayprint.py:726(recurser)
+        8    0.000    0.000    0.002    0.000 /home/yupeng/pandas/pandas/core/reshape/pipeline_merge.py:784(_validate_specification)
+       16    0.000    0.000    0.001    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:2763(get_indexer)
+       82    0.000    0.000    0.001    0.000 {method 'any' of 'numpy.ndarray' objects}
+        8    0.000    0.000    0.001    0.000 /home/yupeng/pandas/pandas/core/reshape/pipeline_merge.py:1383(_items_overlap_with_suffix)
+      568    0.000    0.000    0.001    0.000 /home/yupeng/pandas/pandas/core/dtypes/base.py:243(is_dtype)
+       16    0.000    0.000    0.001    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:2397(_wrap_setop_result)
+       24    0.000    0.000    0.001    0.000 /home/yupeng/pandas/pandas/core/internals/concat.py:247(<listcomp>)
+        1    0.001    0.001    0.001    0.001 /home/yupeng/pandas/pandas/core/reshape/pipeline_merge.py:1303(_get_join_keys)
+       82    0.000    0.000    0.001    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/_methods.py:44(_any)
+       24    0.000    0.000    0.001    0.000 /home/yupeng/pandas/pandas/core/internals/concat.py:173(get_reindexed_values)
+       24    0.000    0.000    0.001    0.000 /home/yupeng/pandas/pandas/core/internals/concat.py:268(_get_empty_dtype_and_na)
+        8    0.000    0.000    0.001    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:4038(append)
+       16    0.000    0.000    0.001    0.000 /home/yupeng/pandas/pandas/core/generic.py:1673(_get_label_or_level_values)
+        8    0.000    0.000    0.001    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:726(astype)
+      164    0.000    0.000    0.001    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/fromnumeric.py:73(_wrapreduction)
+        8    0.000    0.000    0.001    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:4067(_concat)
+       57    0.000    0.000    0.001    0.000 /home/yupeng/pandas/pandas/core/internals/blocks.py:2959(make_block)
+      513    0.000    0.000    0.001    0.000 /home/yupeng/pandas/pandas/core/dtypes/common.py:1589(is_extension_array_dtype)
+      545    0.000    0.000    0.001    0.000 /home/yupeng/pandas/pandas/core/dtypes/common.py:1732(_is_dtype_type)
+       24    0.000    0.000    0.001    0.000 /home/yupeng/pandas/pandas/core/internals/managers.py:213(_rebuild_blknos_and_blklocs)
+      216    0.000    0.000    0.001    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/_dtype.py:319(_name_get)
+      105    0.000    0.000    0.001    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:5369(ensure_index)
+     2417    0.001    0.000    0.001    0.000 /home/yupeng/pandas/pandas/core/dtypes/generic.py:7(_check)
+   234/78    0.000    0.000    0.001    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/arrayprint.py:326(_leading_trailing)
+       40    0.000    0.000    0.001    0.000 /home/yupeng/pandas/pandas/core/dtypes/cast.py:339(maybe_promote)
+       78    0.000    0.000    0.001    0.000 <__array_function__ internals>:2(amax)
+       56    0.000    0.000    0.001    0.000 {pandas._libs.lib.infer_dtype}
+        8    0.000    0.000    0.001    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:4075(_concat_same_dtype)
+       32    0.000    0.000    0.001    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:4122(equals)
+       24    0.000    0.000    0.001    0.000 /home/yupeng/pandas/pandas/core/internals/managers.py:627(_consolidate_check)
+       16    0.000    0.000    0.001    0.000 /home/yupeng/pandas/pandas/core/generic.py:3384(xs)
+       24    0.000    0.000    0.001    0.000 /home/yupeng/pandas/pandas/core/internals/managers.py:628(<listcomp>)
+       78    0.000    0.000    0.001    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/fromnumeric.py:2504(amax)
+5055/4742    0.001    0.000    0.001    0.000 {built-in method builtins.len}
+        8    0.000    0.000    0.001    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:573(_shallow_copy_with_infer)
+       48    0.000    0.000    0.001    0.000 /home/yupeng/pandas/pandas/core/internals/blocks.py:326(ftype)
+       16    0.000    0.000    0.001    0.000 /home/yupeng/pandas/pandas/core/frame.py:2622(__getitem__)
+      126    0.000    0.000    0.001    0.000 {method 'format' of 'str' objects}
+      200    0.000    0.000    0.001    0.000 /home/yupeng/pandas/pandas/core/dtypes/common.py:573(is_categorical_dtype)
+      288    0.000    0.000    0.001    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/_asarray.py:16(asarray)
+      192    0.000    0.000    0.001    0.000 /home/yupeng/pandas/pandas/core/dtypes/common.py:434(is_datetime64tz_dtype)
+       48    0.000    0.000    0.001    0.000 /home/yupeng/pandas/pandas/core/algorithms.py:1426(_get_take_nd_function)
+       16    0.000    0.000    0.001    0.000 /home/yupeng/pandas/pandas/core/generic.py:3550(_get_item_cache)
+     3834    0.000    0.000    0.001    0.000 {built-in method builtins.getattr}
+      216    0.000    0.000    0.001    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/numerictypes.py:365(issubdtype)
+       24    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/blocks.py:2913(get_block_type)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:5038(delete)
+      136    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/common.py:503(is_period_dtype)
+      304    0.000    0.000    0.000    0.000 {built-in method numpy.array}
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:3158(reindex)
+       96    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/common.py:1011(is_datetime64_any_dtype)
+      513    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/dtypes.py:77(find)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/managers.py:1973(<listcomp>)
+       78    0.000    0.000    0.000    0.000 <__array_function__ internals>:2(amin)
+      546    0.000    0.000    0.000    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/arrayprint.py:703(_extendLine)
+       16    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/concat.py:28(get_mgr_concatenation_plan)
+       32    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:1598(is_monotonic)
+       32    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:1605(is_monotonic_increasing)
+      136    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/dtypes.py:915(is_dtype)
+      120    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/common.py:222(is_object_dtype)
+      336    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:1009(_handle_fromlist)
+        8    0.000    0.000    0.000    0.000 <__array_function__ internals>:2(delete)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/reshape/pipeline_merge.py:348(_maybe_add_join_keys)
+       33    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/blocks.py:254(make_block_same_class)
+       48    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/common.py:217(asarray_tuplesafe)
+       86    0.000    0.000    0.000    0.000 <__array_function__ internals>:2(concatenate)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/lib/function_base.py:4225(delete)
+       88    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/managers.py:164(shape)
+       78    0.000    0.000    0.000    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/fromnumeric.py:2629(amin)
+      120    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/common.py:537(is_interval_dtype)
+       78    0.000    0.000    0.000    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/arrayprint.py:69(_make_options_dict)
+       48    0.000    0.000    0.000    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/_dtype.py:46(__str__)
+     2526    0.000    0.000    0.000    0.000 {built-in method builtins.issubclass}
+       88    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/common.py:403(is_datetime64_dtype)
+       24    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:1747(inferred_type)
+       41    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:631(_engine)
+      432    0.000    0.000    0.000    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/numerictypes.py:293(issubclass_)
+        8    0.000    0.000    0.000    0.000 <__array_function__ internals>:2(prod)
+      977    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+       80    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/dtypes.py:1102(is_dtype)
+        9    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/managers.py:920(get)
+      128    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/common.py:472(is_timedelta64_dtype)
+       16    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:233(_inner_indexer)
+       64    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:501(_simple_new)
+       16    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:1684(is_boolean)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/fromnumeric.py:2792(prod)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/concat.py:31(get_dtype_kinds)
+       64    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/base.py:1052(__iter__)
+       57    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/blocks.py:111(__init__)
+       24    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/concat.py:135(dtype)
+       57    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/base.py:879(_ndarray_values)
+       80    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/common.py:252(is_sparse)
+      112    0.000    0.000    0.000    0.000 {built-in method numpy.empty}
+       25    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:1673(is_unique)
+       16    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/generic.py:4487(<genexpr>)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/reshape/pipeline_merge.py:654(_maybe_coerce_merge_keys)
+      264    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/managers.py:166(<genexpr>)
+        9    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/frame.py:2918(_box_item_values)
+       40    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/common.py:1459(is_bool_dtype)
+       16    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/managers.py:330(_verify_integrity)
+       78    0.000    0.000    0.000    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/arrayprint.py:360(_get_formatdict)
+       56    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:3976(__contains__)
+       32    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/missing.py:402(array_equivalent)
+      208    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/common.py:1696(_get_dtype)
+       24    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/frame.py:399(__init__)
+       40    0.000    0.000    0.000    0.000 {method 'all' of 'numpy.ndarray' objects}
+       24    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/concat.py:126(needs_filling)
+       16    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/generic.py:1876(__contains__)
+        9    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/managers.py:949(iget)
+       24    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/generic.py:1571(_is_label_reference)
+      241    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/common.py:1868(pandas_dtype)
+       40    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/cast.py:487(_ensure_dtype_type)
+       16    0.000    0.000    0.000    0.000 {method 'get_indexer' of 'pandas._libs.index.IndexEngine' objects}
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:4152(identical)
+       16    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:555(_shallow_copy)
+      468    0.000    0.000    0.000    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/arrayprint.py:1154(__call__)
+       32    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/common.py:606(is_string_dtype)
+       40    0.000    0.000    0.000    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/_methods.py:47(_all)
+       25    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/blocks.py:2523(__init__)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/reshape/pipeline_merge.py:314(_maybe_restore_index_levels)
+       25    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/common.py:799(is_integer_dtype)
+       64    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/common.py:709(is_dtype_equal)
+      432    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/common.py:208(<lambda>)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/managers.py:761(<listcomp>)
+       16    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/managers.py:755(copy_func)
+        9    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/frame.py:2925(_box_col_values)
+      161    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:3691(values)
+       16    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/common.py:1306(needs_i8_conversion)
+       32    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/generic.py:1541(_is_level_reference)
+       73    0.000    0.000    0.000    0.000 {pandas._libs.lib.values_from_object}
+       40    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/common.py:1671(_is_dtype)
+       16    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:689(view)
+       16    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/reshape/pipeline_merge.py:1364(_any)
+       80    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/common.py:1425(is_float_dtype)
+      192    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:416(parent)
+       78    0.000    0.000    0.000    0.000 {built-in method builtins.locals}
+        9    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/series.py:181(__init__)
+      114    0.000    0.000    0.000    0.000 {pandas._libs.lib.is_scalar}
+       40    0.000    0.000    0.000    0.000 {built-in method builtins.any}
+      128    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/generic.py:388(_get_axis_number)
+      156    0.000    0.000    0.000    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/lib/index_tricks.py:731(__getitem__)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/numeric.py:48(__new__)
+      241    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:644(__len__)
+       16    0.000    0.000    0.000    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/numerictypes.py:602(find_common_type)
+       48    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/construction.py:337(extract_array)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/common.py:240(index_labels_to_array)
+       24    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/common.py:339(is_categorical)
+       32    0.000    0.000    0.000    0.000 {pandas._libs.lib.is_list_like}
+      105    0.000    0.000    0.000    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/_internal.py:865(npy_ctypes_check)
+       16    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:2638(_assert_can_do_setop)
+       48    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/generic.py:1597(<genexpr>)
+       16    0.000    0.000    0.000    0.000 {pandas._libs.algos.take_1d_int64_int64}
+       16    0.000    0.000    0.000    0.000 {pandas._libs.algos.take_2d_axis0_float64_float64}
+        8    0.000    0.000    0.000    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/numeric.py:166(ones)
+       80    0.000    0.000    0.000    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/abc.py:137(__instancecheck__)
+       48    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/common.py:854(is_signed_integer_dtype)
+       32    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/common.py:636(condition)
+       16    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/blocks.py:2985(_extend_blocks)
+       16    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:4581(_maybe_promote)
+      190    0.000    0.000    0.000    0.000 {built-in method builtins.max}
+       56    0.000    0.000    0.000    0.000 {built-in method numpy.arange}
+       33    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/generic.py:186(__init__)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/generic.py:1776(<listcomp>)
+       64    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:3743(_internal_get_values)
+      164    0.000    0.000    0.000    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/fromnumeric.py:74(<dictcomp>)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/generic.py:1600(_is_label_or_level_reference)
+       17    0.000    0.000    0.000    0.000 {method 'astype' of 'numpy.ndarray' objects}
+       16    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/generic.py:1624(_check_label_or_level_ambiguity)
+       16    0.000    0.000    0.000    0.000 <__array_function__ internals>:2(min_scalar_type)
+      432    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/common.py:206(classes)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/generic.py:3248(_maybe_update_cacher)
+       24    0.000    0.000    0.000    0.000 <__array_function__ internals>:2(can_cast)
+       32    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/generic.py:414(_get_axis)
+       24    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/managers.py:200(_is_single_block)
+       24    0.000    0.000    0.000    0.000 {built-in method builtins.sum}
+      161    0.000    0.000    0.000    0.000 {method 'view' of 'numpy.ndarray' objects}
+       24    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/managers.py:129(<listcomp>)
+       16    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/ops/__init__.py:97(get_op_result_name)
+        8    0.000    0.000    0.000    0.000 {built-in method builtins.next}
+       80    0.000    0.000    0.000    0.000 {built-in method _abc._abc_instancecheck}
+       56    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/generic.py:401(_get_axis_name)
+        8    0.000    0.000    0.000    0.000 {pandas._libs.algos.take_2d_axis0_object_object}
+      273    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/generic.py:5268(_consolidate_inplace)
+       24    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/concat.py:398(_is_uniform_reindex)
+       24    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/blocks.py:204(get_values)
+       40    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/common.py:911(is_unsigned_integer_dtype)
+       18    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:2694(get_loc)
+       78    0.000    0.000    0.000    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/arrayprint.py:74(<dictcomp>)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/managers.py:1942(_preprocess_slice_or_indexer)
+       57    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/blocks.py:230(mgr_locs)
+       32    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:534(_get_attributes_dict)
+      113    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/common.py:216(<lambda>)
+       32    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/concat.py:434(combine_concat_plans)
+       72    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/range.py:675(__len__)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/generic.py:348(_construct_axes_from_arguments)
+        8    0.000    0.000    0.000    0.000 <__array_function__ internals>:2(copyto)
+      102    0.000    0.000    0.000    0.000 {method 'copy' of 'dict' objects}
+       32    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/generic.py:5162(__finalize__)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/generic.py:5258(_protect_consolidate)
+       16    0.000    0.000    0.000    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/numerictypes.py:654(<listcomp>)
+      110    0.000    0.000    0.000    0.000 {method 'update' of 'dict' objects}
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/generic.py:4527(_needs_reindex_multi)
+       72    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/frame.py:500(axes)
+       56    0.000    0.000    0.000    0.000 {method 'ravel' of 'numpy.ndarray' objects}
+        7    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/reshape/pipeline_merge.py:1335(<lambda>)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/base.py:64(_reset_cache)
+       16    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/dtypes.py:336(construct_from_string)
+      192    0.000    0.000    0.000    0.000 {method 'rpartition' of 'str' objects}
+       72    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:621(_reset_identity)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:4088(<listcomp>)
+       16    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/common.py:188(any_not_none)
+       48    0.000    0.000    0.000    0.000 {method 'fill' of 'numpy.ndarray' objects}
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/blocks.py:2529(is_bool)
+       16    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/common.py:1132(is_datetime_or_timedelta_dtype)
+      225    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/blocks.py:226(mgr_locs)
+        9    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/generic.py:3220(_set_as_cached)
+       97    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/inference.py:358(is_hashable)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/util/_validators.py:235(validate_axis_style_args)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/copy.py:66(copy)
+      330    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
+       48    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/concat.py:401(<genexpr>)
+       65    0.000    0.000    0.000    0.000 {pandas._libs.algos.ensure_int64}
+       80    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/managers.py:168(ndim)
+       24    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/generic.py:215(_init_mgr)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/generic.py:5271(f)
+       16    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/reshape/pipeline_merge.py:1368(_validate_operand)
+       16    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/series.py:472(_values)
+       18    0.000    0.000    0.000    0.000 {method 'get_loc' of 'pandas._libs.index.IndexEngine' objects}
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/range.py:387(_shallow_copy)
+      128    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/reshape/pipeline_merge.py:559(<lambda>)
+       16    0.000    0.000    0.000    0.000 {pandas._libs.internals.get_blkno_placements}
+       16    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/generic.py:5184(__getattr__)
+       16    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/inference.py:220(is_array_like)
+      182    0.000    0.000    0.000    0.000 {method 'pop' of 'dict' objects}
+       48    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/managers.py:332(<genexpr>)
+        9    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/managers.py:1437(__init__)
+       78    0.000    0.000    0.000    0.000 {method 'discard' of 'set' objects}
+       48    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:1233(_get_names)
+        9    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:3990(__getitem__)
+        9    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/series.py:368(_set_axis)
+       57    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/blocks.py:122(_check_ndim)
+      264    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:3713(_values)
+       72    0.000    0.000    0.000    0.000 {built-in method __new__ of type object at 0x55bff99ed240}
+       16    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/managers.py:1535(internal_values)
+       80    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/blocks.py:322(dtype)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/generic.py:1788(<listcomp>)
+       41    0.000    0.000    0.000    0.000 {built-in method pandas._libs.missing.checknull}
+       32    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:538(<dictcomp>)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/common.py:202(count_not_none)
+       94    0.000    0.000    0.000    0.000 {method 'add' of 'set' objects}
+       78    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/generic.py:1790(<listcomp>)
+        7    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/reshape/pipeline_merge.py:944(<listcomp>)
+       32    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:602(is_)
+       57    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:667(dtype)
+       24    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/missing.py:601(clean_reindex_fill_method)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/sorting.py:129(is_int64_overflow_possible)
+       48    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/concat.py:391(<genexpr>)
+      144    0.000    0.000    0.000    0.000 {pandas._libs.lib.is_integer}
+       16    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/managers.py:913(_consolidate_inplace)
+       58    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/managers.py:233(items)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/range.py:131(_simple_new)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/generic.py:418(_get_block_manager_axis)
+       16    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/generic.py:474(_info_axis)
+        9    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/series.py:424(name)
+       48    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/concat.py:384(<genexpr>)
+       16    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/ops/__init__.py:120(_maybe_match_name)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/common.py:1393(is_string_like_dtype)
+        8    0.000    0.000    0.000    0.000 {built-in method pandas._libs.lib.is_bool_array}
+        8    0.000    0.000    0.000    0.000 {built-in method builtins.sorted}
+       78    0.000    0.000    0.000    0.000 {method 'rstrip' of 'str' objects}
+      153    0.000    0.000    0.000    0.000 {built-in method builtins.hash}
+        9    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/series.py:420(name)
+       24    0.000    0.000    0.000    0.000 {method 'add' of 'pandas._libs.internals.BlockPlacement' objects}
+       86    0.000    0.000    0.000    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/multiarray.py:145(concatenate)
+       24    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/managers.py:619(is_consolidated)
+       24    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/blocks.py:283(__len__)
+      113    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/common.py:211(classes_and_not_datetimelike)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/_asarray.py:88(asanyarray)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/managers.py:897(consolidate)
+       32    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/blocks.py:318(shape)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/frame.py:1020(__len__)
+       32    0.000    0.000    0.000    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/numerictypes.py:578(_can_coerce_all)
+        9    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/blocks.py:348(iget)
+       42    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/generic.py:234(attrs)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/generic.py:3287(_clear_item_cache)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:5436(_ensure_has_len)
+        8    0.000    0.000    0.000    0.000 {pandas._libs.lib.array_equivalent_object}
+       78    0.000    0.000    0.000    0.000 {built-in method builtins.id}
+       16    0.000    0.000    0.000    0.000 {method 'startswith' of 'str' objects}
+       24    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/concat.py:115(__init__)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:4095(<listcomp>)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/inference.py:96(is_iterator)
+       78    0.000    0.000    0.000    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/fromnumeric.py:2624(_amin_dispatcher)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/reshape/pipeline_merge.py:560(<lambda>)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/managers.py:315(__len__)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/dtypes.py:1050(construct_from_string)
+       78    0.000    0.000    0.000    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/fromnumeric.py:2499(_amax_dispatcher)
+       48    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/generic.py:1592(<genexpr>)
+       24    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/frame.py:384(_constructor)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/util/_validators.py:225(validate_bool_kwarg)
+       32    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/common.py:267(maybe_make_list)
+       16    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/common.py:328(apply_if_callable)
+       49    0.000    0.000    0.000    0.000 {pandas._libs.lib.is_float}
+        8    0.000    0.000    0.000    0.000 {method 'reshape' of 'numpy.ndarray' objects}
+       24    0.000    0.000    0.000    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/multiarray.py:469(can_cast)
+        8    0.000    0.000    0.000    0.000 {method 'pop' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/reshape/pipeline_merge.py:1306(<lambda>)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:4062(<setcomp>)
+       24    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/missing.py:73(clean_fill_method)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/dtypes.py:717(construct_from_string)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/generic.py:373(<dictcomp>)
+       50    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:638(<lambda>)
+       16    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:2256(_validate_sort_keyword)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/dtypes/common.py:1422(<lambda>)
+        9    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/common.py:149(cast_scalar_indexer)
+       32    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/common.py:192(<genexpr>)
+       25    0.000    0.000    0.000    0.000 {pandas._libs.algos.ensure_object}
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/reshape/pipeline_merge.py:1358(_should_fill)
+        9    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/series.py:395(_set_subtyp)
+       16    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/managers.py:1490(_block)
+       24    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/common.py:206(<genexpr>)
+       16    0.000    0.000    0.000    0.000 {pandas._libs.lib.item_from_zerodim}
+       32    0.000    0.000    0.000    0.000 {method 'values' of 'dict' objects}
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/numeric.py:75(_validate_dtype)
+       16    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/generic.py:1708(<listcomp>)
+       32    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:1400(nlevels)
+        8    0.000    0.000    0.000    0.000 {method 'get_count' of 'pandas._libs.hashtable.Int64Factorizer' objects}
+        8    0.000    0.000    0.000    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/lib/function_base.py:4221(_delete_dispatcher)
+        8    0.000    0.000    0.000    0.000 {built-in method numpy.core._multiarray_umath.normalize_axis_index}
+       16    0.000    0.000    0.000    0.000 {built-in method builtins.callable}
+        8    0.000    0.000    0.000    0.000 {method 'keys' of 'dict' objects}
+        8    0.000    0.000    0.000    0.000 {method 'clear' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/reshape/pipeline_merge.py:928(<listcomp>)
+        9    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/numeric.py:151(is_all_dates)
+       16    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/generic.py:1643(<genexpr>)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/generic.py:3625(_check_setitem_copy)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:3141(_can_reindex)
+       16    0.000    0.000    0.000    0.000 {pandas._libs.algos.ensure_platform_int}
+       40    0.000    0.000    0.000    0.000 {pandas._libs.lib.is_bool}
+        8    0.000    0.000    0.000    0.000 {method 'get_count' of 'pandas._libs.hashtable.Factorizer' objects}
+        8    0.000    0.000    0.000    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/fromnumeric.py:2787(_prod_dispatcher)
+       16    0.000    0.000    0.000    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/numerictypes.py:655(<listcomp>)
+       16    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/blocks.py:198(internal_values)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/blocks.py:222(fill_value)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/multiarray.py:1043(copyto)
+        8    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/internals/managers.py:394(<dictcomp>)
+       16    0.000    0.000    0.000    0.000 /home/yupeng/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/multiarray.py:584(min_scalar_type)
+        1    0.000    0.000    0.000    0.000 /home/yupeng/pandas/pandas/core/indexes/base.py:527(_constructor)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+

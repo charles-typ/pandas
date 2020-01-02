@@ -12,38 +12,23 @@ except ImportError:
     from pandas import ordered_merge as merge_ordered
 
 
-class Merge:
-
-#    params = [True, False]
-#    param_names = ["sort"]
-
-    def setup(self):
-        N = 10000000
-        indices = tm.makeStringIndex(N).values
-        indices2 = tm.makeStringIndex(N).values
-        key = np.tile(indices[:5000000], 1)
-        key2 = np.tile(indices2[:5000000], 1)
-        self.left = DataFrame(
-            {"key": key, "value": np.random.randn(5000000)}
-        )
-        self.right = DataFrame(
-            {
-                "key": indices[5200000:6000000],
-                "value2": np.random.randn(800000),
-            }
-        )
-
-      #  self.df = DataFrame(
-      #      {
-      #          "key1": np.tile(np.arange(500).repeat(10), 1 ),
-      #          "value": np.random.randn(5000),
-      #      }
-      #  )
-      #  self.df2 = DataFrame({"key1": np.arange(500), "value2": np.random.randn(500)})
-      #  self.df3 = self.df[:5000]
-
-    def time_merge_2intkey(self):
-        pipeline_merge(self.left, self.right, how="pipeline")
+N = 10000000
+pieces = 10
+indices = tm.makeStringIndex(N).values
+indices2 = tm.makeStringIndex(N).values
+key = np.tile(indices[:8000000], 1)
+key2 = np.tile(indices2[:8000000], 1)
+left = DataFrame(
+    {"key": key, "value": np.random.randn(8000000)}
+)
+right = {}
+right = DataFrame(
+    {
+        "key": indices[1000:9000],
+        "value2": np.random.randn(8000),
+    }
+)
+result = merge(left, right, how="inner")
 
 #    def time_merge_dataframe_integer_2key(self, sort):
 #        pipeline_merge(self.df, self.df3, how="pipeline")
@@ -71,4 +56,4 @@ class Merge:
 #         merge(self.left, self.right, how=how)
 
 
-from .pandas_vb_common import setup  # noqa: F401 isort:skip
+#from .pandas_vb_common import setup  # noqa: F401 isort:skip
