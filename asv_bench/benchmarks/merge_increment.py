@@ -47,13 +47,13 @@ class Merge:
 
     def time_merge_2intkey(self):
 
-        result, orizer, intrizer, leftsorter, leftcount = pipeline_merge(self.left, self.right[2], how="pipeline")
+        result, orizer, intrizer, leftsorter, leftcount = pipeline_merge(self.left, self.right[2], how="pipeline_merge")
         #print("*&%&%*$&%*$&*%")
         #print(leftsorter)
         #print(leftcount)
         #print("*&%&%*$&%*$&*%")
         for i in range(3, self.pieces):
-            result, orizer, intrizer, leftsorter, leftcount = pipeline_merge(self.left, self.right[i], factorizer=orizer, intfactorizer=intrizer, leftsorter=leftsorter, leftcount=leftcount, how="pipeline")
+            result, orizer, intrizer, leftsorter, leftcount = pipeline_merge(self.left, self.right[i], factorizer=orizer, intfactorizer=intrizer, leftsorter=leftsorter, leftcount=leftcount, how="pipeline_merge")
             #print("*&%&%*$&%*$&*%")
             #print(leftsorter)
             #print(leftcount)

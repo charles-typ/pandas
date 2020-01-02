@@ -130,7 +130,7 @@ class _PipelineMergeOperation:
             leftsorter=None,
             leftcount=None,
     ):
-        print("calling this init function")
+        #print("calling this init function")
         _left = _validate_operand(left)
         _right = _validate_operand(right)
         self.left = self.orig_left = _left
@@ -194,8 +194,8 @@ class _PipelineMergeOperation:
             self.join_names,
         ) = self._get_merge_keys()
         self.slices = 10
-        print("Size set to be:")
-        print(max(len(self.left_join_keys[0]), self.slices * len(self.right_join_keys[0])))
+       # print("Size set to be:")
+       # print(max(len(self.left_join_keys[0]), self.slices * len(self.right_join_keys[0])))
         if factorizer is None:
             self.factorizer = libhashtable.Factorizer(max(len(self.left_join_keys[0]), self.slices * len(self.right_join_keys[0])))
         else:
@@ -261,10 +261,10 @@ class _PipelineMergeOperation:
         #print("**********")
         #print(result)
        # print("Check point 14")
-        print("######")
-        print(self.left_sorter)
-        print(self.left_count)
-        print("######")
+        #print("######")
+        #print(self.left_sorter)
+        #print(self.left_count)
+        #print("######")
         return result, self.factorizer, self.intfactorizer, self.left_sorter, self.left_count
 
     def _indicator_pre_merge(
@@ -457,17 +457,17 @@ class _PipelineMergeOperation:
         else:
             # FIXME 2 fix get join indexers
             (left_indexer, right_indexer, left_sorter, left_count) = self._get_join_indexers()
-            print("!!!")
-            print(left_sorter)
-            print(left_count)
-            print("!!!")
+            #print("!!!")
+            #print(left_sorter)
+            #print(left_count)
+            #print("!!!")
             if self.left_count is None:
                 self.left_count = left_count
             if self.left_sorter is None:
                 self.left_sorter = left_sorter
-            print("@@@")
-            print(self.left_sorter)
-            print(self.left_count)
+            #print("@@@")
+            #print(self.left_sorter)
+            #print(self.left_count)
             if self.right_index:
                 if len(self.left) > 0:
                     join_index = self._create_join_index(
@@ -913,12 +913,12 @@ def _get_join_indexers(
     assert len(left_keys) == len(
         right_keys
     ), "left_key and right_keys must be the same length"
-    print("*********************")
-    print(left_sorter)
-    print(left_count)
-    print("*********************")
+    #print("*********************")
+    #print(left_sorter)
+    #print(left_count)
+    #print("*********************")
     if left_sorter is None and left_count is None:
-        print("need to factorize left and right keys")
+        #print("need to factorize left and right keys")
         # get left & right join labels and num. of levels at each location
         mapped = (
             _factorize_keys(left_keys[n], right_keys[n], factorizer, intfactorizer, sort=sort)
@@ -935,7 +935,7 @@ def _get_join_indexers(
         # set(lkey) | set(rkey) == range(count)
         lkey, rkey, count = _factorize_keys(lkey, rkey, factorizer, intfactorizer, sort=sort)
     else:
-        print("need to factorize right keys")
+        #print("need to factorize right keys")
         mapped = (
             _factorize_right_keys(right_keys[n], factorizer, intfactorizer, sort=sort)
             for n in range(len(right_keys))
