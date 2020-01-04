@@ -6,6 +6,7 @@ from cpython.mem cimport PyMem_Malloc, PyMem_Realloc, PyMem_Free
 from libc.stdlib cimport malloc, free
 
 import numpy as np
+import timeit
 cimport numpy as cnp
 from numpy cimport ndarray, uint8_t, uint32_t, float64_t
 cnp.import_array()
@@ -70,12 +71,19 @@ cdef class Factorizer:
         >>> factorize(np.array([1,2,np.nan], dtype='O'), na_sentinel=20)
         array([ 0,  1, 20])
         """
+        start = timeit.default_timer()
         if self.uniques.external_view_exists:
             uniques = ObjectVector()
             uniques.extend(self.uniques.to_array())
             self.uniques = uniques
+        end1 = timeit.default_timer()
+        print("Time Hey1: ")
+        print(end1 - start)
         labels = self.table.get_labels(values, self.uniques,
                                        self.count, na_sentinel, na_value)
+        end2 = timeit.default_timer()
+        print("Time Hey2: ")
+        print(end2 - start)
         mask = (labels == na_sentinel)
         # sort on
         if sort:

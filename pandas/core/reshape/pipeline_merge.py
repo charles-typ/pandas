@@ -194,12 +194,14 @@ class _PipelineMergeOperation:
             self.join_names,
         ) = self._get_merge_keys()
         self.slices = 8
-        print("Size set to be:")
-        print(max(len(self.left_join_keys[0]), self.slices * len(self.right_join_keys[0])))
         if factorizer is None:
+            print("Size set to be: 1")
+            print(max(len(self.left_join_keys[0]), self.slices * len(self.right_join_keys[0])))
             #self.factorizer = libhashtable.Factorizer(max(len(self.left_join_keys[0]), self.slices * len(self.right_join_keys[0])))
             self.factorizer = libhashtable.Factorizer(len(self.left_join_keys[0]) + self.slices * len(self.right_join_keys[0]))
         else:
+            print("Size set to be: 2")
+            print(max(len(self.left_join_keys[0]), self.slices * len(self.right_join_keys[0])))
             self.factorizer = factorizer
 
         if intfactorizer is None:
@@ -927,19 +929,25 @@ def _get_join_indexers(
             _factorize_keys(left_keys[n], right_keys[n], factorizer, intfactorizer, sort=sort)
             for n in range(len(left_keys))
         )
+        end1 = timeit.default_timer()
+        print("Time11: ")
+        print(end1 - start)
         zipped = zip(*mapped)
         llab, rlab, shape = [list(x) for x in zipped]
 
         # get flat i8 keys from label lists
         lkey, rkey = _get_join_keys(llab, rlab, shape, factorizer, intfactorizer, sort)
 
+        end2 = timeit.default_timer()
+        print("Time13: ")
+        print(end2 - start)
         # factorize keys to a dense i8 space
         # `count` is the num. of unique keys
         # set(lkey) | set(rkey) == range(count)
         lkey, rkey, count = _factorize_keys(lkey, rkey, factorizer, intfactorizer, sort=sort)
-        end = timeit.default_timer()
-        print("Time1: ")
-        print(end - start)
+        end3 = timeit.default_timer()
+        print("Time13: ")
+        print(end3 - start)
     else:
         #print("need to factorize right keys")
         start = timeit.default_timer()
@@ -947,15 +955,21 @@ def _get_join_indexers(
             _factorize_right_keys(right_keys[n], factorizer, intfactorizer, sort=sort)
             for n in range(len(right_keys))
         )
+        end1 = timeit.default_timer()
+        print("Time21: ")
+        print(end1 - start)
         zipped = zip(*mapped)
         rlab, shape = [list(x) for x in zipped]
         # get flat i8 keys from label lists
         rkey = _get_right_join_keys(rlab, shape, factorizer, intfactorizer, sort)
+        end2 = timeit.default_timer()
+        print("Time22: ")
+        print(end2 - start)
         rkey, count = _factorize_right_keys(rkey, factorizer, intfactorizer, sort=sort)
         lkey = rkey
-        end = timeit.default_timer()
-        print("Time2: ")
-        print(end - start)
+        end3 = timeit.default_timer()
+        print("Time23: ")
+        print(end3 - start)
 
 
     # preserve left frame order if how == 'left' and sort == False
