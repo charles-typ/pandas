@@ -8,7 +8,7 @@ from functools import partial
 import string
 from typing import TYPE_CHECKING, Optional, Tuple, Union
 import warnings
-
+import timeit
 import numpy as np
 
 from pandas._libs import Timedelta, hashtable as libhashtable, lib
@@ -193,16 +193,18 @@ class _PipelineMergeOperation:
             self.right_join_keys,
             self.join_names,
         ) = self._get_merge_keys()
-        self.slices = 10
-       # print("Size set to be:")
-       # print(max(len(self.left_join_keys[0]), self.slices * len(self.right_join_keys[0])))
+        self.slices = 8
+        print("Size set to be:")
+        print(max(len(self.left_join_keys[0]), self.slices * len(self.right_join_keys[0])))
         if factorizer is None:
-            self.factorizer = libhashtable.Factorizer(max(len(self.left_join_keys[0]), self.slices * len(self.right_join_keys[0])))
+            #self.factorizer = libhashtable.Factorizer(max(len(self.left_join_keys[0]), self.slices * len(self.right_join_keys[0])))
+            self.factorizer = libhashtable.Factorizer(len(self.left_join_keys[0]) + self.slices * len(self.right_join_keys[0]))
         else:
             self.factorizer = factorizer
 
         if intfactorizer is None:
-            self.intfactorizer = libhashtable.Int64Factorizer(max(len(self.left_join_keys[0]), self.slices * len(self.right_join_keys[0])))
+            #self.intfactorizer = libhashtable.Int64Factorizer(max(len(self.left_join_keys[0]), self.slices * len(self.right_join_keys[0])))
+            self.intfactorizer = libhashtable.Int64Factorizer(len(self.left_join_keys[0]) + self.slices * len(self.right_join_keys[0]))
         else:
             self.intfactorizer = intfactorizer
         # validate the merge keys dtypes. We may need to coerce
@@ -920,6 +922,7 @@ def _get_join_indexers(
     if left_sorter is None and left_count is None:
         #print("need to factorize left and right keys")
         # get left & right join labels and num. of levels at each location
+        start = timeit.default_timer()
         mapped = (
             _factorize_keys(left_keys[n], right_keys[n], factorizer, intfactorizer, sort=sort)
             for n in range(len(left_keys))
@@ -934,8 +937,12 @@ def _get_join_indexers(
         # `count` is the num. of unique keys
         # set(lkey) | set(rkey) == range(count)
         lkey, rkey, count = _factorize_keys(lkey, rkey, factorizer, intfactorizer, sort=sort)
+        end = timeit.default_timer()
+        print("Time1: ")
+        print(end - start)
     else:
         #print("need to factorize right keys")
+        start = timeit.default_timer()
         mapped = (
             _factorize_right_keys(right_keys[n], factorizer, intfactorizer, sort=sort)
             for n in range(len(right_keys))
@@ -946,6 +953,9 @@ def _get_join_indexers(
         rkey = _get_right_join_keys(rlab, shape, factorizer, intfactorizer, sort)
         rkey, count = _factorize_right_keys(rkey, factorizer, intfactorizer, sort=sort)
         lkey = rkey
+        end = timeit.default_timer()
+        print("Time2: ")
+        print(end - start)
 
 
     # preserve left frame order if how == 'left' and sort == False

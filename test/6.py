@@ -16,28 +16,26 @@ N = 10000000
 pieces = 10
 indices = tm.makeStringIndex(N).values
 indices2 = tm.makeStringIndex(N).values
-key = np.tile(indices[:8000000], 1)
-key2 = np.tile(indices2[:8000000], 1)
+key = np.tile(indices[:500000], 1)
+key2 = np.tile(indices2[:500000], 1)
 left = DataFrame(
-    {"key": key, "value": np.random.randn(8000000)}
+    {"key": key, "value": np.random.randn(500000)}
 )
 right = {}
 for i in range(2, pieces):
     right[i] = DataFrame(
         {
-            "key": indices[i*1000:(i+1)*1000],
-            "value2": np.random.randn(1000),
+            "key": indices[(i - 1)*100000 + 50000:i*100000 + 50000],
+            "value2": np.random.randn(100000),
         }
     )
-globalorizer = None
-globalintrizer = None
 leftsorter = None
 leftcount = None
+orizer = None
+intrizer = None
 for i in range(2, pieces):
     print(i)
-    result, orizer, intrizer, leftsorter, leftcount = pipeline_merge(left, right[i], factorizer=globalorizer, intfactorizer=globalintrizer, leftsorter=leftsorter, leftcount=leftcount, how="pipeline")
-    globalorizer = orizer
-    globalintrizer = intrizer
+    result, orizer, intrizer, leftsorter, leftcount = pipeline_merge(left, right[i], factorizer=orizer, intfactorizer=intrizer, leftsorter=leftsorter, leftcount=leftcount, how="pipeline")
 
 #    def time_merge_dataframe_integer_2key(self, sort):
 #        pipeline_merge(self.df, self.df3, how="pipeline")

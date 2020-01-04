@@ -8,6 +8,7 @@ from functools import partial
 import string
 from typing import TYPE_CHECKING, Optional, Tuple, Union
 import warnings
+import timeit
 
 import numpy as np
 
@@ -1312,6 +1313,7 @@ def _get_join_indexers(
     ), "left_key and right_keys must be the same length"
 
     # get left & right join labels and num. of levels at each location
+    start = timeit.default_timer()
     mapped = (
         _factorize_keys(left_keys[n], right_keys[n], sort=sort)
         for n in range(len(left_keys))
@@ -1326,7 +1328,9 @@ def _get_join_indexers(
     # `count` is the num. of unique keys
     # set(lkey) | set(rkey) == range(count)
     lkey, rkey, count = _factorize_keys(lkey, rkey, sort=sort)
-
+    end = timeit.default_timer()
+    print("Time3")
+    print(end - start)
     # preserve left frame order if how == 'left' and sort == False
     kwargs = copy.copy(kwargs)
     if how == "left":
@@ -1901,7 +1905,7 @@ def _factorize_keys(lk, rk, sort=True):
     ):
         lk, _ = lk._values_for_factorize()
         rk, _ = rk._values_for_factorize()
-
+    flag = 0
     if is_integer_dtype(lk) and is_integer_dtype(rk):
         # GH#23917 TODO: needs tests for case where lk is integer-dtype
         #  and rk is datetime-dtype
@@ -1916,10 +1920,16 @@ def _factorize_keys(lk, rk, sort=True):
         lk = ensure_int64(com.values_from_object(lk))
         rk = ensure_int64(com.values_from_object(rk))
     else:
+        flag = 1
         klass = libhashtable.Factorizer
         lk = ensure_object(lk)
         rk = ensure_object(rk)
 
+    if flag:
+        print("noInt")
+    else:
+        print("Int")
+    print(max(len(lk), len(rk)))
     rizer = klass(max(len(lk), len(rk)))
 
     print("Size should be")

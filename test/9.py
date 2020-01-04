@@ -28,7 +28,7 @@ right = DataFrame(
         "value2": np.random.randn(800000),
     }
 )
-result = merge(left, right, how="inner")
+result = pipeline_merge(left, right, how="pipeline")
 
 #    def time_merge_dataframe_integer_2key(self, sort):
 #        pipeline_merge(self.df, self.df3, how="pipeline")

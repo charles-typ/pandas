@@ -22,10 +22,10 @@ class Merge:
         self.pieces = 10
         indices = tm.makeStringIndex(N).values
         indices2 = tm.makeStringIndex(N).values
-        key = np.tile(indices[:5000000], 1)
-        key2 = np.tile(indices2[:5000000], 1)
+        key = np.tile(indices[:10000000], 1)
+        key2 = np.tile(indices2[:10000000], 1)
         self.left = DataFrame(
-            {"key": key, "value": np.random.randn(5000000)}
+            {"key": key, "value": np.random.randn(10000000)}
         )
         self.right = {}
         for i in range(2, self.pieces):

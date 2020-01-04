@@ -15,15 +15,15 @@ class Merge:
 
 #    params = [True, False]
 #    param_names = ["sort"]
-
+    timeout = 120.0
     def setup(self):
         N = 10000000
         indices = tm.makeStringIndex(N).values
         indices2 = tm.makeStringIndex(N).values
-        key = np.tile(indices[:5000000], 1)
-        key2 = np.tile(indices2[:5000000], 1)
+        key = np.tile(indices[:10000000], 1)
+        key2 = np.tile(indices2[:500000], 1)
         self.left = DataFrame(
-            {"key": key, "value": np.random.randn(5000000)}
+            {"key": key, "value": np.random.randn(10000000)}
         )
         self.right = DataFrame(
             {

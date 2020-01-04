@@ -29,14 +29,13 @@ def inner_join(const int64_t[:] left, const int64_t[:] right,
     left_sorter, left_count = groupsort_indexer(left, max_groups)
     right_sorter, right_count = groupsort_indexer(right, max_groups)
     # FIXME we do not to sort like this, or we could learn more knowledge prior to sorting
-    with nogil:
-        # First pass, determine size of result set, do not use the NA group
-        for i in range(1, max_groups + 1):
-            lc = left_count[i]
-            rc = right_count[i]
+    # First pass, determine size of result set, do not use the NA group
+    for i in range(1, max_groups + 1):
+        lc = left_count[i]
+        rc = right_count[i]
 
-            if rc > 0 and lc > 0:
-                count += lc * rc
+        if rc > 0 and lc > 0:
+            count += lc * rc
 
     # exclude the NA group
     left_pos = left_count[0]
@@ -45,20 +44,19 @@ def inner_join(const int64_t[:] left, const int64_t[:] right,
     left_indexer = np.empty(count, dtype=np.int64)
     right_indexer = np.empty(count, dtype=np.int64)
 
-    with nogil:
-        for i in range(1, max_groups + 1):
-            lc = left_count[i]
-            rc = right_count[i]
+    for i in range(1, max_groups + 1):
+        lc = left_count[i]
+        rc = right_count[i]
 
-            if rc > 0 and lc > 0:
-                for j in range(lc):
-                    offset = position + j * rc
-                    for k in range(rc):
-                        left_indexer[offset + k] = left_pos + j
-                        right_indexer[offset + k] = right_pos + k
-                position += lc * rc
-            left_pos += lc
-            right_pos += rc
+        if rc > 0 and lc > 0:
+            for j in range(lc):
+                offset = position + j * rc
+                for k in range(rc):
+                    left_indexer[offset + k] = left_pos + j
+                    right_indexer[offset + k] = right_pos + k
+            position += lc * rc
+        left_pos += lc
+        right_pos += rc
 
     return (_get_result_indexer(left_sorter, left_indexer),
             _get_result_indexer(right_sorter, right_indexer))
