@@ -10,7 +10,10 @@ WARNING: DO NOT edit .pxi FILE directly, .pxi is generated from .pxi.in
 # ----------------------------------------------------------------------
 
 from pandas._libs.tslibs.util cimport get_c_string
-
+from libc.stdio cimport printf
+from posix.time cimport clock_gettime, timespec, CLOCK_REALTIME
+from libc.time cimport time,time_t
+import timeit
 {{py:
 
 # name, dtype, c_type
@@ -406,7 +409,12 @@ cdef class {{name}}HashTable(HashTable):
             khiter_t k
             {{name}}VectorData *ud
             bint use_na_value
+            timespec ts
+            long start, stop
+            time_t startt, stopt, begint1, begint2, endt1, endt2
 
+        #begint1 = time(NULL)
+        inittime = timeit.default_timer()
         if return_inverse:
             labels = np.empty(n, dtype=np.int64)
         ud = uniques.data
@@ -422,45 +430,65 @@ cdef class {{name}}HashTable(HashTable):
         else:
             na_value2 = {{default_na_value}}
 
-        with nogil:
-            for i in range(n):
-                val = values[i]
+        #endt1 = time(NULL)
+        #printf("hash table first time: %ld, from time: %ld\n", endt1 - begint1, begint1)
+        clock_gettime(CLOCK_REALTIME, &ts)
+        begintime = timeit.default_timer()
+        #start = ts.tv_nsec 
+        #startt = time(NULL)
+        #with nogil:
+        for i in range(n):
+            val = values[i]
 
-                if ignore_na and (
-                {{if not name.lower().startswith(("uint", "int"))}}
-                val != val or
-                {{endif}}
-                (use_na_value and val == na_value2)
-                ):
-                    # if missing values do not count as unique values (i.e. if
-                    # ignore_na is True), skip the hashtable entry for them,
-                    # and replace the corresponding label with na_sentinel
-                    labels[i] = na_sentinel
-                    continue
+            if ignore_na and (
+            {{if not name.lower().startswith(("uint", "int"))}}
+            val != val or
+            {{endif}}
+            (use_na_value and val == na_value2)
+            ):
+                # if missing values do not count as unique values (i.e. if
+                # ignore_na is True), skip the hashtable entry for them,
+                # and replace the corresponding label with na_sentinel
+                labels[i] = na_sentinel
+                continue
 
-                k = kh_get_{{dtype}}(self.table, val)
+            k = kh_get_{{dtype}}(self.table, val)
 
-                if k == self.table.n_buckets:
-                    # k hasn't been seen yet
-                    k = kh_put_{{dtype}}(self.table, val, &ret)
+            if k == self.table.n_buckets:
+                # k hasn't been seen yet
+                k = kh_put_{{dtype}}(self.table, val, &ret)
 
-                    if needs_resize(ud):
-                        with gil:
-                            if uniques.external_view_exists:
-                                raise ValueError("external reference to "
-                                                 "uniques held, but "
-                                                 "Vector.resize() needed")
-                            uniques.resize()
-                    append_data_{{dtype}}(ud, val)
-                    if return_inverse:
-                        self.table.vals[k] = count
-                        labels[i] = count
-                        count += 1
-                elif return_inverse:
-                    # k falls into a previous bucket
-                    # only relevant in case we need to construct the inverse
-                    idx = self.table.vals[k]
-                    labels[i] = idx
+                if needs_resize(ud):
+                    printf("resize needed *******\n")
+                    printf("%ld\n", ud.n);
+                    printf("%ld\n", ud.m);
+                    #with gil:
+                    if uniques.external_view_exists:
+                        raise ValueError("external reference to "
+                                         "uniques held, but "
+                                         "Vector.resize() needed")
+                    uniques.resize()
+                    printf("resize confirmed ************\n")
+                append_data_{{dtype}}(ud, val)
+                if return_inverse:
+                    self.table.vals[k] = count
+                    labels[i] = count
+                    count += 1
+            elif return_inverse:
+                # k falls into a previous bucket
+                # only relevant in case we need to construct the inverse
+                idx = self.table.vals[k]
+                labels[i] = idx
+        #stop = ts.tv_nsec
+        #stopt = time(NULL)
+        endtime = timeit.default_timer()
+        #printf("hash table get time: %ld\n", stop - start)
+        #printf("hash table new get time: %ld, from time: %ld\n", stopt - startt, startt)
+        print("********")
+        print(inittime)
+        print(begintime)
+        print(endtime)
+        print(endtime - begintime)
 
         if return_inverse:
             return uniques.to_array(), np.asarray(labels)

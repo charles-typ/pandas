@@ -16,17 +16,17 @@ N = 10000000
 pieces = 10
 indices = tm.makeStringIndex(N).values
 indices2 = tm.makeStringIndex(N).values
-key = np.tile(indices[:8000000], 1)
-key2 = np.tile(indices2[:8000000], 1)
+key = np.tile(indices[:1000000], 1)
+key2 = np.tile(indices2[:1000000], 1)
 left = DataFrame(
-    {"key": key, "value": np.random.randn(8000000)}
+    {"key": key, "value": np.random.randn(1000000)}
 )
 right = {}
 for i in range(2, pieces):
     right[i] = DataFrame(
         {
-            "key": indices[i*1000:(i+1)*1000],
-            "value2": np.random.randn(1000),
+            "key": indices2[(i - 1)*1000000 + 50000:i*1000000 + 50000],
+            "value2": np.random.randn(1000000),
         }
     )
 globalorizer = None

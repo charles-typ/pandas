@@ -193,7 +193,7 @@ class _PipelineMergeOperation:
             self.right_join_keys,
             self.join_names,
         ) = self._get_merge_keys()
-        self.slices = 8
+        self.slices = 100
         if factorizer is None:
             print("Size set to be: 1")
             print(max(len(self.left_join_keys[0]), self.slices * len(self.right_join_keys[0])))
@@ -206,8 +206,11 @@ class _PipelineMergeOperation:
 
         if intfactorizer is None:
             #self.intfactorizer = libhashtable.Int64Factorizer(max(len(self.left_join_keys[0]), self.slices * len(self.right_join_keys[0])))
+            print("Size set to be: 3")
+            print(max(len(self.left_join_keys[0]), self.slices * len(self.right_join_keys[0])))
             self.intfactorizer = libhashtable.Int64Factorizer(len(self.left_join_keys[0]) + self.slices * len(self.right_join_keys[0]))
         else:
+            print("Size set to be: 4")
             self.intfactorizer = intfactorizer
         # validate the merge keys dtypes. We may need to coerce
         # to avoid incompat dtypes
@@ -1173,6 +1176,7 @@ _join_functions = {
 
 def _factorize_keys(lk, rk, objectrizer, intrizer, sort=True):
     # Some pre-processing for non-ndarray lk / rk
+    start = timeit.default_timer()
     if is_datetime64tz_dtype(lk) and is_datetime64tz_dtype(rk):
         lk = getattr(lk, "_values", lk)._data
         rk = getattr(rk, "_values", rk)._data
@@ -1221,11 +1225,19 @@ def _factorize_keys(lk, rk, objectrizer, intrizer, sort=True):
 
     #rizer = klass(max(len(lk), len(rk)))
     if flag == 0:
+        print("Int")
         rizer = intrizer
     else:
+        print("noInt")
         rizer = objectrizer
+    start1 = timeit.default_timer()
     llab = rizer.factorize(lk)
     rlab = rizer.factorize(rk)
+    start2 = timeit.default_timer()
+    print("look here")
+    print(start1 - start)
+    print(start1)
+    print(start2 - start1)
     #print("$$$$$$$$$$$$$$$$$$$$$$")
     #print(lk)
     #print(rk)
@@ -1255,6 +1267,7 @@ def _factorize_keys(lk, rk, objectrizer, intrizer, sort=True):
 
 def _factorize_right_keys(rk, objectrizer, intrizer, sort=True):
     # Some pre-processing for non-ndarray lk / rk
+    start = timeit.default_timer()
     if is_datetime64tz_dtype(rk):
         rk = getattr(rk, "_values", rk)._data
 
@@ -1289,10 +1302,18 @@ def _factorize_right_keys(rk, objectrizer, intrizer, sort=True):
 
     #rizer = klass(max(len(lk), len(rk)))
     if flag == 0:
+        print("Int")
         rizer = intrizer
     else:
+        print("noInt")
         rizer = objectrizer
+    start1 = timeit.default_timer()
     rlab = rizer.factorize(rk)
+    start2 = timeit.default_timer()
+    print("look")
+    print(start1 - start)
+    print(start1)
+    print(start2 - start1)
     #print("$$$$$$$$$$$$$$$$$$$$$$")
     #print(lk)
     #print(rk)

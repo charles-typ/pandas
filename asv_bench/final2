@@ -1,0 +1,40 @@
+noInt
+8000000
+Size should be
+8000000
+Time Hey1: 
+1.1239972081966698e-06
+Time Hey2: 
+0.362454929996602
+Time Hey1: 
+0.02926034600022831
+Time Hey2: 
+8.148578985998029
+Int
+8000000
+Size should be
+8000000
+Time3
+10.201311703996907
+resize needed *******
+resize confirmed ************
+resize needed *******
+resize confirmed ************
+resize needed *******
+resize confirmed ************
+resize needed *******
+resize confirmed ************
+resize needed *******
+resize confirmed ************
+resize needed *******
+resize confirmed ************
+resize needed *******
+resize confirmed ************
+hash table get time: 0.000000
+hash table new get time: 0
+resize needed *******
+resize confirmed ************
+resize needed *******
+resize confirmed ************
+hash table get time: 0.000000
+hash table new get time: 2
