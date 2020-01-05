@@ -12,24 +12,25 @@ except ImportError:
     from pandas import ordered_merge as merge_ordered
 
 
-N = 10000000
+N = 20000000
 pieces = 10
 indices = tm.makeStringIndex(N).values
 indices2 = tm.makeStringIndex(N).values
-key = np.tile(indices[:1000000], 1)
-key2 = np.tile(indices2[:1000000], 1)
+key = np.tile(indices[:5000000], 1)
+key2 = np.tile(indices2[:5000000], 1)
 left = DataFrame(
-    {"key": key, "value": np.random.randn(1000000)}
+    {"key": key, "value": np.random.randn(5000000)}
 )
 right = {}
 np.random.shuffle(indices)
 right = DataFrame(
     {
-        "key": indices[1000000 + 50000:9000000 + 50000],
-        "value2": np.random.randn(8000000),
+        "key": indices[2000000 + 50000:18000000 + 50000],
+        "value2": np.random.randn(16000000),
     }
 )
 result = merge(left, right, how="inner")
+print(result)
 
 #    def time_merge_dataframe_integer_2key(self, sort):
 #        pipeline_merge(self.df, self.df3, how="pipeline")

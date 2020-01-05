@@ -1,0 +1,3361 @@
+· Discovering benchmarks
+· Profile data does not already exist. Running profiler now.
+·· Benchmarking existing-py_home_ubuntu_miniconda3_envs_pandas-dev_bin_python
+··· Importing benchmark suite produced output:
+···· Calling this unique function: Ordinary hash table
+     ********
+     110026.95425088
+     110026.954253286
+     110026.954255554
+     2.2679887479171157e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110026.954968244
+     110026.954969914
+     110026.954971921
+     2.007000148296356e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110026.956254382
+     110026.956255894
+     110026.95625793
+     2.0360021153464913e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110026.970843294
+     110026.970844954
+     110026.970847064
+     2.1099986042827368e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110026.97150097
+     110026.971502424
+     110026.971504482
+     2.058004611171782e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110026.972602874
+     110026.972604407
+     110026.972606412
+     2.00500653591007e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110026.986642092
+     110026.986643669
+     110026.986645724
+     2.05499236471951e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110026.987282114
+     110026.987283647
+     110026.987285695
+     2.0479928934946656e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110026.988350501
+     110026.988352047
+     110026.988354145
+     2.097993274219334e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110027.009895805
+     110027.00989741
+     110027.009899439
+     2.029002644121647e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110027.010531089
+     110027.010532551
+     110027.010534563
+     2.0120060071349144e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110027.011569849
+     110027.011571505
+     110027.011573594
+     2.0890001906082034e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110027.02560207
+     110027.02560368
+     110027.025605759
+     2.0790030248463154e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110027.026236129
+     110027.026237659
+     110027.026239789
+     2.130007487721741e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110027.027284804
+     110027.027286494
+     110027.027288613
+     2.1189916878938675e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110027.048990468
+     110027.048992159
+     110027.048994186
+     2.0269944798201323e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110027.049625976
+     110027.049627466
+     110027.049629501
+     2.034998033195734e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110027.050675725
+     110027.050677378
+     110027.050679419
+     2.040993422269821e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110027.702665362
+     110027.702667642
+     110027.702669797
+     2.154993126168847e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110027.70332099
+     110027.70332259
+     110027.703324536
+     1.9460130715742707e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110027.704499127
+     110027.704500666
+     110027.704502662
+     1.995998900383711e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110027.728396463
+     110027.728398036
+     110027.728400201
+     2.1650048438459635e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110027.729027059
+     110027.729028593
+     110027.729030678
+     2.0849984139204025e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110027.730081154
+     110027.730082837
+     110027.73008489
+     2.052998752333224e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110027.744270485
+     110027.744272162
+     110027.744274183
+     2.020999090746045e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110027.744905941
+     110027.744907414
+     110027.744909376
+     1.9619910744950175e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110027.74594699
+     110027.745948628
+     110027.745950682
+     2.054002834483981e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110027.767532184
+     110027.767533808
+     110027.767535861
+     2.052998752333224e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110027.768191247
+     110027.768192768
+     110027.768194926
+     2.158005372621119e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110027.769238976
+     110027.769240651
+     110027.769242671
+     2.019995008595288e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110027.783414394
+     110027.783416131
+     110027.783418275
+     2.1439918782562017e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110027.784066761
+     110027.78406864
+     110027.784070792
+     2.1519954316318035e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110027.785126056
+     110027.785127602
+     110027.785129757
+     2.1550076780840755e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110027.808827709
+     110027.808829355
+     110027.808831431
+     2.076005330309272e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110027.809499683
+     110027.809501185
+     110027.809503259
+     2.0740117179229856e-06
+     Calling this unique function: Ordinary hash table
+     ********
+     110027.810603332
+     110027.810604804
+     110027.810606926
+     2.121989382430911e-06
+
+··· Running (increment.Merge.time_merge_2intkey--).
+··· increment.Merge.time_merge_2intkey                      35.7±0.04s
+···· resize needed &&&&&&&
+     128
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     256
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     512
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1024
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2048
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4096
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8192
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     16384
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     32768
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     65536
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     131072
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     262144
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     524288
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1048576
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2097152
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4194304
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     128
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     256
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     512
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1024
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2048
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4096
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8192
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     16384
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     32768
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     65536
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     131072
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     262144
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     524288
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1048576
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2097152
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4194304
+     resize confirmed &&&&&&&
+     resize needed *******
+     128
+     128
+     resize confirmed ************
+     resize needed *******
+     512
+     512
+     resize confirmed ************
+     resize needed *******
+     2048
+     2048
+     resize confirmed ************
+     resize needed *******
+     8192
+     8192
+     resize confirmed ************
+     resize needed *******
+     32768
+     32768
+     resize confirmed ************
+     resize needed *******
+     131072
+     131072
+     resize confirmed ************
+     resize needed *******
+     524288
+     524288
+     resize confirmed ************
+     resize needed *******
+     2097152
+     2097152
+     resize confirmed ************
+     resize needed &&&&&&&
+     128
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     256
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     512
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1024
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2048
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4096
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8192
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     16384
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     32768
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     65536
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     131072
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     262144
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     524288
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1048576
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2097152
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4194304
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     128
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     256
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     512
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1024
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2048
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4096
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8192
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     16384
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     32768
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     65536
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     131072
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     262144
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     524288
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1048576
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2097152
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4194304
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8388608
+     resize confirmed &&&&&&&
+     resize needed *******
+     8388608
+     8388608
+     resize confirmed ************
+     resize needed &&&&&&&
+     128
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     256
+     Size set to be: 1
+     200000000
+     Size set to be: 3
+     200000000
+     Time11: 
+     2.2207997972145677e-05
+     noInt
+     Time Hey1: 
+     8.210045052692294e-07
+     Calling this unique function: PyObject hash table
+     Resize takes time 1.0140007361769676e-05
+     Resize takes time 5.547000910155475e-06
+     Resize takes time 9.272000170312822e-06
+     Resize takes time 1.1999989510513842e-05
+     Resize takes time 1.9108003471046686e-05
+     Resize takes time 4.287400224711746e-05
+     Resize takes time 7.680199632886797e-05
+     Resize takes time 0.00012808300380129367
+     Resize takes time 0.00022748300398234278
+     Resize takes time 0.00043605199607554823
+     Resize takes time 0.0007785990019328892
+     Resize takes time 0.0014708960079587996
+     Resize takes time 0.002889213996240869
+     Resize takes time 0.014032218008651398
+     Resize takes time 0.018533476002630778
+     Resize takes time 0.036644545005401596
+     *************
+     110191.280972682
+     4.090682659007143
+     Time Hey2: 
+     4.091811424004845
+     Resize takes time 8.25499591883272e-06
+     Resize takes time 5.256006261333823e-06
+     Resize takes time 8.404997061006725e-06
+     Resize takes time 9.923998732119799e-06
+     Resize takes time 1.5186000382527709e-05
+     Resize takes time 4.1238992707803845e-05
+     Resize takes time 6.145800580270588e-05
+     Resize takes time 0.0001293340028496459
+     Resize takes time 0.0002325349923921749
+     Resize takes time 0.0004233209911035374
+     Resize takes time 0.0007477299950551242
+     Resize takes time 0.001381281006615609
+     Resize takes time 0.0029421850049402565
+     Resize takes time 0.013744647993007675
+     Resize takes time 0.018578155999421142
+     Resize takes time 0.03692656500788871
+     Time Hey1: 
+     0.17959257899201475
+     Calling this unique function: PyObject hash table
+     *************
+     110195.556844351
+     3.129896786005702
+     Time Hey2: 
+     3.310143116003019
+     look here
+     2.2719992557540536e-05
+     110191.280902876
+     7.408301110001048
+     Time13: 
+     7.436500568990596
+     Int
+     Calling this unique function: Ordinary hash table
+     Resize takes time 8.306000381708145e-06
+     Resize takes time 5.602007149718702e-06
+     Resize takes time 1.771599636413157e-05
+     Resize takes time 4.8846995923668146e-05
+     Resize takes time 0.00017786800162866712
+     Resize takes time 0.0006974249990889803
+     Resize takes time 0.008665333996759728
+     Resize takes time 0.025702560000354424
+     ********
+     110198.717452422
+     110198.717486765
+     110199.395430606
+     0.6779438410012517
+     Calling this unique function: Ordinary hash table
+     ********
+     110199.446226693
+     110199.446262426
+     110199.765144057
+     0.3188816309993854
+     look here
+     6.220399518497288e-05
+     110198.717413913
+     1.0483177810092457
+     Time13: 
+     8.491924349000328
+     Size set to be: 2
+     200000000
+     Size set to be: 4
+     need to factorize right keys
+     Time21: 
+     5.954003427177668e-06
+     noInt
+     Resize takes time 8.301009074784815e-06
+     Resize takes time 4.747998900711536e-06
+     Resize takes time 5.623005563393235e-06
+     Resize takes time 9.427996701560915e-06
+     Resize takes time 1.3425989891402423e-05
+     Resize takes time 4.1490013245493174e-05
+     Resize takes time 6.419899000320584e-05
+     Resize takes time 0.000128387997392565
+     Resize takes time 0.00024681800277903676
+     Resize takes time 0.00039738199848216027
+     Resize takes time 0.0007481359934899956
+     Resize takes time 0.0018225490057375282
+     Resize takes time 0.0028756100073223934
+     Resize takes time 0.013732021005125716
+     Resize takes time 0.018442939006490633
+     Resize takes time 0.03689818299608305
+     Time Hey1: 
+     0.32285279499774333
+     Calling this unique function: PyObject hash table
+     *************
+     110200.658213221
+     1.0381426160020055
+     Time Hey2: 
+     1.36124667499098
+     look
+     2.2944004740566015e-05
+     110200.335295423
+     1.363077540998347
+     Time22: 
+     1.3668817709985888
+     Int
+     Calling this unique function: Ordinary hash table
+     ********
+     110201.756405079
+     110201.756451451
+     110202.023338278
+     0.26688682699750643
+     look
+     4.591900506056845e-05
+     110201.702182167
+     0.3213478319958085
+     Time23: 
+     1.6902261909999652
+     Size set to be: 2
+     200000000
+     Size set to be: 4
+     need to factorize right keys
+     Time21: 
+     5.626003257930279e-06
+     noInt
+     Resize takes time 7.4690033216029406e-06
+     Resize takes time 5.69300027564168e-06
+     Resize takes time 6.767004379071295e-06
+     Resize takes time 7.763999747112393e-06
+     Resize takes time 1.894899469334632e-05
+     Resize takes time 4.089099820703268e-05
+     Resize takes time 7.288099732249975e-05
+     Resize takes time 0.00012854700617026538
+     Resize takes time 0.00025325099704787135
+     Resize takes time 0.00043383199954405427
+     Resize takes time 0.000937086995691061
+     Resize takes time 0.0019064090010942891
+     Resize takes time 0.0029322610062081367
+     Resize takes time 0.005840843004989438
+     Resize takes time 0.011584992011194117
+     Resize takes time 0.055533926002681255
+     Time Hey1: 
+     0.4651757330138935
+     Calling this unique function: PyObject hash table
+     Resize takes time 0.07368665700778365
+     *************
+     110202.922936614
+     1.24567420699168
+     Time Hey2: 
+     1.7128253140108427
+     look
+     2.2223000996746123e-05
+     110202.457695439
+     1.7147038409893867
+     Time22: 
+     1.7186383689986542
+     Int
+     Calling this unique function: Ordinary hash table
+     Resize takes time 0.10362097198958509
+     ********
+     110204.235261343
+     110204.235297923
+     110204.605898665
+     0.3706007419968955
+     look
+     4.773800901602954e-05
+     110204.176345037
+     0.4358440759970108
+     Time23: 
+     2.1564558829995804
+     Size set to be: 2
+     200000000
+     Size set to be: 4
+     need to factorize right keys
+     Time21: 
+     6.223999662324786e-06
+     noInt
+     Resize takes time 7.127993740141392e-06
+     Resize takes time 4.187000740785152e-05
+     Resize takes time 6.886999472044408e-06
+     Resize takes time 9.822004358284175e-06
+     Resize takes time 1.3670010957866907e-05
+     Resize takes time 4.0628001443110406e-05
+     Resize takes time 8.57960112625733e-05
+     Resize takes time 0.00012943398905918002
+     Resize takes time 0.0002239379973616451
+     Resize takes time 0.00040286200237460434
+     Resize takes time 0.000760797003749758
+     Resize takes time 0.0018756220088107511
+     Resize takes time 0.0028913650021422654
+     Resize takes time 0.013760695001110435
+     Resize takes time 0.018561158009106293
+     Resize takes time 0.03694953498779796
+     Resize takes time 0.0735522159957327
+     Time Hey1: 
+     0.67618136999954
+     Calling this unique function: PyObject hash table
+     *************
+     110205.727939455
+     1.3963258669973584
+     Time Hey2: 
+     2.0741422880091704
+     look
+     2.171300002373755e-05
+     110205.051696106
+     2.0759644969948567
+     Time22: 
+     2.079901670003892
+     Int
+     Calling this unique function: Ordinary hash table
+     ********
+     110207.29787821
+     110207.297914201
+     110207.562616824
+     0.26470262299699243
+     look
+     4.706700565293431e-05
+     110207.131609268
+     0.4368108679918805
+     Time23: 
+     2.5186965519969817
+     Size set to be: 2
+     200000000
+     Size set to be: 4
+     need to factorize right keys
+     Time21: 
+     5.7810102589428425e-06
+     noInt
+     Resize takes time 7.452996214851737e-06
+     Resize takes time 5.8589939726516604e-06
+     Resize takes time 7.040012860670686e-06
+     Resize takes time 7.544003892689943e-06
+     Resize takes time 1.742900349199772e-05
+     Resize takes time 4.1024002712219954e-05
+     Resize takes time 7.270800415426493e-05
+     Resize takes time 0.0001296239934163168
+     Resize takes time 0.00022935400193091482
+     Resize takes time 0.0004058980121044442
+     Resize takes time 0.000990108004771173
+     Resize takes time 0.001878175011370331
+     Resize takes time 0.002952224007458426
+     Resize takes time 0.013726420002058148
+     Resize takes time 0.018404798989649862
+     Resize takes time 0.03684735200658906
+     Resize takes time 0.07388990199251566
+     Time Hey1: 
+     0.818399348994717
+     Calling this unique function: PyObject hash table
+     *************
+     110208.835615662
+     1.76159667900356
+     Time Hey2: 
+     2.5812318099924596
+     look
+     2.1601998014375567e-05
+     110208.017149502
+     2.583135692999349
+     Time22: 
+     2.586968796007568
+     Int
+     Calling this unique function: Ordinary hash table
+     ********
+     110210.775715011
+     110210.775750707
+     110211.045999031
+     0.27024832399911247
+     look
+     4.603700654115528e-05
+     110210.604128331
+     0.4472581299924059
+     Time23: 
+     3.0362369600043166
+     Size set to be: 2
+     200000000
+     Size set to be: 4
+     need to factorize right keys
+     Time21: 
+     5.987007170915604e-06
+     noInt
+     Resize takes time 7.378999725915492e-06
+     Resize takes time 5.699010216630995e-06
+     Resize takes time 7.213006028905511e-06
+     Resize takes time 7.911003194749355e-06
+     Resize takes time 1.7604994354769588e-05
+     Resize takes time 4.232999344822019e-05
+     Resize takes time 6.118800956755877e-05
+     Resize takes time 0.00012930099910590798
+     Resize takes time 0.0002214310079580173
+     Resize takes time 0.00039472299977205694
+     Resize takes time 0.0008120339916786179
+     Resize takes time 0.0018291809974471107
+     Resize takes time 0.0029738550074398518
+     Resize takes time 0.007537308003520593resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     512
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1024
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2048
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4096
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8192
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     16384
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     32768
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     65536
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     131072
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     262144
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     524288
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1048576
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2097152
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4194304
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8388608
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     128
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     256
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     512
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1024
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2048
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4096
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8192
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     16384
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     32768
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     65536
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     131072
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     262144
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     524288
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1048576
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2097152
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4194304
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8388608
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     128
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     256
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     512
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1024
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2048
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4096
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8192
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     16384
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     32768
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     65536
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     131072
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     262144
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     524288
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1048576
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2097152
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4194304
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8388608
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     128
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     256
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     512
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1024
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2048
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4096
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8192
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     16384
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     32768
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     65536
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     131072
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     262144
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     524288
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1048576
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2097152
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4194304
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8388608
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     128
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     256
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     512
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1024
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2048
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4096
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8192
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     16384
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     32768
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     65536
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     131072
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     262144
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     524288
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1048576
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2097152
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4194304
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8388608
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     16777216
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     128
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     256
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     512
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1024
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2048
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4096
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8192
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     16384
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     32768
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     65536
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     131072
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     262144
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     524288
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1048576
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2097152
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4194304
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     128
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     256
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     512
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1024
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2048
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4096
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8192
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     16384
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     32768
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     65536
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     131072
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     262144
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     524288
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1048576
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2097152
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4194304
+     resize confirmed &&&&&&&
+     resize needed *******
+     128
+     128
+     resize confirmed ************
+     resize needed *******
+     512
+     512
+     resize confirmed ************
+     resize needed *******
+     2048
+     2048
+     resize confirmed ************
+     resize needed *******
+     8192
+     8192
+     resize confirmed ************
+     resize needed *******
+     32768
+     32768
+     resize confirmed ************
+     resize needed *******
+     131072
+     131072
+     resize confirmed ************
+     resize needed *******
+     524288
+     524288
+     resize confirmed ************
+     resize needed *******
+     2097152
+     2097152
+     resize confirmed ************
+     resize needed &&&&&&&
+     128
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     256
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     512
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1024
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2048
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4096
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8192
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     16384
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     32768
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     65536
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     131072
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     262144
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     524288
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1048576
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2097152
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4194304
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     128
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     256
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     512
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1024
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2048
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4096
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8192
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     16384
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     32768
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     65536
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     131072
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     262144
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     5242
+     Resize takes time 0.027716520009562373
+     Resize takes time 0.03683597700728569
+     Resize takes time 0.07378552999580279
+     Time Hey1: 
+     0.9646748309896793
+     Calling this unique function: PyObject hash table
+     *************
+     110212.45390499
+     4.252447881997796
+     Time Hey2: 
+     5.217997105995892
+     look
+     2.2317006369121373e-05
+     110211.489156284
+     5.219877440991695
+     Time22: 
+     5.223822259998997
+     Int
+     Calling this unique function: Ordinary hash table
+     ********
+     110216.888889387
+     110216.888926242
+     110217.451291257
+     0.562365015008254
+     look
+     4.878701292909682e-05
+     110216.712991638
+     0.7433438769949134
+     Time23: 
+     5.969175625999924
+     Size set to be: 2
+     200000000
+     Size set to be: 4
+     need to factorize right keys
+     Time21: 
+     5.9820013120770454e-06
+     noInt
+     Resize takes time 7.605005521327257e-06
+     Resize takes time 4.749992513097823e-06
+     Resize takes time 5.499008693732321e-06
+     Resize takes time 7.936992915347219e-06
+     Resize takes time 1.3994998880662024e-05
+     Resize takes time 4.256599640939385e-05
+     Resize takes time 6.1091996030882e-05
+     Resize takes time 0.00013481499627232552
+     Resize takes time 0.00022377900313585997
+     Resize takes time 0.0004061660001752898
+     Resize takes time 0.000930491994949989
+     Resize takes time 0.0018338179943384603
+     Resize takes time 0.0037253619957482442
+     Resize takes time 0.0076351780007826164
+     Resize takes time 0.02778515800309833
+     Resize takes time 0.03675030599697493
+     Resize takes time 0.07408072699035984
+     Time Hey1: 
+     1.107972276993678
+     Calling this unique function: PyObject hash table
+     *************
+     110219.012455459
+     1.0521934059943305
+     Time Hey2: 
+     2.16064635598741
+     look
+     2.2863998310640454e-05
+     110217.904416718
+     2.1625092120084446
+     Time22: 
+     2.166403941999306
+     Int
+     Calling this unique function: Ordinary hash table
+     ********
+     110220.251098728
+     110220.251137244
+     110220.632396604
+     0.38125936000142246
+     look
+     4.615398938767612e-05
+     110220.070824699
+     0.5662162210064707
+     Time23: 
+     2.7346333930036053
+     Size set to be: 2
+     200000000
+     Size set to be: 4
+     need to factorize right keys
+     Time21: 
+     5.8119912864640355e-06
+     noInt
+     Resize takes time 7.650989573448896e-06
+     Resize takes time 5.530004273168743e-06
+     Resize takes time 6.414993549697101e-06
+     Resize takes time 7.599999662488699e-06
+     Resize takes time 1.345800410490483e-05
+     Resize takes time 4.0216007619164884e-05
+     Resize takes time 6.116900476627052e-05
+     Resize takes time 0.00012897200940642506
+     Resize takes time 0.00022645799617748708
+     Resize takes time 0.00039320799987763166
+     Resize takes time 0.0009721840033307672
+     Resize takes time 0.0018167670059483498
+     Resize takes time 0.00370879600814078
+     Resize takes time 0.013729283004067838
+     Resize takes time 0.01846610999200493
+     Resize takes time 0.036812309990637004
+     Resize takes time 0.07364150500507094
+     Time Hey1: 
+     1.2347832409868715
+     Calling this unique function: PyObject hash table
+     Resize takes time 0.14630865700019058
+     *************
+     110222.310947123
+     1.314417625995702
+     Time Hey2: 
+     2.5535281019983813
+     look
+     2.357999619562179e-05
+     110221.076097424
+     2.555378192002536
+     Time22: 
+     2.5593086409935495
+     Int
+     Calling this unique function: Ordinary hash table
+     ********
+     110223.819595487
+     110223.819633584
+     110224.200388781
+     0.38075519699486904
+     look
+     4.649099719244987e-05
+     110223.635398083
+     0.5692543939949246
+     Time23: 
+     3.130590475004283
+     Size set to be: 1
+     200000000
+     Size set to be: 3
+     200000000
+     Time11: 
+     5.362002411857247e-06
+     noInt
+     Time Hey1: 
+     7.14004272595048e-07
+     Calling this unique function: PyObject hash table
+     Resize takes time 7.95800588093698e-06
+     Resize takes time 5.564012099057436e-06
+     Resize takes time 8.228991646319628e-06
+     Resize takes time 1.1593001545406878e-05
+     Resize takes time 1.9853003323078156e-05
+     Resize takes time 4.1647988837212324e-05
+     Resize takes time 6.852700607851148e-05
+     Resize takes time 0.00012983300257474184
+     Resize takes time 0.00022535299649462104
+     Resize takes time 0.00041021099605131894
+     Resize takes time 0.000770029000705108
+     Resize takes time 0.0015217549953376874
+     Resize takes time 0.0029878320056013763
+     Resize takes time 0.013974146990221925
+     Resize takes time 0.01855260100273881
+     Resize takes time 0.03677602400421165
+     *************
+     110240.242678236
+     4.283495158000733
+     Time Hey2: 
+     4.284737573005259
+     Resize takes time 7.50500475987792e-06
+     Resize takes time 5.680005415342748e-06
+     Resize takes time 6.361995474435389e-06
+     Resize takes time 1.0861011105589569e-05
+     Resize takes time 1.832100679166615e-05
+     Resize takes time 4.3010004446841776e-05
+     Resize takes time 6.104899512138218e-05
+     Resize takes time 0.00013797699648421258
+     Resize takes time 0.00024841600679792464
+     Resize takes time 0.0004415230068843812
+     Resize takes time 0.0007277199911186472
+     Resize takes time 0.0014411589945666492
+     Resize takes time 0.0029434080061037093
+     Resize takes time 0.013877847988624126
+     Resize takes time 0.018651495993253775
+     Resize takes time 0.03722776999347843
+     Time Hey1: 
+     0.29124489800597075
+     Calling this unique function: PyObject hash table
+     *************
+     110244.823134229
+     3.206938123999862
+     Time Hey2: 
+     3.4989596430095844
+     look here
+     2.00529902940616e-05
+     110240.242635319
+     7.789981103007449
+     Time13: 
+     7.817658626008779
+     Int
+     Calling this unique function: Ordinary hash table
+     Resize takes time 7.315989932976663e-06
+     Resize takes time 5.448993761092424e-06
+     Resize takes time 1.7432001186534762e-05
+     Resize takes time 4.95309941470623e-05
+     Resize takes time 0.0001758150028763339
+     Resize takes time 0.0006861190049676225
+     Resize takes time 0.008825231998343952
+     Resize takes time 0.02587226699688472
+     ********
+     110248.060345355
+     110248.060377444
+     110248.742073546
+     0.6816961020085728
+     Calling this unique function: Ordinary hash table
+     ********
+     110248.793151485
+     110248.793187272
+     110249.111497913
+     0.31831064101425
+     look here
+     5.572100053541362e-05
+     110248.060323477
+     1.0517980760050705
+     Time13: 
+     8.876519919009297
+     Size set to be: 2
+     200000000
+     Size set to be: 4
+     need to factorize right keys
+     Time21: 
+     5.752008291892707e-06
+     noInt
+     Resize takes time 8.25000461190939e-06
+     Resize takes time 5.1449897000566125e-06
+     Resize takes time 6.093003321439028e-06
+     Resize takes time 1.2177988537587225e-05
+     Resize takes time 2.197800495196134e-05
+     Resize takes time 4.171200271230191e-05
+     Resize takes time 6.090299575589597e-05
+     Resize takes time 0.00012774400238413364
+     Resize takes time 0.00023652399249840528
+     Resize takes time 0.0004082870000274852
+     Resize takes time 0.0007529069989686832
+     Resize takes time 0.0019182859978172928
+     Resize takes time 0.002894380988436751
+     Resize takes time 0.013836475991411135
+     Resize takes time 0.0184900609892793
+     Resize takes time 0.03687375500157941
+     Time Hey1: 
+     0.4323033120017499
+     Calling this unique function: PyObject hash table
+     *************
+     110250.132520757
+     1.045589542001835
+     Time Hey2: 
+     1.4781507440056885
+     look
+     2.2460997570306063e-05
+     110249.700152771
+     1.4800050120102242
+     Time22: 
+     1.4838295829977142
+     Int
+     Calling this unique function: Ordinary hash table
+     ********
+     110251.238552992
+     110251.2385895
+     110251.50591591
+     0.26732641000126023
+     look
+     4.511501174420118e-05
+     110251.183989772
+     0.3221243379957741
+     Time23: 
+     1.8078990840003826
+     Size set to be: 2
+     200000000
+     Size set to be: 4
+     need to factorize right keys
+     Time21: 
+     5.574998795054853e-06
+     noInt
+     Resize takes time 8.2320038927719e-06
+     Resize takes time 5.438996595330536e-06
+     Resize takes time 7.578986696898937e-06
+     Resize takes time 1.0226998711004853e-05
+     Resize takes time 2.263700298499316e-05
+     Resize takes time 4.127300053369254e-05
+     Resize takes time 6.425500032491982e-05
+     Resize takes time 0.00012787400919478387
+     Resize takes time 0.0002268679963890463
+     Resize takes time 0.000445843004854396
+     Resize takes time 0.0007644889992661774
+     Resize takes time 0.0018493870011297986
+     Resize takes time 0.002903268003137782
+     Resize takes time 0.013904898994951509
+     Resize takes time 0.018548463995102793
+     Resize takes time 0.03688852899358608
+     Time Hey1: 
+     0.5689715160115156
+     Calling this unique function: PyObject hash table
+     Resize takes time 0.07371446100296453
+     *************
+     110252.541983818
+     1.2790163200115785
+     Time Hey2: 
+     1.8500240340072196
+     look
+     2.242698974441737e-05
+     110251.972939224
+     1.8518671229976462
+     Time22: 
+     1.8557457249989966
+     Int
+     Calling this unique function: Ordinary hash table
+     Resize takes time 0.10397466100403108
+     ********
+     110253.888163026
+     110253.888200025
+     110254.260173161
+     0.371973136003362
+     look
+     4.5710999984294176e-05
+     110253.828695373
+     0.4380701339978259
+     Time23: 
+     2.295785315000103
+     Size set to be: 2
+     200000000
+     Size set to be: 4
+     need to factorize right keys88
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1048576
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2097152
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4194304
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8388608
+     resize confirmed &&&&&&&
+     resize needed *******
+     8388608
+     8388608
+     resize confirmed ************
+     resize needed &&&&&&&
+     128
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     256
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     512
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1024
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2048
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4096
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8192
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     16384
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     32768
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     65536
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     131072
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     262144
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     524288
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1048576
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2097152
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4194304
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8388608
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     128
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     256
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     512
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1024
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2048
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4096
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8192
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     16384
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     32768
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     65536
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     131072
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     262144
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     524288
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1048576
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2097152
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4194304
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8388608
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     128
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     256
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     512
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1024
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2048
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4096
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8192
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     16384
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     32768
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     65536
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     131072
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     262144
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     524288
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1048576
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2097152
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4194304
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8388608
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     128
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     256
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     512
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1024
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2048
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4096
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8192
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     16384
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     32768
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     65536
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     131072
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     262144
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     524288
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1048576
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2097152
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4194304
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8388608
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     128
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     256
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     512
+     resize confirmed &&&&&&&
+     resize needed &&&&&
+     Time21: 
+     5.788999260403216e-06
+     noInt
+     Resize takes time 7.609996828250587e-06
+     Resize takes time 3.7410063669085503e-06
+     Resize takes time 4.703004378825426e-06
+     Resize takes time 7.825001375749707e-06
+     Resize takes time 1.6007994418032467e-05
+     Resize takes time 4.10979992011562e-05
+     Resize takes time 7.678099791519344e-05
+     Resize takes time 0.00012813099601771683
+     Resize takes time 0.0002260910114273429
+     Resize takes time 0.0004097780038136989
+     Resize takes time 0.0009811549971345812
+     Resize takes time 0.0018411009950796142
+     Resize takes time 0.0028864420019090176
+     Resize takes time 0.005837543998495676
+     Resize takes time 0.02787876600632444
+     Resize takes time 0.03691350900044199
+     Resize takes time 0.07349915499798954
+     Time Hey1: 
+     0.7853132980089867
+     Calling this unique function: PyObject hash table
+     *************
+     110255.522739512
+     1.4460188999946695
+     Time Hey2: 
+     2.232976220009732
+     look
+     2.379000943619758e-05
+     110254.737360141
+     2.234831537993159
+     Time22: 
+     2.238878443997237
+     Int
+     Calling this unique function: Ordinary hash table
+     ********
+     110257.144859025
+     110257.144892908
+     110257.425727789
+     0.2808348809921881
+     look
+     4.902899672742933e-05
+     110256.976253359
+     0.45532520800770726
+     Time23: 
+     2.696237344003748
+     Size set to be: 2
+     200000000
+     Size set to be: 4
+     need to factorize right keys
+     Time21: 
+     5.588008207269013e-06
+     noInt
+     Resize takes time 7.437993190251291e-06
+     Resize takes time 4.382003680802882e-06
+     Resize takes time 5.6879944168031216e-06
+     Resize takes time 9.979004971683025e-06
+     Resize takes time 2.2791995434090495e-05
+     Resize takes time 4.1701990994624794e-05
+     Resize takes time 6.113899871706963e-05
+     Resize takes time 0.0001291510125156492
+     Resize takes time 0.00021972699323669076
+     Resize takes time 0.0004308649949962273
+     Resize takes time 0.0007607229927089065
+     Resize takes time 0.0018459160055499524
+     Resize takes time 0.002946498992969282
+     Resize takes time 0.007709049998084083
+     Resize takes time 0.02765899000223726
+     Resize takes time 0.036866459995508194
+     Resize takes time 0.07348249100323301
+     Time Hey1: 
+     0.9266750079987105
+     Calling this unique function: PyObject hash table
+     *************
+     110258.833323652
+     1.8131562339985976
+     Time Hey2: 
+     2.7410805789986625
+     look
+     2.2011998225934803e-05
+     110257.90658174
+     2.7429067510092864
+     Time22: 
+     2.74694439599989
+     Int
+     Calling this unique function: Ordinary hash table
+     ********
+     110260.825174861
+     110260.825211704
+     110261.100701873
+     0.27549016900593415
+     look
+     4.775900742970407e-05
+     110260.653536924
+     0.452609318002942
+     Time23: 
+     3.201537394008483
+     Size set to be: 2
+     200000000
+     Size set to be: 4
+     need to factorize right keys
+     Time21: 
+     5.87200338486582e-06
+     noInt
+     Resize takes time 7.299007847905159e-06
+     Resize takes time 4.439993062987924e-06
+     Resize takes time 5.779002094641328e-06
+     Resize takes time 1.0226998711004853e-05
+     Resize takes time 2.3015993065200746e-05
+     Resize takes time 4.171598993707448e-05
+     Resize takes time 6.60700025036931e-05
+     Resize takes time 0.00012888498895335943
+     Resize takes time 0.00022577900381293148
+     Resize takes time 0.0004606200091075152
+     Resize takes time 0.0007520679937442765
+     Resize takes time 0.001840648998040706
+     Resize takes time 0.002895066005294211
+     Resize takes time 0.007621102995472029
+     Resize takes time 0.02790392299357336
+     Resize takes time 0.03693035099422559
+     Resize takes time 0.07390493499406148
+     Time Hey1: 
+     1.0757578519987874
+     Calling this unique function: PyObject hash table
+     *************
+     110262.640730592
+     4.466798601002665
+     Time Hey2: 
+     5.543471870012581
+     look
+     2.2451000404544175e-05
+     110261.564904083
+     5.545305156003451
+     Time22: 
+     5.5492329800035805
+     Int
+     Calling this unique function: Ordinary hash table
+     ********
+     110267.29060314
+     110267.290641459
+     110267.859293135
+     0.5686516760033555
+     look
+     4.599199746735394e-05
+     110267.114148863
+     0.7502246520016342
+     Time23: 
+     6.301437251997413
+     Size set to be: 2
+     200000000
+     Size set to be: 4
+     need to factorize right keys
+     Time21: 
+     5.794994649477303e-06
+     noInt
+     Resize takes time 7.845010259188712e-06
+     Resize takes time 6.246002158150077e-06
+     Resize takes time 7.042996003292501e-06
+     Resize takes time 1.1449999874457717e-05
+     Resize takes time 2.2449996322393417e-05
+     Resize takes time 4.1067993151955307e-05
+     Resize takes time 6.103298801463097e-05
+     Resize takes time 0.00012939599400851876
+     Resize takes time 0.00023514899658039212
+     Resize takes time 0.0004670360067393631
+     Resize takes time 0.0009427320037502795
+     Resize takes time 0.0018431089993100613
+     Resize takes time 0.003856139999697916
+     Resize takes time 0.007709144992986694
+     Resize takes time 0.02799264100030996
+     Resize takes time 0.03693139100505505
+     Resize takes time 0.07413141900906339
+     Time Hey1: 
+     1.2201604259898886
+     Calling this unique function: PyObject hash table
+     *************
+     110269.549095705
+     1.11156149499584
+     Time Hey2: 
+     2.332198169999174
+     look
+     2.2384992917068303e-05
+     110268.328865169
+     2.3340885100042215
+     Time22: 
+     2.3382766459981212
+     Int
+     Calling this unique function: Ordinary hash table
+     ********
+     110270.847924067
+     110270.84796204
+     110271.232169218
+     0.38420717799453996
+     look
+     4.599099338520318e-05
+     110270.6671519
+     0.5696841050084913
+     Time23: 
+     2.9099614970036782
+     Size set to be: 2
+     200000000
+     Size set to be: 4
+     need to factorize right keys
+     Time21: 
+     5.764988600276411e-06
+     noInt
+     Resize takes time 7.268987246789038e-06
+     Resize takes time 4.665998858399689e-06
+     Resize takes time 6.016009137965739e-06
+     Resize takes time 1.0828007361851633e-05
+     Resize takes time 2.295999729540199e-05
+     Resize takes time 5.89480041526258e-05
+     Resize takes time 6.138799653854221e-05
+     Resize takes time 0.00012715300545096397
+     Resize takes time 0.00023682099708821625
+     Resize takes time 0.00041126200812868774
+     Resize takes time 0.0009218949999194592
+     Resize takes time 0.0018561580072855577
+     Resize takes time 0.003836010000668466
+     Resize takes time 0.005810151997138746
+     Resize takes time 0.028156619999208488
+     Resize takes time 0.03694218200689647
+     Resize takes time 0.07426320300146472
+     Time Hey1: 
+     1.3577730040124152
+     Calling this unique function: PyObject hash table
+     Resize takes time 0.1476370919990586
+     *************
+     110273.053583206
+     1.3286585680034477
+     Time Hey2: 
+     2.6907736440043664
+     look
+     2.238999877590686e-05
+     110271.695746742
+     2.6926698479946936
+     Time22: 
+     2.6966853219928453
+     Int
+     Calling this unique function: Ordinary hash table
+     ********
+     110274.578531131
+     110274.578571179
+     110274.968937242
+     0.3903660630021477
+     look
+     4.591500328388065e-05
+     110274.392442499
+     0.5808335650071967
+     Time23: 
+     3.279517417991883
+     Size set to be: 1
+     200000000
+     Size set to be: 3
+     200000000
+     Time11: 
+     7.504990207962692e-06
+     noInt
+     Time Hey1: 
+     6.019981810823083e-07
+     Calling this unique function: PyObject hash table
+     Resize takes time 8.64500179886818e-06
+     Resize takes time 6.543006747961044e-06
+     Resize takes time 8.931005140766501e-06
+     Resize takes time 1.514999894425273e-05
+     Resize takes time 1.96639884961769e-05
+     Resize takes time 4.3660998926497996e-05
+     Resize takes time 6.363200373016298e-05
+     Resize takes time 0.00013047199172433466
+     Resize takes time 0.00024372599727939814
+     Resize takes time 0.0004529650032054633
+     Resize takes time 0.0007538250065408647
+     Resize takes time 0.0014869909937260672
+     Resize takes time 0.002969349006889388
+     Resize takes time 0.014339810004457831
+     Resize takes time 0.01854221199755557
+     Resize takes time 0.0369217160041444
+     *************
+     110289.52657381
+     4.188737272008439
+     Time Hey2: 
+     4.190012902996386
+     Resize takes time 5.574009264819324e-06
+     Resize takes time 6.103000487200916e-06
+     Resize takes time 5.268011591397226e-06
+     Resize takes time 1.2876000255346298e-05
+     Resize takes time 1.815099676605314e-05
+     Resize takes time 4.133400216232985e-05
+     Resize takes time 6.519799353554845e-05
+     Resize takes time 0.00012818200048059225
+     Resize takes time 0.0002461780095472932
+     Resize takes time 0.0004218910034978762
+     Resize takes time 0.0007195829966804013
+     Resize takes time 0.00143130098877009
+     Resize takes time 0.0029210970096755773
+     Resize takes time 0.01376800099387765
+     Resize takes time 0.018613171996548772
+     Resize takes time 0.03698690899182111
+     Time Hey1: 
+     0.26516482900478877
+     Calling this unique function: PyObject hash table
+     *************
+     110293.986301668
+     3.0876270279986784
+     Time Hey2: 
+     3.353566175996093
+     look here
+     6.609898991882801e-05
+     110289.526528561
+     7.549944707003306
+     Time13: 
+     7.578265479998663
+     Int
+     Calling this unique function: Ordinary hash table
+     Resize takes time 8.364993846043944e-06
+     Resize takes time 7.394002750515938e-06
+     Resize takes time 1.5847006579861045e-05&&
+     1024
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2048
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4096
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8192
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     16384
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     32768
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     65536
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     131072
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     262144
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     524288
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1048576
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2097152
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4194304
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8388608
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     16777216
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     128
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     256
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     512
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1024
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2048
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4096
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8192
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     16384
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     32768
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     65536
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     131072
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     262144
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     524288
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1048576
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2097152
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4194304
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     128
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     256
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     512
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1024
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2048
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4096
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8192
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     16384
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     32768
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     65536
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     131072
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     262144
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     524288
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1048576
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2097152
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4194304
+     resize confirmed &&&&&&&
+     resize needed *******
+     128
+     128
+     resize confirmed ************
+     resize needed *******
+     512
+     512
+     resize confirmed ************
+     resize needed *******
+     2048
+     2048
+     resize confirmed ************
+     resize needed *******
+     8192
+     8192
+     resize confirmed ************
+     resize needed *******
+     32768
+     32768
+     resize confirmed ************
+     resize needed *******
+     131072
+     131072
+     resize confirmed ************
+     resize needed *******
+     524288
+     524288
+     resize confirmed ************
+     resize needed *******
+     2097152
+     2097152
+     resize confirmed ************
+     resize needed &&&&&&&
+     128
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     256
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     512
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1024
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2048
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4096
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8192
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     16384
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     32768
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     65536
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     131072
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     262144
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     524288
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1048576
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2097152
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4194304
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     128
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     256
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     512
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1024
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2048
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4096
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8192
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     16384
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     32768
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     65536
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     131072
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     262144
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     524288
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1048576
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2097152
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4194304
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8388608
+     resize confirmed &&&&&&&
+     resize needed *******
+     8388608
+     8388608
+     resize confirmed ************
+     resize needed &&&&&&&
+     128
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     256
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     512
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1024
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2048
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4096
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8192
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     16384
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     32768
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     65536
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     131072
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     262144
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     524288
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1048576
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2097152
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4194304
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8388608
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     128
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     256
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     512
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1024
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2048
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4096
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8192
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     16384
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     32768
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     65536
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     131072
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     262144
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     524288
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1048576
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2097152
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4194304
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8388608
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     128
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     256
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     512
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1024
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2048
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4096
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8192
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     16384
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     32768
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     65536
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     131072
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     262144
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     524288
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1048576
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2097152
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4194304
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8388608
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     128
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     256
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     512
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     1024
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     2048
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     4096
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     8192
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     16384
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     32768
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     65536
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     131072
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     262144
+     resize confirmed &&&&&&&
+     resize needed &&&&&&&
+     524288
+     resize confirmed &&&&&&&
+     Resize takes time 5.07869990542531e-05
+     Resize takes time 0.00017581199062988162
+     Resize takes time 0.0007083119999151677
+     Resize takes time 0.008607886993559077
+     Resize takes time 0.025943553002434783
+     ********
+     110297.104860988
+     110297.104891176
+     110297.764809981
+     0.6599188050022349
+     Calling this unique function: Ordinary hash table
+     ********
+     110297.815826933
+     110297.815865235
+     110298.126628339
+     0.3107631040038541
+     look here
+     0.00011681400064844638
+     110297.104835544
+     1.0223983049945673
+     Time13: 
+     8.607882148993667
+     Size set to be: 2
+     200000000
+     Size set to be: 4
+     need to factorize right keys
+     Time21: 
+     7.633003406226635e-06
+     noInt
+     Resize takes time 7.757000275887549e-06
+     Resize takes time 5.6810094974935055e-06
+     Resize takes time 7.220995030365884e-06
+     Resize takes time 9.536001016385853e-06
+     Resize takes time 3.4845012123696506e-05
+     Resize takes time 4.183300188742578e-05
+     Resize takes time 6.720300007145852e-05
+     Resize takes time 0.00013000500621274114
+     Resize takes time 0.00022265099687501788
+     Resize takes time 0.00040286200237460434
+     Resize takes time 0.0007871620036894456
+     Resize takes time 0.0019089139968855307
+     Resize takes time 0.002942812003311701
+     Resize takes time 0.013790789991617203
+     Resize takes time 0.018586382997455075
+     Resize takes time 0.03691763800452463
+     Time Hey1: 
+     0.4059261950023938
+     Calling this unique function: PyObject hash table
+     *************
+     110299.104483727
+     1.0180870089970995
+     Time Hey2: 
+     1.4242652429966256
+     look
+     6.643400411121547e-05
+     110298.698493542
+     1.4260937759972876
+     Time22: 
+     1.4299875029973919
+     Int
+     Calling this unique function: Ordinary hash table
+     ********
+     110300.183058409
+     110300.183096512
+     110300.444437841
+     0.2613413289946038
+     look
+     9.548899834044278e-05
+     110300.128491981
+     0.3161490030033747
+     Time23: 
+     1.7481481880095089
+     Size set to be: 2
+     200000000
+     Size set to be: 4
+     need to factorize right keys
+     Time21: 
+     6.915986887179315e-06
+     noInt
+     Resize takes time 7.598006050102413e-06
+     Resize takes time 5.338995833881199e-06
+     Resize takes time 6.081987521611154e-06
+     Resize takes time 1.2276999768801033e-05
+     Resize takes time 2.224798663519323e-05
+     Resize takes time 4.193700442556292e-05
+     Resize takes time 6.630700954701751e-05
+     Resize takes time 0.00012931899982504547
+     Resize takes time 0.00023724800848867744
+     Resize takes time 0.0003996720042778179
+     Resize takes time 0.0008166250045178458
+     Resize takes time 0.0019318839913466945
+     Resize takes time 0.0029358250030782074
+     Resize takes time 0.007655676992726512
+     Resize takes time 0.02792503200180363
+     Resize takes time 0.036999283998738974
+     Time Hey1: 
+     0.5500445750076324
+     Calling this unique function: PyObject hash table
+     Resize takes time 0.0737464319972787
+     *************
+     110301.453203653
+     1.260693578995415
+     Time Hey2: 
+     1.8127823890099535
+     look
+     6.509899685624987e-05
+     110300.90309362
+     1.8145958990062354
+     Time22: 
+     1.818440233997535
+     Int
+     Calling this unique function: Ordinary hash table
+     Resize takes time 0.10416158199950587
+     ********
+     110302.78110657
+     110302.781144842
+     110303.153876795
+     0.3727319530007662
+     look
+     9.602100180927664e-05
+     110302.721547871
+     0.4390064299950609
+     Time23: 
+     2.259484058988164
+     Size set to be: 2
+     200000000
+     Size set to be: 4
+     need to factorize right keys
+     Time21: 
+     7.4830022640526295e-06
+     noInt
+     Resize takes time 1.7017999198287725e-05
+     Resize takes time 5.178997525945306e-06
+     Resize takes time 4.954999894835055e-06
+     Resize takes time 1.0206989827565849e-05
+     Resize takes time 1.7668993677943945e-05
+     Resize takes time 4.063500091433525e-05
+     Resize takes time 7.203398854471743e-05
+     Resize takes time 0.00014367599214892834
+     Resize takes time 0.00023481699463445693
+     Resize takes time 0.0004098109930055216
+     Resize takes time 0.000804848998086527
+     Resize takes time 0.001856312999734655
+     Resize takes time 0.003690437995828688
+     Resize takes time 0.007727068004896864
+     Resize takes time 0.028132405001088046
+     Resize takes time 0.03702272799273487
+     Resize takes time 0.07387404001201503
+     Time Hey1: 
+     0.7666616119968239
+     Calling this unique function: PyObject hash table
+     *************
+     110304.378116747
+     1.4047421129944269
+     Time Hey2: 
+     2.1730510460038204
+     look
+     6.549400859512389e-05
+     110303.611387269
+     2.174885827989783
+     Time22: 
+     2.1821324170014123
+     Int
+     Calling this unique function: Ordinary hash table
+     ********
+     110305.96072102
+     110305.960757662
+     110306.22455177
+     0.26379410800291225
+     look
+     0.00010157701035495847
+     110305.793548628
+     0.4368056699895533
+     Time23: 
+     2.6210482219903497
+     Size set to be: 2
+     200000000
+     Size set to be: 4
+     need to factorize right keys
+     Time21: 
+     7.5599964475259185e-06
+     noInt
+     Resize takes time 7.865994120948017e-06
+     Resize takes time 5.181995220482349e-06
+     Resize takes time 6.05199602432549e-06
+     Resize takes time 9.8690070444718e-06
+     Resize takes time 1.7735001165419817e-05
+     Resize takes time 4.1059000068344176e-05
+     Resize takes time 6.354399374686182e-05
+     Resize takes time 0.00012987799709662795
+     Resize takes time 0.00022295399685390294
+     Resize takes time 0.00043149398698005825
+     Resize takes time 0.0007593519985675812
+     Resize takes time 0.0018156129954149947
+     Resize takes time 0.0037007060018368065
+     Resize takes time 0.007609883003169671
+     Resize takes time 0.02783054499013815
+     Resize takes time 0.037012521002907306
+     Resize takes time 0.07397844998922665
+     Time Hey1: 
+     0.9079886019899277
+     Calling this unique function: PyObject hash table
+     *************
+     110307.589843768
+     1.7529728480003541
+     Time Hey2: 
+     2.6622202879952965
+     look
+     6.619399937335402e-05
+     110306.681790497
+     2.664077121007722
+     Time22: 
+     2.668048169987742
+     Int
+     Calling this unique function: Ordinary hash table
+     ********
+     110309.521436331
+     110309.521471949
+     110309.782622604
+     0.261150655001984
+     look
+     9.511499956715852e-05
+     110309.349849177
+     0.43822166000609286
+     Time23: 
+     3.108359924997785
+     Size set to be: 2
+     200000000
+     Size set to be: 4
+     need to factorize right keys
+     Time21: 
+     7.189999450929463e-06
+     noInt
+     Resize takes time 7.467999239452183e-06
+     Resize takes time 4.913003067485988e-06
+     Resize takes time 6.319009116850793e-06
+     Resize takes time 7.834998541511595e-06
+     Resize takes time 1.7703001503832638e-05
+     Resize takes time 4.135399649385363e-05
+     Resize takes time 6.114100688137114e-05
+     Resize takes time 0.00012968500959686935
+     Resize takes time 0.00023325299844145775
+     Resize takes time 0.00041596501250751317
+     Resize takes time 0.0009396620007464662
+     Resize takes time 0.0018379219982307404
+     Resize takes time 0.0037517839955398813
+     Resize takes time 0.007555386997410096
+     Resize takes time 0.02783929200086277
+     Resize takes time 0.037024239005404525
+     Resize takes time 0.07407205400522798
+     Time Hey1: 
+     1.0550298339949222
+     Calling this unique function: PyObject hash table
+     *************
+     110311.30055227
+     4.343870429001981
+     Time Hey2: 
+     5.3997800090000965
+     look
+     6.580399349331856e-05
+     110310.245454562
+     5.401605061008013
+     Time22: 
+     5.405525212001521
+     Int
+     Calling this unique function: Ordinary hash table
+     ********
+     110315.827852672
+     110315.827891002
+     110316.388519684
+     0.5606286819966044
+     look
+     9.42129991017282e-05
+     110315.650993749
+     0.7425700669991784
+     Time23: 
+     6.150169104002998
+     Size set to be: 2
+     200000000
+     Size set to be: 4
+     need to factorize right keys
+     Time21: 
+     7.437993190251291e-06
+     noInt
+     Resize takes time 7.038004696369171e-06
+     Resize takes time 4.41899464931339e-06
+     Resize takes time 8.578994311392307e-06
+     Resize takes time 7.773007382638752e-06
+     Resize takes time 1.827199594117701e-05
+     Resize takes time 4.3072999687865376e-05
+     Resize takes time 6.217900954652578e-05
+     Resize takes time 0.0001292489905608818
+     Resize takes time 0.0002384330000495538
+     Resize takes time 0.0004094989999430254
+     Resize takes time 0.0007783239998389035
+     Resize takes time 0.0018688889977056533
+     Resize takes time 0.00384760599990841
+     Resize takes time 0.007739646986010484
+     Resize takes time 0.02796164300525561
+     Resize takes time 0.03692275698995218
+     Resize takes time 0.07381808500213083
+     Time Hey1: 
+     1.2047444199997699
+     Calling this unique function: PyObject hash table
+     *************
+     110318.058056215
+     1.1782013420015574
+     Time Hey2: 
+     2.3834387679962674
+     look
+     6.637100887019187e-05
+     110316.853244233
+     2.385283616997185
+     Time22: 
+     2.3896494319924386
+     Int
+     Calling this unique function: Ordinary hash table
+     ********
+     110319.423962657
+     110319.423999542
+     110319.806540779
+     0.3825412369915284
+     look
+     0.00010035101149696857
+     110319.242915662
+     0.5683170369884465
+     Time23: 
+     2.960127416998148
+     Size set to be: 2
+     200000000
+     Size set to be: 4
+     need to factorize right keys
+     Time21: 
+     7.580994861200452e-06
+     noInt
+     Resize takes time 8.497998351231217e-06
+     Resize takes time 6.9789966801181436e-06
+     Resize takes time 5.428999429568648e-06
+     Resize takes time 7.797993021085858e-06
+     Resize takes time 1.3478012988343835e-05
+     Resize takes time 4.018700565211475e-05
+     Resize takes time 6.866399780847132e-05
+     Resize takes time 0.00013033799768891186
+     Resize takes time 0.00022195700148586184
+     Resize takes time 0.00043077200825791806
+     Resize takes time 0.0007619849930051714
+     Resize takes time 0.001831109999329783
+     Resize takes time 0.0028851220122305676
+     Resize takes time 0.007741915003862232
+     Resize takes time 0.030035991003387608
+     Resize takes time 0.03693071000452619
+     Resize takes time 0.07392111200897489
+     Time Hey1: 
+     1.345866814997862
+     Calling this unique function: PyObject hash table
+     Resize takes time 0.14665529599005822
+     *************
+     110321.617631967
+     1.4093955849966733
+     Time Hey2: 
+     2.7596031400025822
+     look
+     6.516999565064907e-05
+     110320.271696407
+     2.76146466100181
+     Time22: 
+     2.7655018899968127
+     Int
+     Calling this unique function: Ordinary hash table
+     ********
+     110323.222946502
+     110323.222984293
+     110323.60836201
+     0.38537771700066514
+     look
+     9.926100028678775e-05
+     110323.037216683
+     0.5754538959881756
+     Time23: 
+     3.3430301479966147
+
+
+Sun Jan  5 15:17:13 2020    /tmp/tmp625u9r33
+
+         32375 function calls (32046 primitive calls) in 35.094 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000   35.094   35.094 {built-in method builtins.exec}
+        1    0.545    0.545   35.094   35.094 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/asv/benchmark.py:540(method_caller)
+        1    0.125    0.125   34.549   34.549 /home/ubuntu/pandas/asv_bench/benchmarks/increment.py:49(time_merge_2intkey)
+        8    0.000    0.000   34.424    4.303 /home/ubuntu/pandas/pandas/core/reshape/pipeline_merge.py:55(pipeline_merge)
+        8    0.000    0.000   33.027    4.128 /home/ubuntu/pandas/pandas/core/reshape/pipeline_merge.py:225(get_result)
+        8    0.000    0.000   31.624    3.953 /home/ubuntu/pandas/pandas/core/reshape/pipeline_merge.py:447(_get_join_info)
+        8    0.001    0.000   31.617    3.952 /home/ubuntu/pandas/pandas/core/reshape/pipeline_merge.py:440(_get_join_indexers)
+        8    0.001    0.000   31.616    3.952 /home/ubuntu/pandas/pandas/core/reshape/pipeline_merge.py:902(_get_join_indexers)
+        9   26.178    2.909   26.178    2.909 {method 'factorize' of 'pandas._libs.hashtable.Factorizer' objects}
+       14    0.020    0.001   22.167    1.583 /home/ubuntu/pandas/pandas/core/reshape/pipeline_merge.py:1268(_factorize_right_keys)
+       14    0.000    0.000   18.636    1.331 /home/ubuntu/pandas/pandas/core/reshape/pipeline_merge.py:958(<genexpr>)
+        2    0.013    0.006    8.586    4.293 /home/ubuntu/pandas/pandas/core/reshape/pipeline_merge.py:1177(_factorize_keys)
+        2    0.000    0.000    7.557    3.778 /home/ubuntu/pandas/pandas/core/reshape/pipeline_merge.py:932(<genexpr>)
+        9    4.539    0.504    4.539    0.504 {method 'factorize' of 'pandas._libs.hashtable.Int64Factorizer' objects}
+        8    0.001    0.000    1.396    0.174 /home/ubuntu/pandas/pandas/core/reshape/pipeline_merge.py:112(__init__)
+        8    0.118    0.015    1.390    0.174 /home/ubuntu/pandas/pandas/core/internals/managers.py:1960(concatenate_block_managers)
+        8    0.000    0.000    1.387    0.173 /home/ubuntu/pandas/pandas/core/reshape/pipeline_merge.py:544(_get_merge_keys)
+        8    0.000    0.000    1.383    0.173 /home/ubuntu/pandas/pandas/core/generic.py:1745(_drop_labels_or_levels)
+       24    0.000    0.000    1.196    0.050 /home/ubuntu/pandas/pandas/core/internals/concat.py:236(concatenate_join_units)
+       48    0.001    0.000    1.075    0.022 /home/ubuntu/pandas/pandas/core/algorithms.py:1555(take_nd)
+       24    0.000    0.000    1.011    0.042 /home/ubuntu/pandas/pandas/core/internals/concat.py:247(<listcomp>)
+       24    0.000    0.000    1.011    0.042 /home/ubuntu/pandas/pandas/core/internals/concat.py:173(get_reindexed_values)
+       40    0.921    0.023    0.921    0.023 {method 'copy' of 'numpy.ndarray' objects}
+        8    0.919    0.115    0.919    0.115 {pandas._libs.algos.take_2d_axis0_object_object}
+        8    0.817    0.102    0.817    0.102 {pandas._libs.join.pipeline_inner_join}
+        8    0.000    0.000    0.755    0.094 /home/ubuntu/pandas/pandas/core/generic.py:5631(copy)
+        8    0.000    0.000    0.755    0.094 /home/ubuntu/pandas/pandas/core/internals/managers.py:738(copy)
+        8    0.000    0.000    0.754    0.094 /home/ubuntu/pandas/pandas/core/internals/managers.py:343(apply)
+       16    0.000    0.000    0.752    0.047 /home/ubuntu/pandas/pandas/core/internals/blocks.py:669(copy)
+        8    0.000    0.000    0.627    0.078 /home/ubuntu/pandas/pandas/core/frame.py:3674(drop)
+        8    0.000    0.000    0.627    0.078 /home/ubuntu/pandas/pandas/core/generic.py:3875(drop)
+        8    0.000    0.000    0.551    0.069 /home/ubuntu/pandas/pandas/core/generic.py:3964(_update_inplace)
+       43    0.550    0.013    0.550    0.013 /home/ubuntu/pandas/pandas/core/generic.py:5203(__setattr__)
+       16    0.081    0.005    0.081    0.005 {pandas._libs.algos.take_2d_axis0_float64_float64}
+        8    0.000    0.000    0.076    0.010 /home/ubuntu/pandas/pandas/core/generic.py:3911(_drop_axis)
+        8    0.000    0.000    0.071    0.009 /home/ubuntu/pandas/pandas/util/_decorators.py:225(wrapper)
+        8    0.000    0.000    0.071    0.009 /home/ubuntu/pandas/pandas/core/frame.py:3653(reindex)
+        8    0.000    0.000    0.070    0.009 /home/ubuntu/pandas/pandas/core/generic.py:4255(reindex)
+      104    0.000    0.000    0.070    0.001 {built-in method builtins.all}
+       24    0.000    0.000    0.069    0.003 /home/ubuntu/pandas/pandas/core/internals/concat.py:375(is_uniform_join_units)
+        8    0.000    0.000    0.069    0.009 /home/ubuntu/pandas/pandas/core/frame.py:3548(_reindex_axes)
+        8    0.000    0.000    0.069    0.009 /home/ubuntu/pandas/pandas/core/frame.py:3585(_reindex_columns)
+       48    0.000    0.000    0.069    0.001 /home/ubuntu/pandas/pandas/core/internals/concat.py:388(<genexpr>)
+       24    0.000    0.000    0.069    0.003 /home/ubuntu/pandas/pandas/core/internals/concat.py:145(is_na)
+        8    0.000    0.000    0.068    0.008 /home/ubuntu/pandas/pandas/core/generic.py:4539(_reindex_with_indexers)
+       65    0.000    0.000    0.068    0.001 /home/ubuntu/pandas/pandas/core/dtypes/missing.py:49(isna)
+       65    0.000    0.000    0.068    0.001 /home/ubuntu/pandas/pandas/core/dtypes/missing.py:132(_isna_new)
+        8    0.000    0.000    0.067    0.008 /home/ubuntu/pandas/pandas/core/internals/managers.py:1194(reindex_indexer)
+       24    0.002    0.000    0.067    0.003 /home/ubuntu/pandas/pandas/core/dtypes/missing.py:225(_isna_ndarraylike)
+        8    0.000    0.000    0.066    0.008 /home/ubuntu/pandas/pandas/core/internals/managers.py:1244(_slice_take_blocks_ax0)
+        8    0.063    0.008    0.063    0.008 {built-in method pandas._libs.missing.isnaobj}
+        8    0.000    0.000    0.063    0.008 /home/ubuntu/pandas/pandas/core/internals/blocks.py:1233(take_nd)
+        8    0.062    0.008    0.062    0.008 {pandas._libs.algos.take_2d_axis1_float64_float64}
+        7    0.022    0.003    0.023    0.003 /home/ubuntu/pandas/pandas/core/reshape/pipeline_merge.py:1379(_get_right_join_keys)
+        1    0.022    0.022    0.022    0.022 /home/ubuntu/pandas/pandas/core/reshape/pipeline_merge.py:1349(_get_join_keys)
+       24    0.001    0.000    0.015    0.001 /home/ubuntu/pandas/pandas/core/internals/concat.py:268(_get_empty_dtype_and_na)
+       24    0.000    0.000    0.012    0.000 /home/ubuntu/pandas/pandas/core/internals/concat.py:135(dtype)
+       40    0.002    0.000    0.012    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:267(__new__)
+       24    0.011    0.000    0.012    0.000 /home/ubuntu/pandas/pandas/core/internals/concat.py:126(needs_filling)
+       16    0.000    0.000    0.011    0.001 /home/ubuntu/pandas/pandas/core/indexes/base.py:2438(intersection)
+     5143    0.005    0.000    0.008    0.000 {built-in method builtins.isinstance}
+      112    0.008    0.000    0.008    0.000 {built-in method numpy.empty}
+        8    0.000    0.000    0.007    0.001 /home/ubuntu/pandas/pandas/core/reshape/pipeline_merge.py:791(_validate_specification)
+       24    0.000    0.000    0.005    0.000 /home/ubuntu/pandas/pandas/core/internals/managers.py:123(__init__)
+       16    0.000    0.000    0.005    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:2397(_wrap_setop_result)
+        8    0.000    0.000    0.005    0.001 /home/ubuntu/pandas/pandas/core/indexes/base.py:5068(drop)
+      504    0.001    0.000    0.005    0.000 /home/ubuntu/pandas/pandas/core/dtypes/base.py:243(is_dtype)
+      130    0.005    0.000    0.005    0.000 {method 'reduce' of 'numpy.ufunc' objects}
+       56    0.005    0.000    0.005    0.000 {built-in method numpy.arange}
+        8    0.000    0.000    0.004    0.001 /home/ubuntu/pandas/pandas/core/reshape/pipeline_merge.py:1431(_items_overlap_with_suffix)
+       82    0.000    0.000    0.004    0.000 {method 'any' of 'numpy.ndarray' objects}
+        8    0.003    0.000    0.004    0.001 /home/ubuntu/pandas/pandas/core/reshape/pipeline_merge.py:355(_maybe_add_join_keys)
+       57    0.000    0.000    0.004    0.000 /home/ubuntu/pandas/pandas/core/internals/blocks.py:2959(make_block)
+       16    0.000    0.000    0.004    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:2763(get_indexer)
+       82    0.000    0.000    0.004    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/_methods.py:44(_any)
+        8    0.000    0.000    0.004    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:4038(append)
+      481    0.001    0.000    0.004    0.000 /home/ubuntu/pandas/pandas/core/dtypes/common.py:1589(is_extension_array_dtype)
+        8    0.000    0.000    0.004    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:4067(_concat)
+     2185    0.002    0.000    0.003    0.000 /home/ubuntu/pandas/pandas/core/dtypes/generic.py:7(_check)
+      473    0.001    0.000    0.003    0.000 /home/ubuntu/pandas/pandas/core/dtypes/common.py:1732(_is_dtype_type)
+       16    0.000    0.000    0.003    0.000 /home/ubuntu/pandas/pandas/core/generic.py:1673(_get_label_or_level_values)
+      105    0.000    0.000    0.003    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:5369(ensure_index)
+       40    0.001    0.000    0.003    0.000 /home/ubuntu/pandas/pandas/core/dtypes/cast.py:339(maybe_promote)
+       32    0.000    0.000    0.003    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:4122(equals)
+      216    0.001    0.000    0.003    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/_dtype.py:319(_name_get)
+        8    0.000    0.000    0.003    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:4075(_concat_same_dtype)
+       24    0.000    0.000    0.002    0.000 /home/ubuntu/pandas/pandas/core/internals/blocks.py:2913(get_block_type)
+       24    0.001    0.000    0.002    0.000 /home/ubuntu/pandas/pandas/core/internals/managers.py:213(_rebuild_blknos_and_blklocs)
+        8    0.000    0.000    0.002    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:573(_shallow_copy_with_infer)
+     3506    0.002    0.000    0.002    0.000 {built-in method builtins.getattr}
+      176    0.000    0.000    0.002    0.000 /home/ubuntu/pandas/pandas/core/dtypes/common.py:434(is_datetime64tz_dtype)
+       16    0.000    0.000    0.002    0.000 /home/ubuntu/pandas/pandas/core/generic.py:3384(xs)
+       24    0.000    0.000    0.002    0.000 /home/ubuntu/pandas/pandas/core/internals/managers.py:627(_consolidate_check)
+      176    0.000    0.000    0.002    0.000 /home/ubuntu/pandas/pandas/core/dtypes/common.py:573(is_categorical_dtype)
+      481    0.001    0.000    0.002    0.000 /home/ubuntu/pandas/pandas/core/dtypes/dtypes.py:77(find)
+      128    0.000    0.000    0.002    0.000 /home/ubuntu/pandas/pandas/core/dtypes/common.py:503(is_period_dtype)
+      216    0.001    0.000    0.002    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/numerictypes.py:365(issubdtype)
+       16    0.000    0.000    0.002    0.000 /home/ubuntu/pandas/pandas/core/frame.py:2622(__getitem__)
+       16    0.002    0.000    0.002    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:233(_inner_indexer)
+       24    0.000    0.000    0.002    0.000 /home/ubuntu/pandas/pandas/core/internals/managers.py:628(<listcomp>)
+       56    0.001    0.000    0.002    0.000 {pandas._libs.lib.infer_dtype}
+1469/1156    0.001    0.000    0.002    0.000 {built-in method builtins.len}
+       48    0.000    0.000    0.002    0.000 /home/ubuntu/pandas/pandas/core/internals/blocks.py:326(ftype)
+      128    0.000    0.000    0.002    0.000 /home/ubuntu/pandas/pandas/core/dtypes/dtypes.py:915(is_dtype)
+      120    0.000    0.000    0.002    0.000 /home/ubuntu/pandas/pandas/core/dtypes/common.py:222(is_object_dtype)
+       48    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/algorithms.py:1426(_get_take_nd_function)
+       16    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/generic.py:3550(_get_item_cache)
+       48    0.000    0.000    0.001    0.000 {method 'format' of 'str' objects}
+      296    0.001    0.000    0.001    0.000 <frozen importlib._bootstrap>:1009(_handle_fromlist)
+    72/56    0.000    0.000    0.001    0.000 {built-in method numpy.core._multiarray_umath.implement_array_function}
+       33    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/internals/blocks.py:254(make_block_same_class)
+        8    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:3158(reindex)
+       88    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/internals/managers.py:164(shape)
+       80    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/dtypes/common.py:1011(is_datetime64_any_dtype)
+     2132    0.001    0.000    0.001    0.000 {built-in method builtins.issubclass}
+        8    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/internals/managers.py:1973(<listcomp>)
+       16    0.001    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/internals/concat.py:28(get_mgr_concatenation_plan)
+      202    0.000    0.000    0.001    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/_asarray.py:16(asarray)
+       41    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:631(_engine)
+       32    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:1598(is_monotonic)
+        8    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:5038(delete)
+      104    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/dtypes/common.py:537(is_interval_dtype)
+       32    0.001    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:1605(is_monotonic_increasing)
+      432    0.001    0.000    0.001    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/numerictypes.py:293(issubclass_)
+        8    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/dtypes/concat.py:31(get_dtype_kinds)
+       40    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/common.py:217(asarray_tuplesafe)
+       64    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/base.py:1052(__iter__)
+       48    0.000    0.000    0.001    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/_dtype.py:46(__str__)
+       57    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/internals/blocks.py:111(__init__)
+       72    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/dtypes/common.py:403(is_datetime64_dtype)
+      112    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/dtypes/common.py:472(is_timedelta64_dtype)
+       57    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/base.py:879(_ndarray_values)
+       80    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/dtypes/common.py:252(is_sparse)
+       64    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/dtypes/dtypes.py:1102(is_dtype)
+      873    0.001    0.000    0.001    0.000 {built-in method builtins.hasattr}
+      264    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/internals/managers.py:166(<genexpr>)
+      210    0.001    0.000    0.001    0.000 {built-in method numpy.array}
+       32    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/dtypes/missing.py:402(array_equivalent)
+        9    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/internals/managers.py:920(get)
+       56    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:501(_simple_new)
+        8    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/reshape/pipeline_merge.py:661(_maybe_coerce_merge_keys)
+       25    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:1673(is_unique)
+        8    0.000    0.000    0.001    0.000 <__array_function__ internals>:2(delete)
+       32    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/dtypes/common.py:606(is_string_dtype)
+       32    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/dtypes/common.py:1459(is_bool_dtype)
+       40    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/dtypes/common.py:1671(_is_dtype)
+       16    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/internals/managers.py:330(_verify_integrity)
+        8    0.000    0.000    0.001    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/lib/function_base.py:4225(delete)
+       40    0.000    0.000    0.001    0.000 {method 'all' of 'numpy.ndarray' objects}
+       24    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:1747(inferred_type)
+       16    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/generic.py:4487(<genexpr>)
+       16    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/dtypes/common.py:1306(needs_i8_conversion)
+       25    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/internals/blocks.py:2523(__init__)
+       40    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/dtypes/cast.py:487(_ensure_dtype_type)
+      217    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/dtypes/common.py:1868(pandas_dtype)
+      384    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/dtypes/common.py:208(<lambda>)
+      160    0.001    0.000    0.001    0.000 {built-in method builtins.print}
+      184    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/dtypes/common.py:1696(_get_dtype)
+       56    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:3976(__contains__)
+       24    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/generic.py:1571(_is_label_reference)
+       40    0.000    0.000    0.001    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/_methods.py:47(_all)
+        8    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:4152(identical)
+        9    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/internals/managers.py:949(iget)
+       16    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:555(_shallow_copy)
+       16    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:1684(is_boolean)
+        9    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/frame.py:2918(_box_item_values)
+       24    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/dtypes/common.py:339(is_categorical)
+       16    0.000    0.000    0.001    0.000 /home/ubuntu/pandas/pandas/core/generic.py:1876(__contains__)
+       24    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/frame.py:399(__init__)
+       73    0.000    0.000    0.000    0.000 {pandas._libs.lib.values_from_object}
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/internals/managers.py:761(<listcomp>)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/reshape/pipeline_merge.py:321(_maybe_restore_index_levels)
+      114    0.000    0.000    0.000    0.000 {pandas._libs.lib.is_scalar}
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/internals/managers.py:755(copy_func)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/reshape/pipeline_merge.py:1412(_any)
+      128    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/generic.py:388(_get_axis_number)
+      241    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:644(__len__)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:689(view)
+      153    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:3691(values)
+       64    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/dtypes/common.py:1425(is_float_dtype)
+       32    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/dtypes/common.py:636(condition)
+       32    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/generic.py:1541(_is_level_reference)
+        8    0.000    0.000    0.000    0.000 <__array_function__ internals>:2(prod)
+        9    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/frame.py:2925(_box_col_values)
+      160    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:416(parent)
+       56    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/dtypes/common.py:709(is_dtype_equal)
+       48    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/construction.py:337(extract_array)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/fromnumeric.py:2792(prod)
+        9    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/series.py:181(__init__)
+       17    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/dtypes/common.py:799(is_integer_dtype)
+       16    0.000    0.000    0.000    0.000 {method 'get_indexer' of 'pandas._libs.index.IndexEngine' objects}
+       40    0.000    0.000    0.000    0.000 {built-in method builtins.any}
+       40    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/dtypes/common.py:854(is_signed_integer_dtype)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/indexes/numeric.py:48(__new__)
+       80    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/abc.py:137(__instancecheck__)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/fromnumeric.py:73(_wrapreduction)
+       64    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:3743(_internal_get_values)
+      384    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/dtypes/common.py:206(classes)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/numerictypes.py:602(find_common_type)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/internals/blocks.py:2985(_extend_blocks)
+       48    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/generic.py:1597(<genexpr>)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/generic.py:1776(<listcomp>)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/common.py:240(index_labels_to_array)
+       32    0.000    0.000    0.000    0.000 {pandas._libs.lib.is_list_like}
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/generic.py:1600(_is_label_or_level_reference)
+       24    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/internals/concat.py:398(_is_uniform_reindex)
+       16    0.000    0.000    0.000    0.000 {pandas._libs.algos.take_1d_int64_int64}
+       24    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/internals/managers.py:129(<listcomp>)
+       24    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/internals/managers.py:200(_is_single_block)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:2638(_assert_can_do_setop)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/generic.py:1624(_check_label_or_level_ambiguity)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/ops/__init__.py:97(get_op_result_name)
+      273    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+       24    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/internals/blocks.py:204(get_values)
+       16    0.000    0.000    0.000    0.000 <__array_function__ internals>:2(min_scalar_type)
+       32    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/dtypes/common.py:911(is_unsigned_integer_dtype)
+       32    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/generic.py:414(_get_axis)
+      153    0.000    0.000    0.000    0.000 {method 'view' of 'numpy.ndarray' objects}
+       80    0.000    0.000    0.000    0.000 {built-in method _abc._abc_instancecheck}
+       24    0.000    0.000    0.000    0.000 {built-in method builtins.sum}
+       56    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/generic.py:401(_get_axis_name)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/generic.py:3248(_maybe_update_cacher)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:4581(_maybe_promote)
+       89    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/dtypes/common.py:216(<lambda>)
+       72    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/indexes/range.py:675(__len__)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:4088(<listcomp>)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/dtypes/common.py:1132(is_datetime_or_timedelta_dtype)
+       32    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/internals/concat.py:434(combine_concat_plans)
+       57    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/internals/blocks.py:230(mgr_locs)
+       97    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/dtypes/inference.py:358(is_hashable)
+       56    0.000    0.000    0.000    0.000 {method 'ravel' of 'numpy.ndarray' objects}
+       41    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/_internal.py:865(npy_ctypes_check)
+       33    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/generic.py:186(__init__)
+       32    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:534(_get_attributes_dict)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/generic.py:5268(_consolidate_inplace)
+       32    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/generic.py:5162(__finalize__)
+      225    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/internals/blocks.py:226(mgr_locs)
+       24    0.000    0.000    0.000    0.000 <__array_function__ internals>:2(can_cast)
+       48    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/internals/concat.py:401(<genexpr>)
+      264    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:3713(_values)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/numeric.py:166(ones)
+       80    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/internals/managers.py:168(ndim)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/reshape/pipeline_merge.py:1416(_validate_operand)
+      160    0.000    0.000    0.000    0.000 {method 'rpartition' of 'str' objects}
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/generic.py:5258(_protect_consolidate)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/internals/managers.py:1942(_preprocess_slice_or_indexer)
+       80    0.000    0.000    0.000    0.000 {built-in method time.perf_counter}
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/generic.py:4527(_needs_reindex_multi)
+        8    0.000    0.000    0.000    0.000 <__array_function__ internals>:2(concatenate)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/numerictypes.py:654(<listcomp>)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/series.py:472(_values)
+        8    0.000    0.000    0.000    0.000 {built-in method builtins.next}
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/generic.py:348(_construct_axes_from_arguments)
+        9    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/internals/managers.py:1437(__init__)
+       48    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/internals/managers.py:332(<genexpr>)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/common.py:188(any_not_none)
+       48    0.000    0.000    0.000    0.000 {method 'fill' of 'numpy.ndarray' objects}
+      128    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+       18    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:2694(get_loc)
+       57    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/internals/blocks.py:122(_check_ndim)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/base.py:64(_reset_cache)
+      144    0.000    0.000    0.000    0.000 {pandas._libs.lib.is_integer}
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/internals/blocks.py:2529(is_bool)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/dtypes/inference.py:220(is_array_like)
+       65    0.000    0.000    0.000    0.000 {pandas._libs.algos.ensure_int64}
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/generic.py:1788(<listcomp>)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/generic.py:1790(<listcomp>)
+       24    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/generic.py:215(_init_mgr)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/generic.py:5271(f)
+       72    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/frame.py:500(axes)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/util/_validators.py:235(validate_axis_style_args)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/reshape/pipeline_merge.py:566(<lambda>)
+       41    0.000    0.000    0.000    0.000 {built-in method pandas._libs.missing.checknull}
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/indexes/range.py:387(_shallow_copy)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/frame.py:1020(__len__)
+      153    0.000    0.000    0.000    0.000 {built-in method builtins.hash}
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/internals/managers.py:1535(internal_values)
+       32    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:602(is_)
+       64    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:621(_reset_identity)
+        9    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:3990(__getitem__)
+        7    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/reshape/pipeline_merge.py:1382(<lambda>)
+       32    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:538(<dictcomp>)
+       48    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:1233(_get_names)
+        9    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/series.py:368(_set_axis)
+       80    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/internals/blocks.py:322(dtype)
+        8    0.000    0.000    0.000    0.000 <__array_function__ internals>:2(copyto)
+       64    0.000    0.000    0.000    0.000 {built-in method __new__ of type object at 0x555749ac4240}
+        9    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/generic.py:3220(_set_as_cached)
+       18    0.000    0.000    0.000    0.000 {method 'get_loc' of 'pandas._libs.index.IndexEngine' objects}
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/common.py:202(count_not_none)
+       96    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
+       24    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/missing.py:601(clean_reindex_fill_method)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/generic.py:5184(__getattr__)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/copy.py:66(copy)
+       58    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/internals/managers.py:233(items)
+       33    0.000    0.000    0.000    0.000 {built-in method builtins.max}
+       89    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/dtypes/common.py:211(classes_and_not_datetimelike)
+       32    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/numerictypes.py:578(_can_coerce_all)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/dtypes/common.py:1393(is_string_like_dtype)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/ops/__init__.py:120(_maybe_match_name)
+       24    0.000    0.000    0.000    0.000 {method 'add' of 'pandas._libs.internals.BlockPlacement' objects}
+       24    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/internals/blocks.py:283(__len__)
+       48    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/internals/concat.py:384(<genexpr>)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/internals/managers.py:913(_consolidate_inplace)
+       48    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/internals/concat.py:391(<genexpr>)
+      104    0.000    0.000    0.000    0.000 {method 'pop' of 'dict' objects}
+        9    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/series.py:424(name)
+       49    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:667(dtype)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/internals/managers.py:315(__len__)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/generic.py:418(_get_block_manager_axis)
+        9    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/series.py:420(name)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/generic.py:474(_info_axis)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:4095(<listcomp>)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/indexes/range.py:131(_simple_new)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/reshape/pipeline_merge.py:567(<lambda>)
+        9    0.000    0.000    0.000    0.000 {method 'astype' of 'numpy.ndarray' objects}
+       42    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/generic.py:234(attrs)
+       32    0.000    0.000    0.000    0.000 {method 'update' of 'dict' objects}
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/sorting.py:129(is_int64_overflow_possible)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:5436(_ensure_has_len)
+       24    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/internals/concat.py:115(__init__)
+       16    0.000    0.000    0.000    0.000 {pandas._libs.internals.get_blkno_placements}
+        8    0.000    0.000    0.000    0.000 {built-in method pandas._libs.lib.is_bool_array}
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/_asarray.py:88(asanyarray)
+       48    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/generic.py:1592(<genexpr>)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/common.py:328(apply_if_callable)
+        8    0.000    0.000    0.000    0.000 {built-in method builtins.sorted}
+       32    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/common.py:267(maybe_make_list)
+       24    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/internals/managers.py:619(is_consolidated)
+        8    0.000    0.000    0.000    0.000 {pandas._libs.lib.array_equivalent_object}
+       32    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/internals/blocks.py:318(shape)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/dtypes/inference.py:96(is_iterator)
+       40    0.000    0.000    0.000    0.000 {pandas._libs.lib.is_bool}
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/internals/managers.py:897(consolidate)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/generic.py:373(<dictcomp>)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/util/_validators.py:225(validate_bool_kwarg)
+       49    0.000    0.000    0.000    0.000 {pandas._libs.lib.is_float}
+       32    0.000    0.000    0.000    0.000 {method 'values' of 'dict' objects}
+        7    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/reshape/pipeline_merge.py:965(<listcomp>)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/reshape/pipeline_merge.py:1406(_should_fill)
+       50    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:638(<lambda>)
+       32    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:1400(nlevels)
+        8    0.000    0.000    0.000    0.000 {method 'reshape' of 'numpy.ndarray' objects}
+        9    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/internals/blocks.py:348(iget)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/generic.py:3287(_clear_item_cache)
+       24    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/frame.py:384(_constructor)
+       24    0.000    0.000    0.000    0.000 {method 'copy' of 'dict' objects}
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:2256(_validate_sort_keyword)
+       25    0.000    0.000    0.000    0.000 {pandas._libs.algos.ensure_object}
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:4062(<setcomp>)
+        9    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/common.py:149(cast_scalar_indexer)
+       16    0.000    0.000    0.000    0.000 {method 'startswith' of 'str' objects}
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/fromnumeric.py:74(<dictcomp>)
+       24    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/multiarray.py:469(can_cast)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/generic.py:1708(<listcomp>)
+       24    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/missing.py:73(clean_fill_method)
+        8    0.000    0.000    0.000    0.000 {method 'pop' of 'list' objects}
+       32    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/common.py:192(<genexpr>)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/generic.py:3625(_check_setitem_copy)
+       24    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/common.py:206(<genexpr>)
+       16    0.000    0.000    0.000    0.000 {pandas._libs.algos.ensure_platform_int}
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/internals/blocks.py:198(internal_values)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/internals/managers.py:1490(_block)
+       16    0.000    0.000    0.000    0.000 {pandas._libs.lib.item_from_zerodim}
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/multiarray.py:584(min_scalar_type)
+       16    0.000    0.000    0.000    0.000 {built-in method builtins.callable}
+        1    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/reshape/pipeline_merge.py:1352(<lambda>)
+        9    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/series.py:395(_set_subtyp)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/dtypes/common.py:1422(<lambda>)
+       16    0.000    0.000    0.000    0.000 {method 'add' of 'set' objects}
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/internals/blocks.py:222(fill_value)
+        8    0.000    0.000    0.000    0.000 {built-in method numpy.core._multiarray_umath.normalize_axis_index}
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/generic.py:1643(<genexpr>)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/fromnumeric.py:2787(_prod_dispatcher)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/indexes/numeric.py:75(_validate_dtype)
+        9    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/indexes/numeric.py:151(is_all_dates)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:3141(_can_reindex)
+       16    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/numerictypes.py:655(<listcomp>)
+        8    0.000    0.000    0.000    0.000 {method 'keys' of 'dict' objects}
+        8    0.000    0.000    0.000    0.000 {method 'clear' of 'dict' objects}
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/internals/managers.py:394(<dictcomp>)
+        8    0.000    0.000    0.000    0.000 {method 'get_count' of 'pandas._libs.hashtable.Int64Factorizer' objects}
+        8    0.000    0.000    0.000    0.000 {method 'get_count' of 'pandas._libs.hashtable.Factorizer' objects}
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/lib/function_base.py:4221(_delete_dispatcher)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/multiarray.py:145(concatenate)
+        8    0.000    0.000    0.000    0.000 /home/ubuntu/miniconda3/envs/pandas-dev/lib/python3.7/site-packages/numpy/core/multiarray.py:1043(copyto)
+        1    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/reshape/pipeline_merge.py:939(<listcomp>)
+        1    0.000    0.000    0.000    0.000 /home/ubuntu/pandas/pandas/core/indexes/base.py:527(_constructor)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+

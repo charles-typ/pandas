@@ -1318,16 +1318,20 @@ def _get_join_indexers(
         _factorize_keys(left_keys[n], right_keys[n], sort=sort)
         for n in range(len(left_keys))
     )
+    print("starting")
     zipped = zip(*mapped)
+    print("first factorization")
     llab, rlab, shape = [list(x) for x in zipped]
 
     # get flat i8 keys from label lists
     lkey, rkey = _get_join_keys(llab, rlab, shape, sort)
 
+    print("finish get join keys")
     # factorize keys to a dense i8 space
     # `count` is the num. of unique keys
     # set(lkey) | set(rkey) == range(count)
     lkey, rkey, count = _factorize_keys(lkey, rkey, sort=sort)
+    print("finish second factorize keys")
     end = timeit.default_timer()
     print("Time3")
     print(end - start)
@@ -1929,7 +1933,6 @@ def _factorize_keys(lk, rk, sort=True):
         print("noInt")
     else:
         print("Int")
-    print(max(len(lk), len(rk)))
     rizer = klass(max(len(lk), len(rk)))
 
     print("Size should be")

@@ -220,12 +220,18 @@ cdef class ObjectVector:
 
     cdef inline append(self, object obj):
         if self.n == self.m:
+            printf("resize needed &&&&&&&\n")
+            printf("%ld\n", self.n);
+            begintime = timeit.default_timer()
             if self.external_view_exists:
                 raise ValueError("external reference but "
                                  "Vector.resize() needed")
             self.m = max(self.m * 2, _INIT_VEC_CAP)
             self.ao.resize(self.m, refcheck=False)
+            printf("resize confirmed &&&&&&&\n")
             self.data = <PyObject**>self.ao.data
+            endtime = timeit.default_timer()
+            print("Resize takes time " + str(endtime - begintime))
 
         Py_INCREF(obj)
         self.data[self.n] = <PyObject*>obj
@@ -414,6 +420,7 @@ cdef class {{name}}HashTable(HashTable):
             time_t startt, stopt, begint1, begint2, endt1, endt2
 
         #begint1 = time(NULL)
+        print("Calling this unique function: Ordinary hash table")
         inittime = timeit.default_timer()
         if return_inverse:
             labels = np.empty(n, dtype=np.int64)
@@ -467,8 +474,11 @@ cdef class {{name}}HashTable(HashTable):
                         raise ValueError("external reference to "
                                          "uniques held, but "
                                          "Vector.resize() needed")
+                    begintime2 = timeit.default_timer()
                     uniques.resize()
+                    endtime2 = timeit.default_timer()
                     printf("resize confirmed ************\n")
+                    print("Resize takes time " + str(endtime2 - begintime2))
                 append_data_{{dtype}}(ud, val)
                 if return_inverse:
                     self.table.vals[k] = count
@@ -792,6 +802,8 @@ cdef class StringHashTable(HashTable):
             const char **vecs
             khiter_t k
             bint use_na_value
+        
+        print("Calling this unique function: String hash table")
 
         if return_inverse:
             labels = np.zeros(n, dtype=np.int64)
@@ -816,6 +828,7 @@ cdef class StringHashTable(HashTable):
                 vecs[i] = v
 
         # compute
+        begintime = timeit.default_timer()
         with nogil:
             for i in range(n):
                 if ignore_na and labels[i] == na_sentinel:
@@ -844,6 +857,10 @@ cdef class StringHashTable(HashTable):
         for i in range(count):
             uniques.append(values[uindexer[i]])
 
+        endtime = timeit.default_timer()
+        print("*************")
+        print(begintime)
+        print(endtime - begintime)
         if return_inverse:
             return uniques.to_array(), np.asarray(labels)
         return uniques.to_array()
@@ -1048,10 +1065,12 @@ cdef class PyObjectHashTable(HashTable):
             khiter_t k
             bint use_na_value
 
+        print("Calling this unique function: PyObject hash table")
         if return_inverse:
             labels = np.empty(n, dtype=np.int64)
         use_na_value = na_value is not None
 
+        begintime = timeit.default_timer()
         for i in range(n):
             val = values[i]
             hash(val)
@@ -1078,7 +1097,10 @@ cdef class PyObjectHashTable(HashTable):
                 # only relevant in case we need to construct the inverse
                 idx = self.table.vals[k]
                 labels[i] = idx
-
+        endtime = timeit.default_timer()
+        print("*************")
+        print(begintime)
+        print(endtime - begintime)
         if return_inverse:
             return uniques.to_array(), np.asarray(labels)
         return uniques.to_array()

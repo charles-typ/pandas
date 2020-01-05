@@ -1,0 +1,235 @@
+starting
+noInt
+Size should be
+16000000
+Time Hey1: 
+9.229988791048527e-07
+Calling this unique function: PyObject hash table
+Resize takes time 9.444003808312118e-06
+Resize takes time 6.597008905373514e-06
+Resize takes time 7.85999873187393e-06
+Resize takes time 1.4762001228518784e-05
+Resize takes time 2.4599998141638935e-05
+Resize takes time 3.944200580008328e-05
+Resize takes time 6.630001007579267e-05
+Resize takes time 0.00015659400378353894
+Resize takes time 0.00029027200071141124
+Resize takes time 0.0008540900016669184
+Resize takes time 0.0011804170062532648
+Resize takes time 0.0023600220010848716
+Resize takes time 0.004670178997912444
+Resize takes time 0.00930083500861656
+Resize takes time 0.018509104003896937
+Resize takes time 0.03706952900392935
+*************
+109094.148942358
+4.055165555997519
+Time Hey2: 
+4.056175792007707
+Resize takes time 6.81899837218225e-06
+Resize takes time 5.648995283991098e-06
+Resize takes time 6.638001650571823e-06
+Resize takes time 8.891001925803721e-06
+Resize takes time 2.2275999072007835e-05
+Resize takes time 3.48210014635697e-05
+Resize takes time 6.475899135693908e-05
+Resize takes time 0.00012753800547216088
+Resize takes time 0.00023130400222726166
+Resize takes time 0.0005105720047140494
+Resize takes time 0.001070074999006465
+Resize takes time 0.0023251580132637173
+Resize takes time 0.006811822997406125
+Resize takes time 0.00928747899888549
+Resize takes time 0.0184454209957039
+Resize takes time 0.03683573199668899
+Time Hey1: 
+0.18045906999032013
+Calling this unique function: PyObject hash table
+Resize takes time 0.07330440699297469
+Resize takes time 0.14748763298848644
+*************
+109098.391168459
+15.611856126008206
+Time Hey2: 
+15.796657544997288
+first factorization
+finish get join keys
+Int
+Size should be
+16000000
+Calling this unique function: Ordinary hash table
+Resize takes time 8.939998224377632e-06
+Resize takes time 6.147005478851497e-06
+Resize takes time 1.7154001398012042e-05
+Resize takes time 3.4693002817220986e-05
+Resize takes time 0.00012636499013751745
+Resize takes time 0.0004933820018777624
+Resize takes time 0.00864280600217171
+Resize takes time 0.025860314999590628
+********
+109114.58569561
+109114.585717115
+109115.25980908
+0.674091965003754
+Calling this unique function: Ordinary hash table
+Resize takes time 0.10346553398994729
+********
+109115.312501326
+109115.312542666
+109118.148981249
+2.836438583006384
+finish second factorize keys
+Time3
+24.048520110998652
+                key     value    value2
+0        P7HAeVsLfK  0.886668  0.378977
+1        SaMdu7oQIu -0.640482  0.180691
+2        W5DLe4uOrJ  2.001207  1.132093
+3        gj4EVkKWCZ -0.858224 -0.871579
+4        5kRAfreSlC  0.301515 -2.200334
+...             ...       ...       ...
+3999287  nnrDD2AF7V  1.774018  2.649403
+3999288  NT8hZY8jJ9  0.722774 -0.192703
+3999289  5KUQamQKPk -0.295749 -1.145832
+3999290  irULkKU5Bk -0.220797 -1.008096
+3999291  lfQEtP5PwF -0.725520 -1.848549
+
+[3999292 rows x 3 columns]
+resize needed &&&&&&&
+128
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+256
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+512
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+1024
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+2048
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+4096
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+8192
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+16384
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+32768
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+65536
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+131072
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+262144
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+524288
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+1048576
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+2097152
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+4194304
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+128
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+256
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+512
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+1024
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+2048
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+4096
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+8192
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+16384
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+32768
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+65536
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+131072
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+262144
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+524288
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+1048576
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+2097152
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+4194304
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+8388608
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+16777216
+resize confirmed &&&&&&&
+resize needed *******
+128
+128
+resize confirmed ************
+resize needed *******
+512
+512
+resize confirmed ************
+resize needed *******
+2048
+2048
+resize confirmed ************
+resize needed *******
+8192
+8192
+resize confirmed ************
+resize needed *******
+32768
+32768
+resize confirmed ************
+resize needed *******
+131072
+131072
+resize confirmed ************
+resize needed *******
+524288
+524288
+resize confirmed ************
+resize needed *******
+2097152
+2097152
+resize confirmed ************
+resize needed *******
+8388608
+8388608
+resize confirmed ************

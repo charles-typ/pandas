@@ -952,7 +952,7 @@ def _get_join_indexers(
         print("Time13: ")
         print(end3 - start)
     else:
-        #print("need to factorize right keys")
+        print("need to factorize right keys")
         start = timeit.default_timer()
         mapped = (
             _factorize_right_keys(right_keys[n], factorizer, intfactorizer, sort=sort)
@@ -1366,6 +1366,7 @@ def _get_join_keys(llab, rlab, shape, factorizer, intfactorizer, sort: bool):
     if nlev == len(shape):  # all done!
         return lkey, rkey
 
+    print("Calling this factorize function both left and right")
     # densify current keys to avoid overflow
     lkey, rkey, count = _factorize_keys(lkey, rkey, factorizer, intfactorizer, sort=sort)
 
@@ -1394,6 +1395,7 @@ def _get_right_join_keys(rlab, shape, factorizer, intfactorizer, sort: bool):
         return rkey
 
     # densify current keys to avoid overflow
+    print("Calling this factorize function both left and right")
     rkey, count = _factorize_right_keys(rkey, factorizer, intfactorizer, sort=sort)
     rlab = [rkey] + rlab[nlev:]
     shape = [count] + shape[nlev:]

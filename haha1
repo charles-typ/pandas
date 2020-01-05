@@ -1,1 +1,958 @@
-· Config file /home/ubuntu/pandas/asv.conf.json not found.
+resize needed &&&&&&&
+128
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+256
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+512
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+1024
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+2048
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+4096
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+8192
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+16384
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+32768
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+65536
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+131072
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+262144
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+524288
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+1048576
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+2097152
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+4194304
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+128
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+256
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+512
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+1024
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+2048
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+4096
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+8192
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+16384
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+32768
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+65536
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+131072
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+262144
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+524288
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+1048576
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+2097152
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+4194304
+resize confirmed &&&&&&&
+resize needed *******
+128
+128
+resize confirmed ************
+resize needed *******
+512
+512
+resize confirmed ************
+resize needed *******
+2048
+2048
+resize confirmed ************
+resize needed *******
+8192
+8192
+resize confirmed ************
+resize needed *******
+32768
+32768
+resize confirmed ************
+resize needed *******
+131072
+131072
+resize confirmed ************
+resize needed *******
+524288
+524288
+resize confirmed ************
+resize needed *******
+2097152
+2097152
+resize confirmed ************
+resize needed &&&&&&&
+128
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+256
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+512
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+1024
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+2048
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+4096
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+8192
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+16384
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+32768
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+65536
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+131072
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+262144
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+524288
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+1048576
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+2097152
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+4194304
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+128
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+256
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+512
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+1024
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+2048
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+4096
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+8192
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+16384
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+32768
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+65536
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+131072
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+262144
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+524288
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+1048576
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+2097152
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+4194304
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+8388608
+resize confirmed &&&&&&&
+resize needed *******
+8388608
+8388608
+resize confirmed ************
+resize needed &&&&&&&
+128
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+256
+2
+Size set to be: 1
+200000000
+Size set to be: 3
+200000000
+Time11: 
+7.439986802637577e-06
+noInt
+Time Hey1: 
+9.71005647443235e-07
+Calling this unique function: PyObject hash table
+Resize takes time 9.0529938461259e-06
+Resize takes time 6.6119973780587316e-06
+Resize takes time 9.064999176189303e-06
+Resize takes time 1.4630000805482268e-05
+Resize takes time 2.373100141994655e-05
+Resize takes time 3.521099279168993e-05
+Resize takes time 6.703899998683482e-05
+Resize takes time 0.00013010601105634123
+Resize takes time 0.00023438100470229983
+Resize takes time 0.00040120500489138067
+Resize takes time 0.0007680200069444254
+Resize takes time 0.0015319399972213432
+Resize takes time 0.0029495649941964075
+Resize takes time 0.013938615011284128
+Resize takes time 0.020750288997078314
+Resize takes time 0.03671279699483421
+*************
+106495.681154367
+4.216506454002229
+Time Hey2: 
+4.217514110001503
+Resize takes time 1.0508010745979846e-05
+Resize takes time 5.949987098574638e-06
+Resize takes time 6.761998520232737e-06
+Resize takes time 9.469993528909981e-06
+Resize takes time 1.7461003153584898e-05
+Resize takes time 3.417200059629977e-05
+Resize takes time 6.588699761778116e-05
+Resize takes time 0.0001164639979833737
+Resize takes time 0.0002386720007052645
+Resize takes time 0.00041782099287956953
+Resize takes time 0.0007182039989857003
+Resize takes time 0.0014636550040449947
+Resize takes time 0.002937271012342535
+Resize takes time 0.01373316699755378
+Resize takes time 0.018444923000060953
+Resize takes time 0.036859355997876264
+Time Hey1: 
+0.179585876991041
+Calling this unique function: PyObject hash table
+*************
+106500.082688442
+3.0785843650082825
+Time Hey2: 
+3.2588209429959534
+look here
+2.212698746006936e-05
+106495.681099442
+7.482575184010784
+Time13: 
+7.510940556996502
+Int
+Calling this unique function: Ordinary hash table
+Resize takes time 7.522001396864653e-06
+Resize takes time 8.028990123420954e-06
+Resize takes time 1.6452002455480397e-05
+Resize takes time 3.50640038959682e-05
+Resize takes time 0.00018408699543215334
+Resize takes time 0.0006874290120322257
+Resize takes time 0.008662673004437238
+Resize takes time 0.02594596600101795
+********
+106503.192130656
+106503.192160699
+106503.862665828
+0.6705051289900439
+Calling this unique function: Ordinary hash table
+********
+106503.914471124
+106503.914513077
+106504.22690363
+0.3123905529937474
+look here
+8.725898806005716e-05
+106503.192091935
+1.0353941490029683
+Time13: 
+8.553351632988779
+3
+Size set to be: 2
+200000000
+Size set to be: 4
+need to factorize right keys
+Time21: 
+6.4559862948954105e-06
+noInt
+Resize takes time 7.711001671850681e-06
+Resize takes time 5.2480027079582214e-06
+Resize takes time 6.242000381462276e-06
+Resize takes time 8.078990504145622e-06
+Resize takes time 2.2755004465579987e-05
+Resize takes time 3.525099600665271e-05
+Resize takes time 6.643100641667843e-05
+Resize takes time 0.00012775900540873408
+Resize takes time 0.0002251289988635108
+Resize takes time 0.00047227900358848274
+Resize takes time 0.0009642280056141317
+Resize takes time 0.0018739590013865381
+Resize takes time 0.0029371929995249957
+Resize takes time 0.007520230996306054
+Resize takes time 0.027822049989481457
+Resize takes time 0.03697996400296688
+Time Hey1: 
+0.3218479500064859
+Calling this unique function: PyObject hash table
+*************
+106505.110597379
+1.0209627900039777
+Time Hey2: 
+1.343058155005565
+look
+2.253400452900678e-05
+106504.788684436
+1.3448519309895346
+Time22: 
+1.3485762769996654
+Int
+Calling this unique function: Ordinary hash table
+********
+106506.191600125
+106506.191639057
+106506.45233041
+0.26069135300349444
+look
+5.3121999371796846e-05
+106506.137273769
+0.31524935000925325
+Time23: 
+1.6657492799859028
+4
+Size set to be: 2
+200000000
+Size set to be: 4
+need to factorize right keys
+Time21: 
+5.516994860954583e-06
+noInt
+Resize takes time 8.109011105261743e-06
+Resize takes time 4.939996870234609e-06
+Resize takes time 5.384994437918067e-06
+Resize takes time 1.1120006092824042e-05
+Resize takes time 1.4802993973717093e-05
+Resize takes time 3.5353994462639093e-05
+Resize takes time 6.495599518530071e-05
+Resize takes time 0.00012807699386030436
+Resize takes time 0.00023738198797218502
+Resize takes time 0.00045579299330711365
+Resize takes time 0.0007061899959808215
+Resize takes time 0.0018514539988245815
+Resize takes time 0.0029479749937308952
+Resize takes time 0.007544722000602633
+Resize takes time 0.0277718779980205
+Resize takes time 0.03691743398667313
+Time Hey1: 
+0.4567776309995679
+Calling this unique function: PyObject hash table
+Resize takes time 0.07351831100822892
+*************
+106507.35222681
+1.2521043109882157
+Time Hey2: 
+1.7108843960013473
+look
+2.3190994397737086e-05
+106506.895382366
+1.7127235689986264
+Time22: 
+1.716771911989781
+Int
+Calling this unique function: Ordinary hash table
+Resize takes time 0.10354949098837096
+********
+106508.671090452
+106508.67113152
+106509.040522896
+0.36939137600711547
+look
+4.5550012146122754e-05
+106508.612164624
+0.4345275119994767
+Time23: 
+2.153300259000389
+5
+Size set to be: 2
+200000000
+Size set to be: 4
+need to factorize right keys
+Time21: 
+6.543996278196573e-06
+noInt
+Resize takes time 7.655995432287455e-06
+Resize takes time 5.0000002374872565e-05
+Resize takes time 9.170995326712728e-06
+Resize takes time 1.0656993254087865e-05
+Resize takes time 1.3331009540706873e-05
+Resize takes time 3.433399251662195e-05
+Resize takes time 6.619399937335402e-05
+Resize takes time 0.00012814599904231727
+Resize takes time 0.00022209899907466024
+Resize takes time 0.00040424799954053015
+Resize takes time 0.0009237780031980947
+Resize takes time 0.0018634760053828359
+Resize takes time 0.002953700997750275
+Resize takes time 0.005811961993458681
+Resize takes time 0.011565150998649187
+Resize takes time 0.05574505199911073
+Resize takes time 0.07413159700809047
+Time Hey1: 
+0.6766875350003829
+Calling this unique function: PyObject hash table
+*************
+106510.168782215
+1.4324508209974738
+Time Hey2: 
+2.110764821001794
+look
+2.2434003767557442e-05
+106509.492030101
+2.112618195998948
+Time22: 
+2.1166565049934434
+Int
+Calling this unique function: Ordinary hash table
+********
+106511.775995252
+106511.776033596
+106512.045148924
+0.269115327988402
+look
+4.748499486595392e-05
+106511.608699611
+0.4422412540006917
+Time23: 
+2.560951419000048
+6
+Size set to be: 2
+200000000
+Size set to be: 4
+need to factorize right keys
+Time21: 
+6.1589962569996715e-06
+noInt
+Resize takes time 7.423004717566073e-06
+Resize takes time 6.043002940714359e-06
+Resize takes time 7.984010153450072e-06
+Resize takes time 9.991999831981957e-06
+Resize takes time 1.3318989658728242e-05
+Resize takes time 3.372201172169298e-05
+Resize takes time 6.580300396308303e-05
+Resize takes time 0.00013459099864121526
+Resize takes time 0.0002213709958596155
+Resize takes time 0.00039342200034298003
+Resize takes time 0.0007494859892176464
+Resize takes time 0.0018325599958188832
+Resize takes time 0.0036990280059399083
+Resize takes time 0.007609764012158848
+Resize takes time 0.02790319400082808
+Resize takes time 0.03699952000170015
+Resize takes time 0.07393143599620089
+Time Hey1: 
+0.8079875560069922
+Calling this unique function: PyObject hash table
+*************
+106513.308335313
+1.7576963079918642
+Time Hey2: 
+2.566934410002432
+look
+2.2719992557540536e-05
+106512.500284757
+2.568772655999055
+Time22: 
+2.5725561220024247
+Int
+Calling this unique function: Ordinary hash table
+********
+106515.244478081
+106515.244517227
+106515.506985474
+0.2624682470050175
+look
+4.488498962018639e-05
+106515.07284744
+0.43957400901126675
+Time23: 
+3.0140865680004936
+7
+Size set to be: 2
+200000000
+Size set to be: 4
+need to factorize right keys
+Time21: 
+5.9779995353892446e-06
+noInt
+Resize takes time 6.6150096245110035e-06
+Resize takes time 5.214998964220285e-06
+Resize takes time 6.255999323911965e-06
+Resize takes time 9.652008884586394e-06
+Resize takes time 1.3364013284444809e-05
+Resize takes time 3.290601307526231e-05
+Resize takes time 6.376199598889798e-05
+Resize takes time 0.0001259340060641989
+Resize takes time 0.00022910800180397928
+Resize takes time 0.00044085600529797375
+Resize takes time 0.0007653200009372085
+Resize takes time 0.0018868089973693714
+Resize takes time 0.003638841997599229
+Resize takes time 0.007577087002573535
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+512
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+1024
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+2048
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+4096
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+8192
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+16384
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+32768
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+65536
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+131072
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+262144
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+524288
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+1048576
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+2097152
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+4194304
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+8388608
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+128
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+256
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+512
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+1024
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+2048
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+4096
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+8192
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+16384
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+32768
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+65536
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+131072
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+262144
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+524288
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+1048576
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+2097152
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+4194304
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+8388608
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+128
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+256
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+512
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+1024
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+2048
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+4096
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+8192
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+16384
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+32768
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+65536
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+131072
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+262144
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+524288
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+1048576
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+2097152
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+4194304
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+8388608
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+128
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+256
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+512
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+1024
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+2048
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+4096
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+8192
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+16384
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+32768
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+65536
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+131072
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+262144
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+524288
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+1048576
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+2097152
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+4194304
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+8388608
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+128
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+256
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+512
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+1024
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+2048
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+4096
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+8192
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+16384
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+32768
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+65536
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+131072
+resize confirmed
+Resize takes time 0.028230461000930518
+Resize takes time 0.036986109989811666
+Resize takes time 0.07416785300301854
+Time Hey1: 
+0.9453513790067518
+Calling this unique function: PyObject hash table
+*************
+106516.900121993
+4.200620803996571
+Time Hey2: 
+5.146868019000976
+look
+2.098199911415577e-05
+106515.954666917
+5.148695182011579
+Time22: 
+5.152508807994309
+Int
+Calling this unique function: Ordinary hash table
+********
+106521.284325474
+106521.284366051
+106521.845247247
+0.5608811959973536
+look
+4.5733992010354996e-05
+106521.107186176
+0.7430870779935503
+Time23: 
+5.897612959990511
+8
+Size set to be: 2
+200000000
+Size set to be: 4
+need to factorize right keys
+Time21: 
+6.027999916113913e-06
+noInt
+Resize takes time 7.399998139590025e-06
+Resize takes time 5.209003575146198e-06
+Resize takes time 6.2019971664994955e-06
+Resize takes time 1.0649993782863021e-05
+Resize takes time 1.8423990695737302e-05
+Resize takes time 3.454799298197031e-05
+Resize takes time 6.595900049433112e-05
+Resize takes time 0.0001282980083487928
+Resize takes time 0.00022641499526798725
+Resize takes time 0.00040025000635068864
+Resize takes time 0.0009349639876745641
+Resize takes time 0.001895925001008436
+Resize takes time 0.002936516990303062
+Resize takes time 0.0075569539912976325
+Resize takes time 0.02787637201254256
+Resize takes time 0.03679237500182353
+Resize takes time 0.07393528100510594
+Time Hey1: 
+1.0819290279905545
+Calling this unique function: PyObject hash table
+*************
+106523.372123072
+1.1016113110090373
+Time Hey2: 
+2.184069144001114
+look
+2.2193999029695988e-05
+106522.29008763
+2.185961348004639
+Time22: 
+2.1899596419971203
+Int
+Calling this unique function: Ordinary hash table
+********
+106524.661775938
+106524.661813648
+106525.043150026
+0.381336378006381
+look
+6.518000736832619e-05
+106524.480072922
+0.5677223639941076
+Time23: 
+2.759722251998028
+9
+Size set to be: 2
+200000000
+Size set to be: 4
+need to factorize right keys
+Time21: 
+5.619993316940963e-06
+noInt
+Resize takes time 6.7920045694336295e-06
+Resize takes time 4.875008016824722e-06
+Resize takes time 8.051007171161473e-06
+Resize takes time 8.232993423007429e-06
+Resize takes time 1.3789001968689263e-05
+Resize takes time 3.4608994610607624e-05
+Resize takes time 6.624900561291724e-05
+Resize takes time 0.0001259260025108233
+Resize takes time 0.00022312199871521443
+Resize takes time 0.0004126639978494495
+Resize takes time 0.0009595370065653697
+Resize takes time 0.0018647770048119128
+Resize takes time 0.002951367001514882
+Resize takes time 0.0076269990095170215
+Resize takes time 0.011577986995689571
+Resize takes time 0.05575992701051291
+Resize takes time 0.07354878300975543
+Time Hey1: 
+1.2372897940076655
+Calling this unique function: PyObject hash table
+Resize takes time 0.14786671100591775
+*************
+106526.721207427
+1.299507702991832
+Time Hey2: 
+2.5411330350034405
+look
+2.282600325997919e-05
+106525.483854082
+2.5429475019918755
+Time22: 
+2.546812050000881
+Int
+Calling this unique function: Ordinary hash table
+********
+106528.216189912
+106528.216230829
+106528.596876094
+0.3806452650023857
+look
+4.557499778456986e-05
+106528.030675754
+0.5704724579991307
+Time23: 
+3.119264642999042
+               key     value    value2
+0       2KYm3e2Tic -0.141144 -2.450492
+1       gnqYL06tPF  0.807478 -0.784744
+2       2oFd81FYbu  0.128700  0.307215
+3       vwm8OzDN22 -0.460156  1.090916
+4       cuNlmtqrW5  1.077218  0.609424
+...            ...       ...       ...
+499823  Mm7VDDfhmF -0.940088 -0.931706
+499824  DKz2yvHDTv -1.606661  0.422635
+499825  3snS0cSpvc  0.106499 -0.656446
+499826  5seginAz4j  0.532442 -0.073315
+499827  FHnH9iqIVs -0.937486  0.932934
+
+[499828 rows x 3 columns]
+ &&&&&&&
+resize needed &&&&&&&
+262144
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+524288
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+1048576
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+2097152
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+4194304
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+8388608
+resize confirmed &&&&&&&
+resize needed &&&&&&&
+16777216
+resize confirmed &&&&&&&
