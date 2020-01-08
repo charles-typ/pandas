@@ -72,13 +72,19 @@ cdef class Factorizer:
         array([ 0,  1, 20])
         """
         start = timeit.default_timer()
-        if self.uniques.external_view_exists:
-            uniques = ObjectVector()
-            uniques.extend(self.uniques.to_array())
-            self.uniques = uniques
+        print("&^^&^&^&^^this is my house&^&^&^^&^&")
+        print(self.uniques.__len__())
+        print("&^^&^&^&^^this is my house&^&^&^^&^&")
+        #if self.uniques.external_view_exists:
+        #    uniques = ObjectVector()
+        #    uniques.extend(self.uniques.to_array())
+        #    self.uniques = uniques
         end1 = timeit.default_timer()
         print("Time Hey1: ")
         print(end1 - start)
+        print("&^^&^&^&^^&^&^&^^&^&")
+        print(self.uniques.__len__())
+        print("&^^&^&^&^^&^&^&^^&^&")
         labels = self.table.get_labels(values, self.uniques,
                                        self.count, na_sentinel, na_value)
         end2 = timeit.default_timer()

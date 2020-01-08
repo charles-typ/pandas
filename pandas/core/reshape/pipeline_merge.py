@@ -193,22 +193,22 @@ class _PipelineMergeOperation:
             self.right_join_keys,
             self.join_names,
         ) = self._get_merge_keys()
-        self.slices = 100
+        self.slices = 11
         if factorizer is None:
             print("Size set to be: 1")
             print(max(len(self.left_join_keys[0]), self.slices * len(self.right_join_keys[0])))
-            #self.factorizer = libhashtable.Factorizer(max(len(self.left_join_keys[0]), self.slices * len(self.right_join_keys[0])))
-            self.factorizer = libhashtable.Factorizer(len(self.left_join_keys[0]) + self.slices * len(self.right_join_keys[0]))
+            self.factorizer = libhashtable.Factorizer(max(len(self.left_join_keys[0]), self.slices * len(self.right_join_keys[0])))
+            #self.factorizer = libhashtable.Factorizer(len(self.left_join_keys[0]) + self.slices * len(self.right_join_keys[0]))
         else:
             print("Size set to be: 2")
-            print(max(len(self.left_join_keys[0]), self.slices * len(self.right_join_keys[0])))
+            #print(max(len(self.left_join_keys[0]), self.slices * len(self.right_join_keys[0])))
             self.factorizer = factorizer
 
         if intfactorizer is None:
-            #self.intfactorizer = libhashtable.Int64Factorizer(max(len(self.left_join_keys[0]), self.slices * len(self.right_join_keys[0])))
+            self.intfactorizer = libhashtable.Int64Factorizer(max(len(self.left_join_keys[0]), self.slices * len(self.right_join_keys[0])))
             print("Size set to be: 3")
             print(max(len(self.left_join_keys[0]), self.slices * len(self.right_join_keys[0])))
-            self.intfactorizer = libhashtable.Int64Factorizer(len(self.left_join_keys[0]) + self.slices * len(self.right_join_keys[0]))
+            #self.intfactorizer = libhashtable.Int64Factorizer(len(self.left_join_keys[0]) + self.slices * len(self.right_join_keys[0]))
         else:
             print("Size set to be: 4")
             self.intfactorizer = intfactorizer
@@ -1308,6 +1308,7 @@ def _factorize_right_keys(rk, objectrizer, intrizer, sort=True):
         print("noInt")
         rizer = objectrizer
     start1 = timeit.default_timer()
+    print("Here 1")
     rlab = rizer.factorize(rk)
     start2 = timeit.default_timer()
     print("look")

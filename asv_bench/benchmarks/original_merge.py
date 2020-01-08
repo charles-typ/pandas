@@ -28,8 +28,8 @@ class Merge:
         np.random.shuffle(indices)
         self.right = DataFrame(
             {
-                "key": indices[2050000:18050000],
-                "value2": np.random.randn(16000000),
+                "key": indices[1050000:3050000],
+                "value2": np.random.randn(2000000),
             }
         )
 

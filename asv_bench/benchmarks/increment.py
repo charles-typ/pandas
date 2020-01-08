@@ -19,7 +19,7 @@ class Merge:
 
     def setup(self):
         N = 20000000
-        self.pieces = 10
+        self.pieces = 9
         indices = tm.makeStringIndex(N).values
         indices2 = tm.makeStringIndex(N).values
         key = np.tile(indices[:5000000], 1)
@@ -32,8 +32,8 @@ class Merge:
         for i in range(2, self.pieces):
             self.right[i] = DataFrame(
                 {
-                    "key": indices[(i - 1)*2000000 + 50000:i*2000000 + 50000],
-                    "value2": np.random.randn(2000000),
+                    "key": indices[(i - 1)*1000000 + 50000:i*1000000 + 50000],
+                    "value2": np.random.randn(1000000),
                 }
             )
 
@@ -53,7 +53,8 @@ class Merge:
         #print(leftsorter)
         #print(leftcount)
         #print("*&%&%*$&%*$&*%")
-        for i in range(3, self.pieces):
+        pieces = 4
+        for i in range(3, pieces):
             result, orizer, intrizer, leftsorter, leftcount = pipeline_merge(self.left, self.right[i], factorizer=orizer, intfactorizer=intrizer, leftsorter=leftsorter, leftcount=leftcount, how="pipeline")
             #print("*&%&%*$&%*$&*%")
             #print(leftsorter)

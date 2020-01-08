@@ -223,9 +223,9 @@ cdef class ObjectVector:
             printf("resize needed &&&&&&&\n")
             printf("%ld\n", self.n);
             begintime = timeit.default_timer()
-            if self.external_view_exists:
-                raise ValueError("external reference but "
-                                 "Vector.resize() needed")
+            #if self.external_view_exists:
+            #    raise ValueError("external reference but "
+            #                     "Vector.resize() needed")
             self.m = max(self.m * 2, _INIT_VEC_CAP)
             self.ao.resize(self.m, refcheck=False)
             printf("resize confirmed &&&&&&&\n")
@@ -239,8 +239,8 @@ cdef class ObjectVector:
 
     def to_array(self):
         if self.m != self.n:
-            if self.external_view_exists:
-                raise ValueError("should have raised on append()")
+            #if self.external_view_exists:
+            #    raise ValueError("should have raised on append()")
             self.ao.resize(self.n, refcheck=False)
             self.m = self.n
         self.external_view_exists = True
@@ -1071,9 +1071,16 @@ cdef class PyObjectHashTable(HashTable):
         use_na_value = na_value is not None
 
         begintime = timeit.default_timer()
+        #endtime1 = 0
+        #endtime2 = 0
+        #endtime3 = 0
+        #endtime4 = 0
+        #begintime1 = 0
         for i in range(n):
+            #begintime1 += timeit.default_timer()
             val = values[i]
             hash(val)
+            #endtime1 += timeit.default_timer()
 
             if ignore_na and ((val != val or val is None)
                               or (use_na_value and val == na_value)):
@@ -1083,7 +1090,9 @@ cdef class PyObjectHashTable(HashTable):
                 labels[i] = na_sentinel
                 continue
 
+            #endtime2 += timeit.default_timer()
             k = kh_get_pymap(self.table, <PyObject*>val)
+            #endtime3 += timeit.default_timer()
             if k == self.table.n_buckets:
                 # k hasn't been seen yet
                 k = kh_put_pymap(self.table, <PyObject*>val, &ret)
@@ -1097,6 +1106,19 @@ cdef class PyObjectHashTable(HashTable):
                 # only relevant in case we need to construct the inverse
                 idx = self.table.vals[k]
                 labels[i] = idx
+            #endtime4 += timeit.default_timer()
+            #if i % 100000 == 0:
+            #    #print("fuck fuck fuck fuck")
+            #    #print(endtime1 - begintime1)
+            #    #print(endtime2 - endtime1)
+            #    #print(endtime3 - endtime2)
+            #    #print(endtime4 - endtime3)
+            #    #print("fuck fuck fuck fuck")
+            #    begintime1 = 0
+            #    endtime1 = 0
+            #    endtime2 = 0
+            #    endtime3 = 0
+            #    endtime4 = 0
         endtime = timeit.default_timer()
         print("*************")
         print(begintime)
