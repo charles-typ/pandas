@@ -72,6 +72,7 @@ def pipeline_merge(
         intfactorizer=None,
         leftsorter=None,
         leftcount=None,
+        slices=None,
 ):
     op = _PipelineMergeOperation(
         left,
@@ -91,6 +92,7 @@ def pipeline_merge(
         intfactorizer=intfactorizer,
         leftsorter=leftsorter,
         leftcount=leftcount,
+        slices=slices,
     )
     return op.get_result()
 
@@ -129,6 +131,7 @@ class _PipelineMergeOperation:
             intfactorizer=None,
             leftsorter=None,
             leftcount=None,
+            slices=None,
     ):
         #print("calling this init function")
         _left = _validate_operand(left)
@@ -193,24 +196,24 @@ class _PipelineMergeOperation:
             self.right_join_keys,
             self.join_names,
         ) = self._get_merge_keys()
-        self.slices = 11
+        self.slices = slices
         if factorizer is None:
-            print("Size set to be: 1")
-            print(max(len(self.left_join_keys[0]), self.slices * len(self.right_join_keys[0])))
+            #print("Size set to be: 1")
+            #print(max(len(self.left_join_keys[0]), self.slices * len(self.right_join_keys[0])))
             self.factorizer = libhashtable.Factorizer(max(len(self.left_join_keys[0]), self.slices * len(self.right_join_keys[0])))
             #self.factorizer = libhashtable.Factorizer(len(self.left_join_keys[0]) + self.slices * len(self.right_join_keys[0]))
         else:
-            print("Size set to be: 2")
+            #print("Size set to be: 2")
             #print(max(len(self.left_join_keys[0]), self.slices * len(self.right_join_keys[0])))
             self.factorizer = factorizer
 
         if intfactorizer is None:
             self.intfactorizer = libhashtable.Int64Factorizer(max(len(self.left_join_keys[0]), self.slices * len(self.right_join_keys[0])))
-            print("Size set to be: 3")
-            print(max(len(self.left_join_keys[0]), self.slices * len(self.right_join_keys[0])))
+            #print("Size set to be: 3")
+            #print(max(len(self.left_join_keys[0]), self.slices * len(self.right_join_keys[0])))
             #self.intfactorizer = libhashtable.Int64Factorizer(len(self.left_join_keys[0]) + self.slices * len(self.right_join_keys[0]))
         else:
-            print("Size set to be: 4")
+            #print("Size set to be: 4")
             self.intfactorizer = intfactorizer
         # validate the merge keys dtypes. We may need to coerce
         # to avoid incompat dtypes
@@ -228,7 +231,10 @@ class _PipelineMergeOperation:
             self.left, self.right = self._indicator_pre_merge(self.left, self.right)
         # FIXME 1 modify indexer
         #print("Check point 11")
+        start = timeit.default_timer()
         join_index, left_indexer, right_indexer = self._get_join_info()
+        end = timeit.default_timer()
+        print("Get join info takes time: ", end -  start)
 
         ldata, rdata = self.left._data, self.right._data
         lsuf, rsuf = self.suffixes
@@ -462,8 +468,10 @@ class _PipelineMergeOperation:
                 right_ax, left_ax, self.right_join_keys, sort=self.sort
             )
         else:
-            # FIXME 2 fix get join indexers
+            start = timeit.default_timer()
             (left_indexer, right_indexer, left_sorter, left_count) = self._get_join_indexers()
+            end = timeit.default_timer()
+            print("Get join indexers takes time: ", end -  start)   # FIXME 2 fix get join indexers
             #print("!!!")
             #print(left_sorter)
             #print(left_count)
@@ -932,9 +940,9 @@ def _get_join_indexers(
             _factorize_keys(left_keys[n], right_keys[n], factorizer, intfactorizer, sort=sort)
             for n in range(len(left_keys))
         )
-        end1 = timeit.default_timer()
-        print("Time11: ")
-        print(end1 - start)
+        #end1 = timeit.default_timer()
+        #print("Time11: ")
+        #print(end1 - start)
         zipped = zip(*mapped)
         llab, rlab, shape = [list(x) for x in zipped]
 
@@ -942,37 +950,33 @@ def _get_join_indexers(
         lkey, rkey = _get_join_keys(llab, rlab, shape, factorizer, intfactorizer, sort)
 
         end2 = timeit.default_timer()
-        print("Time13: ")
-        print(end2 - start)
+        print("Time12: ", end2 - start)
         # factorize keys to a dense i8 space
         # `count` is the num. of unique keys
         # set(lkey) | set(rkey) == range(count)
         lkey, rkey, count = _factorize_keys(lkey, rkey, factorizer, intfactorizer, sort=sort)
         end3 = timeit.default_timer()
-        print("Time13: ")
-        print(end3 - start)
+        print("Time13: ", end3 - start)
     else:
-        print("need to factorize right keys")
+        #print("need to factorize right keys")
         start = timeit.default_timer()
         mapped = (
             _factorize_right_keys(right_keys[n], factorizer, intfactorizer, sort=sort)
             for n in range(len(right_keys))
         )
-        end1 = timeit.default_timer()
-        print("Time21: ")
-        print(end1 - start)
+        #end1 = timeit.default_timer()
+        #print("Time21: ")
+        #print(end1 - start)
         zipped = zip(*mapped)
         rlab, shape = [list(x) for x in zipped]
         # get flat i8 keys from label lists
         rkey = _get_right_join_keys(rlab, shape, factorizer, intfactorizer, sort)
         end2 = timeit.default_timer()
-        print("Time22: ")
-        print(end2 - start)
+        print("Time22: ", end2 - start)
         rkey, count = _factorize_right_keys(rkey, factorizer, intfactorizer, sort=sort)
         lkey = rkey
         end3 = timeit.default_timer()
-        print("Time23: ")
-        print(end3 - start)
+        print("Time23: ", end3 - start)
 
 
     # preserve left frame order if how == 'left' and sort == False
@@ -1176,7 +1180,7 @@ _join_functions = {
 
 def _factorize_keys(lk, rk, objectrizer, intrizer, sort=True):
     # Some pre-processing for non-ndarray lk / rk
-    start = timeit.default_timer()
+    #start = timeit.default_timer()
     if is_datetime64tz_dtype(lk) and is_datetime64tz_dtype(rk):
         lk = getattr(lk, "_values", lk)._data
         rk = getattr(rk, "_values", rk)._data
@@ -1225,19 +1229,21 @@ def _factorize_keys(lk, rk, objectrizer, intrizer, sort=True):
 
     #rizer = klass(max(len(lk), len(rk)))
     if flag == 0:
-        print("Int")
+    #    print("Int")
         rizer = intrizer
     else:
-        print("noInt")
+    #    print("noInt")
         rizer = objectrizer
     start1 = timeit.default_timer()
-    llab = rizer.factorize(lk)
-    rlab = rizer.factorize(rk)
+    llab = rizer.new_factorize(lk)
     start2 = timeit.default_timer()
-    print("look here")
-    print(start1 - start)
-    print(start1)
-    print(start2 - start1)
+    rlab = rizer.new_factorize(rk)
+    start3 = timeit.default_timer()
+    #print("look here")
+    print("factorize left keys: ", start2 - start1)
+    print("factorize right keys: ", start3 - start2)
+    #print(start1)
+    #print(start2 - start1)
     #print("$$$$$$$$$$$$$$$$$$$$$$")
     #print(lk)
     #print(rk)
@@ -1267,7 +1273,7 @@ def _factorize_keys(lk, rk, objectrizer, intrizer, sort=True):
 
 def _factorize_right_keys(rk, objectrizer, intrizer, sort=True):
     # Some pre-processing for non-ndarray lk / rk
-    start = timeit.default_timer()
+    #start = timeit.default_timer()
     if is_datetime64tz_dtype(rk):
         rk = getattr(rk, "_values", rk)._data
 
@@ -1302,19 +1308,22 @@ def _factorize_right_keys(rk, objectrizer, intrizer, sort=True):
 
     #rizer = klass(max(len(lk), len(rk)))
     if flag == 0:
-        print("Int")
+        #print("Int")
         rizer = intrizer
     else:
-        print("noInt")
+        #print("noInt")
         rizer = objectrizer
+    #start1 = timeit.default_timer()
+    #print("Here 1")
     start1 = timeit.default_timer()
-    print("Here 1")
-    rlab = rizer.factorize(rk)
+    rlab = rizer.new_factorize(rk)
     start2 = timeit.default_timer()
-    print("look")
-    print(start1 - start)
-    print(start1)
-    print(start2 - start1)
+    print("factorize right keys: ", start2 - start1)
+    #start2 = timeit.default_timer()
+    #print("look")
+    #print(start1 - start)
+    #print(start1)
+    #print(start2 - start1)
     #print("$$$$$$$$$$$$$$$$$$$$$$")
     #print(lk)
     #print(rk)

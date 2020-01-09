@@ -17,22 +17,19 @@ class Merge:
 #    param_names = ["sort"]
     timeout = 400.0
     def setup(self):
-        N = 20000000
+        N = 10000000
         indices = tm.makeStringIndex(N).values
-        indices2 = tm.makeStringIndex(N).values
-        key = np.tile(indices[:5000000], 1)
-        key2 = np.tile(indices2[:5000000], 1)
+        key = np.tile(indices[:50000], 1)
         self.left = DataFrame(
-            {"key": key, "value": np.random.randn(5000000)}
+            {"key": key, "value": np.random.randn(50000)}
         )
         np.random.shuffle(indices)
         self.right = DataFrame(
             {
-                "key": indices[1050000:3050000],
-                "value2": np.random.randn(2000000),
+                "key": indices[1050000:7050000],
+                "value2": np.random.randn(6000000),
             }
         )
-
       #  self.df = DataFrame(
       #      {
       #          "key1": np.tile(np.arange(500).repeat(10), 1 ),
@@ -42,9 +39,14 @@ class Merge:
       #  self.df2 = DataFrame({"key1": np.arange(500), "value2": np.random.randn(500)})
       #  self.df3 = self.df[:5000]
 
-    def time_merge_2intkey(self):
+    def time_merge_1intkey(self):
         merge(self.left, self.right, how="inner")
-
+    #def time_merge_2intkey(self):
+    #    merge(self.left, self.right[2], how="inner")
+    #def time_merge_3intkey(self):
+    #    merge(self.left, self.right[3], how="inner")
+    #def time_merge_4intkey(self):
+    #    merge(self.left, self.right[4], how="inner")
 #    def time_merge_dataframe_integer_2key(self, sort):
 #        pipeline_merge(self.df, self.df3, how="pipeline")
 #

@@ -1,4 +1,5 @@
 import string
+import timeit
 
 import numpy as np
 
@@ -13,24 +14,24 @@ except ImportError:
 
 
 N = 20000000
-pieces = 10
 indices = tm.makeStringIndex(N).values
-indices2 = tm.makeStringIndex(N).values
-key = np.tile(indices[:5000000], 1)
-key2 = np.tile(indices2[:5000000], 1)
+key = np.tile(indices[:50000], 1)
 left = DataFrame(
-    {"key": key, "value": np.random.randn(5000000)}
+    {"key": key, "value": np.random.randn(50000)}
 )
 right = {}
 np.random.shuffle(indices)
-right = DataFrame(
-    {
-        "key": indices[2000000 + 50000:18000000 + 50000],
-        "value2": np.random.randn(16000000),
-    }
-)
-result = merge(left, right, how="inner")
-print(result)
+for i in range(1, 20):
+    right = DataFrame(
+        {
+            "key": indices[500000 + 5000:(i+1) * 500000 + 5000],
+            "value2": np.random.randn(i * 500000),
+        }
+    )
+    start = timeit.default_timer()
+    result = merge(left, right, how="inner")
+    end = timeit.default_timer()
+    print("******* ", end - start)
 
 #    def time_merge_dataframe_integer_2key(self, sort):
 #        pipeline_merge(self.df, self.df3, how="pipeline")

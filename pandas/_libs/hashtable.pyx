@@ -72,24 +72,24 @@ cdef class Factorizer:
         array([ 0,  1, 20])
         """
         start = timeit.default_timer()
-        print("&^^&^&^&^^this is my house&^&^&^^&^&")
-        print(self.uniques.__len__())
-        print("&^^&^&^&^^this is my house&^&^&^^&^&")
-        #if self.uniques.external_view_exists:
-        #    uniques = ObjectVector()
-        #    uniques.extend(self.uniques.to_array())
-        #    self.uniques = uniques
+        #print("&^^&^&^&^^this is my house&^&^&^^&^&")
+        #print(self.uniques.__len__())
+        #print("&^^&^&^&^^this is my house&^&^&^^&^&")
+        if self.uniques.external_view_exists:
+            uniques = ObjectVector()
+            uniques.extend(self.uniques.to_array())
+            self.uniques = uniques
         end1 = timeit.default_timer()
-        print("Time Hey1: ")
-        print(end1 - start)
-        print("&^^&^&^&^^&^&^&^^&^&")
-        print(self.uniques.__len__())
-        print("&^^&^&^&^^&^&^&^^&^&")
+        print("Time Hey1:", end1 - start)
+        #print("&^^&^&^&^^&^&^&^^&^&")
+        #print(self.uniques.__len__())
+        #print("&^^&^&^&^^&^&^&^^&^&")
+        print("Unique length before: ", self.uniques.__len__())
+        print("Count of keys after: ", self.count)
         labels = self.table.get_labels(values, self.uniques,
                                        self.count, na_sentinel, na_value)
         end2 = timeit.default_timer()
-        print("Time Hey2: ")
-        print(end2 - start)
+        print("Time Hey2: ", end2 - end1)
         mask = (labels == na_sentinel)
         # sort on
         if sort:
@@ -101,6 +101,49 @@ cdef class Factorizer:
             labels = reverse_indexer.take(labels, mode='clip')
             labels[mask] = na_sentinel
         self.count = len(self.uniques)
+        print("Unique length after: ", self.uniques.__len__())
+        print("Count of key afters: ", self.count)
+        return labels
+
+    def new_factorize(self, ndarray[object] values, sort=False, na_sentinel=-1,
+                  na_value=None):
+        """
+        Factorize values with nans replaced by na_sentinel
+        >>> factorize(np.array([1,2,np.nan], dtype='O'), na_sentinel=20)
+        array([ 0,  1, 20])
+        """
+        start = timeit.default_timer()
+        #print("&^^&^&^&^^this is my house&^&^&^^&^&")
+        #print(self.uniques.__len__())
+        #print("&^^&^&^&^^this is my house&^&^&^^&^&")
+        #if self.uniques.external_view_exists:
+        #    uniques = ObjectVector()
+        #    uniques.extend(self.uniques.to_array())
+        #    self.uniques = uniques
+        end1 = timeit.default_timer()
+        print("Time Hey1:", end1 - start)
+        #print("&^^&^&^&^^&^&^&^^&^&")
+        #print(self.uniques.__len__())
+        #print("&^^&^&^&^^&^&^&^^&^&")
+        print("Unique length before: ", self.uniques.__len__())
+        print("Count of keys after: ", self.count)
+        labels = self.table.get_labels(values, self.uniques,
+                                       self.count, na_sentinel, na_value)
+        end2 = timeit.default_timer()
+        print("Time Hey2: ", end2 - end1)
+        mask = (labels == na_sentinel)
+        # sort on
+        if sort:
+            if labels.dtype != np.intp:
+                labels = labels.astype(np.intp)
+            sorter = self.uniques.to_array().argsort()
+            reverse_indexer = np.empty(len(sorter), dtype=np.intp)
+            reverse_indexer.put(sorter, np.arange(len(sorter)))
+            labels = reverse_indexer.take(labels, mode='clip')
+            labels[mask] = na_sentinel
+        self.count = len(self.uniques)
+        print("Unique length after: ", self.uniques.__len__())
+        print("Count of key afters: ", self.count)
         return labels
 
     def unique(self, ndarray[object] values):
@@ -150,6 +193,33 @@ cdef class Int64Factorizer:
 
         self.count = len(self.uniques)
         return labels
+
+    def new_factorize(self, const int64_t[:] values, sort=False,
+                  na_sentinel=-1, na_value=None):
+        """
+        Factorize values with nans replaced by na_sentinel
+        >>> factorize(np.array([1,2,np.nan], dtype='O'), na_sentinel=20)
+        array([ 0,  1, 20])
+        """
+        labels = self.table.get_labels(values, self.uniques,
+                                       self.count, na_sentinel,
+                                       na_value=na_value)
+
+        # sort on
+        if sort:
+            if labels.dtype != np.intp:
+                labels = labels.astype(np.intp)
+
+            sorter = self.uniques.to_array().argsort()
+            reverse_indexer = np.empty(len(sorter), dtype=np.intp)
+            reverse_indexer.put(sorter, np.arange(len(sorter)))
+
+            labels = reverse_indexer.take(labels)
+
+        self.count = len(self.uniques)
+        return labels
+
+
 
 
 @cython.wraparound(False)

@@ -1,5 +1,5 @@
 import string
-
+import timeit
 import numpy as np
 
 from pandas import DataFrame, MultiIndex, Series, concat, date_range, merge, merge_asof
@@ -13,31 +13,61 @@ except ImportError:
 
 
 N = 20000000
-pieces = 10
+pieces = 20
 indices = tm.makeStringIndex(N).values
-indices2 = tm.makeStringIndex(N).values
-key = np.tile(indices[:5000000], 1)
-#key2 = np.tile(indices2[:1000000], 1)
+key = np.tile(indices[:50000], 1)
 left = DataFrame(
-    {"key": key, "value": np.random.randn(5000000)}
+    {"key": key, "value": np.random.randn(50000)}
 )
 right = {}
 np.random.shuffle(indices)
-for i in range(2, pieces):
+for i in range(1, pieces):
     right[i] = DataFrame(
         {
-            "key": indices[(i - 1)*2000000 + 50000:i*2000000 + 50000],
-            "value2": np.random.randn(2000000),
+            "key": indices[(i - 1)*500000 + 5000:i*500000 + 5000],
+            "value2": np.random.randn(500000),
         }
     )
-leftsorter = None
-leftcount = None
-orizer = None
-intrizer = None
-for i in range(2, pieces):
-    print(i)
-    result, orizer, intrizer, leftsorter, leftcount = pipeline_merge(left, right[i], factorizer=orizer, intfactorizer=intrizer, leftsorter=leftsorter, leftcount=leftcount, how="pipeline")
-print(result)
+#right[12] = DataFrame(
+#    {
+#        "key": indices[(11)*1000000 + 50000:11*1000000 + 50000 + 600000],
+#        "value2": np.random.randn(600000),
+#    }
+#)
+for ttt in range(2, pieces + 1):
+    right_merge = DataFrame(columns=["key", "value2"])
+    for i in range(1, ttt):
+        #print(right[i])
+        right_merge = right_merge.append(right[i])
+    #print(right_merge)
+    start = timeit.default_timer()
+    result = merge(left, right_merge, how="inner")
+    end = timeit.default_timer()
+    print("******* ", end - start)
+
+print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+for ttt in range(2, pieces + 1):
+    leftsorter = None
+    leftcount = None
+    orizer = None
+    intrizer = None
+    start = timeit.default_timer()
+    for i in range(1, ttt):
+        result, orizer, intrizer, leftsorter, leftcount = pipeline_merge(left, right[i], factorizer=orizer, intfactorizer=intrizer, leftsorter=leftsorter, leftcount=leftcount, slices=ttt-1, how="pipeline")
+    end = timeit.default_timer()
+    print("******* ", end - start)
+
+
+#for ttt in range(2, pieces + 1):
+#    leftsorter = None
+#    leftcount = None
+#    orizer = None
+#    intrizer = None
+#    start = timeit.default_timer()
+#    for i in range(1, ttt):
+#        result, orizer, intrizer, leftsorter, leftcount = pipeline_merge(left, right[i], factorizer=orizer, intfactorizer=intrizer, leftsorter=leftsorter, leftcount=leftcount, how="pipeline")
+#    end = timeit.default_timer()
+#    print(end - start)
 #    def time_merge_dataframe_integer_2key(self, sort):
 #        pipeline_merge(self.df, self.df3, how="pipeline")
 #
