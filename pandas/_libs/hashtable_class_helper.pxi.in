@@ -419,7 +419,6 @@ cdef class {{name}}HashTable(HashTable):
             long start, stop
             time_t startt, stopt, begint1, begint2, endt1, endt2
 
-        #begint1 = time(NULL)
         #print("Calling this unique function: Ordinary hash table")
         inittime = timeit.default_timer()
         if return_inverse:
@@ -437,11 +436,8 @@ cdef class {{name}}HashTable(HashTable):
         else:
             na_value2 = {{default_na_value}}
 
-        #endt1 = time(NULL)
         #printf("hash table first time: %ld, from time: %ld\n", endt1 - begint1, begint1)
-        #begintime = timeit.default_timer()
-        #start = ts.tv_nsec 
-        #startt = time(NULL)
+        begintime = timeit.default_timer()
         #with nogil:
         for i in range(n):
             val = values[i]
@@ -488,16 +484,9 @@ cdef class {{name}}HashTable(HashTable):
                 # only relevant in case we need to construct the inverse
                 idx = self.table.vals[k]
                 labels[i] = idx
-        #stop = ts.tv_nsec
-        #stopt = time(NULL)
-        #endtime = timeit.default_timer()
-        #printf("hash table get time: %ld\n", stop - start)
-        #printf("hash table new get time: %ld, from time: %ld\n", stopt - startt, startt)
-        #print("********")
-        #print(inittime)
-        #print(begintime)
-        #print(endtime)
-        #print(endtime - begintime)
+        endtime = timeit.default_timer()
+        print("Inthash table first part time: ", begintime - inittime)
+        print("Inthash table second part time: ", endtime - begintime)
 
         if return_inverse:
             return uniques.to_array(), np.asarray(labels)
@@ -1071,7 +1060,7 @@ cdef class PyObjectHashTable(HashTable):
         #endtime3 = 0
         #endtime4 = 0
         #begintime1 = 0
-        for i in range(int(n/4)):
+        for i in range(n):
         #    begintime1 += timeit.default_timer()
             val = values[i]
             hash(val)
@@ -1114,96 +1103,6 @@ cdef class PyObjectHashTable(HashTable):
             #    endtime2 = 0
             #    endtime3 = 0
             #    endtime4 = 0
-        for i in range(int(n/4), int(n/2)):
-        #    begintime1 += timeit.default_timer()
-            val = values[i]
-            hash(val)
-        #    endtime1 += timeit.default_timer()
-
-            if ignore_na and ((val != val or val is None)
-                              or (use_na_value and val == na_value)):
-                # if missing values do not count as unique values (i.e. if
-                # ignore_na is True), skip the hashtable entry for them, and
-                # replace the corresponding label with na_sentinel
-                labels[i] = na_sentinel
-                continue
-
-        #    endtime2 += timeit.default_timer()
-            k = kh_get_pymap(self.table, <PyObject*>val)
-        #    endtime3 += timeit.default_timer()
-            if k == self.table.n_buckets:
-                # k hasn't been seen yet
-                k = kh_put_pymap(self.table, <PyObject*>val, &ret)
-                uniques.append(val)
-                if return_inverse:
-                    self.table.vals[k] = count
-                    labels[i] = count
-                    count += 1
-            elif return_inverse:
-                # k falls into a previous bucket
-                # only relevant in case we need to construct the inverse
-                idx = self.table.vals[k]
-                labels[i] = idx
-        for i in range(int(n/2), int(3*n/4)):
-        #    begintime1 += timeit.default_timer()
-            val = values[i]
-            hash(val)
-        #    endtime1 += timeit.default_timer()
-
-            if ignore_na and ((val != val or val is None)
-                              or (use_na_value and val == na_value)):
-                # if missing values do not count as unique values (i.e. if
-                # ignore_na is True), skip the hashtable entry for them, and
-                # replace the corresponding label with na_sentinel
-                labels[i] = na_sentinel
-                continue
-
-        #    endtime2 += timeit.default_timer()
-            k = kh_get_pymap(self.table, <PyObject*>val)
-        #    endtime3 += timeit.default_timer()
-            if k == self.table.n_buckets:
-                # k hasn't been seen yet
-                k = kh_put_pymap(self.table, <PyObject*>val, &ret)
-                uniques.append(val)
-                if return_inverse:
-                    self.table.vals[k] = count
-                    labels[i] = count
-                    count += 1
-            elif return_inverse:
-                # k falls into a previous bucket
-                # only relevant in case we need to construct the inverse
-                idx = self.table.vals[k]
-                labels[i] = idx
-        for i in range(int(3 * n/4), n):
-        #    begintime1 += timeit.default_timer()
-            val = values[i]
-            hash(val)
-        #    endtime1 += timeit.default_timer()
-
-            if ignore_na and ((val != val or val is None)
-                              or (use_na_value and val == na_value)):
-                # if missing values do not count as unique values (i.e. if
-                # ignore_na is True), skip the hashtable entry for them, and
-                # replace the corresponding label with na_sentinel
-                labels[i] = na_sentinel
-                continue
-
-        #    endtime2 += timeit.default_timer()
-            k = kh_get_pymap(self.table, <PyObject*>val)
-        #    endtime3 += timeit.default_timer()
-            if k == self.table.n_buckets:
-                # k hasn't been seen yet
-                k = kh_put_pymap(self.table, <PyObject*>val, &ret)
-                uniques.append(val)
-                if return_inverse:
-                    self.table.vals[k] = count
-                    labels[i] = count
-                    count += 1
-            elif return_inverse:
-                # k falls into a previous bucket
-                # only relevant in case we need to construct the inverse
-                idx = self.table.vals[k]
-                labels[i] = idx
         #print("fuck fuck fuck fuck")
         #print(endtime1 - begintime1)
         #print(endtime2 - endtime1)
@@ -1213,7 +1112,7 @@ cdef class PyObjectHashTable(HashTable):
         endtime = timeit.default_timer()
         #print("*************")
         #print(begintime)
-        print("Hash table takes time: ", endtime - begintime)
+        print("ObjectHash table takes time: ", endtime - begintime)
         if return_inverse:
             return uniques.to_array(), np.asarray(labels)
         return uniques.to_array()
