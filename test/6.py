@@ -13,19 +13,19 @@ except ImportError:
 
 
 N = 20000000
-pieces = 20
+pieces = 10
 indices = tm.makeStringIndex(N).values
-key = np.tile(indices[:50000], 1)
+key = np.tile(indices[:10000000], 1)
 left = DataFrame(
-    {"key": key, "value": np.random.randn(50000)}
+    {"key": key, "value": np.random.randn(10000000)}
 )
 right = {}
 np.random.shuffle(indices)
 for i in range(1, pieces):
     right[i] = DataFrame(
         {
-            "key": indices[(i - 1)*500000 + 5000:i*500000 + 5000],
-            "value2": np.random.randn(500000),
+            "key": indices[(i - 1)*1000000 + 5000:i*1000000 + 5000],
+            "value2": np.random.randn(1000000),
         }
     )
 #right[12] = DataFrame(
@@ -33,7 +33,20 @@ for i in range(1, pieces):
 #        "key": indices[(11)*1000000 + 50000:11*1000000 + 50000 + 600000],
 #        "value2": np.random.randn(600000),
 #    }
-#)
+#
+for ttt in range(2, pieces + 1):
+    leftsorter = None
+    leftcount = None
+    orizer = None
+    intrizer = None
+    start = timeit.default_timer()
+    for i in range(1, ttt):
+        result, orizer, intrizer, leftsorter, leftcount = pipeline_merge(left, right[i], factorizer=orizer, intfactorizer=intrizer, leftsorter=leftsorter, leftcount=leftcount, slices=ttt-1, how="pipeline")
+    end = timeit.default_timer()
+    print("******* ", end - start)
+
+print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+
 for ttt in range(2, pieces + 1):
     right_merge = DataFrame(columns=["key", "value2"])
     for i in range(1, ttt):
@@ -46,6 +59,7 @@ for ttt in range(2, pieces + 1):
     print("******* ", end - start)
 
 print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+
 for ttt in range(2, pieces + 1):
     leftsorter = None
     leftcount = None
@@ -57,6 +71,17 @@ for ttt in range(2, pieces + 1):
     end = timeit.default_timer()
     print("******* ", end - start)
 
+print("################################")
+for ttt in range(2, pieces + 1):
+    right_merge = DataFrame(columns=["key", "value2"])
+    for i in range(1, ttt):
+        #print(right[i])
+        right_merge = right_merge.append(right[i])
+    #print(right_merge)
+    start = timeit.default_timer()
+    result = merge(left, right_merge, how="inner")
+    end = timeit.default_timer()
+    print("******* ", end - start)
 
 #for ttt in range(2, pieces + 1):
 #    leftsorter = None

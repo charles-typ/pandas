@@ -485,7 +485,7 @@ cdef class {{name}}HashTable(HashTable):
                 idx = self.table.vals[k]
                 labels[i] = idx
         endtime = timeit.default_timer()
-        print("Inthash table first part time: ", begintime - inittime)
+        #print("Inthash table first part time: ", begintime - inittime)
         print("Inthash table second part time: ", endtime - begintime)
 
         if return_inverse:

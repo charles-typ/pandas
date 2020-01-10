@@ -1,78 +1,1027 @@
-Check point 11
-$$$$$$$$$$$$$$$$$$$$$$
-['K5' 'K7' 'K5' 'K50']
-['K9' 'K23' 'K5' 'K7']
-[0 1 0 2]
-[3 4 0 1]
-$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$
-[0 1 0 2]
-[3 4 0 1]
-[0 1 0 2]
-[3 4 0 1]
-$$$$$$$$$$$$$$$$$$$$$$
-left_sorter : 
-[0 2 1 3]
-left_count : 
-[0 2 1 1 0 0]
-left_incremenet_count : 
-[0 2 3 4 4 4]
-left_indexer
-[0 2 1]
-right_indexer
-[2 2 3]
-{1: array([0, 2, 1])}
-{1: array([2, 2, 3])}
-Check point 12
-BlockManager
-Items: Index(['key', 'A', 'B', 'C', 'D'], dtype='object')
-Axis 1: Int64Index([0, 1, 2], dtype='int64')
-ObjectBlock: slice(0, 3, 1), 3 x 3, dtype: object
-ObjectBlock: slice(3, 5, 1), 2 x 3, dtype: object
-Check point 13
-  key   A   B   C   D
-0  K5  A0  B0  C2  D2
-1  K5  A2  B2  C2  D2
-2  K7  A1  B1  C3  D3
-Check point 14
-  key   A   B   C   D
-0  K5  A0  B0  C2  D2
-1  K5  A2  B2  C2  D2
-2  K7  A1  B1  C3  D3
-Check point 11
-$$$$$$$$$$$$$$$$$$$$$$
-['K5' 'K7' 'K5' 'K50']
-['K0' 'K6' 'K7' 'K3']
-[0 1 0 2]
-[5 6 1 7]
-$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$
-[0 1 0 2]
-[5 6 1 7]
-[0 1 0 2]
-[5 6 1 7]
-$$$$$$$$$$$$$$$$$$$$$$
-left_sorter : 
-[0 2 1 3]
-left_count : 
-[0 2 1 1 0 0 0 0 0]
-left_incremenet_count : 
-[0 2 3 4 4 4 4 4 4]
-left_indexer
-[1]
-right_indexer
-[2]
-{1: array([1])}
-{1: array([2])}
-Check point 12
-BlockManager
-Items: Index(['key', 'A', 'B', 'C', 'D'], dtype='object')
-Axis 1: Int64Index([0], dtype='int64')
-ObjectBlock: slice(0, 3, 1), 3 x 1, dtype: object
-ObjectBlock: slice(3, 5, 1), 2 x 1, dtype: object
-Check point 13
-  key   A   B   C   D
-0  K7  A1  B1  C2  D2
-Check point 14
-  key   A   B   C   D
-0  K7  A1  B1  C2  D2
+Time Hey1: 8.880160748958588e-07
+Unique length before:  0
+Count of keys after:  0
+ObjectHash table takes time:  0.010981364001054317
+Time Hey2:  0.011065250961109996
+Unique length after:  50000
+Count of key afters:  50000
+Time Hey1: 0.0009132809937000275
+Unique length before:  50000
+Count of keys after:  50000
+ObjectHash table takes time:  0.31424293300369754
+Time Hey2:  0.31446712103206664
+Unique length after:  548767
+Count of key afters:  548767
+factorize left keys:  0.0111214549979195
+factorize right keys:  0.31589366198750213
+Time2 0.3472275340463966
+Inthash table first part time:  6.8400404416024685e-06
+Inthash table second part time:  0.00727705197641626
+Inthash table first part time:  1.5461002476513386e-05
+Inthash table second part time:  0.058140098000876606
+factorize left keys:  0.007351229025516659
+factorize right keys:  0.05890721397008747
+Time3 0.4151297580101527
+Get join indexer takes time:  0.42797048803186044
+Get join info takes time:  0.4281194829964079
+*******  0.47510368999792263
+Time Hey1: 5.820184014737606e-07
+Unique length before:  0
+Count of keys after:  0
+ObjectHash table takes time:  0.01248439698247239
+Time Hey2:  0.012550402956549078
+Unique length after:  50000
+Count of key afters:  50000
+Time Hey1: 0.0009268290014006197
+Unique length before:  50000
+Count of keys after:  50000
+ObjectHash table takes time:  0.6892565379966982
+Time Hey2:  0.6893326549907215
+Unique length after:  1047582
+Count of key afters:  1047582
+factorize left keys:  0.012607595999725163
+factorize right keys:  0.6911926110042259
+Time2 0.7431484980043024
+Inthash table first part time:  5.299982149153948e-06
+Inthash table second part time:  0.005477433034684509
+Inthash table first part time:  2.5516957975924015e-05
+Inthash table second part time:  0.12503930705133826
+factorize left keys:  0.0055333889904432
+factorize right keys:  0.12538948201108724
+Time3 0.8767671920359135
+Get join indexer takes time:  0.896438721974846
+Get join info takes time:  0.8965988580021076
+*******  0.9846371239982545
+Time Hey1: 6.569898687303066e-07
+Unique length before:  0
+Count of keys after:  0
+ObjectHash table takes time:  0.016943180991802365
+Time Hey2:  0.017013845965266228
+Unique length after:  50000
+Count of key afters:  50000
+Time Hey1: 0.0009318559896200895
+Unique length before:  50000
+Count of keys after:  50000
+ObjectHash table takes time:  0.7264455099939369
+Time Hey2:  0.726540849020239
+Unique length after:  1546299
+Count of key afters:  1546299
+factorize left keys:  0.017069998022634536
+factorize right keys:  0.72885574598331
+Time2 0.8027163939550519
+Inthash table first part time:  5.4889824241399765e-06
+Inthash table second part time:  0.005292867019306868
+Inthash table first part time:  3.130099503323436e-05
+Inthash table second part time:  0.14294575800886378
+factorize left keys:  0.005350635969080031
+factorize right keys:  0.1432815269799903
+Time3 0.9529334019753151
+Get join indexer takes time:  0.9855418810038827
+Get join info takes time:  0.9857076199841686
+*******  1.112117776996456
+Time Hey1: 6.359769031405449e-07
+Unique length before:  0
+Count of keys after:  0
+ObjectHash table takes time:  0.018921820970717818
+Time Hey2:  0.019006215035915375
+Unique length after:  50000
+Count of key afters:  50000
+Time Hey1: 0.0010109400027431548
+Unique length before:  50000
+Count of keys after:  50000
+ObjectHash table takes time:  1.3859680009773
+Time Hey2:  1.3860695579787716
+Unique length after:  2044982
+Count of key afters:  2044982
+factorize left keys:  0.01908002299023792
+factorize right keys:  1.3889580199611373
+Time2 1.4856733659980819
+Inthash table first part time:  5.4730335250496864e-06
+Inthash table second part time:  0.0054295919835567474
+Inthash table first part time:  3.1429051887243986e-05
+Inthash table second part time:  0.23383789596846327
+factorize left keys:  0.005487017042469233
+factorize right keys:  0.23420596698997542
+Time3 1.7297618529992178
+Get join indexer takes time:  1.7728750800015405
+Get join info takes time:  1.7730411819647998
+*******  1.9371486180461943
+Time Hey1: 6.800401024520397e-07
+Unique length before:  0
+Count of keys after:  0
+ObjectHash table takes time:  0.013344342994969338
+Time Hey2:  0.013408540980890393
+Unique length after:  50000
+Count of key afters:  50000
+Time Hey1: 0.0009364960133098066
+Unique length before:  50000
+Count of keys after:  50000
+ObjectHash table takes time:  1.7216250540222973
+Time Hey2:  1.7222515100147575
+Unique length after:  2543695
+Count of key afters:  2543695
+factorize left keys:  0.013462500995956361
+factorize right keys:  1.7254792880266905
+Time2 1.8367593869916163
+Inthash table first part time:  6.29801070317626e-06
+Inthash table second part time:  0.011907623964361846
+Inthash table first part time:  2.509198384359479e-05
+Inthash table second part time:  0.34411637199809775
+factorize left keys:  0.011982741998508573
+factorize right keys:  0.3461091500357725
+Time3 2.2006436359952204
+Get join indexer takes time:  2.262016232998576
+Get join info takes time:  2.2621869429713115
+*******  2.471070846018847
+Time Hey1: 5.909823812544346e-07
+Unique length before:  0
+Count of keys after:  0
+ObjectHash table takes time:  0.017113022971898317
+Time Hey2:  0.01718998298747465
+Unique length after:  50000
+Count of key afters:  50000
+Time Hey1: 0.000967653002589941
+Unique length before:  50000
+Count of keys after:  50000
+ObjectHash table takes time:  2.1087852470227517
+Time Hey2:  2.109232860035263
+Unique length after:  3042469
+Count of key afters:  3042469
+factorize left keys:  0.017249941010959446
+factorize right keys:  2.1129344810033217
+Time2 2.2463612119900063
+Inthash table first part time:  5.4629635997116566e-06
+Inthash table second part time:  0.005121657042764127
+Inthash table first part time:  3.0656985472887754e-05
+Inthash table second part time:  0.37873370602028444
+factorize left keys:  0.005180890031624585
+factorize right keys:  0.3805823139846325
+Time3 2.638566207024269
+Get join indexer takes time:  2.7179062989889644
+Get join info takes time:  2.7180794770247303
+*******  2.9692944669513963
+Time Hey1: 5.729962140321732e-07
+Unique length before:  0
+Count of keys after:  0
+ObjectHash table takes time:  0.013172485982067883
+Time Hey2:  0.013236236001830548
+Unique length after:  50000
+Count of key afters:  50000
+Time Hey1: 0.0009329660097137094
+Unique length before:  50000
+Count of keys after:  50000
+ObjectHash table takes time:  3.167776682996191
+Time Hey2:  3.1680897739715874
+Unique length after:  3541250
+Count of key afters:  3541250
+factorize left keys:  0.013289930997416377
+factorize right keys:  3.172234239988029
+Time2 3.323284886952024
+Inthash table first part time:  6.069021765142679e-06
+Inthash table second part time:  0.008410722948610783
+Inthash table first part time:  1.9205035641789436e-05
+Inthash table second part time:  0.4905765149742365
+factorize left keys:  0.00847381103085354
+factorize right keys:  0.49228220898658037
+Time3 3.833537660946604
+Get join indexer takes time:  3.9252643840154633
+Get join info takes time:  3.9254429430002347
+*******  4.211494855990168
+Time Hey1: 5.999463610351086e-07
+Unique length before:  0
+Count of keys after:  0
+ObjectHash table takes time:  0.013188979995902628
+Time Hey2:  0.013271387026179582
+Unique length after:  50000
+Count of key afters:  50000
+Time Hey1: 0.0009585400111973286
+Unique length before:  50000
+Count of keys after:  50000
+ObjectHash table takes time:  3.4932944499887526
+Time Hey2:  3.493376491998788
+Unique length after:  4039949
+Count of key afters:  4039949
+factorize left keys:  0.013328488043043762
+factorize right keys:  3.4979526239912957
+Time2 3.66450558102224
+Inthash table first part time:  5.865003913640976e-06
+Inthash table second part time:  0.006199311988893896
+Inthash table first part time:  2.2895983420312405e-05
+Inthash table second part time:  0.5557527060154825
+factorize left keys:  0.006259194982703775
+factorize right keys:  0.5573225030093454
+Time3 4.238279987999704
+Get join indexer takes time:  4.338933716004249
+Get join info takes time:  4.339107420004439
+*******  4.665846369985957
+Time Hey1: 6.00994098931551e-07
+Unique length before:  0
+Count of keys after:  0
+ObjectHash table takes time:  0.013018825964536518
+Time Hey2:  0.01318263600114733
+Unique length after:  50000
+Count of key afters:  50000
+Time Hey1: 0.0009459760040044785
+Unique length before:  50000
+Count of keys after:  50000
+ObjectHash table takes time:  3.924393813998904
+Time Hey2:  3.9255135180428624
+Unique length after:  4538718
+Count of key afters:  4538718
+factorize left keys:  0.013239951978903264
+factorize right keys:  3.93046746897744
+Time2 4.119129825965501
+Inthash table first part time:  6.428046617656946e-06
+Inthash table second part time:  0.007635677990037948
+Inthash table first part time:  2.2519961930811405e-05
+Inthash table second part time:  0.6343931810115464
+factorize left keys:  0.007698506989981979
+factorize right keys:  0.635872948972974
+Time3 4.773352419957519
+Get join indexer takes time:  4.906834080989938
+Get join info takes time:  4.907010436989367
+*******  5.273043558001518
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+Time Hey1: 6.829504854977131e-07
+Unique length before:  0
+Count of keys after:  0
+ObjectHash table takes time:  0.00992310099536553
+Time Hey2:  0.009990386024583131
+Unique length after:  50000
+Count of key afters:  50000
+Time Hey1: 5.149631761014462e-07
+Unique length before:  50000
+Count of keys after:  50000
+ObjectHash table takes time:  0.287165186018683
+Time Hey2:  0.28723119100322947
+Unique length after:  548767
+Count of key afters:  548767
+factorize left keys:  0.01004572695819661
+factorize right keys:  0.2877196120098233
+Time12:  0.2989121650462039
+Inthash table first part time:  8.122005965560675e-06
+Inthash table second part time:  0.005110925005283207
+Inthash table first part time:  6.466987542808056e-06
+Inthash table second part time:  0.05180781602393836
+factorize left keys:  0.005162493034731597
+factorize right keys:  0.05187070497777313
+Time13:  0.3564794920384884
+Get join indexers takes time:  0.36182686599204317
+Get join info takes time:  0.36197419301606715
+*******  0.40613102697534487
+Time Hey1: 6.249756552278996e-07
+Unique length before:  0
+Count of keys after:  0
+ObjectHash table takes time:  0.011397540045436472
+Time Hey2:  0.011462124006357044
+Unique length after:  50000
+Count of key afters:  50000
+Time Hey1: 5.119945853948593e-07
+Unique length before:  50000
+Count of keys after:  50000
+ObjectHash table takes time:  0.16896772000472993
+Time Hey2:  0.16903049900429323
+Unique length after:  548767
+Count of key afters:  548767
+factorize left keys:  0.011514311947394162
+factorize right keys:  0.16948419401887804
+Time12:  0.1821199799887836
+Inthash table first part time:  9.584007784724236e-06
+Inthash table second part time:  0.005203823035117239
+Inthash table first part time:  6.954011041671038e-06
+Inthash table second part time:  0.050122576009016484
+factorize left keys:  0.005255940021015704
+factorize right keys:  0.05018421000568196
+Time13:  0.23804843198740855
+Get join indexers takes time:  0.24357728799805045
+Get join info takes time:  0.24372595903696492
+Time Hey1: 6.049522198736668e-07
+Unique length before:  548767
+Count of keys after:  548767
+ObjectHash table takes time:  0.4417426069849171
+Time Hey2:  0.4418436490232125
+Unique length after:  1047582
+Count of key afters:  1047582
+factorize right keys:  0.44232090999139473
+Time22:  0.4433590130065568
+Inthash table first part time:  8.615024853497744e-06
+Inthash table second part time:  0.0814647750230506
+factorize right keys:  0.08155662199715152
+Time23:  0.5254308900330216
+Get join indexers takes time:  0.5277099290397018
+Get join info takes time:  0.5278558499994688
+*******  0.8569986050133593
+Time Hey1: 5.770125426352024e-07
+Unique length before:  0
+Count of keys after:  0
+ObjectHash table takes time:  0.012831627973355353
+Time Hey2:  0.012895659019704908
+Unique length after:  50000
+Count of key afters:  50000
+Time Hey1: 4.929606802761555e-07
+Unique length before:  50000
+Count of keys after:  50000
+ObjectHash table takes time:  0.14894805999938399
+Time Hey2:  0.14901026501320302
+Unique length after:  548767
+Count of key afters:  548767
+factorize left keys:  0.01294794399291277
+factorize right keys:  0.14947217900771648
+Time12:  0.16353602800518274
+Inthash table first part time:  1.0820047464221716e-05
+Inthash table second part time:  0.005249554989859462
+Inthash table first part time:  6.128044333308935e-06
+Inthash table second part time:  0.0515022769686766
+factorize left keys:  0.005304918973706663
+factorize right keys:  0.051565365050919354
+Time13:  0.22089348500594497
+Get join indexers takes time:  0.22776098898611963
+Get join info takes time:  0.22790794796310365
+Time Hey1: 5.890033207833767e-07
+Unique length before:  548767
+Count of keys after:  548767
+ObjectHash table takes time:  0.19592694897437468
+Time Hey2:  0.1960245969821699
+Unique length after:  1047582
+Count of key afters:  1047582
+factorize right keys:  0.196489850000944
+Time22:  0.1974878970067948
+Inthash table first part time:  8.765025995671749e-06
+Inthash table second part time:  0.05977301800157875
+factorize right keys:  0.0598635760252364
+Time23:  0.257778222032357
+Get join indexers takes time:  0.26005100703332573
+Get join info takes time:  0.2601945109781809
+Time Hey1: 6.030313670635223e-07
+Unique length before:  1047582
+Count of keys after:  1047582
+ObjectHash table takes time:  0.309535602980759
+Time Hey2:  0.30963304196484387
+Unique length after:  1546299
+Count of key afters:  1546299
+factorize right keys:  0.31014422001317143
+Time22:  0.3111631119973026
+Inthash table first part time:  8.732953574508429e-06
+Inthash table second part time:  0.0708863619947806
+factorize right keys:  0.07176103896927088
+Time23:  0.3833577449549921
+Get join indexers takes time:  0.38560464896727353
+Get join info takes time:  0.385748682951089
+*******  1.0037852419773117
+Time Hey1: 6.240443326532841e-07
+Unique length before:  0
+Count of keys after:  0
+ObjectHash table takes time:  0.012806801998522133
+Time Hey2:  0.012867568992078304
+Unique length after:  50000
+Count of key afters:  50000
+Time Hey1: 4.990142770111561e-07
+Unique length before:  50000
+Count of keys after:  50000
+ObjectHash table takes time:  0.14366565900854766
+Time Hey2:  0.14372478396398947
+Unique length after:  548767
+Count of key afters:  548767
+factorize left keys:  0.0129170460277237
+factorize right keys:  0.14418031298555434
+Time12:  0.1582282640156336
+Inthash table first part time:  8.677016012370586e-06
+Inthash table second part time:  0.005235340038780123
+Inthash table first part time:  5.776004400104284e-06
+Inthash table second part time:  0.04972161102341488
+factorize left keys:  0.005288998014293611
+factorize right keys:  0.04978690796997398
+Time13:  0.21385657601058483
+Get join indexers takes time:  0.22045495500788093
+Get join info takes time:  0.2206035900162533
+Time Hey1: 6.220070645213127e-07
+Unique length before:  548767
+Count of keys after:  548767
+ObjectHash table takes time:  0.19132595404516906
+Time Hey2:  0.19142569397808984
+Unique length after:  1047582
+Count of key afters:  1047582
+factorize right keys:  0.1918884590268135
+Time22:  0.19288684101775289
+Inthash table first part time:  8.739996701478958e-06
+Inthash table second part time:  0.05262220895383507
+factorize right keys:  0.05269797798246145
+Time23:  0.24592302000382915
+Get join indexers takes time:  0.24820087500847876
+Get join info takes time:  0.2483447429840453
+Time Hey1: 6.379559636116028e-07
+Unique length before:  1047582
+Count of keys after:  1047582
+ObjectHash table takes time:  0.2883886370109394
+Time Hey2:  0.2884896940086037
+Unique length after:  1546299
+Count of key afters:  1546299
+factorize right keys:  0.2889774850336835
+Time22:  0.28999786399072036
+Inthash table first part time:  9.31095564737916e-06
+Inthash table second part time:  0.06954129703808576
+factorize right keys:  0.07041059801122174
+Time23:  0.3607908579870127
+Get join indexers takes time:  0.3630879240226932
+Get join info takes time:  0.3632342540076934
+Time Hey1: 5.949987098574638e-07
+Unique length before:  1546299
+Count of keys after:  1546299
+ObjectHash table takes time:  0.6439086910104379
+Time Hey2:  0.6440065769711509
+Unique length after:  2044982
+Count of key afters:  2044982
+factorize right keys:  0.6444935760227963
+Time22:  0.6454973400104791
+Inthash table first part time:  8.912000339478254e-06
+Inthash table second part time:  0.10046188399428502
+factorize right keys:  0.1018363029579632
+Time23:  0.7477671679807827
+Get join indexers takes time:  0.7500832250225358
+Get join info takes time:  0.7502308299881406
+*******  1.7525686279986985
+Time Hey1: 5.550100468099117e-07
+Unique length before:  0
+Count of keys after:  0
+ObjectHash table takes time:  0.013002125022467226
+Time Hey2:  0.01307823503157124
+Unique length after:  50000
+Count of key afters:  50000
+Time Hey1: 4.899920895695686e-07
+Unique length before:  50000
+Count of keys after:  50000
+ObjectHash table takes time:  0.16765360702993348
+Time Hey2:  0.1677208809996955
+Unique length after:  548767
+Count of key afters:  548767
+factorize left keys:  0.013145455974154174
+factorize right keys:  0.16820035898126662
+Time12:  0.18246576702222228
+Inthash table first part time:  9.041046723723412e-06
+Inthash table second part time:  0.0052667229901999235
+Inthash table first part time:  6.867980118840933e-06
+Inthash table second part time:  0.05197520402725786
+factorize left keys:  0.0053236280218698084
+factorize right keys:  0.05204399599460885
+Time13:  0.24045985605334863
+Get join indexers takes time:  0.24622412800090387
+Get join info takes time:  0.24638075404800475
+Time Hey1: 6.370246410369873e-07
+Unique length before:  548767
+Count of keys after:  548767
+ObjectHash table takes time:  0.1972516299574636
+Time Hey2:  0.19734598899958655
+Unique length after:  1047582
+Count of key afters:  1047582
+factorize right keys:  0.1978185879997909
+Time22:  0.1988169879768975
+Inthash table first part time:  8.575036190450191e-06
+Inthash table second part time:  0.05257286998676136
+factorize right keys:  0.05264798499410972
+Time23:  0.25180463900323957
+Get join indexers takes time:  0.25410488597117364
+Get join info takes time:  0.25424715399276465
+Time Hey1: 5.849869921803474e-07
+Unique length before:  1047582
+Count of keys after:  1047582
+ObjectHash table takes time:  0.28517097199801356
+Time Hey2:  0.2852759060333483
+Unique length after:  1546299
+Count of key afters:  1546299
+factorize right keys:  0.28575627302052453
+Time22:  0.2867647189996205
+Inthash table first part time:  8.385046385228634e-06
+Inthash table second part time:  0.06887340196408331
+factorize right keys:  0.06975963799050078
+Time23:  0.35689676797483116
+Get join indexers takes time:  0.3591614250326529
+Get join info takes time:  0.35930623597232625
+Time Hey1: 6.399932317435741e-07
+Unique length before:  1546299
+Count of keys after:  1546299
+ObjectHash table takes time:  0.6430382539983839
+Time Hey2:  0.6431444119662046
+Unique length after:  2044982
+Count of key afters:  2044982
+factorize right keys:  0.643615556997247
+Time22:  0.6446205489919521
+Inthash table first part time:  8.601986337453127e-06
+Inthash table second part time:  0.09986968501470983
+factorize right keys:  0.10116706503322348
+Time23:  0.7461760609876364
+Get join indexers takes time:  0.7484420649707317
+Get join info takes time:  0.7485873739933595
+Time Hey1: 6.199697963893414e-07
+Unique length before:  2044982
+Count of keys after:  2044982
+ObjectHash table takes time:  0.31635158899007365
+Time Hey2:  0.3164479330298491
+Unique length after:  2543695
+Count of key afters:  2543695
+factorize right keys:  0.31692044099327177
+Time22:  0.3179261850309558
+Inthash table first part time:  8.707982487976551e-06
+Inthash table second part time:  0.07799872802570462
+factorize right keys:  0.07963373698294163
+Time23:  0.39794412202900276
+Get join indexers takes time:  0.4002672390197404
+Get join info takes time:  0.4004127050284296
+*******  2.224277897970751
+Time Hey1: 6.469781510531902e-07
+Unique length before:  0
+Count of keys after:  0
+ObjectHash table takes time:  0.012800125987268984
+Time Hey2:  0.012861840019468218
+Unique length after:  50000
+Count of key afters:  50000
+Time Hey1: 4.7497451305389404e-07
+Unique length before:  50000
+Count of keys after:  50000
+ObjectHash table takes time:  0.1439932489884086
+Time Hey2:  0.14405551902018487
+Unique length after:  548767
+Count of key afters:  548767
+factorize left keys:  0.012913642975036055
+factorize right keys:  0.14454163203481585
+Time12:  0.15856879204511642
+Inthash table first part time:  9.793962817639112e-06
+Inthash table second part time:  0.00522123504197225
+Inthash table first part time:  6.496964488178492e-06
+Inthash table second part time:  0.04849163704784587
+factorize left keys:  0.005274709954392165
+factorize right keys:  0.048536094021983445
+Time13:  0.2127893260330893
+Get join indexers takes time:  0.2182459519826807
+Get join info takes time:  0.2183870009612292
+Time Hey1: 6.33997842669487e-07
+Unique length before:  548767
+Count of keys after:  548767
+ObjectHash table takes time:  0.19132835499476641
+Time Hey2:  0.19142556202132255
+Unique length after:  1047582
+Count of key afters:  1047582
+factorize right keys:  0.19189301697770134
+Time22:  0.19289032998494804
+Inthash table first part time:  9.020965080708265e-06
+Inthash table second part time:  0.05267535103484988
+factorize right keys:  0.052752923977095634
+Time23:  0.2459825170226395
+Get join indexers takes time:  0.2482410370139405
+Get join info takes time:  0.24838323600124568
+Time Hey1: 5.880137905478477e-07
+Unique length before:  1047582
+Count of keys after:  1047582
+ObjectHash table takes time:  0.28690009500132874
+Time Hey2:  0.28699371201219037
+Unique length after:  1546299
+Count of key afters:  1546299
+factorize right keys:  0.28747783199651167
+Time22:  0.28848291997564957
+Inthash table first part time:  8.090981282293797e-06
+Inthash table second part time:  0.06953771400731057
+factorize right keys:  0.07038479199400172
+Time23:  0.35925748897716403
+Get join indexers takes time:  0.36152451002271846
+Get join info takes time:  0.3616698840050958
+Time Hey1: 5.829497240483761e-07
+Unique length before:  1546299
+Count of keys after:  1546299
+ObjectHash table takes time:  0.6410759419668466
+Time Hey2:  0.6411930050235242
+Unique length after:  2044982
+Count of key afters:  2044982
+factorize right keys:  0.6416729899938218
+Time22:  0.6426809300319292
+Inthash table first part time:  9.215960744768381e-06
+Inthash table second part time:  0.10022466001100838
+factorize right keys:  0.10148305603070185
+Time23:  0.7445781200076453
+Get join indexers takes time:  0.7468836070038378
+Get join info takes time:  0.7470286760362796
+Time Hey1: 6.67991116642952e-07
+Unique length before:  2044982
+Count of keys after:  2044982
+ObjectHash table takes time:  0.3061774260131642
+Time Hey2:  0.306268546031788
+Unique length after:  2543695
+Count of key afters:  2543695
+factorize right keys:  0.3067516490118578
+Time22:  0.30776171397883445
+Inthash table first part time:  8.423055987805128e-06
+Inthash table second part time:  0.0783603559830226
+factorize right keys:  0.08001332997810096
+Time23:  0.38819599198177457
+Get join indexers takes time:  0.39050361898262054
+Get join info takes time:  0.39065004797885194
+Time Hey1: 7.959897629916668e-07
+Unique length before:  2543695
+Count of keys after:  2543695
+ObjectHash table takes time:  0.43696861097123474
+Time Hey2:  0.437657417031005
+Unique length after:  3042469
+Count of key afters:  3042469
+factorize right keys:  0.43813433597097173
+Time22:  0.43917339196195826
+Inthash table first part time:  9.109964594244957e-06
+Inthash table second part time:  0.084697566984687
+factorize right keys:  0.08669255097629502
+Time23:  0.5262668979703449
+Get join indexers takes time:  0.5285682079847902
+Get join info takes time:  0.5287154510151595
+*******  2.749098125961609
+Time Hey1: 5.880137905478477e-07
+Unique length before:  0
+Count of keys after:  0
+ObjectHash table takes time:  0.012792390014510602
+Time Hey2:  0.012853668944444507
+Unique length after:  50000
+Count of key afters:  50000
+Time Hey1: 4.899920895695686e-07
+Unique length before:  50000
+Count of keys after:  50000
+ObjectHash table takes time:  0.14564535598037764
+Time Hey2:  0.14570699800970033
+Unique length after:  548767
+Count of key afters:  548767
+factorize left keys:  0.012902989983558655
+factorize right keys:  0.1461580729810521
+Time12:  0.16016835399204865
+Inthash table first part time:  8.50198557600379e-06
+Inthash table second part time:  0.005251036025583744
+Inthash table first part time:  6.771995685994625e-06
+Inthash table second part time:  0.04914292198373005
+factorize left keys:  0.005313522997312248
+factorize right keys:  0.049304553016554564
+Time13:  0.21527885395335034
+Get join indexers takes time:  0.22087775502586737
+Get join info takes time:  0.22102356795221567
+Time Hey1: 5.880137905478477e-07
+Unique length before:  548767
+Count of keys after:  548767
+ObjectHash table takes time:  0.19442648504627869
+Time Hey2:  0.19452198297949508
+Unique length after:  1047582
+Count of key afters:  1047582
+factorize right keys:  0.1949833400431089
+Time22:  0.1959797460003756
+Inthash table first part time:  8.618051651865244e-06
+Inthash table second part time:  0.05238444195128977
+factorize right keys:  0.052459696016740054
+Time23:  0.24877257301704958
+Get join indexers takes time:  0.25105618801899254
+Get join info takes time:  0.25119854899821803
+Time Hey1: 6.200280040502548e-07
+Unique length before:  1047582
+Count of keys after:  1047582
+ObjectHash table takes time:  0.28759059897856787
+Time Hey2:  0.2876833339687437
+Unique length after:  1546299
+Count of key afters:  1546299
+factorize right keys:  0.288165861973539
+Time22:  0.2891959529952146
+Inthash table first part time:  8.502043783664703e-06
+Inthash table second part time:  0.06901397800538689
+factorize right keys:  0.06986189598683268
+Time23:  0.35941658000228927
+Get join indexers takes time:  0.36171345197362825
+Get join info takes time:  0.3618583210045472
+Time Hey1: 6.449990905821323e-07
+Unique length before:  1546299
+Count of keys after:  1546299
+ObjectHash table takes time:  0.643006217025686
+Time Hey2:  0.6431103530339897
+Unique length after:  2044982
+Count of key afters:  2044982
+factorize right keys:  0.6435844450024888
+Time22:  0.6446078179869801
+Inthash table first part time:  9.697978384792805e-06
+Inthash table second part time:  0.10031255398644134
+factorize right keys:  0.10158062801929191
+Time23:  0.7466101460158825
+Get join indexers takes time:  0.7489292719983496
+Get join info takes time:  0.7490774889593013
+Time Hey1: 5.830079317092896e-07
+Unique length before:  2044982
+Count of keys after:  2044982
+ObjectHash table takes time:  0.3230411510448903
+Time Hey2:  0.3231427419814281
+Unique length after:  2543695
+Count of key afters:  2543695
+factorize right keys:  0.32362957298755646
+Time22:  0.32462990999920294
+Inthash table first part time:  9.445007890462875e-06
+Inthash table second part time:  0.07876504899468273
+factorize right keys:  0.08050283102784306
+Time23:  0.40563658403698355
+Get join indexers takes time:  0.4079596869996749
+Get join info takes time:  0.4081066680373624
+Time Hey1: 6.059999577701092e-07
+Unique length before:  2543695
+Count of keys after:  2543695
+ObjectHash table takes time:  0.45262784097576514
+Time Hey2:  0.4533268639934249
+Unique length after:  3042469
+Count of key afters:  3042469
+factorize right keys:  0.45380618603667244
+Time22:  0.45482141501270235
+Inthash table first part time:  8.584989700466394e-06
+Inthash table second part time:  0.08423294604290277
+factorize right keys:  0.0862586650182493
+Time23:  0.5414295920054428
+Get join indexers takes time:  0.5436880760244094
+Get join info takes time:  0.5438317970256321
+Time Hey1: 6.220070645213127e-07
+Unique length before:  3042469
+Count of keys after:  3042469
+ObjectHash table takes time:  1.0860403300030157
+Time Hey2:  1.0868789759697393
+Unique length after:  3541250
+Count of key afters:  3541250
+factorize right keys:  1.0873590559931472
+Time22:  1.0883556790067814
+Inthash table first part time:  8.81002051755786e-06
+Inthash table second part time:  0.17138157499721274
+factorize right keys:  0.1737685599946417
+Time23:  1.262612733989954
+Get join indexers takes time:  1.2648800250026397
+Get join info takes time:  1.2650246190023609
+*******  4.098190316988621
+Time Hey1: 5.390029400587082e-07
+Unique length before:  0
+Count of keys after:  0
+ObjectHash table takes time:  0.012813911016564816
+Time Hey2:  0.012880510999821126
+Unique length after:  50000
+Count of key afters:  50000
+Time Hey1: 4.91039827466011e-07
+Unique length before:  50000
+Count of keys after:  50000
+ObjectHash table takes time:  0.14353816298535094
+Time Hey2:  0.1436107019544579
+Unique length after:  548767
+Count of key afters:  548767
+factorize left keys:  0.01293263299157843
+factorize right keys:  0.144072585972026
+Time12:  0.1581209659925662
+Inthash table first part time:  8.924049325287342e-06
+Inthash table second part time:  0.005237621953710914
+Inthash table first part time:  7.032009307295084e-06
+Inthash table second part time:  0.04893137502949685
+factorize left keys:  0.005289595981594175
+factorize right keys:  0.04898705199593678
+Time13:  0.21286501496797428
+Get join indexers takes time:  0.21837718796450645
+Get join info takes time:  0.2185232969932258
+Time Hey1: 6.500049494206905e-07
+Unique length before:  548767
+Count of keys after:  548767
+ObjectHash table takes time:  0.19534320599632338
+Time Hey2:  0.19544235401554033
+Unique length after:  1047582
+Count of key afters:  1047582
+factorize right keys:  0.19592139800079167
+Time22:  0.19693991099484265
+Inthash table first part time:  8.244009222835302e-06
+Inthash table second part time:  0.054277338029351085
+factorize right keys:  0.054360404959879816
+Time23:  0.25171704398235306
+Get join indexers takes time:  0.25400489498861134
+Get join info takes time:  0.2541479130159132
+Time Hey1: 5.899928510189056e-07
+Unique length before:  1047582
+Count of keys after:  1047582
+ObjectHash table takes time:  0.296929951000493
+Time Hey2:  0.297024384024553
+Unique length after:  1546299
+Count of key afters:  1546299
+factorize right keys:  0.297515588987153
+Time22:  0.2985471590072848
+Inthash table first part time:  8.984992746263742e-06
+Inthash table second part time:  0.0701818959787488
+factorize right keys:  0.07104380999226123
+Time23:  0.3699883120134473
+Get join indexers takes time:  0.3722924199537374
+Get join info takes time:  0.3724368779803626
+Time Hey1: 6.530317477881908e-07
+Unique length before:  1546299
+Count of keys after:  1546299
+ObjectHash table takes time:  0.6429571009939536
+Time Hey2:  0.6430582299944945
+Unique length after:  2044982
+Count of key afters:  2044982
+factorize right keys:  0.6435356510337442
+Time22:  0.6445450690225698
+Inthash table first part time:  9.139010217040777e-06
+Inthash table second part time:  0.09990126802586019
+factorize right keys:  0.10117830702802166
+Time23:  0.7461619210080244
+Get join indexers takes time:  0.7484318380011246
+Get join info takes time:  0.7485756070236675
+Time Hey1: 5.74975274503231e-07
+Unique length before:  2044982
+Count of keys after:  2044982
+ObjectHash table takes time:  0.31012848601676524
+Time Hey2:  0.3102229710202664
+Unique length after:  2543695
+Count of key afters:  2543695
+factorize right keys:  0.31070070900022984
+Time22:  0.311724676983431
+Inthash table first part time:  8.773000445216894e-06
+Inthash table second part time:  0.07783082098467276
+factorize right keys:  0.0794915419537574
+Time23:  0.39162773196585476
+Get join indexers takes time:  0.3939179629669525
+Get join info takes time:  0.39406277297530323
+Time Hey1: 6.92030880600214e-07
+Unique length before:  2543695
+Count of keys after:  2543695
+ObjectHash table takes time:  0.43772924097720534
+Time Hey2:  0.4384319649543613
+Unique length after:  3042469
+Count of key afters:  3042469
+factorize right keys:  0.4389097129460424
+Time22:  0.4399075759574771
+Inthash table first part time:  8.740986231714487e-06
+Inthash table second part time:  0.08440103504108265
+factorize right keys:  0.08642363001126796
+Time23:  0.5267079229815863
+Get join indexers takes time:  0.5289669740013778
+Get join info takes time:  0.5291118769673631
+Time Hey1: 6.170012056827545e-07
+Unique length before:  3042469
+Count of keys after:  3042469
+ObjectHash table takes time:  1.0822805680218153
+Time Hey2:  1.083089756022673
+Unique length after:  3541250
+Count of key afters:  3541250
+factorize right keys:  1.0835764579824172
+Time22:  1.0845809050370008
+Inthash table first part time:  8.578004781156778e-06
+Inthash table second part time:  0.1714570439653471
+factorize right keys:  0.17387927399249747
+Time23:  1.2589265810092911
+Get join indexers takes time:  1.2611757160048
+Get join info takes time:  1.2614044300280511
+Time Hey1: 5.869660526514053e-07
+Unique length before:  3541250
+Count of keys after:  3541250
+ObjectHash table takes time:  0.29137717600679025
+Time Hey2:  0.2923012940445915
+Unique length after:  4039949
+Count of key afters:  4039949
+factorize right keys:  0.2927811580011621
+Time22:  0.2937825989793055
+Inthash table first part time:  8.360948413610458e-06
+Inthash table second part time:  0.110366941022221
+factorize right keys:  0.11315143300453201
+Time23:  0.40739637700608
+Get join indexers takes time:  0.4096837340039201
+Get join info takes time:  0.4098298230092041
+*******  4.530237925006077
+Time Hey1: 5.799811333417892e-07
+Unique length before:  0
+Count of keys after:  0
+ObjectHash table takes time:  0.012821283016819507
+Time Hey2:  0.012885026982985437
+Unique length after:  50000
+Count of key afters:  50000
+Time Hey1: 5.129841156303883e-07
+Unique length before:  50000
+Count of keys after:  50000
+ObjectHash table takes time:  0.1481366420048289
+Time Hey2:  0.14819702302338555
+Unique length after:  548767
+Count of key afters:  548767
+factorize left keys:  0.012946548988111317
+factorize right keys:  0.14866974600590765
+Time12:  0.16272475296864286
+Inthash table first part time:  8.906994480639696e-06
+Inthash table second part time:  0.005222434992901981
+Inthash table first part time:  7.205992005765438e-06
+Inthash table second part time:  0.04887771501671523
+factorize left keys:  0.005274577008094639
+factorize right keys:  0.04893324797740206
+Time13:  0.21742253401316702
+Get join indexers takes time:  0.2230540190357715
+Get join info takes time:  0.2231989949941635
+Time Hey1: 6.160116754472256e-07
+Unique length before:  548767
+Count of keys after:  548767
+ObjectHash table takes time:  0.19373663602164015
+Time Hey2:  0.19383118796395138
+Unique length after:  1047582
+Count of key afters:  1047582
+factorize right keys:  0.19429667299846187
+Time22:  0.1952935199951753
+Inthash table first part time:  8.41100700199604e-06
+Inthash table second part time:  0.053138859977480024
+factorize right keys:  0.05322340701241046
+Time23:  0.24895436904625967
+Get join indexers takes time:  0.2512203269870952
+Get join info takes time:  0.251362987968605
+Time Hey1: 6.520422175526619e-07
+Unique length before:  1047582
+Count of keys after:  1047582
+ObjectHash table takes time:  0.2895960439927876
+Time Hey2:  0.2896904199733399
+Unique length after:  1546299
+Count of key afters:  1546299
+factorize right keys:  0.290170052961912
+Time22:  0.2911787540069781
+Inthash table first part time:  8.480972610414028e-06
+Inthash table second part time:  0.06987675500568002
+factorize right keys:  0.07078233099309728
+Time23:  0.36236997600644827
+Get join indexers takes time:  0.36463237600401044
+Get join info takes time:  0.3647760279709473
+Time Hey1: 6.439513526856899e-07
+Unique length before:  1546299
+Count of keys after:  1546299
+ObjectHash table takes time:  0.6491510139894672
+Time Hey2:  0.6492494650301524
+Unique length after:  2044982
+Count of key afters:  2044982
+factorize right keys:  0.6497200450394303
+Time22:  0.6507429009652697
+Inthash table first part time:  8.378992788493633e-06
+Inthash table second part time:  0.0999616650515236
+factorize right keys:  0.10123769496567547
+Time23:  0.7523824489908293
+Get join indexers takes time:  0.7546879999572411
+Get join info takes time:  0.7548344860551879
+Time Hey1: 6.289919838309288e-07
+Unique length before:  2044982
+Count of keys after:  2044982
+ObjectHash table takes time:  0.31361558998469263
+Time Hey2:  0.3137253180029802
+Unique length after:  2543695
+Count of key afters:  2543695
+factorize right keys:  0.314202616980765
+Time22:  0.315202912024688
+Inthash table first part time:  8.497037924826145e-06
+Inthash table second part time:  0.07802369096316397
+factorize right keys:  0.0797089749830775
+Time23:  0.395313723012805
+Get join indexers takes time:  0.3975873689632863
+Get join info takes time:  0.39777671499177814
+Time Hey1: 5.750334821641445e-07
+Unique length before:  2543695
+Count of keys after:  2543695
+ObjectHash table takes time:  0.4584082769579254
+Time Hey2:  0.45910768199246377
+Unique length after:  3042469
+Count of key afters:  3042469
+factorize right keys:  0.4596023759804666
+Time22:  0.4606107220170088
+Inthash table first part time:  8.468981832265854e-06
+Inthash table second part time:  0.08585358399432153
+factorize right keys:  0.08785240299766883
+Time23:  0.5490213329903781
+Get join indexers takes time:  0.5513134310021996
+Get join info takes time:  0.5514590779785067
+Time Hey1: 6.039626896381378e-07
+Unique length before:  3042469
+Count of keys after:  3042469
+ObjectHash table takes time:  1.1525579289882444
+Time Hey2:  1.1533740800223313
+Unique length after:  3541250
+Count of key afters:  3541250
+factorize right keys:  1.1538930450333282
+Time22:  1.1549029229790904
+Inthash table first part time:  9.513983968645334e-06
+Inthash table second part time:  0.17303444998105988
+factorize right keys:  0.1754342099884525
+Time23:  1.330866314994637
+Get join indexers takes time:  1.3331665769801475
+Get join info takes time:  1.3333191190031357
+Time Hey1: 6.399932317435741e-07
+Unique length before:  3541250
+Count of keys after:  3541250
+ObjectHash table takes time:  0.3041076740482822
+Time Hey2:  0.30508098599966615
+Unique length after:  4039949
+Count of key afters:  4039949
+factorize right keys:  0.30556900502415374
+Time22:  0.3065752640250139
+Inthash table first part time:  8.929986506700516e-06
+Inthash table second part time:  0.11119071603752673
+factorize right keys:  0.1139596439898014
+Time23:  0.42111528804525733
+Get join indexers takes time:  0.42343302903464064
+Get join info takes time:  0.42358026502188295
+Time Hey1: 6.469781510531902e-07
+Unique length before:  4039949
+Count of keys after:  4039949
+ObjectHash table takes time:  0.3367901999736205
+Time Hey2:  0.3378933549975045
+Unique length after:  4538718
+Count of key afters:  4538718
+factorize right keys:  0.338382861984428
+Time22:  0.3393893510219641
+Inthash table first part time:  8.707982487976551e-06
+Inthash table second part time:  0.11791667802026495
+factorize right keys:  0.12106682197190821
+Time23:  0.46094990003621206
+Get join indexers takes time:  0.46329231798881665
+Get join info takes time:  0.4634417640045285
+*******  5.150284729024861

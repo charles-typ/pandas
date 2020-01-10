@@ -27,6 +27,7 @@ N = 20000000
 pieces = args.chunk
 logger.info("Start generating data")
 indices = tm.makeStringIndex(N).values
+indices2 = tm.makeStringIndex(N).values
 key = np.tile(indices[:left_table], 1)
 left = DataFrame(
     {"key": key, "value": np.random.randn(left_table)}
@@ -36,7 +37,7 @@ np.random.shuffle(indices)
 for i in range(1, pieces):
     right[i] = DataFrame(
         {
-            "key": indices[(i - 1)*right_table + 5000:i*right_table + 5000],
+            "key": indices2[(i - 1)*right_table + 5000:i*right_table + 5000],
             "value2": np.random.randn(right_table),
         }
     )
@@ -49,6 +50,7 @@ logger.info("Left table size: " + str(left_table) + ", right table chunk size: "
 #    }
 #)
 logger.info("Start Running test for original pandas code")
+prev = 0
 for ttt in range(2, pieces + 1):
     right_merge = DataFrame(columns=["key", "value2"])
     for i in range(1, ttt):
@@ -57,23 +59,26 @@ for ttt in range(2, pieces + 1):
     start = timeit.default_timer()
     result = merge(left, right_merge, how="inner")
     end = timeit.default_timer()
-    logger.info(str(ttt - 1) + " chunks take time: " + str(end - start))
+    logger.info(str(ttt - 1) + " chunks take time: " + str(end - start) + " single chunk takes time: " + str(end - start - prev))
+    prev = end - start
     #print("******* ", end - start)
 
 print("--------------------------------------------------------------------------------")
 print("\n")
 logger.info("Start Running test for pipelined pandas code")
-for ttt in range(2, pieces + 1):
-    leftsorter = None
-    leftcount = None
-    orizer = None
-    intrizer = None
+
+leftsorter = None
+leftcount = None
+orizer = None
+intrizer = None
+count = 0
+for i in range(1, pieces):
     start = timeit.default_timer()
-    for i in range(1, ttt):
-        result, orizer, intrizer, leftsorter, leftcount = pipeline_merge(left, right[i], factorizer=orizer, intfactorizer=intrizer, leftsorter=leftsorter, leftcount=leftcount, slices=ttt-1, how="pipeline")
+    result, orizer, intrizer, leftsorter, leftcount = pipeline_merge(left, right[i], factorizer=orizer, intfactorizer=intrizer, leftsorter=leftsorter, leftcount=leftcount, slices=ttt-1, how="pipeline")
     end = timeit.default_timer()
-    logger.info(str(ttt - 1) + " chunks take time " +  str(end - start))
-    #print("******* ", end - start)
+    count += (end - start)
+    logger.info(str(i) + " chunks take time " +  str(end - start) + " Accum time: " + str(count))
+   #print("******* ", end - start)
 
 
 #for ttt in range(2, pieces + 1):

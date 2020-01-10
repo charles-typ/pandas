@@ -231,10 +231,10 @@ class _PipelineMergeOperation:
             self.left, self.right = self._indicator_pre_merge(self.left, self.right)
         # FIXME 1 modify indexer
         #print("Check point 11")
-        start = timeit.default_timer()
+        #start = timeit.default_timer()
         join_index, left_indexer, right_indexer = self._get_join_info()
-        end = timeit.default_timer()
-        print("Get join info takes time: ", end -  start)
+        #end = timeit.default_timer()
+        #print("Get join info takes time: ", end -  start)
 
         ldata, rdata = self.left._data, self.right._data
         lsuf, rsuf = self.suffixes
@@ -468,10 +468,10 @@ class _PipelineMergeOperation:
                 right_ax, left_ax, self.right_join_keys, sort=self.sort
             )
         else:
-            start = timeit.default_timer()
+            #start = timeit.default_timer()
             (left_indexer, right_indexer, left_sorter, left_count) = self._get_join_indexers()
-            end = timeit.default_timer()
-            print("Get join indexers takes time: ", end -  start)   # FIXME 2 fix get join indexers
+            #end = timeit.default_timer()
+            #print("Get join indexers takes time: ", end -  start)   # FIXME 2 fix get join indexers
             #print("!!!")
             #print(left_sorter)
             #print(left_count)
@@ -945,18 +945,19 @@ def _get_join_indexers(
         #print(end1 - start)
         zipped = zip(*mapped)
         llab, rlab, shape = [list(x) for x in zipped]
-
+        end1 = timeit.default_timer()
+        print("Time11: ", end1 - start)
         # get flat i8 keys from label lists
         lkey, rkey = _get_join_keys(llab, rlab, shape, factorizer, intfactorizer, sort)
 
         end2 = timeit.default_timer()
-        print("Time12: ", end2 - start)
+        print("Time12: ", end2 - end1)
         # factorize keys to a dense i8 space
         # `count` is the num. of unique keys
         # set(lkey) | set(rkey) == range(count)
         lkey, rkey, count = _factorize_keys(lkey, rkey, factorizer, intfactorizer, sort=sort)
         end3 = timeit.default_timer()
-        print("Time13: ", end3 - start)
+        print("Time13: ", end3 - end2)
     else:
         #print("need to factorize right keys")
         start = timeit.default_timer()
@@ -969,14 +970,17 @@ def _get_join_indexers(
         #print(end1 - start)
         zipped = zip(*mapped)
         rlab, shape = [list(x) for x in zipped]
+        end1 = timeit.default_timer()
+        print("Time21: ", end1 - start)
         # get flat i8 keys from label lists
         rkey = _get_right_join_keys(rlab, shape, factorizer, intfactorizer, sort)
         end2 = timeit.default_timer()
-        print("Time22: ", end2 - start)
+        print("Time22: ", end2 - end1)
         rkey, count = _factorize_right_keys(rkey, factorizer, intfactorizer, sort=sort)
+        # TODO check this copy
         lkey = rkey
         end3 = timeit.default_timer()
-        print("Time23: ", end3 - start)
+        print("Time23: ", end3 - end2)
 
 
     # preserve left frame order if how == 'left' and sort == False
@@ -1234,14 +1238,14 @@ def _factorize_keys(lk, rk, objectrizer, intrizer, sort=True):
     else:
     #    print("noInt")
         rizer = objectrizer
-    start1 = timeit.default_timer()
+    #start1 = timeit.default_timer()
     llab = rizer.new_factorize(lk)
-    start2 = timeit.default_timer()
+    #start2 = timeit.default_timer()
     rlab = rizer.new_factorize(rk)
-    start3 = timeit.default_timer()
+    #start3 = timeit.default_timer()
     #print("look here")
-    print("factorize left keys: ", start2 - start1)
-    print("factorize right keys: ", start3 - start2)
+    #print("factorize left keys: ", start2 - start1)
+    #print("factorize right keys: ", start3 - start2)
     #print(start1)
     #print(start2 - start1)
     #print("$$$$$$$$$$$$$$$$$$$$$$")
@@ -1318,7 +1322,8 @@ def _factorize_right_keys(rk, objectrizer, intrizer, sort=True):
     start1 = timeit.default_timer()
     rlab = rizer.new_factorize(rk)
     start2 = timeit.default_timer()
-    print("factorize right keys: ", start2 - start1)
+    if flag == 0:
+        print("Fuck it ", start2 - start1)
     #start2 = timeit.default_timer()
     #print("look")
     #print(start1 - start)
@@ -1376,7 +1381,6 @@ def _get_join_keys(llab, rlab, shape, factorizer, intfactorizer, sort: bool):
     if nlev == len(shape):  # all done!
         return lkey, rkey
 
-    print("Calling this factorize function both left and right")
     # densify current keys to avoid overflow
     lkey, rkey, count = _factorize_keys(lkey, rkey, factorizer, intfactorizer, sort=sort)
 
@@ -1405,7 +1409,6 @@ def _get_right_join_keys(rlab, shape, factorizer, intfactorizer, sort: bool):
         return rkey
 
     # densify current keys to avoid overflow
-    print("Calling this factorize function both left and right")
     rkey, count = _factorize_right_keys(rkey, factorizer, intfactorizer, sort=sort)
     rlab = [rkey] + rlab[nlev:]
     shape = [count] + shape[nlev:]
