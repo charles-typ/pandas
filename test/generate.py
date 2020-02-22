@@ -49,6 +49,8 @@ logger.info("Left table size: " + str(left_table) + ", right table chunk size: "
 #        "value2": np.random.randn(600000),
 #    }
 #)
+print("\n")
+
 logger.info("Start Running test for original pandas code")
 prev = 0
 for ttt in range(2, pieces + 1):
@@ -65,6 +67,22 @@ for ttt in range(2, pieces + 1):
 
 print("--------------------------------------------------------------------------------")
 print("\n")
+
+
+logger.info("Start Running test for original pandas code, in increment manner")
+total = 0
+for i in range(1, pieces):
+    start = timeit.default_timer()
+    result = merge(left, right[i], how="inner")
+    end = timeit.default_timer()
+    logger.info(str(i) + "th single chunk takes time: " + str(end - start))
+    total += end - start
+    #print("******* ", end - start)
+logger.info("Original increment takes time: " + str(total))
+
+print("--------------------------------------------------------------------------------")
+print("\n")
+
 logger.info("Start Running test for pipelined pandas code")
 
 leftsorter = None
@@ -80,6 +98,23 @@ for i in range(1, pieces):
     logger.info(str(i) + " chunks take time " +  str(end - start) + " Accum time: " + str(count))
    #print("******* ", end - start)
 
+
+print("--------------------------------------------------------------------------------")
+print("\n")
+logger.info("Start Running test for pipelined pandas with merge join code")
+
+leftsorter = None
+leftcount = None
+orizer = None
+intrizer = None
+count = 0
+for i in range(1, pieces):
+    start = timeit.default_timer()
+    result, orizer, intrizer, leftsorter, leftcount = pipeline_merge(left, right[i], factorizer=orizer, intfactorizer=intrizer, leftsorter=leftsorter, leftcount=leftcount, slices=ttt-1, how="pipeline_merge")
+    end = timeit.default_timer()
+    count += (end - start)
+    logger.info(str(i) + " chunks take time " +  str(end - start) + " Accum time: " + str(count))
+   #print("******* ", end - start)
 
 #for ttt in range(2, pieces + 1):
 #    leftsorter = None

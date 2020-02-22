@@ -1,5 +1,5 @@
 #! /bin/sh
-asv profile  -E existing '^increment.Merge(.*)'         &> report/increment
-asv profile  -E existing 'original_increment.Merge(.*)' &> report/original_increment
-asv profile  -E existing 'original_merge.Merge(.*)'     &> report/original_merge
-asv profile  -E existing '^merge.Merge(.*)'             &> report/merge
+asv run  -E existing -b '^increment.Merge(.*)'         
+asv run  -E existing -b 'original_increment.Merge(.*)' 
+asv run  -E existing -b 'original_merge.Merge(.*)'     
+asv run  -E existing -b '^merge_increment.Merge(.*)'   

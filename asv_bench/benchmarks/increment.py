@@ -19,11 +19,11 @@ class Merge:
 
     def setup(self):
         N = 10000000
-        self.pieces = 6
+        self.pieces = 10
         indices = tm.makeStringIndex(N).values
-        key = np.tile(indices[:50000], 1)
+        key = np.tile(indices[:5000000], 1)
         self.left = DataFrame(
-            {"key": key, "value": np.random.randn(50000)}
+            {"key": key, "value": np.random.randn(5000000)}
         )
         self.right = {}
         np.random.shuffle(indices)
@@ -46,14 +46,14 @@ class Merge:
 
     def time_merge_2intkey(self):
 
-        result, orizer, intrizer, leftsorter, leftcount = pipeline_merge(self.left, self.right[2], how="pipeline")
+        result, orizer, intrizer, leftsorter, leftcount = pipeline_merge(self.left, self.right[2], slices=10, how="pipeline")
         #print("*&%&%*$&%*$&*%")
         #print(leftsorter)
         #print(leftcount)
         #print("*&%&%*$&%*$&*%")
-        pieces = 6
+        pieces = 10
         for i in range(3, pieces):
-            result, orizer, intrizer, leftsorter, leftcount = pipeline_merge(self.left, self.right[i], factorizer=orizer, intfactorizer=intrizer, leftsorter=leftsorter, leftcount=leftcount, how="pipeline")
+            result, orizer, intrizer, leftsorter, leftcount = pipeline_merge(self.left, self.right[i], factorizer=orizer, intfactorizer=intrizer, leftsorter=leftsorter, leftcount=leftcount, slices=10, how="pipeline")
             #print("*&%&%*$&%*$&*%")
             #print(leftsorter)
             #print(leftcount)

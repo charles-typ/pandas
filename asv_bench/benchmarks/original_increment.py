@@ -22,17 +22,17 @@ class Merge:
         self.pieces = 10
         indices = tm.makeStringIndex(N).values
         indices2 = tm.makeStringIndex(N).values
-        key = np.tile(indices[:10000000], 1)
-        key2 = np.tile(indices2[:10000000], 1)
+        key = np.tile(indices[:5000000], 1)
+        key2 = np.tile(indices2[:5000000], 1)
         self.left = DataFrame(
-            {"key": key, "value": np.random.randn(10000000)}
+            {"key": key, "value": np.random.randn(5000000)}
         )
         self.right = {}
         for i in range(2, self.pieces):
             self.right[i] = DataFrame(
                 {
-                    "key": indices[(i - 1)*1000000 + 50000:(i)*1000000 + 50000],
-                    "value2": np.random.randn(1000000),
+                    "key": indices[(i - 1)*500000 + 50000:(i)*500000 + 50000],
+                    "value2": np.random.randn(500000),
                 }
             )
 
@@ -46,8 +46,8 @@ class Merge:
 #        self.df3 = self.df[:5000]
 
     def time_merge_2intkey(self):
-        #for i in range(2, self.pieces):
-        result = merge(self.left, self.right[2], how="inner")
+        for i in range(2, self.pieces):
+        	result = merge(self.left, self.right[i], how="inner")
 
 #    def time_merge_dataframe_integer_2key(self, sort):
 #        pipeline_merge(self.df, self.df3, how="pipeline")

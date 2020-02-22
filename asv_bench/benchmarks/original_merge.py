@@ -19,15 +19,15 @@ class Merge:
     def setup(self):
         N = 10000000
         indices = tm.makeStringIndex(N).values
-        key = np.tile(indices[:50000], 1)
+        key = np.tile(indices[:5000000], 1)
         self.left = DataFrame(
-            {"key": key, "value": np.random.randn(50000)}
+            {"key": key, "value": np.random.randn(5000000)}
         )
         np.random.shuffle(indices)
         self.right = DataFrame(
             {
-                "key": indices[1050000:7050000],
-                "value2": np.random.randn(6000000),
+                "key": indices[550000:4550000],
+                "value2": np.random.randn(4000000),
             }
         )
       #  self.df = DataFrame(
