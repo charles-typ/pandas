@@ -87,10 +87,13 @@ class BaseGrouper:
         indexer: Optional[np.ndarray] = None,
     ):
         assert isinstance(axis, Index), axis
-
+        print("Groupings: ")
+        print(groupings)
         self._filter_empty_groups = self.compressed = len(groupings) != 1
         self.axis = axis
         self._groupings: List[grouper.Grouping] = list(groupings)
+        print("Groupings: 2")
+        print(self._groupings)
         self.sort = sort
         self.group_keys = group_keys
         self.mutated = mutated
@@ -221,6 +224,11 @@ class BaseGrouper:
 
     @property
     def codes(self) -> List[np.ndarray]:
+        print("Codes")
+        print(self.groupings)
+        for i in self.groupings:
+            print(i)
+            print(i.codes)
         return [ping.codes for ping in self.groupings]
 
     @property
@@ -261,7 +269,8 @@ class BaseGrouper:
     @cache_readonly
     def group_info(self):
         comp_ids, obs_group_ids = self._get_compressed_codes()
-
+        print("Collecting group info here:")
+        print(comp_ids)
         ngroups = len(obs_group_ids)
         comp_ids = ensure_int64(comp_ids)
         return comp_ids, obs_group_ids, ngroups
@@ -277,6 +286,8 @@ class BaseGrouper:
 
     def _get_compressed_codes(self) -> Tuple[np.ndarray, np.ndarray]:
         all_codes = self.codes
+        print("All codes:")
+        print(all_codes)
         if len(all_codes) > 1:
             group_index = get_group_index(all_codes, self.shape, sort=True, xnull=True)
             return compress_group_index(group_index, sort=self.sort)

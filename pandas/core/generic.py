@@ -7309,6 +7309,9 @@ class NDFrame(PandasObject, SelectionMixin):
         group_keys: bool_t = True,
         squeeze: bool_t = False,
         observed: bool_t = False,
+        pipeline: bool_t = False,
+        hash_table=None,
+
     ):
         """
         Group DataFrame or Series using a mapper or by a Series of columns.
@@ -7320,6 +7323,10 @@ class NDFrame(PandasObject, SelectionMixin):
 
         Parameters
         ----------
+        hash_table: pandas._lib.hashtable
+            Used for pipelined operations
+        pipeline: bool, default False
+            True for groupby pipelining
         by : mapping, function, label, or list of labels
             Used to determine the groups for the groupby.
             If ``by`` is a function, it's called on each value of the object's
@@ -7431,6 +7438,8 @@ class NDFrame(PandasObject, SelectionMixin):
             group_keys=group_keys,
             squeeze=squeeze,
             observed=observed,
+            pipeline=pipeline,
+            hash_table=hash_table,
         )
 
     def asfreq(

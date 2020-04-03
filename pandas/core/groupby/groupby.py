@@ -373,9 +373,13 @@ class _GroupBy(PandasObject, SelectionMixin):
         squeeze: bool = False,
         observed: bool = False,
         mutated: bool = False,
+        pipeline: bool = False,
+        hash_table=None,
     ):
 
         self._selection = selection
+        self.hash_table = hash_table
+        self.pipeline = pipeline
 
         assert isinstance(obj, NDFrame), type(obj)
         obj._consolidate_inplace()
@@ -399,7 +403,7 @@ class _GroupBy(PandasObject, SelectionMixin):
         if grouper is None:
             from pandas.core.groupby.grouper import get_grouper
 
-            grouper, exclusions, obj = get_grouper(
+            grouper, exclusions, obj, self.hash_table = get_grouper(
                 obj,
                 keys,
                 axis=axis,
@@ -407,6 +411,8 @@ class _GroupBy(PandasObject, SelectionMixin):
                 sort=sort,
                 observed=observed,
                 mutated=self.mutated,
+                hash_table=self.hash_table,
+                pipeline=self.pipeline,
             )
 
         self.obj = obj
@@ -1227,9 +1233,15 @@ class GroupBy(_GroupBy):
         Name: B, dtype: float64
         """
         nv.validate_groupby_func("mean", args, kwargs, ["numeric_only"])
-        return self._cython_agg_general(
-            "mean", alt=lambda x, axis: Series(x).mean(**kwargs), **kwargs
-        )
+        if self.pipeline:
+            return self._cython_agg_general(
+                "mean", alt=lambda x, axis: Series(x).mean(**kwargs), **kwargs
+            ), self.hash_table
+        else:
+            return self._cython_agg_general(
+                "mean", alt=lambda x, axis: Series(x).mean(**kwargs), **kwargs
+            )
+
 
     @Substitution(name="groupby")
     @Appender(_common_see_also)
@@ -1815,13 +1827,15 @@ class GroupBy(_GroupBy):
             # object
             from pandas.core.groupby.grouper import get_grouper
 
-            grouper, _, _ = get_grouper(
+            grouper, _, _, self.hash_table = get_grouper(
                 dropped,
                 key=self.keys,
                 axis=self.axis,
                 level=self.level,
                 sort=self.sort,
                 mutated=self.mutated,
+                hash_table=self.hash_table,
+                pipeline=self.pipeline
             )
 
         grb = dropped.groupby(grouper, as_index=self.as_index, sort=self.sort)
@@ -2527,6 +2541,8 @@ def get_groupby(
     squeeze: bool = False,
     observed: bool = False,
     mutated: bool = False,
+    pipeline: bool = False,
+    hash_table=None,
 ):
 
     klass: Union[Type["SeriesGroupBy"], Type["DataFrameGroupBy"]]
@@ -2555,4 +2571,6 @@ def get_groupby(
         squeeze=squeeze,
         observed=observed,
         mutated=mutated,
+        pipeline=pipeline,
+        hash_table=hash_table,
     )

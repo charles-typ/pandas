@@ -632,6 +632,13 @@ def _group_mean(floating[:, :] out,
     sumx = np.zeros_like(out)
 
     N, K = (<object>values).shape
+    print("Show the table")
+    for i in range(N):
+        for j in range(K):
+            print(values[i, j])
+    print("Showing the grouping")
+    for i in range(len(labels)):
+        print(labels[i])
 
     with nogil:
         for i in range(N):
@@ -658,6 +665,63 @@ def _group_mean(floating[:, :] out,
 
 group_mean_float32 = _group_mean['float']
 group_mean_float64 = _group_mean['double']
+
+
+@cython.wraparound(False)
+@cython.boundscheck(False)
+def _pipeline_group_mean(floating[:, :] out,
+                int64_t[:] counts,
+                floating[:, :] values,
+                const int64_t[:] labels,
+                Py_ssize_t min_count=-1):
+    cdef:
+        Py_ssize_t i, j, N, K, lab, ncounts = len(counts)
+        floating val, count
+        floating[:, :] sumx
+        int64_t[:, :] nobs
+
+    assert min_count == -1, "'min_count' only used in add and prod"
+
+    if not len(values) == len(labels):
+        raise ValueError("len(index) != len(labels)")
+
+    nobs = np.zeros((<object>out).shape, dtype=np.int64)
+    sumx = np.zeros_like(out)
+
+    N, K = (<object>values).shape
+    print("Show the table")
+    for i in range(N):
+        for j in range(K):
+            print(values[i, j])
+    print("Showing the grouping")
+    for i in range(len(labels)):
+        print(labels[i])
+
+    with nogil:
+        for i in range(N):
+            lab = labels[i]
+            if lab < 0:
+                continue
+
+            counts[lab] += 1
+            for j in range(K):
+                val = values[i, j]
+                # not nan
+                if val == val:
+                    nobs[lab, j] += 1
+                    sumx[lab, j] += val
+
+        for i in range(ncounts):
+            for j in range(K):
+                count = nobs[i, j]
+                if nobs[i, j] == 0:
+                    out[i, j] = NAN
+                else:
+                    out[i, j] = sumx[i, j] / count
+
+
+pipeline_group_mean_float32 = _pipeline_group_mean['float']
+pipeline_group_mean_float64 = _pipeline_group_mean['double']
 
 
 @cython.wraparound(False)

@@ -114,10 +114,10 @@ def _ensure_data(values, dtype=None):
 
     # datetimelike
     if (
-        needs_i8_conversion(values)
-        or is_period_dtype(dtype)
-        or is_datetime64_any_dtype(dtype)
-        or is_timedelta64_dtype(dtype)
+            needs_i8_conversion(values)
+            or is_period_dtype(dtype)
+            or is_datetime64_any_dtype(dtype)
+            or is_timedelta64_dtype(dtype)
     ):
         if is_period_dtype(values) or is_period_dtype(dtype):
             from pandas import PeriodIndex
@@ -146,7 +146,7 @@ def _ensure_data(values, dtype=None):
         return values.asi8, dtype
 
     elif is_categorical_dtype(values) and (
-        is_categorical_dtype(dtype) or dtype is None
+            is_categorical_dtype(dtype) or dtype is None
     ):
         values = getattr(values, "values", values)
         values = values.codes
@@ -444,7 +444,7 @@ def isin(comps, values) -> np.ndarray:
 
 
 def _factorize_array(
-    values, na_sentinel: int = -1, size_hint=None, na_value=None
+        values, na_sentinel: int = -1, size_hint=None, na_value=None
 ) -> Tuple[np.ndarray, np.ndarray]:
     """
     Factorize an array-like to codes and uniques.
@@ -469,12 +469,51 @@ def _factorize_array(
     uniques : ndarray
     """
     hash_klass, values = _get_data_algo(values)
-
+    print("Hash table type")
+    print(hash_klass)
     table = hash_klass(size_hint or len(values))
     uniques, codes = table.factorize(values, na_sentinel=na_sentinel, na_value=na_value)
 
     codes = ensure_platform_int(codes)
     return codes, uniques
+
+
+def _pipeline_factorize_array(
+        values, na_sentinel: int = -1, size_hint=None, na_value=None, hash_table=None
+) -> Tuple[np.ndarray, np.ndarray, object]:
+    """
+    Factorize an array-like to codes and uniques.
+
+    This doesn't do any coercion of types or unboxing before factorization.
+
+    Parameters
+    ----------
+    values : ndarray
+    na_sentinel : int, default -1
+    size_hint : int, optional
+        Passsed through to the hashtable's 'get_labels' method
+    na_value : object, optional
+        A value in `values` to consider missing. Note: only use this
+        parameter when you know that you don't have any values pandas would
+        consider missing in the array (NaN for float data, iNaT for
+        datetimes, etc.).
+
+    Returns
+    -------
+    codes : ndarray
+    uniques : ndarray
+    """
+    hash_klass, values = _get_data_algo(values)
+    print("Hash table type")
+    print(hash_klass)
+    if hash_table is None:
+        table = hash_klass(size_hint or len(values))
+    else:
+        table = hash_table
+    uniques, codes = table.factorize(values, na_sentinel=na_sentinel, na_value=na_value)
+
+    codes = ensure_platform_int(codes)
+    return codes, uniques, table
 
 
 _shared_docs[
@@ -596,7 +635,7 @@ _shared_docs[
 )
 @Appender(_shared_docs["factorize"])
 def factorize(
-    values, sort: bool = False, na_sentinel: int = -1, size_hint: Optional[int] = None
+        values, sort: bool = False, na_sentinel: int = -1, size_hint: Optional[int] = None
 ) -> Tuple[np.ndarray, Union[np.ndarray, ABCIndex]]:
     # Implementation notes: This method is responsible for 3 things
     # 1.) coercing data to array-like (ndarray, Index, extension array)
@@ -612,11 +651,14 @@ def factorize(
 
     if is_extension_array_dtype(values):
         values = extract_array(values)
+        print("Factorize 1")
         codes, uniques = values.factorize(na_sentinel=na_sentinel)
         dtype = original.dtype
+        print(codes)
+        print(uniques)
     else:
         values, dtype = _ensure_data(values)
-
+        print("Factorize 2")
         if original.dtype.kind in ["m", "M"]:
             na_value = na_value_for_dtype(original.dtype)
         else:
@@ -625,6 +667,8 @@ def factorize(
         codes, uniques = _factorize_array(
             values, na_sentinel=na_sentinel, size_hint=size_hint, na_value=na_value
         )
+        print(codes)
+        print(uniques)
 
     if sort and len(uniques) > 0:
         uniques, codes = safe_sort(
@@ -632,7 +676,8 @@ def factorize(
         )
 
     uniques = _reconstruct_data(uniques, dtype, original)
-
+    print("Factorize 3")
+    print(uniques)
     # return original tenor
     if isinstance(original, ABCIndexClass):
         uniques = original._shallow_copy(uniques, name=None)
@@ -640,17 +685,73 @@ def factorize(
         from pandas import Index
 
         uniques = Index(uniques)
-
+    print("Factorize 4")
+    print(uniques)
     return codes, uniques
 
 
+def pipeline_factorize(
+        values, sort: bool = False, na_sentinel: int = -1, size_hint: Optional[int] = None, hash_table=None
+):
+    # Implementation notes: This method is responsible for 3 things
+    # 1.) coercing data to array-like (ndarray, Index, extension array)
+    # 2.) factorizing codes and uniques
+    # 3.) Maybe boxing the uniques in an Index
+    #
+    # Step 2 is dispatched to extension types (like Categorical). They are
+    # responsible only for factorization. All data coercion, sorting and boxing
+    # should happen here.
+
+    values = _ensure_arraylike(values)
+    original = values
+
+    if is_extension_array_dtype(values):
+        values = extract_array(values)
+        print("Factorize 1")
+        codes, uniques = values.factorize(na_sentinel=na_sentinel)
+        dtype = original.dtype
+        print(codes)
+        print(uniques)
+    else:
+        values, dtype = _ensure_data(values)
+        print("Factorize 2")
+        if original.dtype.kind in ["m", "M"]:
+            na_value = na_value_for_dtype(original.dtype)
+        else:
+            na_value = None
+
+        [codes, uniques, hash_table] = _pipeline_factorize_array(values, na_sentinel=na_sentinel, size_hint=size_hint,
+                                                                 na_value=na_value, hash_table=hash_table)
+        print(codes)
+        print(uniques)
+
+    if sort and len(uniques) > 0:
+        uniques, codes = safe_sort(
+            uniques, codes, na_sentinel=na_sentinel, assume_unique=True, verify=False
+        )
+
+    uniques = _reconstruct_data(uniques, dtype, original)
+    print("Factorize 3")
+    print(uniques)
+    # return original tenor
+    if isinstance(original, ABCIndexClass):
+        uniques = original._shallow_copy(uniques, name=None)
+    elif isinstance(original, ABCSeries):
+        from pandas import Index
+
+        uniques = Index(uniques)
+    print("Factorize 4")
+    print(uniques)
+    return codes, uniques, hash_table
+
+
 def value_counts(
-    values,
-    sort: bool = True,
-    ascending: bool = False,
-    normalize: bool = False,
-    bins=None,
-    dropna: bool = True,
+        values,
+        sort: bool = True,
+        ascending: bool = False,
+        normalize: bool = False,
+        bins=None,
+        dropna: bool = True,
 ) -> ABCSeries:
     """
     Compute a histogram of the counts of non-null values.
@@ -840,12 +941,12 @@ def mode(values, dropna: bool = True) -> ABCSeries:
 
 
 def rank(
-    values,
-    axis: int = 0,
-    method: str = "average",
-    na_option: str = "keep",
-    ascending: bool = True,
-    pct: bool = False,
+        values,
+        axis: int = 0,
+        method: str = "average",
+        na_option: str = "keep",
+        ascending: bool = True,
+        pct: bool = False,
 ):
     """
     Rank the values along a given axis.
@@ -960,10 +1061,10 @@ def checked_add_with_arr(arr, b, arr_mask=None, b_mask=None):
         to_raise = ((np.iinfo(np.int64).max - b2 < arr) & not_nan).any()
     else:
         to_raise = (
-            ((np.iinfo(np.int64).max - b2[mask1] < arr[mask1]) & not_nan[mask1]).any()
-            or (
-                (np.iinfo(np.int64).min - b2[mask2] > arr[mask2]) & not_nan[mask2]
-            ).any()
+                ((np.iinfo(np.int64).max - b2[mask1] < arr[mask1]) & not_nan[mask1]).any()
+                or (
+                        (np.iinfo(np.int64).min - b2[mask2] > arr[mask2]) & not_nan[mask2]
+                ).any()
         )
 
     if to_raise:
@@ -1082,8 +1183,8 @@ class SelectN:
         nsmallest/nlargest methods
         """
         return (
-            is_numeric_dtype(dtype) and not is_complex_dtype(dtype)
-        ) or needs_i8_conversion(dtype)
+                       is_numeric_dtype(dtype) and not is_complex_dtype(dtype)
+               ) or needs_i8_conversion(dtype)
 
 
 class SelectNSeries(SelectN):
@@ -1424,7 +1525,7 @@ _take_2d_multi_dict = {
 
 
 def _get_take_nd_function(
-    ndim: int, arr_dtype, out_dtype, axis: int = 0, mask_info=None
+        ndim: int, arr_dtype, out_dtype, axis: int = 0, mask_info=None
 ):
     if ndim <= 2:
         tup = (arr_dtype.name, out_dtype.name)
@@ -1553,7 +1654,7 @@ def take(arr, indices, axis: int = 0, allow_fill: bool = False, fill_value=None)
 
 
 def take_nd(
-    arr, indexer, axis: int = 0, out=None, fill_value=np.nan, allow_fill: bool = True
+        arr, indexer, axis: int = 0, out=None, fill_value=np.nan, allow_fill: bool = True
 ):
     """
     Specialized Cython take which sets NaN values in one pass
@@ -1704,7 +1805,6 @@ def take_2d_multi(arr, indexer, fill_value=np.nan):
         if func is not None:
             func = _convert_wrapper(func, out.dtype)
     if func is None:
-
         def func(arr, indexer, out, fill_value=np.nan):
             _take_2d_multi_object(
                 arr, indexer, out, fill_value=fill_value, mask_info=mask_info
@@ -1767,9 +1867,9 @@ def searchsorted(arr, value, side="left", sorter=None):
         sorter = ensure_platform_int(sorter)
 
     if (
-        isinstance(arr, np.ndarray)
-        and is_integer_dtype(arr)
-        and (is_integer(value) or is_integer_dtype(value))
+            isinstance(arr, np.ndarray)
+            and is_integer_dtype(arr)
+            and (is_integer(value) or is_integer_dtype(value))
     ):
         # if `arr` and `value` have different dtypes, `arr` would be
         # recast by numpy, causing a slow search.
@@ -1789,7 +1889,7 @@ def searchsorted(arr, value, side="left", sorter=None):
         else:
             value = array(value, dtype=dtype)
     elif not (
-        is_object_dtype(arr) or is_numeric_dtype(arr) or is_categorical_dtype(arr)
+            is_object_dtype(arr) or is_numeric_dtype(arr) or is_categorical_dtype(arr)
     ):
         # E.g. if `arr` is an array with dtype='datetime64[ns]'
         # and `value` is a pd.Timestamp, we may need to convert value
@@ -1902,11 +2002,11 @@ def diff(arr, n: int, axis: int = 0):
 #  low-dependency, is used in this module, and used private methods from
 #  this module.
 def safe_sort(
-    values,
-    codes=None,
-    na_sentinel: int = -1,
-    assume_unique: bool = False,
-    verify: bool = True,
+        values,
+        codes=None,
+        na_sentinel: int = -1,
+        assume_unique: bool = False,
+        verify: bool = True,
 ) -> Union[np.ndarray, Tuple[np.ndarray, np.ndarray]]:
     """
     Sort ``values`` and reorder corresponding ``codes``.
@@ -1969,8 +2069,8 @@ def safe_sort(
 
     sorter = None
     if (
-        not is_extension_array_dtype(values)
-        and lib.infer_dtype(values, skipna=False) == "mixed-integer"
+            not is_extension_array_dtype(values)
+            and lib.infer_dtype(values, skipna=False) == "mixed-integer"
     ):
         # unorderable in py3 if mixed str/int
         ordered = sort_mixed(values)

@@ -250,7 +250,11 @@ class Grouping:
         sort: bool = True,
         observed: bool = False,
         in_axis: bool = False,
+        hash_table=None,
+        pipeline: bool = False,
     ):
+        self.pipeline = pipeline
+        self.table = hash_table
         self.name = name
         self.level = level
         self.grouper = _convert_grouper(index, grouper)
@@ -390,7 +394,10 @@ class Grouping:
     @property
     def codes(self) -> np.ndarray:
         if self._codes is None:
-            self._make_codes()
+            if self.pipeline:
+                self._pipeline_make_codes()
+            else:
+                self._make_codes()
         return self._codes
 
     @cache_readonly
@@ -402,7 +409,10 @@ class Grouping:
     @property
     def group_index(self) -> Index:
         if self._group_index is None:
-            self._make_codes()
+            if self.pipeline:
+                self._pipeline_make_codes()
+            else:
+                self._make_codes()
         assert self._group_index is not None
         return self._group_index
 
@@ -413,8 +423,29 @@ class Grouping:
                 codes = self.grouper.codes_info
                 uniques = self.grouper.result_index
             else:
+                print("Calling this factorize function")
                 codes, uniques = algorithms.factorize(self.grouper, sort=self.sort)
+                print(codes)
+                print(uniques)
                 uniques = Index(uniques, name=self.name)
+                print(uniques)
+            self._codes = codes
+            self._group_index = uniques
+
+    def _pipeline_make_codes(self) -> None:
+        if self._codes is None or self._group_index is None:
+            # we have a list of groupers
+            if isinstance(self.grouper, ops.BaseGrouper):
+                codes = self.grouper.codes_info
+                uniques = self.grouper.result_index
+            else:
+                print("Calling this factorize function")
+                [codes, uniques, self.table] = algorithms.pipeline_factorize(self.grouper, sort=self.sort,
+                                                                             hash_table=self.table)
+                print(codes)
+                print(uniques)
+                uniques = Index(uniques, name=self.name)
+                print(uniques)
             self._codes = codes
             self._group_index = uniques
 
@@ -432,7 +463,9 @@ def get_grouper(
     observed: bool = False,
     mutated: bool = False,
     validate: bool = True,
-) -> "Tuple[ops.BaseGrouper, List[Hashable], FrameOrSeries]":
+    pipeline: bool = True,
+    hash_table=None,
+) -> "Tuple[ops.BaseGrouper, List[Hashable], FrameOrSeries, object]":
     """
     Create and return a BaseGrouper, which is an internal
     mapping of how to create the grouper indexers.
@@ -508,13 +541,13 @@ def get_grouper(
     if isinstance(key, Grouper):
         binner, grouper, obj = key._get_grouper(obj, validate=False)
         if key.key is None:
-            return grouper, [], obj
+            return grouper, [], obj, None
         else:
-            return grouper, [key.key], obj
+            return grouper, [key.key], obj, None
 
     # already have a BaseGrouper, just return it
     elif isinstance(key, ops.BaseGrouper):
-        return key, [], obj
+        return key, [], obj, None
 
     if not isinstance(key, list):
         keys = [key]
@@ -611,6 +644,7 @@ def get_grouper(
 
         # create the Grouping
         # allow us to passing the actual Grouping as the gpr
+        print("Creating the grouping here")
         ping = (
             Grouping(
                 group_axis,
@@ -621,6 +655,8 @@ def get_grouper(
                 sort=sort,
                 observed=observed,
                 in_axis=in_axis,
+                hash_table=hash_table,
+                pipeline=pipeline,
             )
             if not isinstance(gpr, Grouping)
             else gpr
@@ -635,7 +671,7 @@ def get_grouper(
 
     # create the internals grouper
     grouper = ops.BaseGrouper(group_axis, groupings, sort=sort, mutated=mutated)
-    return grouper, exclusions, obj
+    return grouper, exclusions, obj, groupings[0].table
 
 
 def _is_label_like(val) -> bool:
