@@ -450,6 +450,7 @@ def _group_add(complexfloating_t[:, :] out,
                int64_t[:] counts,
                complexfloating_t[:, :] values,
                const int64_t[:] labels,
+               complexfloating_t[:,:] sumx,
                Py_ssize_t min_count=0):
     """
     Only aggregates on axis=0
@@ -457,9 +458,9 @@ def _group_add(complexfloating_t[:, :] out,
     cdef:
         Py_ssize_t i, j, N, K, lab, ncounts = len(counts)
         complexfloating_t val, count
-        complexfloating_t[:, :] sumx
+        #complexfloating_t[:, :] sumx
         int64_t[:, :] nobs
-
+    print("Calling this group add function!")
     if len(values) != len(labels):
         raise ValueError("len(index) != len(labels)")
 

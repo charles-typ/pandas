@@ -7428,7 +7428,7 @@ class NDFrame(PandasObject, SelectionMixin):
             raise TypeError("You have to supply one of 'by' and 'level'")
         axis = self._get_axis_number(axis)
 
-        return get_groupby(
+        ret =  get_groupby(
             self,
             by=by,
             axis=axis,
@@ -7441,6 +7441,152 @@ class NDFrame(PandasObject, SelectionMixin):
             pipeline=pipeline,
             hash_table=hash_table,
         )
+        print("Finish this")
+        return ret
+
+    def pipeline_groupby(
+        self,
+        by=None,
+        axis=0,
+        level=None,
+        as_index: bool_t = True,
+        sort: bool_t = True,
+        group_keys: bool_t = True,
+        squeeze: bool_t = False,
+        observed: bool_t = False,
+        pipeline: bool_t = False,
+        hash_table=None,
+
+    ):
+        """
+        Group DataFrame or Series using a mapper or by a Series of columns.
+
+        A groupby operation involves some combination of splitting the
+        object, applying a function, and combining the results. This can be
+        used to group large amounts of data and compute operations on these
+        groups.
+
+        Parameters
+        ----------
+        hash_table: pandas._lib.hashtable
+            Used for pipelined operations
+        pipeline: bool, default False
+            True for groupby pipelining
+        by : mapping, function, label, or list of labels
+            Used to determine the groups for the groupby.
+            If ``by`` is a function, it's called on each value of the object's
+            index. If a dict or Series is passed, the Series or dict VALUES
+            will be used to determine the groups (the Series' values are first
+            aligned; see ``.align()`` method). If an ndarray is passed, the
+            values are used as-is determine the groups. A label or list of
+            labels may be passed to group by the columns in ``self``. Notice
+            that a tuple is interpreted as a (single) key.
+        axis : {0 or 'index', 1 or 'columns'}, default 0
+            Split along rows (0) or columns (1).
+        level : int, level name, or sequence of such, default None
+            If the axis is a MultiIndex (hierarchical), group by a particular
+            level or levels.
+        as_index : bool, default True
+            For aggregated output, return object with group labels as the
+            index. Only relevant for DataFrame input. as_index=False is
+            effectively "SQL-style" grouped output.
+        sort : bool, default True
+            Sort group keys. Get better performance by turning this off.
+            Note this does not influence the order of observations within each
+            group. Groupby preserves the order of rows within each group.
+        group_keys : bool, default True
+            When calling apply, add group keys to index to identify pieces.
+        squeeze : bool, default False
+            Reduce the dimensionality of the return type if possible,
+            otherwise return a consistent type.
+        observed : bool, default False
+            This only applies if any of the groupers are Categoricals.
+            If True: only show observed values for categorical groupers.
+            If False: show all values for categorical groupers.
+
+            .. versionadded:: 0.23.0
+
+        Returns
+        -------
+        DataFrameGroupBy or SeriesGroupBy
+            Depends on the calling object and returns groupby object that
+            contains information about the groups.
+
+        See Also
+        --------
+        resample : Convenience method for frequency conversion and resampling
+            of time series.
+
+        Notes
+        -----
+        See the `user guide
+        <http://pandas.pydata.org/pandas-docs/stable/groupby.html>`_ for more.
+
+        Examples
+        --------
+        >>> df = pd.DataFrame({'Animal': ['Falcon', 'Falcon',
+        ...                               'Parrot', 'Parrot'],
+        ...                    'Max Speed': [380., 370., 24., 26.]})
+        >>> df
+           Animal  Max Speed
+        0  Falcon      380.0
+        1  Falcon      370.0
+        2  Parrot       24.0
+        3  Parrot       26.0
+        >>> df.groupby(['Animal']).mean()
+                Max Speed
+        Animal
+        Falcon      375.0
+        Parrot       25.0
+
+        **Hierarchical Indexes**
+
+        We can groupby different levels of a hierarchical index
+        using the `level` parameter:
+
+        >>> arrays = [['Falcon', 'Falcon', 'Parrot', 'Parrot'],
+        ...           ['Captive', 'Wild', 'Captive', 'Wild']]
+        >>> index = pd.MultiIndex.from_arrays(arrays, names=('Animal', 'Type'))
+        >>> df = pd.DataFrame({'Max Speed': [390., 350., 30., 20.]},
+        ...                   index=index)
+        >>> df
+                        Max Speed
+        Animal Type
+        Falcon Captive      390.0
+               Wild         350.0
+        Parrot Captive       30.0
+               Wild          20.0
+        >>> df.groupby(level=0).mean()
+                Max Speed
+        Animal
+        Falcon      370.0
+        Parrot       25.0
+        >>> df.groupby(level=1).mean()
+                 Max Speed
+        Type
+        Captive      210.0
+        Wild         185.0
+        """
+        from pandas.core.groupby.groupby import pipeline_get_groupby
+
+        if level is None and by is None:
+            raise TypeError("You have to supply one of 'by' and 'level'")
+        axis = self._get_axis_number(axis)
+
+        ret, table = pipeline_get_groupby(
+            self,
+            by=by,
+            axis=axis,
+            level=level,
+            as_index=as_index,
+            sort=sort,
+            group_keys=group_keys,
+            squeeze=squeeze,
+            observed=observed,
+            pipeline=True,
+            hash_table=hash_table,
+        )
+        return ret, table
 
     def asfreq(
         self,

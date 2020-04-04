@@ -78,13 +78,13 @@ class BaseGrouper:
     """
 
     def __init__(
-        self,
-        axis: Index,
-        groupings: "Sequence[grouper.Grouping]",
-        sort: bool = True,
-        group_keys: bool = True,
-        mutated: bool = False,
-        indexer: Optional[np.ndarray] = None,
+            self,
+            axis: Index,
+            groupings: "Sequence[grouper.Grouping]",
+            sort: bool = True,
+            group_keys: bool = True,
+            mutated: bool = False,
+            indexer: Optional[np.ndarray] = None,
     ):
         assert isinstance(axis, Index), axis
         print("Groupings: ")
@@ -164,11 +164,11 @@ class BaseGrouper:
             pass
 
         elif (
-            com.get_callable_name(f) not in base.plotting_methods
-            and isinstance(splitter, FrameSplitter)
-            and axis == 0
-            # apply_frame_axis0 doesn't allow MultiIndex
-            and not isinstance(sdata.index, MultiIndex)
+                com.get_callable_name(f) not in base.plotting_methods
+                and isinstance(splitter, FrameSplitter)
+                and axis == 0
+                # apply_frame_axis0 doesn't allow MultiIndex
+                and not isinstance(sdata.index, MultiIndex)
         ):
             try:
                 result_values, mutated = splitter.fast_apply(f, group_keys)
@@ -401,7 +401,7 @@ class BaseGrouper:
         return func
 
     def _get_cython_func_and_vals(
-        self, kind: str, how: str, values: np.ndarray, is_numeric: bool
+            self, kind: str, how: str, values: np.ndarray, is_numeric: bool
     ):
         """
         Find the appropriate cython function, casting if necessary.
@@ -435,7 +435,7 @@ class BaseGrouper:
         return func, values
 
     def _cython_operation(
-        self, kind: str, values, how: str, axis, min_count: int = -1, **kwargs
+            self, kind: str, values, how: str, axis, min_count: int = -1, **kwargs
     ) -> Tuple[np.ndarray, Optional[List[str]]]:
         """
         Returns the values of a cython operation as a Tuple of [data, names].
@@ -532,12 +532,17 @@ class BaseGrouper:
         codes, _, _ = self.group_info
 
         if kind == "aggregate":
+            print("Shape is:")
+            print(out_shape)
             result = _maybe_fill(
                 np.empty(out_shape, dtype=out_dtype), fill_value=np.nan
             )
+            intermediate = _maybe_fill(
+                np.empty(out_shape, dtype=out_dtype), fill_value=np.nan
+            )
             counts = np.zeros(self.ngroups, dtype=np.int64)
-            result = self._aggregate(
-                result, counts, values, codes, func, is_datetimelike, min_count
+            result = self._pipeline_aggregate(
+                result, counts, values, codes, func, intermediate, is_datetimelike, min_count
             )
         elif kind == "transform":
             result = _maybe_fill(
@@ -583,26 +588,50 @@ class BaseGrouper:
         return self._cython_operation("transform", values, how, axis, **kwargs)
 
     def _aggregate(
-        self,
-        result,
-        counts,
-        values,
-        comp_ids,
-        agg_func,
-        is_datetimelike: bool,
-        min_count: int = -1,
+            self,
+            result,
+            counts,
+            values,
+            comp_ids,
+            agg_func,
+            is_datetimelike: bool,
+            min_count: int = -1,
     ):
         if agg_func is libgroupby.group_nth:
             # different signature from the others
             # TODO: should we be using min_count instead of hard-coding it?
+            print("Aggregate 1")
             agg_func(result, counts, values, comp_ids, rank=1, min_count=-1)
         else:
+            print("Aggregate 2")
             agg_func(result, counts, values, comp_ids, min_count)
 
         return result
 
+    def _pipeline_aggregate(
+            self,
+            result,
+            counts,
+            values,
+            comp_ids,
+            agg_func,
+            intermediate,
+            is_datetimelike: bool,
+            min_count: int = -1,
+    ):
+        if agg_func is libgroupby.group_nth:
+            # different signature from the others
+            # TODO: should we be using min_count instead of hard-coding it?
+            print("Aggregate 1")
+            agg_func(result, counts, values, comp_ids, rank=1, min_count=-1)
+        else:
+            print("Aggregate 2")
+            agg_func(result, counts, values, comp_ids, intermediate, min_count)
+
+        return result
+
     def _transform(
-        self, result, values, comp_ids, transform_func, is_datetimelike: bool, **kwargs
+            self, result, values, comp_ids, transform_func, is_datetimelike: bool, **kwargs
     ):
 
         comp_ids, _, ngroups = self.group_info
@@ -720,12 +749,12 @@ class BinGrouper(BaseGrouper):
     """
 
     def __init__(
-        self,
-        bins,
-        binlabels,
-        filter_empty: bool = False,
-        mutated: bool = False,
-        indexer=None,
+            self,
+            bins,
+            binlabels,
+            filter_empty: bool = False,
+            mutated: bool = False,
+            indexer=None,
     ):
         self.bins = ensure_int64(bins)
         self.binlabels = ensure_index(binlabels)

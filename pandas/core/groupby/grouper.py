@@ -166,7 +166,7 @@ class Grouper:
             key = self.key
             # The 'on' is already defined
             if getattr(self.grouper, "name", None) == key and isinstance(
-                obj, ABCSeries
+                    obj, ABCSeries
             ):
                 ax = self._grouper.take(obj.index)
             else:
@@ -241,20 +241,20 @@ class Grouping:
     """
 
     def __init__(
-        self,
-        index: Index,
-        grouper=None,
-        obj: Optional[FrameOrSeries] = None,
-        name=None,
-        level=None,
-        sort: bool = True,
-        observed: bool = False,
-        in_axis: bool = False,
-        hash_table=None,
-        pipeline: bool = False,
+            self,
+            index: Index,
+            grouper=None,
+            obj: Optional[FrameOrSeries] = None,
+            name=None,
+            level=None,
+            sort: bool = True,
+            observed: bool = False,
+            in_axis: bool = False,
+            hash_table=None,
+            pipeline: bool = False,
     ):
         self.pipeline = pipeline
-        self.table = hash_table
+        self.hash_table = hash_table
         self.name = name
         self.level = level
         self.grouper = _convert_grouper(index, grouper)
@@ -342,15 +342,15 @@ class Grouping:
 
             # no level passed
             elif not isinstance(
-                self.grouper, (Series, Index, ExtensionArray, np.ndarray)
+                    self.grouper, (Series, Index, ExtensionArray, np.ndarray)
             ):
                 if getattr(self.grouper, "ndim", 1) != 1:
                     t = self.name or str(type(self.grouper))
                     raise ValueError(f"Grouper for '{t}' not 1-dimensional")
                 self.grouper = self.index.map(self.grouper)
                 if not (
-                    hasattr(self.grouper, "__len__")
-                    and len(self.grouper) == len(self.index)
+                        hasattr(self.grouper, "__len__")
+                        and len(self.grouper) == len(self.index)
                 ):
                     grper = pprint_thing(self.grouper)
                     errmsg = (
@@ -440,8 +440,8 @@ class Grouping:
                 uniques = self.grouper.result_index
             else:
                 print("Calling this factorize function")
-                [codes, uniques, self.table] = algorithms.pipeline_factorize(self.grouper, sort=self.sort,
-                                                                             hash_table=self.table)
+                [codes, uniques, self.hash_table] = algorithms.pipeline_factorize(self.grouper, sort=self.sort,
+                                                                                  hash_table=self.hash_table)
                 print(codes)
                 print(uniques)
                 uniques = Index(uniques, name=self.name)
@@ -455,16 +455,16 @@ class Grouping:
 
 
 def get_grouper(
-    obj: FrameOrSeries,
-    key=None,
-    axis: int = 0,
-    level=None,
-    sort: bool = True,
-    observed: bool = False,
-    mutated: bool = False,
-    validate: bool = True,
-    pipeline: bool = True,
-    hash_table=None,
+        obj: FrameOrSeries,
+        key=None,
+        axis: int = 0,
+        level=None,
+        sort: bool = True,
+        observed: bool = False,
+        mutated: bool = False,
+        validate: bool = True,
+        pipeline: bool = False,
+        hash_table=None,
 ) -> "Tuple[ops.BaseGrouper, List[Hashable], FrameOrSeries, object]":
     """
     Create and return a BaseGrouper, which is an internal
@@ -565,11 +565,11 @@ def get_grouper(
 
     # is this an index replacement?
     if (
-        not any_callable
-        and not any_arraylike
-        and not any_groupers
-        and match_axis_length
-        and level is None
+            not any_callable
+            and not any_arraylike
+            and not any_groupers
+            and match_axis_length
+            and level is None
     ):
         if isinstance(obj, DataFrame):
             all_in_columns_index = all(
@@ -671,7 +671,7 @@ def get_grouper(
 
     # create the internals grouper
     grouper = ops.BaseGrouper(group_axis, groupings, sort=sort, mutated=mutated)
-    return grouper, exclusions, obj, groupings[0].table
+    return grouper, exclusions, obj, groupings[0].hash_table
 
 
 def _is_label_like(val) -> bool:

@@ -359,22 +359,22 @@ class _GroupBy(PandasObject, SelectionMixin):
     _apply_whitelist: FrozenSet[str] = frozenset()
 
     def __init__(
-        self,
-        obj: NDFrame,
-        keys: Optional[_KeysArgType] = None,
-        axis: int = 0,
-        level=None,
-        grouper: "Optional[ops.BaseGrouper]" = None,
-        exclusions=None,
-        selection=None,
-        as_index: bool = True,
-        sort: bool = True,
-        group_keys: bool = True,
-        squeeze: bool = False,
-        observed: bool = False,
-        mutated: bool = False,
-        pipeline: bool = False,
-        hash_table=None,
+            self,
+            obj: NDFrame,
+            keys: Optional[_KeysArgType] = None,
+            axis: int = 0,
+            level=None,
+            grouper: "Optional[ops.BaseGrouper]" = None,
+            exclusions=None,
+            selection=None,
+            as_index: bool = True,
+            sort: bool = True,
+            group_keys: bool = True,
+            squeeze: bool = False,
+            observed: bool = False,
+            mutated: bool = False,
+            pipeline: bool = False,
+            hash_table=None,
     ):
 
         self._selection = selection
@@ -419,6 +419,12 @@ class _GroupBy(PandasObject, SelectionMixin):
         self.axis = obj._get_axis_number(axis)
         self.grouper = grouper
         self.exclusions = set(exclusions) if exclusions else set()
+
+    def get_hash_table(self):
+        return self.hash_table
+
+    def fetch_grouper(self):
+        return self.grouper
 
     def __len__(self) -> int:
         return len(self.groups)
@@ -544,10 +550,10 @@ class _GroupBy(PandasObject, SelectionMixin):
         """
         grp = self.grouper
         if not (
-            self.as_index
-            and getattr(grp, "groupings", None) is not None
-            and self.obj.ndim > 1
-            and self._group_selection is None
+                self.as_index
+                and getattr(grp, "groupings", None) is not None
+                and self.obj.ndim > 1
+                and self._group_selection is None
         ):
             return
 
@@ -650,7 +656,7 @@ b  2""",
                 return self.apply(curried)
             except TypeError as err:
                 if not re.search(
-                    "reduction operation '.*' not allowed for this dtype", str(err)
+                        "reduction operation '.*' not allowed for this dtype", str(err)
                 ):
                     # We don't have a cython implementation
                     # TODO: is the above comment accurate?
@@ -702,6 +708,7 @@ b  2""",
         Generator yielding sequence of (name, subsetted object)
         for each group
         """
+        print("Getting this iteration function?")
         return self.grouper.get_iterator(self.obj, axis=self.axis)
 
     @Appender(
@@ -840,7 +847,7 @@ b  2""",
             Whether transform should attempt to cast the result of aggregation
         """
         return (self.size().fillna(0) > 0).any() and (
-            func_nm not in base.cython_cast_blacklist
+                func_nm not in base.cython_cast_blacklist
         )
 
     def _cython_transform(self, how: str, numeric_only: bool = True, **kwargs):
@@ -877,7 +884,7 @@ b  2""",
         raise AbstractMethodError(self)
 
     def _cython_agg_general(
-        self, how: str, alt=None, numeric_only: bool = True, min_count: int = -1
+            self, how: str, alt=None, numeric_only: bool = True, min_count: int = -1
     ):
         output: Dict[base.OutputKey, Union[np.ndarray, DatetimeArray]] = {}
         # Ideally we would be able to enumerate self._iterate_slices and use
@@ -1021,7 +1028,6 @@ b  2""",
             result = concat(values, axis=self.axis)
 
         if isinstance(result, Series) and self._selection_name is not None:
-
             result.name = self._selection_name
 
         return result
@@ -1234,14 +1240,15 @@ class GroupBy(_GroupBy):
         """
         nv.validate_groupby_func("mean", args, kwargs, ["numeric_only"])
         if self.pipeline:
+            print("RETURN 1")
             return self._cython_agg_general(
                 "mean", alt=lambda x, axis: Series(x).mean(**kwargs), **kwargs
-            ), self.hash_table
+            ), self.grouper.groupings[0].hash_table
         else:
+            print("RETURN 2")
             return self._cython_agg_general(
                 "mean", alt=lambda x, axis: Series(x).mean(**kwargs), **kwargs
             )
-
 
     @Substitution(name="groupby")
     @Appender(_common_see_also)
@@ -1256,11 +1263,18 @@ class GroupBy(_GroupBy):
         Series or DataFrame
             Median of values within each group.
         """
-        return self._cython_agg_general(
-            "median",
-            alt=lambda x, axis: Series(x).median(axis=axis, **kwargs),
-            **kwargs,
-        )
+        if self.pipeline:
+            return self._cython_agg_general(
+                "median",
+                alt=lambda x, axis: Series(x).median(axis=axis, **kwargs),
+                **kwargs,
+            ), self.grouper.groupings[0].hash_table
+        else:
+            return self._cython_agg_general(
+                "median",
+                alt=lambda x, axis: Series(x).median(axis=axis, **kwargs),
+                **kwargs,
+            )
 
     @Substitution(name="groupby")
     @Appender(_common_see_also)
@@ -1350,6 +1364,46 @@ class GroupBy(_GroupBy):
             result.name = self.obj.name
         return self._reindex_output(result, fill_value=0)
 
+    @Substitution(name="groupby")
+    @Appender(_common_see_also)
+    def sum(self):
+        if self.pipeline:
+            print("RETURN 1")
+            return self._cython_agg_general("add"), self.grouper.groupings[0].hash_table
+        else:
+            print("RETURN 2")
+            return self._cython_agg_general("add")
+
+    @Substitution(name="groupby")
+    @Appender(_common_see_also)
+    def prod(self):
+        if self.pipeline:
+            print("RETURN 1")
+            return self._cython_agg_general("prod"), self.grouper.groupings[0].hash_table
+        else:
+            print("RETURN 2")
+            return self._cython_agg_general("prod")
+
+    @Substitution(name="groupby")
+    @Appender(_common_see_also)
+    def min(self):
+        if self.pipeline:
+            print("RETURN 1")
+            return self._cython_agg_general("min"), self.grouper.groupings[0].hash_table
+        else:
+            print("RETURN 2")
+            return self._cython_agg_general("min")
+
+    @Substitution(name="groupby")
+    @Appender(_common_see_also)
+    def max(self):
+        if self.pipeline:
+            print("RETURN 1")
+            return self._cython_agg_general("max"), self.grouper.groupings[0].hash_table
+        else:
+            print("RETURN 2")
+            return self._cython_agg_general("max")
+
     @classmethod
     def _add_numeric_operations(cls):
         """
@@ -1357,11 +1411,11 @@ class GroupBy(_GroupBy):
         """
 
         def groupby_function(
-            name: str,
-            alias: str,
-            npfunc,
-            numeric_only: bool = True,
-            min_count: int = -1,
+                name: str,
+                alias: str,
+                npfunc,
+                numeric_only: bool = True,
+                min_count: int = -1,
         ):
 
             _local_template = """
@@ -1432,10 +1486,10 @@ class GroupBy(_GroupBy):
             else:
                 return last(x)
 
-        cls.sum = groupby_function("sum", "add", np.sum, min_count=0)
-        cls.prod = groupby_function("prod", "prod", np.prod, min_count=0)
-        cls.min = groupby_function("min", "min", np.min, numeric_only=False)
-        cls.max = groupby_function("max", "max", np.max, numeric_only=False)
+        #cls.sum = groupby_function("sum", "add", np.sum, min_count=0)
+        #cls.prod = groupby_function("prod", "prod", np.prod, min_count=0)
+        #cls.min = groupby_function("min", "min", np.min, numeric_only=False)
+        #cls.max = groupby_function("max", "max", np.max, numeric_only=False)
         cls.first = groupby_function("first", "first", first_compat, numeric_only=False)
         cls.last = groupby_function("last", "last", last_compat, numeric_only=False)
 
@@ -1848,7 +1902,7 @@ class GroupBy(_GroupBy):
 
         # reset/reindex to the original groups
         if len(self.obj) == len(dropped) or len(result) == len(
-            self.grouper.result_index
+                self.grouper.result_index
         ):
             result.index = self.grouper.result_index
         else:
@@ -1911,8 +1965,8 @@ class GroupBy(_GroupBy):
             if inference:
                 # Check for edge case
                 if not (
-                    is_integer_dtype(inference)
-                    and interpolation in {"linear", "midpoint"}
+                        is_integer_dtype(inference)
+                        and interpolation in {"linear", "midpoint"}
                 ):
                     vals = vals.astype(inference)
 
@@ -2099,12 +2153,12 @@ class GroupBy(_GroupBy):
     @Substitution(name="groupby")
     @Appender(_common_see_also)
     def rank(
-        self,
-        method: str = "average",
-        ascending: bool = True,
-        na_option: str = "keep",
-        pct: bool = False,
-        axis: int = 0,
+            self,
+            method: str = "average",
+            ascending: bool = True,
+            na_option: str = "keep",
+            pct: bool = False,
+            axis: int = 0,
     ):
         """
         Provide the rank of values within each group.
@@ -2208,17 +2262,17 @@ class GroupBy(_GroupBy):
         return self._cython_transform("cummax", numeric_only=False)
 
     def _get_cythonized_result(
-        self,
-        how: str,
-        cython_dtype: np.dtype,
-        aggregate: bool = False,
-        needs_values: bool = False,
-        needs_mask: bool = False,
-        needs_ngroups: bool = False,
-        result_is_index: bool = False,
-        pre_processing=None,
-        post_processing=None,
-        **kwargs,
+            self,
+            how: str,
+            cython_dtype: np.dtype,
+            aggregate: bool = False,
+            needs_values: bool = False,
+            needs_mask: bool = False,
+            needs_ngroups: bool = False,
+            result_is_index: bool = False,
+            pre_processing=None,
+            post_processing=None,
+            **kwargs,
     ):
         """
         Get result for Cythonized functions.
@@ -2437,7 +2491,7 @@ class GroupBy(_GroupBy):
         return self._selected_obj[mask]
 
     def _reindex_output(
-        self, output: FrameOrSeries, fill_value: Scalar = np.NaN
+            self, output: FrameOrSeries, fill_value: Scalar = np.NaN
     ) -> FrameOrSeries:
         """
         If we have categorical groupers, then we might want to make sure that
@@ -2475,8 +2529,8 @@ class GroupBy(_GroupBy):
 
         # reindexing only applies to a Categorical grouper
         elif not any(
-            isinstance(ping.grouper, (Categorical, CategoricalIndex))
-            for ping in groupings
+                isinstance(ping.grouper, (Categorical, CategoricalIndex))
+                for ping in groupings
         ):
             return output
 
@@ -2528,23 +2582,22 @@ GroupBy._add_numeric_operations()
 
 @Appender(GroupBy.__doc__)
 def get_groupby(
-    obj: NDFrame,
-    by: Optional[_KeysArgType] = None,
-    axis: int = 0,
-    level=None,
-    grouper: "Optional[ops.BaseGrouper]" = None,
-    exclusions=None,
-    selection=None,
-    as_index: bool = True,
-    sort: bool = True,
-    group_keys: bool = True,
-    squeeze: bool = False,
-    observed: bool = False,
-    mutated: bool = False,
-    pipeline: bool = False,
-    hash_table=None,
+        obj: NDFrame,
+        by: Optional[_KeysArgType] = None,
+        axis: int = 0,
+        level=None,
+        grouper: "Optional[ops.BaseGrouper]" = None,
+        exclusions=None,
+        selection=None,
+        as_index: bool = True,
+        sort: bool = True,
+        group_keys: bool = True,
+        squeeze: bool = False,
+        observed: bool = False,
+        mutated: bool = False,
+        pipeline: bool = False,
+        hash_table=None,
 ):
-
     klass: Union[Type["SeriesGroupBy"], Type["DataFrameGroupBy"]]
     if isinstance(obj, Series):
         from pandas.core.groupby.generic import SeriesGroupBy
@@ -2557,7 +2610,7 @@ def get_groupby(
     else:
         raise TypeError(f"invalid type: {obj}")
 
-    return klass(
+    ret = klass(
         obj=obj,
         keys=by,
         axis=axis,
@@ -2574,3 +2627,56 @@ def get_groupby(
         pipeline=pipeline,
         hash_table=hash_table,
     )
+    print("Finish get groupby")
+    return ret
+
+
+@Appender(GroupBy.__doc__)
+def pipeline_get_groupby(
+        obj: NDFrame,
+        by: Optional[_KeysArgType] = None,
+        axis: int = 0,
+        level=None,
+        grouper: "Optional[ops.BaseGrouper]" = None,
+        exclusions=None,
+        selection=None,
+        as_index: bool = True,
+        sort: bool = True,
+        group_keys: bool = True,
+        squeeze: bool = False,
+        observed: bool = False,
+        mutated: bool = False,
+        pipeline: bool = False,
+        hash_table=None,
+):
+    klass: Union[Type["SeriesGroupBy"], Type["DataFrameGroupBy"]]
+    if isinstance(obj, Series):
+        from pandas.core.groupby.generic import SeriesGroupBy
+
+        klass = SeriesGroupBy
+    elif isinstance(obj, DataFrame):
+        from pandas.core.groupby.generic import DataFrameGroupBy
+
+        klass = DataFrameGroupBy
+    else:
+        raise TypeError(f"invalid type: {obj}")
+
+    ret = klass(
+        obj=obj,
+        keys=by,
+        axis=axis,
+        level=level,
+        grouper=grouper,
+        exclusions=exclusions,
+        selection=selection,
+        as_index=as_index,
+        sort=sort,
+        group_keys=group_keys,
+        squeeze=squeeze,
+        observed=observed,
+        mutated=mutated,
+        pipeline=pipeline,
+        hash_table=hash_table,
+    )
+    print("Finish this get groupby")
+    return ret, ret.get_hash_table()
