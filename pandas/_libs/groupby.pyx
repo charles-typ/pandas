@@ -465,8 +465,7 @@ def _group_add(complexfloating_t[:, :] out,
         raise ValueError("len(index) != len(labels)")
 
     nobs = np.zeros((<object>out).shape, dtype=np.int64)
-    sumx = np.zeros_like(out)
-
+    #sumx = np.zeros_like(out)
     N, K = (<object>values).shape
 
     with nogil:
