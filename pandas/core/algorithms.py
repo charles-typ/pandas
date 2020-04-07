@@ -469,7 +469,7 @@ def _factorize_array(
     uniques : ndarray
     """
     hash_klass, values = _get_data_algo(values)
-    print("Hash table type")
+    print("Hash table type 1")
     print(hash_klass)
     table = hash_klass(size_hint or len(values))
     uniques, codes = table.factorize(values, na_sentinel=na_sentinel, na_value=na_value)
@@ -479,8 +479,8 @@ def _factorize_array(
 
 
 def _pipeline_factorize_array(
-        values, na_sentinel: int = -1, size_hint=None, na_value=None, hash_table=None
-) -> Tuple[np.ndarray, np.ndarray, object]:
+        values, na_sentinel: int = -1, pre_uniques=None, size_hint=None, na_value=None, hash_table=None
+) -> Tuple[np.ndarray, np.ndarray, object, np.ndarray]:
     """
     Factorize an array-like to codes and uniques.
 
@@ -504,16 +504,21 @@ def _pipeline_factorize_array(
     uniques : ndarray
     """
     hash_klass, values = _get_data_algo(values)
-    print("Hash table type")
+    print("Hash table type 2")
     print(hash_klass)
     if hash_table is None:
         table = hash_klass(size_hint or len(values))
     else:
         table = hash_table
-    uniques, codes = table.factorize(values, na_sentinel=na_sentinel, na_value=na_value)
-
+    (uniques, codes), pre_uniques = table.pipeline_factorize(values, pre_uniques=pre_uniques, na_sentinel=na_sentinel, na_value=na_value)
+    print("Uniques:")
+    print(uniques)
+    print("codes:")
+    print(codes)
+    print("pre_uniques")
+    print(pre_uniques)
     codes = ensure_platform_int(codes)
-    return codes, uniques, table
+    return codes, uniques, table, pre_uniques
 
 
 _shared_docs[
@@ -691,7 +696,8 @@ def factorize(
 
 
 def pipeline_factorize(
-        values, sort: bool = False, na_sentinel: int = -1, size_hint: Optional[int] = None, hash_table=None
+        values, pre_uniques = None, sort: bool = False, na_sentinel: int = -1, size_hint: Optional[int] = None,
+        hash_table=None
 ):
     # Implementation notes: This method is responsible for 3 things
     # 1.) coercing data to array-like (ndarray, Index, extension array)
@@ -720,8 +726,10 @@ def pipeline_factorize(
         else:
             na_value = None
 
-        [codes, uniques, hash_table] = _pipeline_factorize_array(values, na_sentinel=na_sentinel, size_hint=size_hint,
-                                                                 na_value=na_value, hash_table=hash_table)
+        [codes, uniques, hash_table, pre_uniques] = _pipeline_factorize_array(values, pre_uniques=pre_uniques,
+                                                                              na_sentinel=na_sentinel,
+                                                                              size_hint=size_hint, na_value=na_value,
+                                                                              hash_table=hash_table)
         print(codes)
         print(uniques)
 
@@ -742,7 +750,7 @@ def pipeline_factorize(
         uniques = Index(uniques)
     print("Factorize 4")
     print(uniques)
-    return codes, uniques, hash_table
+    return codes, uniques, hash_table, pre_uniques
 
 
 def value_counts(

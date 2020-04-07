@@ -251,10 +251,12 @@ class Grouping:
             observed: bool = False,
             in_axis: bool = False,
             hash_table=None,
+            pre_uniques=None,
             pipeline: bool = False,
     ):
         self.pipeline = pipeline
         self.hash_table = hash_table
+        self.pre_uniques = pre_uniques
         self.name = name
         self.level = level
         self.grouper = _convert_grouper(index, grouper)
@@ -440,8 +442,8 @@ class Grouping:
                 uniques = self.grouper.result_index
             else:
                 print("Calling this factorize function")
-                [codes, uniques, self.hash_table] = algorithms.pipeline_factorize(self.grouper, sort=self.sort,
-                                                                                  hash_table=self.hash_table)
+                [codes, uniques, self.hash_table, self.pre_uniques] = \
+                    algorithms.pipeline_factorize(self.grouper, sort=self.sort, hash_table=self.hash_table)
                 print(codes)
                 print(uniques)
                 uniques = Index(uniques, name=self.name)

@@ -153,7 +153,7 @@ _apply_docs = dict(
     >>> g = s.groupby(s.index)
 
     From ``s`` above we can see that ``g`` has two groups, ``a`` and ``b``.
-    Calling `apply` in various ways, we can get different grouping results:
+    Caflling `apply` in various ways, we can get different grouping results:
 
     Example 1: The function passed to `apply` takes a Series as
     its argument and returns a Series.  `apply` combines the result for
@@ -921,7 +921,7 @@ b  2""",
         return self._wrap_aggregated_output(output)
 
     def _pipeline_cython_agg_general(
-            self, how: str, intermediate, alt=None, numeric_only: bool = True, min_count: int = -1, **kwargs
+            self, how: str, alt=None, numeric_only: bool = True, min_count: int = -1, **kwargs
     ):
         output: Dict[base.OutputKey, Union[np.ndarray, DatetimeArray]] = {}
         # Ideally we would be able to enumerate self._iterate_slices and use
@@ -929,6 +929,7 @@ b  2""",
         # returns a (n x 4) array. Output requires 1D ndarrays as values, so we
         # need to slice that up into 1D arrays
         idx = 0
+        intermediate = 0 # FIXME set this to a list
         for obj in self._iterate_slices():
             name = obj.name
             is_numeric = is_numeric_dtype(obj.dtype)
@@ -936,7 +937,7 @@ b  2""",
                 continue
             print("Calling here:")
             print(obj._values)
-            result, agg_names = self.grouper.pipeline_aggregate(
+            result, agg_names, intermediate = self.grouper.pipeline_aggregate(
                 obj._values, how, min_count=min_count, **kwargs
             )
 
@@ -956,7 +957,7 @@ b  2""",
         if len(output) == 0:
             raise DataError("No numeric types to aggregate")
 
-        return self._wrap_aggregated_output(output)
+        return self._wrap_aggregated_output(output), intermediate
 
     def _python_agg_general(self, func, *args, **kwargs):
         func = self._is_builtin_func(func)

@@ -483,6 +483,9 @@ cdef class {{name}}HashTable(HashTable):
                 # k falls into a previous bucket
                 # only relevant in case we need to construct the inverse
                 idx = self.table.vals[k]
+                print("Label here!!!!!")
+                print(self.table.n_buckets)
+                print(idx)
                 labels[i] = idx
         endtime = timeit.default_timer()
         #print("Inthash table first part time: ", begintime - inittime)
@@ -546,6 +549,41 @@ cdef class {{name}}HashTable(HashTable):
         return self._unique(values, uniques_vector, na_sentinel=na_sentinel,
                             na_value=na_value, ignore_na=True,
                             return_inverse=True)
+
+    def pipeline_factorize(self, const {{dtype}}_t[:] values, {{dtype}}_t[:] pre_uniques=None, Py_ssize_t na_sentinel=-1,
+                  object na_value=None):
+        """
+        Calculate unique values and labels (no sorting!)
+
+        Missing values are not included in the "uniques" for this method.
+        The labels for any missing values will be set to "na_sentinel"
+
+        Parameters
+        ----------
+        values : ndarray[{{dtype}}]
+            Array of values of which unique will be calculated
+        na_sentinel : Py_ssize_t, default -1
+            Sentinel value used for all NA-values in inverse
+        na_value : object, default None
+            Value to identify as missing. If na_value is None, then
+            any value "val" satisfying val != val is considered missing.
+            If na_value is not None, then _additionally_, any value "val"
+            satisfying val == na_value is considered missing.
+
+        Returns
+        -------
+        uniques : ndarray[{{dtype}}]
+            Unique values of input, not sorted
+        labels : ndarray[int64]
+            The labels from values to uniques
+        """
+        uniques_vector = {{name}}Vector()
+        if pre_uniques is not None:
+            for i in range(pre_uniques):
+                uniques_vector.append(pre_uniques[i])
+        return self._unique(values, uniques_vector, na_sentinel=na_sentinel,
+                            na_value=na_value, ignore_na=True,
+                            return_inverse=True), uniques_vector.to_array()
 
     def get_labels(self, const {{dtype}}_t[:] values, {{name}}Vector uniques,
                    Py_ssize_t count_prior=0, Py_ssize_t na_sentinel=-1,

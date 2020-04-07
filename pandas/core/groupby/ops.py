@@ -578,7 +578,7 @@ class BaseGrouper:
 
     def _pipeline_cython_operation(
             self, kind: str, values, how: str, axis, min_count: int = -1, **kwargs
-    ) -> Tuple[np.ndarray, Optional[List[str]]]:
+    ) -> Tuple[np.ndarray, Optional[List[str]], object]:
         """
         Returns the values of a cython operation as a Tuple of [data, names].
 
@@ -649,6 +649,7 @@ class BaseGrouper:
         swapped = False
         if vdim == 1:
             values = values[:, None]
+            print("out shape set here 1")
             out_shape = (self.ngroups, arity)
         else:
             if axis > 0:
@@ -659,6 +660,7 @@ class BaseGrouper:
                 raise NotImplementedError(
                     "arity of more than 1 is not supported for the 'how' argument"
                 )
+            print("out shape set here 2")
             out_shape = (self.ngroups,) + values.shape[1:]
 
         func, values = self._get_cython_func_and_vals(kind, how, values, is_numeric)
@@ -687,10 +689,15 @@ class BaseGrouper:
                         np.empty(out_shape, dtype=out_dtype), fill_value=0
                     )
                 print(intermediate)
+                print(func)
+                print(result)
+                print(out_shape)
                 counts = np.zeros(self.ngroups, dtype=np.int64)
                 func(result, counts, values, codes, intermediate, min_count)
                 print("intermediate result here!")
                 print(intermediate)
+                print("final result here")
+                print(result)
             else:
                 print("Shape is:")
                 print(out_shape)
@@ -739,7 +746,7 @@ class BaseGrouper:
         elif is_datetimelike and kind == "aggregate":
             result = result.astype(orig_values.dtype)
 
-        return result, names
+        return result, names, intermediate
 
     def aggregate(self, values, how: str, axis: int = 0, min_count: int = -1):
         return self._cython_operation(

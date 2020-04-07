@@ -467,7 +467,11 @@ def _group_add(complexfloating_t[:, :] out,
     nobs = np.zeros((<object>out).shape, dtype=np.int64)
     #sumx = np.zeros_like(out)
     N, K = (<object>values).shape
-
+    print("Length here !")
+    print(ncounts)
+    print(K)
+    print(sumx)
+    ncounts = 2
     with nogil:
         for i in range(N):
             lab = labels[i]
@@ -488,6 +492,7 @@ def _group_add(complexfloating_t[:, :] out,
                     else:
                         sumx[lab, j] += val
 
+
         for i in range(ncounts):
             for j in range(K):
                 if nobs[i, j] < min_count:
@@ -495,7 +500,11 @@ def _group_add(complexfloating_t[:, :] out,
                 else:
                     out[i, j] = sumx[i, j]
 
-
+    print(sumx)
+    for i in range(ncounts):
+        for j in range(K):
+            print(sumx[i,j])
+            print(out[i,j])
 group_add_float32 = _group_add['float32_t']
 group_add_float64 = _group_add['float64_t']
 group_add_complex64 = _group_add['float complex']
