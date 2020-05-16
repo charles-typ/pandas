@@ -2744,7 +2744,7 @@ def pipeline_get_groupby(
         mutated=mutated,
         pipeline=pipeline,
         hash_table=hash_table,
-        pre_uniques=pre_unqiues
+        pre_uniques=pre_uniques
     )
     print("Finish this get groupby")
     return ret, ret.get_hash_table(), ret.get_pre_unqiues()
