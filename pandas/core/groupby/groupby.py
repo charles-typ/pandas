@@ -2714,7 +2714,7 @@ def pipeline_get_groupby(
         mutated: bool = False,
         pipeline: bool = False,
         hash_table=None,
-        pre_unqiues=None
+        pre_uniques=None
 ):
     klass: Union[Type["SeriesGroupBy"], Type["DataFrameGroupBy"]]
     if isinstance(obj, Series):
