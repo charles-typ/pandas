@@ -420,6 +420,7 @@ cdef class {{name}}HashTable(HashTable):
             time_t startt, stopt, begint1, begint2, endt1, endt2
 
         #print("Calling this unique function: Ordinary hash table")
+        count = len(uniques)
         inittime = timeit.default_timer()
         if return_inverse:
             labels = np.empty(n, dtype=np.int64)
@@ -579,7 +580,7 @@ cdef class {{name}}HashTable(HashTable):
         """
         uniques_vector = {{name}}Vector()
         if pre_uniques is not None:
-            for i in range(pre_uniques):
+            for i in range(len(pre_uniques)):
                 uniques_vector.append(pre_uniques[i])
         return self._unique(values, uniques_vector, na_sentinel=na_sentinel,
                             na_value=na_value, ignore_na=True,

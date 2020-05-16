@@ -7456,6 +7456,7 @@ class NDFrame(PandasObject, SelectionMixin):
         observed: bool_t = False,
         pipeline: bool_t = False,
         hash_table=None,
+        pre_uniques=None
 
     ):
         """
@@ -7573,7 +7574,7 @@ class NDFrame(PandasObject, SelectionMixin):
             raise TypeError("You have to supply one of 'by' and 'level'")
         axis = self._get_axis_number(axis)
 
-        ret, table = pipeline_get_groupby(
+        ret, table, pre_uniques = pipeline_get_groupby(
             self,
             by=by,
             axis=axis,
@@ -7585,8 +7586,9 @@ class NDFrame(PandasObject, SelectionMixin):
             observed=observed,
             pipeline=True,
             hash_table=hash_table,
+            pre_uniques=pre_uniques
         )
-        return ret, table
+        return ret, table, pre_uniques
 
     def asfreq(
         self,

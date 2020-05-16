@@ -426,6 +426,9 @@ class _GroupBy(PandasObject, SelectionMixin):
     def get_hash_table(self):
         return self.hash_table
 
+    def get_pre_unqiues(self):
+        return self.pre_uniques
+
     def fetch_grouper(self):
         return self.grouper
 
@@ -1237,7 +1240,7 @@ class GroupBy(_GroupBy):
         raise NotImplementedError
 
     @Substitution(name="groupby")
-    @Appender(see_also=_common_see_also)
+    @Appender(_common_see_also)
     def pipeline_mean(self, intermediate=None):
         if self.pipeline:
             print("RETURN 1")
@@ -1421,7 +1424,7 @@ class GroupBy(_GroupBy):
     def pipeline_sum(self, intermediate=None):
         if self.pipeline:
             print("RETURN 1")
-            return self._pipeline_cython_agg_general("add", intermediate=intermediate), self.grouper.groupings[0].hash_table
+            return self._pipeline_cython_agg_general("add", intermediate=intermediate), self.grouper.groupings[0].hash_table, self.grouper.groupings[0].pre_uniques
         else:
             print("RETURN 2")
             return self._cython_agg_general("add")
@@ -2711,6 +2714,7 @@ def pipeline_get_groupby(
         mutated: bool = False,
         pipeline: bool = False,
         hash_table=None,
+        pre_uniques=None
 ):
     klass: Union[Type["SeriesGroupBy"], Type["DataFrameGroupBy"]]
     if isinstance(obj, Series):
@@ -2740,6 +2744,7 @@ def pipeline_get_groupby(
         mutated=mutated,
         pipeline=pipeline,
         hash_table=hash_table,
+        pre_uniques=pre_uniques
     )
     print("Finish this get groupby")
-    return ret, ret.get_hash_table()
+    return ret, ret.get_hash_table(), ret.get_pre_unqiues()
