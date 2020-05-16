@@ -469,9 +469,16 @@ def _group_add(complexfloating_t[:, :] out,
     N, K = (<object>values).shape
     print("Length here !")
     print(ncounts)
+    print(N)
     print(K)
-    print(sumx)
-    ncounts = 2
+    print("******")
+    for i in range(len(labels)):
+        print(labels[i])
+
+    print("******")
+    for i in range(len(sumx)):
+        print(sumx[i])
+    print("******")
     with nogil:
         for i in range(N):
             lab = labels[i]
