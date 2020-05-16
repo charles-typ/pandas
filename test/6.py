@@ -47,41 +47,41 @@ for ttt in range(2, pieces + 1):
 
 print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
 
-for ttt in range(2, pieces + 1):
-    right_merge = DataFrame(columns=["key", "value2"])
-    for i in range(1, ttt):
-        #print(right[i])
-        right_merge = right_merge.append(right[i])
-    #print(right_merge)
-    start = timeit.default_timer()
-    result = merge(left, right_merge, how="inner")
-    end = timeit.default_timer()
-    print("******* ", end - start)
-
-print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
-
-for ttt in range(2, pieces + 1):
-    leftsorter = None
-    leftcount = None
-    orizer = None
-    intrizer = None
-    start = timeit.default_timer()
-    for i in range(1, ttt):
-        result, orizer, intrizer, leftsorter, leftcount = pipeline_merge(left, right[i], factorizer=orizer, intfactorizer=intrizer, leftsorter=leftsorter, leftcount=leftcount, slices=ttt-1, how="pipeline")
-    end = timeit.default_timer()
-    print("******* ", end - start)
-
-print("################################")
-for ttt in range(2, pieces + 1):
-    right_merge = DataFrame(columns=["key", "value2"])
-    for i in range(1, ttt):
-        #print(right[i])
-        right_merge = right_merge.append(right[i])
-    #print(right_merge)
-    start = timeit.default_timer()
-    result = merge(left, right_merge, how="inner")
-    end = timeit.default_timer()
-    print("******* ", end - start)
+#for ttt in range(2, pieces + 1):
+#    right_merge = DataFrame(columns=["key", "value2"])
+#    for i in range(1, ttt):
+#        #print(right[i])
+#        right_merge = right_merge.append(right[i])
+#    #print(right_merge)
+#    start = timeit.default_timer()
+#    result = merge(left, right_merge, how="inner")
+#    end = timeit.default_timer()
+#    print("******* ", end - start)
+#
+#print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+#
+#for ttt in range(2, pieces + 1):
+#    leftsorter = None
+#    leftcount = None
+#    orizer = None
+#    intrizer = None
+#    start = timeit.default_timer()
+#    for i in range(1, ttt):
+#        result, orizer, intrizer, leftsorter, leftcount = pipeline_merge(left, right[i], factorizer=orizer, intfactorizer=intrizer, leftsorter=leftsorter, leftcount=leftcount, slices=ttt-1, how="pipeline")
+#    end = timeit.default_timer()
+#    print("******* ", end - start)
+#
+#print("################################")
+#for ttt in range(2, pieces + 1):
+#    right_merge = DataFrame(columns=["key", "value2"])
+#    for i in range(1, ttt):
+#        #print(right[i])
+#        right_merge = right_merge.append(right[i])
+#    #print(right_merge)
+#    start = timeit.default_timer()
+#    result = merge(left, right_merge, how="inner")
+#    end = timeit.default_timer()
+#    print("******* ", end - start)
 
 #for ttt in range(2, pieces + 1):
 #    leftsorter = None

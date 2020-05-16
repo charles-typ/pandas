@@ -134,7 +134,7 @@ class _PipelineMergeOperation:
             leftsorter=None,
             leftcount=None,
             slices=None,
-            left_factorize_keys=None
+            left_factorized_keys=None
     ):
         # print("calling this init function")
         _left = _validate_operand(left)
@@ -143,7 +143,7 @@ class _PipelineMergeOperation:
         self.right = self.orig_right = _right
         self.how = how
         self.axis = axis
-        self.left_factorize_keys = left_factorize_keys
+        self.left_factorized_keys = left_factorized_keys
         self.on = com.maybe_make_list(on)
         self.left_on = com.maybe_make_list(left_on)
         self.right_on = com.maybe_make_list(right_on)
@@ -453,7 +453,7 @@ class _PipelineMergeOperation:
         # FIXME 4 fix this function
         return _get_join_indexers(
             self.left_join_keys, self.right_join_keys, self.factorizer, self.intfactorizer, self.left_sorter,
-            self.left_count, sort=self.sort, how=self.how, left_factorized_keys=self.left_factorize_keys
+            self.left_count, sort=self.sort, how=self.how, left_factorized_keys=self.left_factorized_keys
         )
 
     def _get_join_info(self):
@@ -1020,11 +1020,22 @@ def _get_join_indexers(
         kwargs["sort"] = sort
     join_func = _join_functions[how]
 
+    print("***********#%$#%#%#%#%")
+    print(lkey)
+    print("***********#%$#%#%#%#%")
+    print(rkey)
+    print("***********#%$#%#%#%#%")
+    print(count)
+    print("***********#%$#%#%#%#%")
+    print(left_sorter)
+    print("***********#%$#%#%#%#%")
+    print(left_count)
+    print("***********#%$#%#%#%#%")
     return join_func(lkey, rkey, count, left_sorter, left_count, **kwargs)
 
 
 def build_hash_table(
-        keys, factorizer, intfactorizer, previous_keys, **kwargs
+        keys, size_hint = 100, factorizer=None, intfactorizer=None, previous_keys=None, sort: bool=False, **kwargs
 ):
     """
 
@@ -1041,11 +1052,16 @@ def build_hash_table(
         indexers into the left_keys, right_keys
 
     """
+    if factorizer is None:
+        factorizer = libhashtable.Factorizer(size_hint)
+    if intfactorizer is None:
+        intfactorizer = libhashtable.Int64Factorizer(size_hint)
+
     # print("need to factorize right keys")
     start = timeit.default_timer()
     mapped = (
-        _factorize_single_key(keys[n], factorizer, intfactorizer)
-        for n in range(len(keys))
+        _factorize_single_key(keys, factorizer, intfactorizer, sort=sort)
+	for i in range(1)
     )
     # end1 = timeit.default_timer()
     # print("Time21: ")
@@ -1053,9 +1069,12 @@ def build_hash_table(
     zipped = zip(*mapped)
     rlab, shape = [list(x) for x in zipped]
     # get flat i8 keys from label lists
-    rkey = _get_right_join_keys(rlab, shape, factorizer, intfactorizer)
-    rkey, count = _factorize_single_key(rkey, factorizer, intfactorizer)
-    return previous_keys + rkey
+    rkey = _get_right_join_keys(rlab, shape, factorizer, intfactorizer, sort)
+    rkey, count = _factorize_single_key(rkey, factorizer, intfactorizer, sort=sort)
+    if previous_keys is not None:
+    	return np.append(previous_keys, rkey), factorizer, intfactorizer
+    else:
+        return rkey, factorizer, intfactorizer
 
 
 def _restore_dropped_levels_multijoin(
@@ -1245,7 +1264,6 @@ _join_functions = {
     "outer": libjoin.full_outer_join,
     "pipeline": libjoin.pipeline_inner_join,
     "pipeline_merge": libjoin.pipeline_inner_merge_join,
-    "pipeline_left_index": libjoin.pipeline_left_index
 }
 
 
@@ -1390,8 +1408,6 @@ def _factorize_single_key(rk, objectrizer, intrizer, sort=True):
     start1 = timeit.default_timer()
     rlab = rizer.new_factorize(rk)
     start2 = timeit.default_timer()
-    if flag == 0:
-        print("Fuck it ", start2 - start1)
     # start2 = timeit.default_timer()
     # print("look")
     # print(start1 - start)
