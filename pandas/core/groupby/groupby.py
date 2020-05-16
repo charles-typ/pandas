@@ -1424,7 +1424,7 @@ class GroupBy(_GroupBy):
     def pipeline_sum(self, intermediate=None):
         if self.pipeline:
             print("RETURN 1")
-            return self._pipeline_cython_agg_general("add", intermediate=intermediate), self.grouper.groupings[0].hash_table
+            return self._pipeline_cython_agg_general("add", intermediate=intermediate), self.grouper.groupings[0].hash_table, self.grouper.groupings[0].pre_uniques
         else:
             print("RETURN 2")
             return self._cython_agg_general("add")
