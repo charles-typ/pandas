@@ -375,11 +375,13 @@ class _GroupBy(PandasObject, SelectionMixin):
             mutated: bool = False,
             pipeline: bool = False,
             hash_table=None,
+            pre_uniques=None
     ):
 
         self._selection = selection
         self.hash_table = hash_table
         self.pipeline = pipeline
+        self.pre_uniques=pre_uniques
 
         assert isinstance(obj, NDFrame), type(obj)
         obj._consolidate_inplace()
@@ -403,7 +405,7 @@ class _GroupBy(PandasObject, SelectionMixin):
         if grouper is None:
             from pandas.core.groupby.grouper import get_grouper
 
-            grouper, exclusions, obj, self.hash_table = get_grouper(
+            grouper, exclusions, obj, self.hash_table, self.pre_uniques = get_grouper(
                 obj,
                 keys,
                 axis=axis,
@@ -413,6 +415,7 @@ class _GroupBy(PandasObject, SelectionMixin):
                 mutated=self.mutated,
                 hash_table=self.hash_table,
                 pipeline=self.pipeline,
+                pre_uniques=self.pre_uniques
             )
 
         self.obj = obj
@@ -1234,6 +1237,16 @@ class GroupBy(_GroupBy):
         raise NotImplementedError
 
     @Substitution(name="groupby")
+    @Appender(see_also=_common_see_also)
+    def pipeline_mean(self, intermediate=None):
+        if self.pipeline:
+            print("RETURN 1")
+            return self._pipeline_cython_agg_general("mean", intermediate=intermediate), self.grouper.groupings[0].hash_table
+        else:
+            print("RETURN 2")
+            return self._cython_agg_general("mean")
+
+    @Substitution(name="groupby")
     @Substitution(see_also=_common_see_also)
     def mean(self, *args, **kwargs):
         """
@@ -1930,7 +1943,7 @@ class GroupBy(_GroupBy):
             # object
             from pandas.core.groupby.grouper import get_grouper
 
-            grouper, _, _, self.hash_table = get_grouper(
+            grouper, _, _, self.hash_table, self.pre_uniques = get_grouper(
                 dropped,
                 key=self.keys,
                 axis=self.axis,
@@ -1938,7 +1951,8 @@ class GroupBy(_GroupBy):
                 sort=self.sort,
                 mutated=self.mutated,
                 hash_table=self.hash_table,
-                pipeline=self.pipeline
+                pipeline=self.pipeline,
+                pre_uniques=self.pre_uniques
             )
 
         grb = dropped.groupby(grouper, as_index=self.as_index, sort=self.sort)

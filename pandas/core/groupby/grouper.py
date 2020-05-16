@@ -443,13 +443,16 @@ class Grouping:
             else:
                 print("Calling this factorize function")
                 [codes, uniques, self.hash_table, self.pre_uniques] = \
-                    algorithms.pipeline_factorize(self.grouper, sort=self.sort, hash_table=self.hash_table)
+                    algorithms.pipeline_factorize(self.grouper, pre_uniques=self.pre_uniques, sort=self.sort, hash_table=self.hash_table)
                 print(codes)
                 print(uniques)
                 uniques = Index(uniques, name=self.name)
                 print(uniques)
             self._codes = codes
             self._group_index = uniques
+
+    def _get_pre_uniques(self):
+        return self.pre_uniques
 
     @cache_readonly
     def groups(self) -> dict:
@@ -467,7 +470,8 @@ def get_grouper(
         validate: bool = True,
         pipeline: bool = False,
         hash_table=None,
-) -> "Tuple[ops.BaseGrouper, List[Hashable], FrameOrSeries, object]":
+        pre_uniques=None
+) -> "Tuple[ops.BaseGrouper, List[Hashable], FrameOrSeries, object, object]":
     """
     Create and return a BaseGrouper, which is an internal
     mapping of how to create the grouper indexers.
@@ -543,13 +547,13 @@ def get_grouper(
     if isinstance(key, Grouper):
         binner, grouper, obj = key._get_grouper(obj, validate=False)
         if key.key is None:
-            return grouper, [], obj, None
+            return grouper, [], obj, None, None
         else:
-            return grouper, [key.key], obj, None
+            return grouper, [key.key], obj, None, None
 
     # already have a BaseGrouper, just return it
     elif isinstance(key, ops.BaseGrouper):
-        return key, [], obj, None
+        return key, [], obj, None, None
 
     if not isinstance(key, list):
         keys = [key]
@@ -659,6 +663,7 @@ def get_grouper(
                 in_axis=in_axis,
                 hash_table=hash_table,
                 pipeline=pipeline,
+                pre_uniques=pre_uniques
             )
             if not isinstance(gpr, Grouping)
             else gpr
@@ -673,7 +678,7 @@ def get_grouper(
 
     # create the internals grouper
     grouper = ops.BaseGrouper(group_axis, groupings, sort=sort, mutated=mutated)
-    return grouper, exclusions, obj, groupings[0].hash_table
+    return grouper, exclusions, obj, groupings[0].hash_table, groupings[0].pre_uniques
 
 
 def _is_label_like(val) -> bool:
