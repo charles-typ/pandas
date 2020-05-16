@@ -1240,7 +1240,7 @@ class GroupBy(_GroupBy):
         raise NotImplementedError
 
     @Substitution(name="groupby")
-    @Appender(see_also=_common_see_also)
+    @Appender(_common_see_also)
     def pipeline_mean(self, intermediate=None):
         if self.pipeline:
             print("RETURN 1")
