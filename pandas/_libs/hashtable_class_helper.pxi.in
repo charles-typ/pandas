@@ -420,6 +420,7 @@ cdef class {{name}}HashTable(HashTable):
             time_t startt, stopt, begint1, begint2, endt1, endt2
 
         #print("Calling this unique function: Ordinary hash table")
+        count = len(uniques)
         inittime = timeit.default_timer()
         if return_inverse:
             labels = np.empty(n, dtype=np.int64)
