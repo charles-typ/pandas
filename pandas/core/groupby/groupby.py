@@ -426,6 +426,9 @@ class _GroupBy(PandasObject, SelectionMixin):
     def get_hash_table(self):
         return self.hash_table
 
+    def get_pre_unqiues(self):
+        return self.pre_uniques
+
     def fetch_grouper(self):
         return self.grouper
 
@@ -2711,6 +2714,7 @@ def pipeline_get_groupby(
         mutated: bool = False,
         pipeline: bool = False,
         hash_table=None,
+        pre_unqiues=None
 ):
     klass: Union[Type["SeriesGroupBy"], Type["DataFrameGroupBy"]]
     if isinstance(obj, Series):
@@ -2740,6 +2744,7 @@ def pipeline_get_groupby(
         mutated=mutated,
         pipeline=pipeline,
         hash_table=hash_table,
+        pre_uniques=pre_unqiues
     )
     print("Finish this get groupby")
-    return ret, ret.get_hash_table()
+    return ret, ret.get_hash_table(), ret.get_pre_unqiues()
