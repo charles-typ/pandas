@@ -1,4 +1,4 @@
-name: pandas-jiffy
+name: pandas-jot
 channels:
   - conda-forge
 dependencies:
