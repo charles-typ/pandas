@@ -443,10 +443,67 @@ ctypedef fused complexfloating_t:
     complex64_t
     complex128_t
 
-
 @cython.wraparound(False)
 @cython.boundscheck(False)
 def _group_add(complexfloating_t[:, :] out,
+               int64_t[:] counts,
+               complexfloating_t[:, :] values,
+               const int64_t[:] labels,
+               Py_ssize_t min_count=0):
+    """
+    Only aggregates on axis=0
+    """
+    cdef:
+        Py_ssize_t i, j, N, K, lab, ncounts = len(counts)
+        complexfloating_t val, count
+        complexfloating_t[:, :] sumx
+        int64_t[:, :] nobs
+
+    if len(values) != len(labels):
+        raise ValueError("len(index) != len(labels)")
+
+    nobs = np.zeros((<object>out).shape, dtype=np.int64)
+    sumx = np.zeros_like(out)
+
+    N, K = (<object>values).shape
+
+    with nogil:
+        for i in range(N):
+            lab = labels[i]
+            if lab < 0:
+                continue
+
+            counts[lab] += 1
+            for j in range(K):
+                val = values[i, j]
+
+                # not nan
+                if val == val:
+                    nobs[lab, j] += 1
+                    if (complexfloating_t is complex64_t or
+                            complexfloating_t is complex128_t):
+                        # clang errors if we use += with these dtypes
+                        sumx[lab, j] = sumx[lab, j] + val
+                    else:
+                        sumx[lab, j] += val
+
+        for i in range(ncounts):
+            for j in range(K):
+                if nobs[i, j] < min_count:
+                    out[i, j] = NAN
+                else:
+                    out[i, j] = sumx[i, j]
+
+
+group_add_float32 = _group_add['float32_t']
+group_add_float64 = _group_add['float64_t']
+group_add_complex64 = _group_add['float complex']
+group_add_complex128 = _group_add['double complex']
+
+
+@cython.wraparound(False)
+@cython.boundscheck(False)
+def _pipeline_group_add(complexfloating_t[:, :] out,
                int64_t[:] counts,
                complexfloating_t[:, :] values,
                const int64_t[:] labels,
@@ -512,10 +569,10 @@ def _group_add(complexfloating_t[:, :] out,
         for j in range(K):
             print(sumx[i,j])
             print(out[i,j])
-group_add_float32 = _group_add['float32_t']
-group_add_float64 = _group_add['float64_t']
-group_add_complex64 = _group_add['float complex']
-group_add_complex128 = _group_add['double complex']
+pipeline_group_add_float32 = _pipeline_group_add['float32_t']
+pipeline_group_add_float64 = _pipeline_group_add['float64_t']
+pipeline_group_add_complex64 = _pipeline_group_add['float complex']
+pipeline_group_add_complex128 = _pipeline_group_add['double complex']
 
 
 @cython.wraparound(False)
@@ -625,10 +682,59 @@ def _group_var(floating[:, :] out,
 group_var_float32 = _group_var['float']
 group_var_float64 = _group_var['double']
 
-
 @cython.wraparound(False)
 @cython.boundscheck(False)
 def _group_mean(floating[:, :] out,
+                int64_t[:] counts,
+                floating[:, :] values,
+                const int64_t[:] labels,
+                Py_ssize_t min_count=-1):
+    cdef:
+        Py_ssize_t i, j, N, K, lab, ncounts = len(counts)
+        floating val, count
+        floating[:, :] sumx
+        int64_t[:, :] nobs
+
+    assert min_count == -1, "'min_count' only used in add and prod"
+
+    if not len(values) == len(labels):
+        raise ValueError("len(index) != len(labels)")
+
+    nobs = np.zeros((<object>out).shape, dtype=np.int64)
+    sumx = np.zeros_like(out)
+
+    N, K = (<object>values).shape
+
+    with nogil:
+        for i in range(N):
+            lab = labels[i]
+            if lab < 0:
+                continue
+
+            counts[lab] += 1
+            for j in range(K):
+                val = values[i, j]
+                # not nan
+                if val == val:
+                    nobs[lab, j] += 1
+                    sumx[lab, j] += val
+
+        for i in range(ncounts):
+            for j in range(K):
+                count = nobs[i, j]
+                if nobs[i, j] == 0:
+                    out[i, j] = NAN
+                else:
+                    out[i, j] = sumx[i, j] / count
+
+
+group_mean_float32 = _group_mean['float']
+group_mean_float64 = _group_mean['double']
+
+
+@cython.wraparound(False)
+@cython.boundscheck(False)
+def _pipeline_group_mean(floating[:, :] out,
                 int64_t[:] counts,
                 floating[:, :] values,
                 const int64_t[:] labels,
@@ -679,8 +785,8 @@ def _group_mean(floating[:, :] out,
                     out[i, j] = sumx[i, j] / count
 
 
-group_mean_float32 = _group_mean['float']
-group_mean_float64 = _group_mean['double']
+pipeline_group_mean_float32 = _pipeline_group_mean['float']
+pipeline_group_mean_float64 = _pipeline_group_mean['double']
 
 
 @cython.wraparound(False)

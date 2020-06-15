@@ -345,6 +345,8 @@ class BaseGrouper:
             "first": "group_nth",
             "last": "group_last",
             "ohlc": "group_ohlc",
+            "pipeline_add": "pipeline_group_add",
+            "pipeline_mean": "pipeline_group_mean",
         },
         "transform": {
             "cumprod": "group_cumprod",
