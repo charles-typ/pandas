@@ -85,15 +85,13 @@ def pipeline_inner_join(const int64_t[:] left, const int64_t[:] right,
         for i in range(1, left_length):
             left_increment_count[i] = left_increment_count[i - 1] + left_count[i]
     #right_sorter, right_count = groupsort_indexer(right, max_groups)
-    print("left_sorter : ")
-    print(left_sorter)
-    print("left_count : ")
-    print(left_count)
-    print("left_incremenet_count : ")
-    print(left_increment_count)
-    for i in range(len(left)):
-        print(left[i])
-    print("done")
+    #print("left_sorter : ")
+    #print(left_sorter)
+    #print("left_count : ")
+    #print(left_count)
+    #print("left_increment_count : ")
+    #print(left_increment_count)
+    #print("done")
     #print("right_sorter : ")
     #print(right_sorter)
     #print("right_count : ")

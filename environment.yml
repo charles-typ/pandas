@@ -1,10 +1,10 @@
-name: pandas-jot
+name: pandas-jot-3.6.9
 channels:
   - conda-forge
 dependencies:
   # required
   - numpy>=1.15
-  - python=3.7.1
+  - python=3.6.9
   - python-dateutil>=2.6.1
   - pytz
 

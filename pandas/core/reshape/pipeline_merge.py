@@ -1020,17 +1020,17 @@ def _get_join_indexers(
         kwargs["sort"] = sort
     join_func = _join_functions[how]
 
-    print("***********#%$#%#%#%#%")
-    print(lkey)
-    print("***********#%$#%#%#%#%")
-    print(rkey)
-    print("***********#%$#%#%#%#%")
-    print(count)
-    print("***********#%$#%#%#%#%")
-    print(left_sorter)
-    print("***********#%$#%#%#%#%")
-    print(left_count)
-    print("***********#%$#%#%#%#%")
+    #print("***********#%$#%#%#%#%")
+    #print(lkey)
+    #print("***********#%$#%#%#%#%")
+    #print(rkey)
+    #print("***********#%$#%#%#%#%")
+    #print(count)
+    #print("***********#%$#%#%#%#%")
+    #print(left_sorter)
+    #print("***********#%$#%#%#%#%")
+    #print(left_count)
+    #print("***********#%$#%#%#%#%")
     return join_func(lkey, rkey, count, left_sorter, left_count, **kwargs)
 
 
