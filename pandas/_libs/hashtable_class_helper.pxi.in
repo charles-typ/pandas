@@ -484,9 +484,9 @@ cdef class {{name}}HashTable(HashTable):
                 # k falls into a previous bucket
                 # only relevant in case we need to construct the inverse
                 idx = self.table.vals[k]
-                print("Label here!!!!!")
-                print(self.table.n_buckets)
-                print(idx)
+                #print("Label here!!!!!")
+                #print(self.table.n_buckets)
+                #print(idx)
                 labels[i] = idx
         endtime = timeit.default_timer()
         #print("Inthash table first part time: ", begintime - inittime)
