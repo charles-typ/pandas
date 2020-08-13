@@ -631,7 +631,7 @@ class SeriesGroupBy(GroupBy):
         result = Series(res, index=ri, name=self._selection_name)
         return self._reindex_output(result, fill_value=0)
 
-    def pipeline_nunique(self, dropna: bool = True, pre_uniques=None, hash_table=None):
+    def pipeline_nunique(self, dropna: bool = True, lookuptable=None):
         """
         Return number of unique elements in the group.
 
@@ -642,8 +642,12 @@ class SeriesGroupBy(GroupBy):
         """
         ids, _, _ = self.grouper.group_info
 
+        print("ID111111111111")
+        print(ids)
         val = self.obj._internal_get_values()
 
+        print("val111111111111")
+        print(val)
         # GH 27951
         # temporary fix while we wait for NumPy bug 12629 to be fixed
         val[isna(val)] = np.datetime64("NaT")
@@ -653,14 +657,17 @@ class SeriesGroupBy(GroupBy):
         except TypeError:  # catches object dtypes
             msg = f"val.dtype must be object, got {val.dtype}"
             assert val.dtype == object, msg
-            val, _, new_hash_table, new_pre_uniques = algorithms.factorize(val, pre_uniques=pre_uniques, sort=False, hash_table=hash_table)
+            val, _ = algorithms.factorize(val, sort=False)
             sorter = np.lexsort((val, ids))
             _isna = lambda a: a == -1
         else:
             _isna = isna
 
         ids, val = ids[sorter], val[sorter]
-
+        print("ID22222222222")
+        print(ids)
+        print("Val2222222222")
+        print(val)
         # group boundaries are where group ids change
         # unique observations are where sorted values change
         idx = np.r_[0, 1 + np.nonzero(ids[1:] != ids[:-1])[0]]
@@ -674,8 +681,26 @@ class SeriesGroupBy(GroupBy):
         else:
             inc[mask & np.r_[False, mask[:-1]]] = 0
             inc[idx] = 1
-
+        if lookuptable is None:
+            lookuptable = {}
+        for i in range(len(inc)):
+            print("i: ", i)
+            print("inc[i]", inc[i])
+            print("ids[i]", ids[i])
+            print("val[i]", val[i])
+            if inc[i] != 0:
+                if (ids[i], val[i]) in lookuptable:
+                    inc[i] = 0
+                else:
+                    print("Inserting " + str(ids[i]) + " " + str(val[i]))
+                    lookuptable[(ids[i], val[i])] = True
+        print("inc!!!!!!")
+        print(inc)
+        print("idx!!!!!!")
+        print(idx)
         out = np.add.reduceat(inc, idx).astype("int64", copy=False)
+        print("Out!!!!!!!!!!")
+        print(out)
         if len(ids):
             # NaN/NaT group exists if the head of ids is -1,
             # so remove it from res and exclude its index from idx
@@ -694,7 +719,11 @@ class SeriesGroupBy(GroupBy):
             res[ids[idx]] = out
 
         result = Series(res, index=ri, name=self._selection_name)
-        return self._reindex_output(result, fill_value=0), new_hash_table, new_pre_uniques
+        print("Result!!!!!!!!!!!!!!!!!!")
+        print(result)
+        for key in lookuptable:
+            print(key)
+        return self._reindex_output(result, fill_value=0), lookuptable
 
     @Appender(Series.describe.__doc__)
     def describe(self, **kwargs):
