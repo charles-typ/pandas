@@ -11,10 +11,12 @@ df2 = pd.DataFrame({'id': ['spam', 'test', 'egg', 'spam',
 	'value1': [2, 6, 5, 4, 7, 8],
 	'value2': list('abbaxy')})
 
-ret1, table = df.groupby('id').agg({'value1':'pipeline_nunique'}, lookuptable)
+groupbyobject, table, preuniques = df.pipeline_groupby('id')
+ret1, table = groupbyobject.agg({'value1':'pipeline_nunique'}, lookuptable)
 print(ret1)
 print(table)
-ret2, table2 = df2.groupby('id').agg({'value1':'pipeline_nunique'}, table)
+groupbyobject, table, preuniques = df2.pipeline_groupby('id', hash_table=table, pre_uniques=preuniques)
+ret2, table2 = groupbyobject.agg({'value1':'pipeline_nunique'}, table)
 print(ret2)
 print(table2)
 for index, row in ret2.iterrows():
