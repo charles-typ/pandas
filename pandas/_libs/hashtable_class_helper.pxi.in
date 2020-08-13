@@ -975,7 +975,7 @@ cdef class StringHashTable(HashTable):
                 uniques_vector.append(pre_uniques[i])
         return self._unique(values, uniques_vector, na_sentinel=na_sentinel,
                             na_value=na_value, ignore_na=True,
-                            return_inverse=True)
+                            return_inverse=True),uniques_vector.to_array()
 
     def get_labels(self, ndarray[object] values, ObjectVector uniques,
                    Py_ssize_t count_prior=0, Py_ssize_t na_sentinel=-1,
