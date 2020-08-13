@@ -383,6 +383,20 @@ class SelectionMixin:
                 colg = self._gotitem(self._selection, ndim=2, subset=obj)
                 return colg.aggregate(how)
 
+            def _agg_nunique(name, how, table, subset=None):
+                """
+                aggregate a 1-dim with how
+                """
+                colg = self._gotitem(name, ndim=1, subset=subset)
+                if colg.ndim != 1:
+                    raise SpecificationError(
+                        "nested dictionary is ambiguous in aggregation"
+                    )
+                #print("FUNCTION%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
+                #print(colg.aggregate)
+                return colg.aggregate(how, table)
+
+
             def _agg(arg, func):
                 """
                 run the aggregations over the arg with func
@@ -390,7 +404,15 @@ class SelectionMixin:
                 """
                 result = OrderedDict()
                 for fname, agg_how in arg.items():
-                    result[fname] = func(fname, agg_how)
+                   # print("!!!Hwwwww!")
+                   # print(func)
+                   # print(fname)
+                   # print(agg_how)
+                   # print(args)
+                    if agg_how is "pipeline_nunique":
+                        result[fname] = _agg_nunique(fname, agg_how, args)
+                    else:
+                        result[fname] = func(fname, agg_how)
                 return result
 
             # set the final keys
@@ -470,7 +492,17 @@ class SelectionMixin:
 
             # fall thru
             from pandas import DataFrame, Series
-
+            #print("Watch out!!!!!!!!!")
+            #print(type(result['value1']))
+            for key in result:
+                result = result[key]
+            table = None
+            if isinstance(result, tuple):
+                #print("Found tuple!")
+                #print(type(result))
+                table = result[1]
+                result = result[0]
+                #print(type(result))
             try:
                 result = DataFrame(result)
             except ValueError:
@@ -478,7 +510,11 @@ class SelectionMixin:
                 # we have a dict of scalars
                 result = Series(result, name=getattr(self, "name", None))
 
-            return result, True
+            if table is None:
+            	return result, True
+            else:
+                #print("returning three")
+                return result, True, table
         elif is_list_like(arg):
             # we require a list, but not an 'str'
             return self._aggregate_multiple_funcs(arg, _axis=_axis), None
